@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemap.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://janrehacek.com/</loc>
+    <lastmod>2026-05-29</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://janrehacek.com/"/>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://janrehacek.com/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://janrehacek.com/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://janrehacek.com/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://janrehacek.com/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://janrehacek.com/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://janrehacek.com/"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://janrehacek.com/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://janrehacek.com/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://janrehacek.com/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://janrehacek.com/"/>
+  </url>
+</urlset>
