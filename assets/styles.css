@@ -323,6 +323,10 @@ nav {
     gap: 40px;
     text-align: center;
 }
+.stats-grid-5 {
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+}
 .stat-num {
     font-family: 'Geist', sans-serif;
     font-size: 52px;
@@ -330,6 +334,17 @@ nav {
     color: var(--text);
     line-height: 1;
     letter-spacing: -2px;
+    /* Stop a long number ("243 600 Kč") from overflowing on tablet */
+    white-space: nowrap;
+}
+.stats-grid-5 .stat-num { font-size: 46px; letter-spacing: -1.6px; }
+.stat-num-big { font-size: inherit; }
+.stat-num-unit {
+    font-size: 0.6em;
+    font-weight: 500;
+    color: var(--text-muted);
+    letter-spacing: -0.5px;
+    margin-left: 2px;
 }
 .stat-label {
     font-size: 13px;
@@ -783,6 +798,16 @@ footer {
     .about-grid, .housio-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
     .services-grid, .testimonials-grid, .academy-grid { grid-template-columns: 1fr; }
     .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+    /* 5-stat grid on tablet (700–1023): 6-col scaffold, two rows of 3+2 with the
+       second row centered (third item ends mid-row, last two anchor the bottom). */
+    .stats-grid-5 {
+        grid-template-columns: repeat(6, 1fr);
+        gap: 28px 24px;
+    }
+    .stats-grid-5 > div { grid-column: span 2; }
+    .stats-grid-5 > div:nth-child(4) { grid-column: 2 / span 2; }
+    .stats-grid-5 > div:nth-child(5) { grid-column: 4 / span 2; }
+    .stats-grid-5 .stat-num { font-size: 38px; }
     .footer-grid { grid-template-columns: 1fr 1fr; }
     section, .housio-section, .contact { padding: 60px 0; }
     .stat-num { font-size: 42px; }
@@ -791,6 +816,19 @@ footer {
 @media (max-width: 500px) {
     .footer-grid { grid-template-columns: 1fr; }
     .stats-grid { grid-template-columns: 1fr; }
+    /* 5-stat on phones: 2 cols × 3 rows, centred 5th card stretches both cols */
+    .stats-grid-5 {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 28px 16px;
+    }
+    .stats-grid-5 > div { grid-column: auto; }
+    .stats-grid-5 > div:nth-child(4) { grid-column: 1; }
+    .stats-grid-5 > div:nth-child(5) {
+        grid-column: 1 / span 2;
+        max-width: 60%;
+        margin: 0 auto;
+    }
+    .stats-grid-5 .stat-num { font-size: 36px; }
     .hero-photo { height: 60vh; min-height: 360px; }
     .hero-inner { padding: 0 20px 48px; margin-top: -48px; }
     .hero-actions { gap: 10px; }
