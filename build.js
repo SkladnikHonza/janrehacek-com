@@ -421,8 +421,8 @@ function build() {
             hero_meta_disposition: l.disposition ? `<span>✦ ${escapeHtml(l.disposition)} dispozice</span>` : '',
             hero_meta_area:        l.area ? `<span>◊ ${escapeHtml(l.area)} m² užitné plochy</span>` : '',
             hero_meta_floor:       l.floor ? `<span>⛶ ${escapeHtml(l.floor)}</span>` : (l.building_type ? `<span>⛶ ${escapeHtml(l.building_type)}</span>` : ''),
-            // Filter index path (rentals/sales) — used in the back link
-            type_index_path: `../`,    // detail is one level deep in /nabidka/{type}/
+            // Back link → filtered type index (absolute so it works with cleanUrls trailingSlash:false)
+            type_index_path: `/nabidka/${l.type}/`,
         });
         fs.writeFileSync(path.join(dir, 'index.html'), html);
         console.log(`  → nabidka/${l.type}/${l.slug}/index.html  (${l.gallery.length} photo${l.gallery.length === 1 ? '' : 's'})`);
@@ -432,9 +432,9 @@ function build() {
     for (const page of INDEX_PAGES) {
         const filtered = page.filter ? listings.filter(l => l.type === page.filter) : listings;
         const base = '../'.repeat(page.depth);
-        // Card href depends on whether we're on unified index or filtered
+        // Card href is always absolute → works with cleanUrls regardless of trailing slash
         const cardsHtml = filtered.map(l => {
-            const href = page.filter ? `${l.slug}/` : `${l.type}/${l.slug}/`;
+            const href = `/nabidka/${l.type}/${l.slug}/`;
             const coverSrc = `${base}images/listings/${l.type}/${l.slug}/${l.cover}`;
             return renderTemplate(cardTpl, {
                 href,

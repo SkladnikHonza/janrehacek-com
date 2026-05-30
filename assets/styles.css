@@ -1358,9 +1358,6 @@ a.logo:hover { opacity: 0.7; }
 
 /* ===== LISTINGS — CATEGORIZED ENHANCEMENTS ===== */
 
-/* Honor EXIF orientation everywhere (belt + suspenders for iPhone HEIC->JPEG) */
-img { image-orientation: from-image; }
-
 /* Status-tinted badges on listing cards */
 .listing-card-badge.status-active   { color: #2d7a4a; }            /* green */
 .listing-card-badge.status-reserved { color: #c97c2e; }            /* warm orange */
