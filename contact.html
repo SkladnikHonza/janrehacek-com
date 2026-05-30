@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kontakt — Jan Řeháček</title>
+<meta name="description" content="Kontaktujte Jana Řeháčka. První konzultace je vždy zdarma a nezávazná, reakce do 24 hodin.">
+<link rel="canonical" href="https://janrehacek.com/contact">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://janrehacek.com/contact">
+<meta property="og:title" content="Kontakt — Jan Řeháček">
+<meta property="og:description" content="Kontaktujte Jana Řeháčka. První konzultace je vždy zdarma a nezávazná, reakce do 24 hodin.">
+<meta property="og:image" content="https://janrehacek.com/images/jan-rehacek.png">
+<meta property="og:locale" content="cs_CZ">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<nav>
+    <div class="nav-inner">
+        <a href="index.html" class="logo">Jan Řeháček<span>.</span></a>
+        <ul class="nav-links">
+            <li><a href="about.html" data-i18n="nav.about">O mně</a></li>
+            <li><a href="services.html" data-i18n="nav.services">Služby</a></li>
+            <li><a href="investors.html" data-i18n="nav.investors">Pro investory</a></li>
+            <li><a href="https://www.housio.app" target="_blank" rel="noopener noreferrer" class="external" data-i18n="nav.housio">Housio.App</a></li>
+            <li><a href="references.html" data-i18n="nav.testimonials">Reference</a></li>
+            <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+            <li><a href="contact.html" class="btn btn-primary active" data-i18n="nav.contact">Kontakt</a></li>
+            <li>
+                <div class="lang-switcher" id="langSwitcher">
+                    <div class="lang-current" onclick="toggleLangMenu()">
+                        <span class="lang-flag" id="langCurrentFlag">🇨🇿</span>
+                        <span id="langCurrentCode">CZ</span>
+                        <span class="lang-arrow">▼</span>
+                    </div>
+                    <div class="lang-dropdown">
+                        <div class="lang-option" data-lang="cs" onclick="setLanguage('cs')"><span class="lang-option-flag">🇨🇿</span><span class="lang-option-name">Čeština</span><span class="lang-option-check">✓</span></div>
+                        <div class="lang-option" data-lang="sk" onclick="setLanguage('sk')"><span class="lang-option-flag">🇸🇰</span><span class="lang-option-name">Slovenčina</span><span class="lang-option-check">✓</span></div>
+                        <div class="lang-option" data-lang="en" onclick="setLanguage('en')"><span class="lang-option-flag">🇬🇧</span><span class="lang-option-name">English</span><span class="lang-option-check">✓</span></div>
+                        <div class="lang-option" data-lang="de" onclick="setLanguage('de')"><span class="lang-option-flag">🇩🇪</span><span class="lang-option-name">Deutsch</span><span class="lang-option-check">✓</span></div>
+                        <div class="lang-option" data-lang="fr" onclick="setLanguage('fr')"><span class="lang-option-flag">🇫🇷</span><span class="lang-option-name">Français</span><span class="lang-option-check">✓</span></div>
+                        <div class="lang-option" data-lang="it" onclick="setLanguage('it')"><span class="lang-option-flag">🇮🇹</span><span class="lang-option-name">Italiano</span><span class="lang-option-check">✓</span></div>
+                        <div class="lang-option" data-lang="es" onclick="setLanguage('es')"><span class="lang-option-flag">🇪🇸</span><span class="lang-option-name">Español</span><span class="lang-option-check">✓</span></div>
+                        <div class="lang-option" data-lang="pl" onclick="setLanguage('pl')"><span class="lang-option-flag">🇵🇱</span><span class="lang-option-name">Polski</span><span class="lang-option-check">✓</span></div>
+                        <div class="lang-option" data-lang="ru" onclick="setLanguage('ru')"><span class="lang-option-flag">🇷🇺</span><span class="lang-option-name">Русский</span><span class="lang-option-check">✓</span></div>
+                        <div class="lang-option" data-lang="ja" onclick="setLanguage('ja')"><span class="lang-option-flag">🇯🇵</span><span class="lang-option-name">日本語</span><span class="lang-option-check">✓</span></div>
+                        <div class="lang-option" data-lang="zh" onclick="setLanguage('zh')"><span class="lang-option-flag">🇨🇳</span><span class="lang-option-name">中文</span><span class="lang-option-check">✓</span></div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <button class="menu-toggle">☰</button>
+    </div>
+</nav>
+
+<header class="page-header">
+    <div class="container">
+        <div class="page-header-eyebrow" data-i18n="contact.eyebrow">Kontakt</div>
+        <h1 data-i18n-html="page.contact.title">Pojďme si <em>promluvit.</em></h1>
+        <p class="page-header-text" data-i18n="page.contact.sub">První konzultace je vždy zdarma a nezávazná. Stačí mi krátce popsat, co řešíte.</p>
+    </div>
+</header>
+
+<section id="contact" class="contact">
+    <div class="container">
+        <div class="contact-grid">
+            <div class="contact-info">
+                <p data-i18n="contact.text">První konzultace je vždy zdarma a nezávazná. Stačí mi krátce popsat, co řešíte, a já se Vám ozvu obvykle do 24 hodin.</p>
+                <div class="contact-detail">
+                    <div class="contact-detail-icon">✉</div>
+                    <div>
+                        <div class="contact-detail-label" data-i18n="contact.email">E-mail</div>
+                        <div class="contact-detail-value">jan@rehacek-invest.cz</div>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <div class="contact-detail-icon">☎</div>
+                    <div>
+                        <div class="contact-detail-label" data-i18n="contact.phone">Telefon</div>
+                        <div class="contact-detail-value">+420 777 123 456</div>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <div class="contact-detail-icon">⌂</div>
+                    <div>
+                        <div class="contact-detail-label" data-i18n="contact.office">Sídlo</div>
+                        <div class="contact-detail-value" data-i18n="contact.office_value">Praha, Česká republika</div>
+                    </div>
+                </div>
+                <div class="contact-detail">
+                    <div class="contact-detail-icon">◷</div>
+                    <div>
+                        <div class="contact-detail-label" data-i18n="contact.response">Reakce</div>
+                        <div class="contact-detail-value" data-i18n="contact.response_value">Do 24 hodin</div>
+                    </div>
+                </div>
+            </div>
+            <form class="contact-form" onsubmit="event.preventDefault(); alert((window.translations && window.translations[document.documentElement.lang] && window.translations[document.documentElement.lang]['contact.success']) || 'Děkuji za zprávu!'); this.reset();">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label data-i18n="form.name">Jméno *</label>
+                        <input type="text" required data-i18n-placeholder="form.name_ph" placeholder="Vaše jméno">
+                    </div>
+                    <div class="form-group">
+                        <label data-i18n="form.email">E-mail *</label>
+                        <input type="email" required data-i18n-placeholder="form.email_ph" placeholder="vase@email.cz">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label data-i18n="form.phone">Telefon</label>
+                    <input type="tel" placeholder="+420 ...">
+                </div>
+                <div class="form-group">
+                    <label data-i18n="form.interest">O co máte zájem?</label>
+                    <select>
+                        <option data-i18n="form.opt1">Realitní investice</option>
+                        <option data-i18n="form.opt2">Investiční poradenství</option>
+                        <option data-i18n="form.opt3">Mentoring & akademie</option>
+                        <option data-i18n="form.opt4">Housio platforma</option>
+                        <option data-i18n="form.opt5">Něco jiného</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label data-i18n="form.message">Vaše zpráva *</label>
+                    <textarea required data-i18n-placeholder="form.message_ph" placeholder="Krátce mi popište, co řešíte..."></textarea>
+                </div>
+                <button type="submit" class="btn-submit" data-i18n="form.submit">Odeslat zprávu →</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo" style="color:white;">Jan Řeháček<span>.</span></div>
+                <p data-i18n="footer.brand">Investor, realitní expert a zakladatel platformy Housio. Buduji majetek a vzdělávám novou generaci investorů.</p>
+            </div>
+            <div class="footer-col">
+                <h5 data-i18n="footer.nav">Navigace</h5>
+                <a href="about.html" data-i18n="nav.about">O mně</a>
+                <a href="services.html" data-i18n="nav.services">Služby</a>
+                <a href="investors.html" data-i18n="nav.investors">Pro investory</a>
+                <a href="references.html" data-i18n="nav.testimonials">Reference</a>
+                <a href="blog.html" data-i18n="nav.blog">Blog</a>
+            </div>
+            <div class="footer-col">
+                <h5 data-i18n="footer.products">Produkty</h5>
+                <a href="https://www.housio.app" target="_blank" rel="noopener noreferrer">Housio.App</a>
+                <a href="investors.html" data-i18n="academy.eyebrow">Akademie investora</a>
+                <a href="services.html" data-i18n="services.s3_title">Mentoring</a>
+                <a href="contact.html" data-i18n="footer.consultation">Konzultace</a>
+            </div>
+            <div class="footer-col">
+                <h5 data-i18n="footer.contact">Kontakt</h5>
+                <a href="mailto:jan@rehacek-invest.cz">jan@rehacek-invest.cz</a>
+                <a href="tel:+420777123456">+420 777 123 456</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span data-i18n="footer.rights">© 2026 Jan Řeháček. Všechna práva vyhrazena.</span>
+            <span data-i18n="footer.tagline">Vytvořeno s vizí pro novou generaci investorů.</span>
+        </div>
+    </div>
+</footer>
+
+<script src="assets/script.js" defer></script>
+</body>
+</html>

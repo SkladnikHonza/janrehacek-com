@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blog — Jan Řeháček</title>
+<meta name="description" content="Blog Jana Řeháčka o investicích, realitním trhu a budování majetku. Brzy se tady objeví první články.">
+<link rel="canonical" href="https://janrehacek.com/blog">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://janrehacek.com/blog">
+<meta property="og:title" content="Blog — Jan Řeháček">
+<meta property="og:description" content="Blog Jana Řeháčka o investicích, realitním trhu a budování majetku. Brzy se tady objeví první články.">
+<meta property="og:image" content="https://janrehacek.com/images/jan-rehacek.png">
+<meta property="og:locale" content="cs_CZ">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<nav>
+    <div class="nav-inner">
+        <a href="index.html" class="logo">Jan Řeháček<span>.</span></a>
+        <ul class="nav-links">
+            <li><a href="about.html" data-i18n="nav.about">O mně</a></li>
+            <li><a href="services.html" data-i18n="nav.services">Služby</a></li>
+            <li><a href="investors.html" data-i18n="nav.investors">Pro investory</a></li>
+            <li><a href="https://www.housio.app" target="_blank" rel="noopener noreferrer" class="external" data-i18n="nav.housio">Housio.App</a></li>
+            <li><a href="references.html" data-i18n="nav.testimonials">Reference</a></li>
+            <li><a href="blog.html" class="active" data-i18n="nav.blog">Blog</a></li>
+            <li><a href="contact.html" class="btn btn-primary" data-i18n="nav.contact">Kontakt</a></li>
+            <li>
+                <div class="lang-switcher" id="langSwitcher">
+                    <div class="lang-current" onclick="toggleLangMenu()">
+                        <span class="lang-flag" id="langCurrentFlag">🇨🇿</span>
+                        <span id="langCurrentCode">CZ</span>
+                        <span class="lang-arrow">▼</span>
+                    </div>
+                    <div class="lang-dropdown">
+                        <div class="lang-option" data-lang="cs" onclick="setLanguage('cs')"><span class="lang-option-flag">🇨🇿</span><span class="lang-option-name">Čeština</span><span class="lang-option-check">✓</span></div>
+                        <div class="lang-option" data-lang="sk" onclick="setLanguage('sk')"><span class="lang-option-flag">🇸🇰</span><span class="lang-option-name">Slovenčina</span><span class="lang-option-check">✓</span></div>
+                        <div class="lang-option" data-lang="en" onclick="setLanguage('en')"><span class="lang-option-flag">🇬🇧</span><span class="lang-option-name">English</span><span class="lang-option-check">✓</span></div>
+                        <div class="lang-option" data-lang="de" onclick="setLanguage('de')"><span class="lang-option-flag">🇩🇪</span><span class="lang-option-name">Deutsch</span><span class="lang-option-check">✓</span></div>
+                        <div class="lang-option" data-lang="fr" onclick="setLanguage('fr')"><span class="lang-option-flag">🇫🇷</span><span class="lang-option-name">Français</span><span class="lang-option-check">✓</span></div>
+                        <div class="lang-option" data-lang="it" onclick="setLanguage('it')"><span class="lang-option-flag">🇮🇹</span><span class="lang-option-name">Italiano</span><span class="lang-option-check">✓</span></div>
+                        <div class="lang-option" data-lang="es" onclick="setLanguage('es')"><span class="lang-option-flag">🇪🇸</span><span class="lang-option-name">Español</span><span class="lang-option-check">✓</span></div>
+                        <div class="lang-option" data-lang="pl" onclick="setLanguage('pl')"><span class="lang-option-flag">🇵🇱</span><span class="lang-option-name">Polski</span><span class="lang-option-check">✓</span></div>
+                        <div class="lang-option" data-lang="ru" onclick="setLanguage('ru')"><span class="lang-option-flag">🇷🇺</span><span class="lang-option-name">Русский</span><span class="lang-option-check">✓</span></div>
+                        <div class="lang-option" data-lang="ja" onclick="setLanguage('ja')"><span class="lang-option-flag">🇯🇵</span><span class="lang-option-name">日本語</span><span class="lang-option-check">✓</span></div>
+                        <div class="lang-option" data-lang="zh" onclick="setLanguage('zh')"><span class="lang-option-flag">🇨🇳</span><span class="lang-option-name">中文</span><span class="lang-option-check">✓</span></div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <button class="menu-toggle">☰</button>
+    </div>
+</nav>
+
+<header class="page-header">
+    <div class="container">
+        <div class="page-header-eyebrow" data-i18n="nav.blog">Blog</div>
+        <h1 data-i18n="page.blog.title">Blog</h1>
+        <p class="page-header-text" data-i18n="page.blog.sub">Brzy tady najdete články o investicích, realitním trhu a budování majetku.</p>
+    </div>
+</header>
+
+<section class="coming-soon">
+    <div class="coming-soon-inner">
+        <span class="coming-soon-icon" aria-hidden="true">✎</span>
+        <h2 data-i18n="blog.coming.title">Stránka v přípravě</h2>
+        <p data-i18n="blog.coming.text">Pracuji na obsahu — první články se objeví brzy. Mezitím se podívejte na ostatní sekce nebo mě kontaktujte přímo.</p>
+        <a href="index.html" class="btn btn-primary" data-i18n="blog.coming.cta" style="padding: 14px 28px; font-size: 14.5px; font-weight: 600;">← Zpět na úvod</a>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo" style="color:white;">Jan Řeháček<span>.</span></div>
+                <p data-i18n="footer.brand">Investor, realitní expert a zakladatel platformy Housio. Buduji majetek a vzdělávám novou generaci investorů.</p>
+            </div>
+            <div class="footer-col">
+                <h5 data-i18n="footer.nav">Navigace</h5>
+                <a href="about.html" data-i18n="nav.about">O mně</a>
+                <a href="services.html" data-i18n="nav.services">Služby</a>
+                <a href="investors.html" data-i18n="nav.investors">Pro investory</a>
+                <a href="references.html" data-i18n="nav.testimonials">Reference</a>
+                <a href="blog.html" data-i18n="nav.blog">Blog</a>
+            </div>
+            <div class="footer-col">
+                <h5 data-i18n="footer.products">Produkty</h5>
+                <a href="https://www.housio.app" target="_blank" rel="noopener noreferrer">Housio.App</a>
+                <a href="investors.html" data-i18n="academy.eyebrow">Akademie investora</a>
+                <a href="services.html" data-i18n="services.s3_title">Mentoring</a>
+                <a href="contact.html" data-i18n="footer.consultation">Konzultace</a>
+            </div>
+            <div class="footer-col">
+                <h5 data-i18n="footer.contact">Kontakt</h5>
+                <a href="mailto:jan@rehacek-invest.cz">jan@rehacek-invest.cz</a>
+                <a href="tel:+420777123456">+420 777 123 456</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span data-i18n="footer.rights">© 2026 Jan Řeháček. Všechna práva vyhrazena.</span>
+            <span data-i18n="footer.tagline">Vytvořeno s vizí pro novou generaci investorů.</span>
+        </div>
+    </div>
+</footer>
+
+<script src="assets/script.js" defer></script>
+</body>
+</html>

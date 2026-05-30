@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reference — Jan Řeháček</title>
+<meta name="description" content="Co o spolupráci říkají klienti Jana Řeháčka. Konkrétní příběhy investorů, kteří s Janem postavili portfolio nemovitostí.">
+<link rel="canonical" href="https://janrehacek.com/references">
+
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://janrehacek.com/references">
+<meta property="og:title" content="Reference — Jan Řeháček">
+<meta property="og:description" content="Co o spolupráci říkají klienti Jana Řeháčka. Konkrétní příběhy investorů, kteří s Janem postavili portfolio nemovitostí.">
+<meta property="og:image" content="https://janrehacek.com/images/jan-rehacek.png">
+<meta property="og:locale" content="cs_CZ">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<nav>
+    <div class="nav-inner">
+        <a href="index.html" class="logo">Jan Řeháček<span>.</span></a>
+        <ul class="nav-links">
+            <li><a href="about.html" data-i18n="nav.about">O mně</a></li>
+            <li><a href="services.html" data-i18n="nav.services">Služby</a></li>
+            <li><a href="investors.html" data-i18n="nav.investors">Pro investory</a></li>
+            <li><a href="https://www.housio.app" target="_blank" rel="noopener noreferrer" class="external" data-i18n="nav.housio">Housio.App</a></li>
+            <li><a href="references.html" class="active" data-i18n="nav.testimonials">Reference</a></li>
+            <li><a href="blog.html" data-i18n="nav.blog">Blog</a></li>
+            <li><a href="contact.html" class="btn btn-primary" data-i18n="nav.contact">Kontakt</a></li>
+            <li>
+                <div class="lang-switcher" id="langSwitcher">
+                    <div class="lang-current" onclick="toggleLangMenu()">
+                        <span class="lang-flag" id="langCurrentFlag">🇨🇿</span>
+                        <span id="langCurrentCode">CZ</span>
+                        <span class="lang-arrow">▼</span>
+                    </div>
+                    <div class="lang-dropdown">
+                        <div class="lang-option" data-lang="cs" onclick="setLanguage('cs')"><span class="lang-option-flag">🇨🇿</span><span class="lang-option-name">Čeština</span><span class="lang-option-check">✓</span></div>
+                        <div class="lang-option" data-lang="sk" onclick="setLanguage('sk')"><span class="lang-option-flag">🇸🇰</span><span class="lang-option-name">Slovenčina</span><span class="lang-option-check">✓</span></div>
+                        <div class="lang-option" data-lang="en" onclick="setLanguage('en')"><span class="lang-option-flag">🇬🇧</span><span class="lang-option-name">English</span><span class="lang-option-check">✓</span></div>
+                        <div class="lang-option" data-lang="de" onclick="setLanguage('de')"><span class="lang-option-flag">🇩🇪</span><span class="lang-option-name">Deutsch</span><span class="lang-option-check">✓</span></div>
+                        <div class="lang-option" data-lang="fr" onclick="setLanguage('fr')"><span class="lang-option-flag">🇫🇷</span><span class="lang-option-name">Français</span><span class="lang-option-check">✓</span></div>
+                        <div class="lang-option" data-lang="it" onclick="setLanguage('it')"><span class="lang-option-flag">🇮🇹</span><span class="lang-option-name">Italiano</span><span class="lang-option-check">✓</span></div>
+                        <div class="lang-option" data-lang="es" onclick="setLanguage('es')"><span class="lang-option-flag">🇪🇸</span><span class="lang-option-name">Español</span><span class="lang-option-check">✓</span></div>
+                        <div class="lang-option" data-lang="pl" onclick="setLanguage('pl')"><span class="lang-option-flag">🇵🇱</span><span class="lang-option-name">Polski</span><span class="lang-option-check">✓</span></div>
+                        <div class="lang-option" data-lang="ru" onclick="setLanguage('ru')"><span class="lang-option-flag">🇷🇺</span><span class="lang-option-name">Русский</span><span class="lang-option-check">✓</span></div>
+                        <div class="lang-option" data-lang="ja" onclick="setLanguage('ja')"><span class="lang-option-flag">🇯🇵</span><span class="lang-option-name">日本語</span><span class="lang-option-check">✓</span></div>
+                        <div class="lang-option" data-lang="zh" onclick="setLanguage('zh')"><span class="lang-option-flag">🇨🇳</span><span class="lang-option-name">中文</span><span class="lang-option-check">✓</span></div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <button class="menu-toggle">☰</button>
+    </div>
+</nav>
+
+<header class="page-header">
+    <div class="container">
+        <div class="page-header-eyebrow" data-i18n="testimonials.eyebrow">Reference</div>
+        <h1 data-i18n-html="page.references.title">Co o spolupráci říkají <em>moji klienti.</em></h1>
+        <p class="page-header-text" data-i18n="testimonials.subtitle">Důvěra je v naší branži všechno. Tady je pár slov od lidí, kterým jsem pomohl.</p>
+    </div>
+</header>
+
+<section id="testimonials">
+    <div class="container">
+        <div class="testimonials-grid">
+            <div class="testimonial">
+                <div class="testimonial-stars">★★★★★</div>
+                <div class="testimonial-quote" data-i18n="testimonials.q1">"Jan mi pomohl postavit portfolio třech bytů během dvou let. Přístup je profesionální a vždy hraje fair. Doporučuji každému, kdo to s investicemi myslí vážně."</div>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">MN</div>
+                    <div>
+                        <div class="testimonial-name">Martin Novák</div>
+                        <div class="testimonial-role" data-i18n="testimonials.r1">Investor, klient od 2022</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-stars">★★★★★</div>
+                <div class="testimonial-quote" data-i18n="testimonials.q2">"Bez Janovy Akademie bych do toho nikdy nešla. Konkrétní rady, žádná teorie. Za rok mám první výnosovou nemovitost."</div>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">PŠ</div>
+                    <div>
+                        <div class="testimonial-name">Petra Šimková</div>
+                        <div class="testimonial-role" data-i18n="testimonials.r2">Začínající investorka</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-stars">★★★★★</div>
+                <div class="testimonial-quote" data-i18n="testimonials.q3">"Spolupráce na úrovni. Jan se umí dívat do budoucna a vidí příležitosti, které ostatní přehlížejí. Skvělá kombinace zkušenosti a vize."</div>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">TK</div>
+                    <div>
+                        <div class="testimonial-name">Tomáš Krejčí</div>
+                        <div class="testimonial-role" data-i18n="testimonials.r3">Podnikatel, klient od 2020</div>
+                    </div>
+                </div>
+            </div>
+            <div class="testimonial">
+                <div class="testimonial-stars">★★★★★</div>
+                <div class="testimonial-quote" data-i18n="testimonials.q4">"Mentoring s Janem byla nejlepší investice do sebe za posledních pět let. Naučil mě myslet jako investor, ne jako spekulant."</div>
+                <div class="testimonial-author">
+                    <div class="testimonial-avatar">LH</div>
+                    <div>
+                        <div class="testimonial-name">Lukáš Horák</div>
+                        <div class="testimonial-role" data-i18n="testimonials.r4">Účastník mentoringu</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo" style="color:white;">Jan Řeháček<span>.</span></div>
+                <p data-i18n="footer.brand">Investor, realitní expert a zakladatel platformy Housio. Buduji majetek a vzdělávám novou generaci investorů.</p>
+            </div>
+            <div class="footer-col">
+                <h5 data-i18n="footer.nav">Navigace</h5>
+                <a href="about.html" data-i18n="nav.about">O mně</a>
+                <a href="services.html" data-i18n="nav.services">Služby</a>
+                <a href="investors.html" data-i18n="nav.investors">Pro investory</a>
+                <a href="references.html" data-i18n="nav.testimonials">Reference</a>
+                <a href="blog.html" data-i18n="nav.blog">Blog</a>
+            </div>
+            <div class="footer-col">
+                <h5 data-i18n="footer.products">Produkty</h5>
+                <a href="https://www.housio.app" target="_blank" rel="noopener noreferrer">Housio.App</a>
+                <a href="investors.html" data-i18n="academy.eyebrow">Akademie investora</a>
+                <a href="services.html" data-i18n="services.s3_title">Mentoring</a>
+                <a href="contact.html" data-i18n="footer.consultation">Konzultace</a>
+            </div>
+            <div class="footer-col">
+                <h5 data-i18n="footer.contact">Kontakt</h5>
+                <a href="mailto:jan@rehacek-invest.cz">jan@rehacek-invest.cz</a>
+                <a href="tel:+420777123456">+420 777 123 456</a>
+                <a href="#">LinkedIn</a>
+                <a href="#">Instagram</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span data-i18n="footer.rights">© 2026 Jan Řeháček. Všechna práva vyhrazena.</span>
+            <span data-i18n="footer.tagline">Vytvořeno s vizí pro novou generaci investorů.</span>
+        </div>
+    </div>
+</footer>
+
+<script src="assets/script.js" defer></script>
+</body>
+</html>
