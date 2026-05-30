@@ -939,3 +939,120 @@ if (toggle) {
         }
     });
 }
+
+
+// ===== LISTING GALLERY LIGHTBOX =====
+// Fullscreen viewer for the Airbnb-style detail-page gallery.
+// Triggered by [data-gallery-open] elements (tiles + "show all" button);
+// reads the full image list from data-gallery JSON on .listing-gallery.
+(function initListingLightbox() {
+    const gallery = document.querySelector('.listing-gallery[data-gallery]');
+    if (!gallery) return;
+
+    let images;
+    try {
+        images = JSON.parse(gallery.getAttribute('data-gallery'));
+    } catch (e) {
+        console.warn('Listing gallery: invalid data-gallery JSON', e);
+        return;
+    }
+    if (!Array.isArray(images) || !images.length) return;
+
+    let currentIndex = 0;
+    let lastFocused = null;
+
+    // Build lightbox DOM once
+    const lb = document.createElement('div');
+    lb.className = 'lightbox';
+    lb.setAttribute('role', 'dialog');
+    lb.setAttribute('aria-modal', 'true');
+    lb.setAttribute('aria-label', 'Galerie fotek nemovitosti');
+    lb.setAttribute('aria-hidden', 'true');
+    lb.innerHTML = `
+        <div class="lightbox-counter" aria-live="polite"></div>
+        <button type="button" class="lightbox-btn lightbox-close" aria-label="Zavřít galerii (Esc)">✕</button>
+        <button type="button" class="lightbox-btn lightbox-prev" aria-label="Předchozí fotka (šipka vlevo)">‹</button>
+        <button type="button" class="lightbox-btn lightbox-next" aria-label="Další fotka (šipka vpravo)">›</button>
+        <div class="lightbox-stage">
+            <img class="lightbox-img" alt="">
+        </div>
+    `;
+    document.body.appendChild(lb);
+
+    const imgEl    = lb.querySelector('.lightbox-img');
+    const counter  = lb.querySelector('.lightbox-counter');
+    const closeBtn = lb.querySelector('.lightbox-close');
+    const prevBtn  = lb.querySelector('.lightbox-prev');
+    const nextBtn  = lb.querySelector('.lightbox-next');
+
+    function preload(i) {
+        if (i < 0 || i >= images.length) return;
+        const img = new Image();
+        img.src = images[i].src;
+    }
+
+    function show(index) {
+        currentIndex = (index + images.length) % images.length;
+        const item = images[currentIndex];
+        imgEl.src = item.src;
+        imgEl.alt = item.alt || '';
+        counter.textContent = `${currentIndex + 1} / ${images.length}`;
+        preload(currentIndex + 1);
+        preload(currentIndex - 1);
+    }
+
+    function open(index) {
+        lastFocused = document.activeElement;
+        show(index);
+        lb.classList.add('is-open');
+        lb.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        document.addEventListener('keydown', onKey);
+        // Defer focus so it lands after the dialog is painted
+        requestAnimationFrame(() => closeBtn.focus());
+    }
+
+    function close() {
+        lb.classList.remove('is-open');
+        lb.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        document.removeEventListener('keydown', onKey);
+        if (lastFocused && typeof lastFocused.focus === 'function') {
+            lastFocused.focus();
+        }
+    }
+
+    function onKey(e) {
+        if (e.key === 'Escape') { e.preventDefault(); close(); return; }
+        if (e.key === 'ArrowRight') { e.preventDefault(); show(currentIndex + 1); return; }
+        if (e.key === 'ArrowLeft')  { e.preventDefault(); show(currentIndex - 1); return; }
+        if (e.key === 'Tab') {
+            // Focus trap — cycle through prev / next / close
+            const focusables = [prevBtn, nextBtn, closeBtn];
+            const idx = focusables.indexOf(document.activeElement);
+            e.preventDefault();
+            const next = e.shiftKey
+                ? focusables[(idx - 1 + focusables.length) % focusables.length]
+                : focusables[(idx + 1) % focusables.length];
+            next.focus();
+        }
+    }
+
+    // Trigger: any tile or the "show all" button
+    document.querySelectorAll('[data-gallery-open]').forEach(el => {
+        el.addEventListener('click', (e) => {
+            e.preventDefault();
+            const idx = parseInt(el.getAttribute('data-index') || '0', 10);
+            open(Number.isFinite(idx) ? idx : 0);
+        });
+    });
+
+    prevBtn.addEventListener('click', () => show(currentIndex - 1));
+    nextBtn.addEventListener('click', () => show(currentIndex + 1));
+    closeBtn.addEventListener('click', close);
+
+    // Click on backdrop or empty stage area (but not the image itself) closes
+    lb.addEventListener('click', (e) => {
+        if (e.target === lb || e.target.classList.contains('lightbox-stage')) close();
+    });
+})();

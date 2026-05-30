@@ -1209,7 +1209,7 @@ a.logo:hover { opacity: 0.7; }
     font-weight: 600;
 }
 
-/* ===== GALLERY ===== */
+/* ===== GALLERY — Airbnb-style hero + 2×2 thumbnails ===== */
 .listing-gallery-section { padding: 32px 0 64px; }
 .listing-gallery-section .section-title {
     font-family: 'Geist', sans-serif;
@@ -1218,32 +1218,224 @@ a.logo:hover { opacity: 0.7; }
     letter-spacing: -0.8px;
     margin-bottom: 28px;
 }
+.listing-gallery-wrap {
+    position: relative;
+}
 .listing-gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 6px;
+    height: 520px;
+    border-radius: var(--radius);
+    overflow: hidden;
+    background: var(--bg-card);
 }
 .listing-gallery-item {
     position: relative;
-    aspect-ratio: 3 / 2;
     overflow: hidden;
-    border-radius: var(--radius-sm);
     cursor: zoom-in;
     background: linear-gradient(135deg, #e8e0d3 0%, #d4c4a8 100%);
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+.listing-gallery-item.is-hero {
+    grid-row: span 2;
 }
 .listing-gallery-item img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     display: block;
-    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), filter 0.3s;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
-.listing-gallery-item:hover img {
-    transform: scale(1.04);
-    filter: brightness(1.05);
+.listing-gallery-item::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0);
+    transition: background 0.2s ease;
+    pointer-events: none;
 }
-.listing-gallery-item.wide { grid-column: span 2; aspect-ratio: 6 / 4; }
-.listing-gallery-item.tall { grid-row: span 2; aspect-ratio: 3 / 4; }
+.listing-gallery-item:hover::after { background: rgba(0, 0, 0, 0.10); }
+.listing-gallery-item:hover img { transform: scale(1.03); }
+.listing-gallery-item:focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: -3px;
+}
+
+/* "+N dalších" overlay on the last visible thumbnail */
+.listing-gallery-more {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(15, 17, 21, 0.55);
+    color: white;
+    font-family: 'Geist', sans-serif;
+    font-size: clamp(15px, 1.6vw, 20px);
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    pointer-events: none;
+    transition: background 0.2s ease;
+}
+.listing-gallery-item:hover .listing-gallery-more { background: rgba(15, 17, 21, 0.65); }
+
+/* "Zobrazit všech X fotek" button — floats over bottom-right */
+.listing-gallery-showall {
+    position: absolute;
+    bottom: 18px;
+    right: 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 9px 16px;
+    background: var(--bg-card);
+    color: var(--text);
+    border: 1px solid var(--text);
+    border-radius: 8px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+    transition: transform 0.18s ease, box-shadow 0.18s ease;
+    z-index: 2;
+}
+.listing-gallery-showall:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 26px rgba(0, 0, 0, 0.16);
+}
+.listing-gallery-showall:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+}
+
+/* Tablet: hero spans both columns at top, thumbs 2×2 below */
+@media (max-width: 900px) {
+    .listing-gallery {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 300px 150px 150px;
+        height: auto;
+    }
+    .listing-gallery-item.is-hero {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+}
+
+/* Mobile: hero full-width, then 2×2 grid */
+@media (max-width: 500px) {
+    .listing-gallery {
+        grid-template-rows: 230px 110px 110px;
+        gap: 4px;
+        border-radius: var(--radius-sm);
+    }
+    .listing-gallery-showall {
+        bottom: 12px;
+        right: 12px;
+        padding: 7px 12px;
+        font-size: 12px;
+    }
+}
+
+/* ===== LIGHTBOX — fullscreen photo viewer ===== */
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(8, 9, 12, 0.92);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
+    opacity: 0;
+    transition: opacity 0.22s ease;
+}
+.lightbox.is-open {
+    display: flex;
+    opacity: 1;
+}
+.lightbox-stage {
+    position: relative;
+    max-width: 90vw;
+    max-height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.lightbox-img {
+    max-width: 90vw;
+    max-height: 90vh;
+    object-fit: contain;
+    display: block;
+    user-select: none;
+    -webkit-user-drag: none;
+    box-shadow: 0 40px 120px rgba(0, 0, 0, 0.5);
+    animation: lb-fade-in 0.25s ease;
+}
+@keyframes lb-fade-in {
+    from { opacity: 0; transform: scale(0.985); }
+    to   { opacity: 1; transform: scale(1); }
+}
+.lightbox-counter {
+    position: absolute;
+    top: 22px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: rgba(255, 255, 255, 0.85);
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    pointer-events: none;
+}
+.lightbox-btn {
+    position: absolute;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.08);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 22px;
+    line-height: 1;
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
+}
+.lightbox-btn:hover {
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.30);
+}
+.lightbox-btn:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+.lightbox-close { top: 22px; right: 22px; font-size: 18px; }
+.lightbox-close:hover { transform: scale(1.08); }
+.lightbox-prev,
+.lightbox-next { top: 50%; transform: translateY(-50%); }
+.lightbox-prev { left: 22px; }
+.lightbox-next { right: 22px; }
+.lightbox-prev:hover,
+.lightbox-next:hover { transform: translateY(-50%) scale(1.08); }
+
+@media (max-width: 600px) {
+    .lightbox-btn { width: 42px; height: 42px; font-size: 20px; }
+    .lightbox-close { top: 12px; right: 12px; font-size: 16px; }
+    .lightbox-prev { left: 8px; }
+    .lightbox-next { right: 8px; }
+    .lightbox-counter { top: 14px; font-size: 13px; }
+}
 
 /* ===== SPECS GRID ===== */
 .listing-specs-section {
@@ -1344,15 +1536,10 @@ a.logo:hover { opacity: 0.7; }
         padding: 40px 0 24px;
     }
     .listing-info-panel { position: static; }
-    .listing-gallery { grid-template-columns: repeat(2, 1fr); }
-    .listing-gallery-item.wide { grid-column: span 2; }
-    .listing-gallery-item.tall { grid-row: auto; aspect-ratio: 3 / 2; }
     .listing-specs-section { padding: 56px 0; }
     .listing-specs-grid { gap: 14px; }
 }
 @media (max-width: 500px) {
-    .listing-gallery { grid-template-columns: 1fr; }
-    .listing-gallery-item.wide { grid-column: span 1; }
     .listing-specs-grid { grid-template-columns: 1fr; }
 }
 

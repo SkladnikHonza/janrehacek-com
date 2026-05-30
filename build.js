@@ -256,15 +256,52 @@ function findCover(images) {
     return exact || images[0] || null;
 }
 
-function renderGallery(slug, type, images) {
+/** Czech plural for the "Zobrazit … X fotek" button. */
+function pluralizePhotos(n) {
+    if (n === 1)              return 'Zobrazit fotku';
+    if (n >= 2 && n <= 4)     return `Zobrazit všechny ${n} fotky`;
+    return `Zobrazit všech ${n} fotek`;
+}
+
+/**
+ * Airbnb-style gallery: hero tile (left, 2 rows tall) + 2×2 thumbnails (right).
+ * Shows up to 5 tiles; the 5th carries a "+N dalších" overlay when more remain.
+ * Full image list is embedded as JSON in data-gallery for the lightbox JS.
+ */
+function renderGallery(slug, type, images, title) {
     if (!images.length) return '            <!-- No gallery photos -->';
-    return images.map((file, i) => {
-        const wide = (images.length >= 3 && (i === 0 || i === images.length - 1)) ? ' wide' : '';
-        const src = `../../../images/listings/${type}/${slug}/${file}`;
-        return `            <a href="${src}" target="_blank" rel="noopener" class="listing-gallery-item${wide}">
-                <img src="${src}" alt="${escapeHtml(file)}" loading="lazy">
+    const titleEsc = escapeHtml(title);
+    const visible = images.slice(0, 5);
+    const remaining = Math.max(0, images.length - visible.length);
+
+    // Lightbox payload — every image with a readable alt
+    const galleryData = images.map((file, i) => ({
+        src: `../../../images/listings/${type}/${slug}/${file}`,
+        alt: i === 0 ? title : `${title} — foto ${i + 1}`,
+    }));
+    const dataAttr = escapeHtml(JSON.stringify(galleryData));
+
+    const tiles = visible.map((file, i) => {
+        const src  = `../../../images/listings/${type}/${slug}/${file}`;
+        const alt  = i === 0 ? titleEsc : `${titleEsc} — foto ${i + 1}`;
+        const hero = i === 0 ? ' is-hero' : '';
+        const showOverlay = (i === visible.length - 1) && remaining > 0;
+        const loading = i === 0 ? 'eager' : 'lazy';
+        return `            <a href="${src}" target="_blank" rel="noopener" class="listing-gallery-item${hero}" data-gallery-open data-index="${i}" aria-label="Otevřít fotku ${i + 1} z ${images.length}">
+                <img src="${src}" alt="${alt}" loading="${loading}">${showOverlay ? `
+                <span class="listing-gallery-more" aria-hidden="true">+${remaining} dalších</span>` : ''}
             </a>`;
     }).join('\n');
+
+    return `        <div class="listing-gallery-wrap">
+            <div class="listing-gallery" data-gallery="${dataAttr}">
+${tiles}
+            </div>
+            <button type="button" class="listing-gallery-showall" data-gallery-open data-index="0" aria-label="${escapeHtml(pluralizePhotos(images.length))}">
+                <svg viewBox="0 0 20 20" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M3 3h6v6H3V3zm8 0h6v6h-6V3zM3 11h6v6H3v-6zm8 0h6v6h-6v-6z"/></svg>
+                <span>${escapeHtml(pluralizePhotos(images.length))}</span>
+            </button>
+        </div>`;
 }
 
 function renderCardBadge(l) {
@@ -479,7 +516,7 @@ function build() {
             description_html: renderDescription(l.description),
             info_panel: renderInfoPanel(l),
             spec_cards: renderSpecCards(l.specs),
-            gallery_items: renderGallery(l.slug, l.type, l.gallery),
+            gallery_items: renderGallery(l.slug, l.type, l.gallery, l.title),
             // Pre-built convenience strings for hero meta line
             hero_meta_disposition: l.disposition ? `<span>✦ ${escapeHtml(l.disposition)} dispozice</span>` : '',
             hero_meta_area:        l.area ? `<span>◊ ${escapeHtml(l.area)} m² užitné plochy</span>` : '',
