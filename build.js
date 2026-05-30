@@ -50,10 +50,11 @@ const STATIC_ROUTES = [
 ];
 
 // Index pages to generate (each filters listings by type or shows all)
+// `tab` matches one of the filter-nav tabs ('vse' | 'pronajem' | 'prodej') for active highlight.
 const INDEX_PAGES = [
-    { subdir: '',            depth: 1, filter: null,        h1: 'Aktuální nabídka <em>nemovitostí.</em>',  eyebrow: 'Nabídka nemovitostí' },
-    { subdir: 'pronajem/',   depth: 2, filter: 'pronajem',  h1: 'Aktuální <em>pronájmy.</em>',             eyebrow: 'Pronájem nemovitostí' },
-    { subdir: 'prodej/',     depth: 2, filter: 'prodej',    h1: 'Aktuální nabídka <em>k prodeji.</em>',    eyebrow: 'Prodej nemovitostí' },
+    { subdir: '',            depth: 1, filter: null,        tab: 'vse',      h1: 'Aktuální nabídka <em>nemovitostí.</em>',  eyebrow: 'Nabídka nemovitostí' },
+    { subdir: 'pronajem/',   depth: 2, filter: 'pronajem',  tab: 'pronajem', h1: 'Aktuální <em>pronájmy.</em>',             eyebrow: 'Pronájem nemovitostí' },
+    { subdir: 'prodej/',     depth: 2, filter: 'prodej',    tab: 'prodej',   h1: 'Aktuální nabídka <em>k prodeji.</em>',    eyebrow: 'Prodej nemovitostí' },
 ];
 
 // Type label shown on card badge
@@ -304,6 +305,68 @@ function renderCardMeta(l) {
     }).join('\n');
 }
 
+/** Czech plural for "X aktivních nabídek": 1 → nabídka, 2-4 → nabídky, else nabídek. */
+function pluralizeOffers(n) {
+    if (n === 1)              return `${n} aktivní nabídka`;
+    if (n >= 2 && n <= 4)     return `${n} aktivní nabídky`;
+    return `${n} aktivních nabídek`;
+}
+
+/** Big category-choice cards shown only on /nabidka/ root, above the secondary filter tabs. */
+function renderCategoryCards(counts) {
+    return `        <div class="category-choice">
+            <a href="/nabidka/pronajem/" class="category-card">
+                <div class="category-card-icon" aria-hidden="true">
+                    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                        <circle cx="17" cy="24" r="8"/>
+                        <path d="M25 24h17M38 24v6M32 24v4"/>
+                    </svg>
+                </div>
+                <div class="category-card-body">
+                    <div class="category-card-eyebrow">Nabídka pronájmů</div>
+                    <h2 class="category-card-title">Pronájem</h2>
+                    <p class="category-card-subtitle">Byty a domy k pronajmutí přímo od majitele — bez provize, ihned k nastěhování.</p>
+                </div>
+                <div class="category-card-meta">
+                    <span>${pluralizeOffers(counts.pronajem)}</span>
+                    <span class="category-card-arrow">→</span>
+                </div>
+            </a>
+            <a href="/nabidka/prodej/" class="category-card">
+                <div class="category-card-icon" aria-hidden="true">
+                    <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M8 23L24 9l16 14"/>
+                        <path d="M12 21v18h24V21"/>
+                        <path d="M20 39V28h8v11"/>
+                    </svg>
+                </div>
+                <div class="category-card-body">
+                    <div class="category-card-eyebrow">Nabídka k prodeji</div>
+                    <h2 class="category-card-title">Prodej</h2>
+                    <p class="category-card-subtitle">Pečlivě vybrané byty a domy k investici i k bydlení po důkladné due diligence.</p>
+                </div>
+                <div class="category-card-meta">
+                    <span>${pluralizeOffers(counts.prodej)}</span>
+                    <span class="category-card-arrow">→</span>
+                </div>
+            </a>
+        </div>`;
+}
+
+/** Secondary filter nav under the hero. `activeTab` is one of 'vse' | 'pronajem' | 'prodej'. */
+function renderFilterNav(activeTab, showLabel) {
+    const tab = (key, href, label) =>
+        `<a href="${href}"${key === activeTab ? ' class="active" aria-current="page"' : ''}>${label}</a>`;
+    const label = showLabel
+        ? '        <div class="listings-tabs-label">Nebo si projděte všechny nabídky</div>\n'
+        : '';
+    return `${label}        <nav class="listings-tabs" aria-label="Filtr nabídek">
+            ${tab('vse',      '/nabidka/',          'Vše')}
+            ${tab('pronajem', '/nabidka/pronajem/', 'Pronájem')}
+            ${tab('prodej',   '/nabidka/prodej/',   'Prodej')}
+        </nav>`;
+}
+
 function renderTemplate(template, replacements) {
     return template.replace(/\{\{(\w+)\}\}/g, (match, key) => {
         if (replacements[key] !== undefined) return replacements[key];
@@ -428,9 +491,16 @@ function build() {
         console.log(`  → nabidka/${l.type}/${l.slug}/index.html  (${l.gallery.length} photo${l.gallery.length === 1 ? '' : 's'})`);
     }
 
+    // Counts per type — fed into the big category-choice cards on the root page.
+    const counts = {
+        pronajem: listings.filter(l => l.type === 'pronajem').length,
+        prodej:   listings.filter(l => l.type === 'prodej').length,
+    };
+
     // Index pages (unified + per-type)
     for (const page of INDEX_PAGES) {
         const filtered = page.filter ? listings.filter(l => l.type === page.filter) : listings;
+        const isRoot = page.filter === null;
         const base = '../'.repeat(page.depth);
         // Card href is always absolute → works with cleanUrls regardless of trailing slash
         const cardsHtml = filtered.map(l => {
@@ -456,6 +526,8 @@ function build() {
             cards: cardsHtml || '            <!-- žádné nabídky v této kategorii -->',
             eyebrow: page.eyebrow,
             h1: page.h1,
+            category_cards: isRoot ? renderCategoryCards(counts) : '',
+            filter_nav: renderFilterNav(page.tab, isRoot),
             empty_notice: filtered.length ? '' : '<p style="text-align:center;color:var(--text-muted);padding:60px 0;">Aktuálně zde nemáme žádnou nabídku. Mrkněte na další kategorie nebo nás <a href="' + base + 'contact.html" style="color:var(--accent-dark);font-weight:600;">kontaktujte</a>.</p>',
         });
         fs.writeFileSync(path.join(outDir, 'index.html'), html);

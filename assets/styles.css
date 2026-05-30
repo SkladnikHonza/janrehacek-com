@@ -1414,3 +1414,119 @@ a.logo:hover { opacity: 0.7; }
     .listings-tabs { display: flex; width: 100%; }
     .listings-tabs a { flex: 1; text-align: center; padding: 8px 12px; font-size: 12.5px; }
 }
+
+/* ===== Category choice — big decision cards on /nabidka/ root ===== */
+.category-choice {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    margin-top: 40px;
+}
+.category-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+    min-height: 300px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    color: var(--text);
+    text-decoration: none;
+    overflow: hidden;
+    transition: transform 0.28s ease, box-shadow 0.28s ease, border-color 0.28s ease;
+}
+.category-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at top right, rgba(212, 165, 116, 0.14) 0%, transparent 65%);
+    opacity: 0;
+    transition: opacity 0.28s ease;
+    pointer-events: none;
+}
+.category-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+    box-shadow: 0 22px 56px -24px rgba(15, 17, 21, 0.20);
+}
+.category-card:hover::after { opacity: 1; }
+
+.category-card-icon {
+    color: var(--accent-dark);
+    margin-bottom: 28px;
+    line-height: 0;
+}
+.category-card-icon svg {
+    width: 48px;
+    height: 48px;
+}
+.category-card-body { flex: 1; position: relative; z-index: 1; }
+.category-card-eyebrow {
+    text-transform: uppercase;
+    font-size: 11.5px;
+    letter-spacing: 2px;
+    color: var(--accent-dark);
+    font-weight: 600;
+    margin-bottom: 14px;
+}
+.category-card-title {
+    font-family: 'Geist', sans-serif;
+    font-size: clamp(30px, 3.6vw, 42px);
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -1.4px;
+    margin-bottom: 14px;
+    text-transform: uppercase;
+}
+.category-card-subtitle {
+    font-size: 16px;
+    color: var(--text-muted);
+    line-height: 1.55;
+    max-width: 380px;
+}
+.category-card-meta {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 32px;
+    padding-top: 22px;
+    border-top: 1px solid var(--border);
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--accent-dark);
+}
+.category-card-arrow {
+    display: inline-block;
+    transition: transform 0.22s ease;
+}
+.category-card:hover .category-card-arrow { transform: translateX(6px); }
+
+/* Small label introducing the secondary filter tabs under the cards */
+.listings-tabs-label {
+    margin-top: 36px;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 2px;
+    color: var(--text-light);
+    font-weight: 600;
+}
+
+@media (max-width: 700px) {
+    .category-choice {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        margin-top: 32px;
+    }
+    .category-card {
+        min-height: 220px;
+        padding: 28px 24px;
+    }
+    .category-card-icon { margin-bottom: 20px; }
+    .category-card-icon svg { width: 40px; height: 40px; }
+    .category-card-meta { margin-top: 24px; padding-top: 18px; }
+    .listings-tabs-label { margin-top: 28px; }
+}
