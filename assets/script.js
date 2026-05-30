@@ -4,7 +4,7 @@
 window.translations = window.translations || {};
 
 window.translations.cs = {
-    "nav.about": "O mně", "nav.services": "Služby", "nav.investors": "Pro investory", "nav.housio": "Housio.App", "nav.academy": "Akademie", "nav.testimonials": "Reference", "nav.blog": "Blog", "nav.contact": "Kontakt",
+    "nav.about": "O mně", "nav.services": "Služby", "nav.investors": "Pro investory", "nav.housio": "Housio.App", "nav.academy": "Akademie", "nav.testimonials": "Reference", "nav.listings": "Nabídka", "nav.blog": "Blog", "nav.contact": "Kontakt",
     // New page-header keys (CZ only; other languages translate later)
     "page.about.title": "Příběh za jedním <em>jménem.</em>", "page.about.sub": "12+ let v investicích, portfolio 85M €, vlastní platforma Housio. Tady je celý příběh.",
     "page.services.title": "Tři oblasti, kde Vám <em>přinesu hodnotu.</em>", "page.services.sub": "Realitní obchod, investiční strategie, mentoring — provedu Vás celým procesem.",
