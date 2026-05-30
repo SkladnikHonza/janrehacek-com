@@ -1,0 +1,12 @@
+{
+  "name": "janrehacek-com",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Personal website of Jan Řeháček — investor & realitní expert. Static HTML + file-based listings.",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

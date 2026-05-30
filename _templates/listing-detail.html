@@ -1,46 +1,46 @@
 <!DOCTYPE html>
 <!--
    GENERATED FILE — do not edit by hand.
-   This page is produced by build.js from all images/listings/*/info.md folders
-   using template _templates/listing-index.html.
-   To change layout: edit the template and rerun `node build.js`.
-   To add/remove listings: create/delete folders in images/listings/.
+   This page is produced by build.js from images/listings/{{slug}}/info.md
+   and the template _templates/listing-detail.html.
+   To change content: edit info.md and rerun `node build.js`.
+   To change layout: edit _templates/listing-detail.html and rerun build.
 -->
 <html lang="cs">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nabídka nemovitostí | Jan Řeháček</title>
-<meta name="description" content="Pečlivě vybrané prémiové nemovitosti k investici i bydlení. Aktuální nabídka od Jana Řeháčka — investora a realitního experta.">
-<link rel="canonical" href="https://janrehacek.com/nabidka">
+<title>{{title}} | Nabídka | Jan Řeháček</title>
+<meta name="description" content="{{short_description}}">
+<link rel="canonical" href="https://janrehacek.com/nabidka/{{slug}}">
 
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://janrehacek.com/nabidka">
-<meta property="og:title" content="Nabídka nemovitostí | Jan Řeháček">
-<meta property="og:description" content="Pečlivě vybrané prémiové nemovitosti k investici i bydlení.">
-<meta property="og:image" content="https://janrehacek.com/images/jan-rehacek.png">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://janrehacek.com/nabidka/{{slug}}">
+<meta property="og:title" content="{{title}}">
+<meta property="og:description" content="{{short_description}}">
+<meta property="og:image" content="https://janrehacek.com/images/listings/{{slug}}/cover.jpg">
 <meta property="og:locale" content="cs_CZ">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/styles.css">
+<link rel="stylesheet" href="../../assets/styles.css">
 </head>
 <body>
 
 <nav>
     <div class="nav-inner">
-        <a href="../index.html" class="logo">Jan Řeháček<span>.</span></a>
+        <a href="../../index.html" class="logo">Jan Řeháček<span>.</span></a>
         <ul class="nav-links">
-            <li><a href="../about.html" data-i18n="nav.about">O mně</a></li>
-            <li><a href="../services.html" data-i18n="nav.services">Služby</a></li>
-            <li><a href="../investors.html" data-i18n="nav.investors">Pro investory</a></li>
-            <li><a href="./" class="active" data-i18n="nav.listings">Nabídka</a></li>
+            <li><a href="../../about.html" data-i18n="nav.about">O mně</a></li>
+            <li><a href="../../services.html" data-i18n="nav.services">Služby</a></li>
+            <li><a href="../../investors.html" data-i18n="nav.investors">Pro investory</a></li>
+            <li><a href="../" class="active" data-i18n="nav.listings">Nabídka</a></li>
             <li><a href="https://www.housio.app" target="_blank" rel="noopener noreferrer" class="external" data-i18n="nav.housio">Housio.App</a></li>
-            <li><a href="../references.html" data-i18n="nav.testimonials">Reference</a></li>
-            <li><a href="../blog.html" data-i18n="nav.blog">Blog</a></li>
-            <li><a href="../contact.html" class="btn btn-primary" data-i18n="nav.contact">Kontakt</a></li>
+            <li><a href="../../references.html" data-i18n="nav.testimonials">Reference</a></li>
+            <li><a href="../../blog.html" data-i18n="nav.blog">Blog</a></li>
+            <li><a href="../../contact.html" class="btn btn-primary" data-i18n="nav.contact">Kontakt</a></li>
             <li>
                 <div class="lang-switcher" id="langSwitcher">
                     <div class="lang-current" onclick="toggleLangMenu()">
@@ -68,39 +68,71 @@
     </div>
 </nav>
 
-<header class="page-header">
-    <div class="container">
-        <div class="page-header-eyebrow">Nabídka nemovitostí</div>
-        <h1>Aktuální nabídka <em>nemovitostí.</em></h1>
-        <p class="page-header-text">Pečlivě vybrané prémiové byty a domy z portfolia, které prošly důkladnou due diligence. Každá nabídka je doprovázena kompletním servisem od první prohlídky až po předání klíčů.</p>
-    </div>
-</header>
-
-<section class="listings-section">
-    <div class="container">
-        <div class="listing-grid">
-            <a href="havirov-jarosova/" class="listing-card">
-                <div class="listing-card-cover">
-                    <img src="../images/listings/havirov-jarosova/cover.jpg" alt="Byt po rekonstrukci, Havířov — Jarošova">
-                    <div class="listing-card-badge">Nová nabídka</div>
-                </div>
-                <div class="listing-card-body">
-                    <div class="listing-card-price">Cena na vyžádání</div>
-                    <div class="listing-card-location">Havířov — Jarošova</div>
-                    <h3 class="listing-card-title">Byt po rekonstrukci, Havířov — Jarošova</h3>
-                    <div class="listing-card-meta">
-                        <span>1+1</span>
-                        <span class="sep">·</span>
-                        <span>38 m²</span>
-                        <span class="sep">·</span>
-                        <span>3. patro</span>
-                    </div>
-                    <p class="listing-card-desc">Kompletně zrekonstruovaný byt 1+1 v klidné části Havířova. Moderní kuchyňská linka, nová koupelna, parketová podlaha a výhled do zeleně z balkonu.</p>
-                    <span class="listing-card-link">Detail nabídky →</span>
-                </div>
-            </a>
-
+<section class="listing-hero">
+    <img src="../../images/listings/{{slug}}/cover.jpg" alt="{{title}}">
+    <div class="listing-hero-overlay"></div>
+    <div class="listing-hero-content">
+        <div class="listing-hero-eyebrow">{{price}} · {{location_short}}</div>
+        <h1>{{title}}</h1>
+        <div class="listing-hero-meta">
+            <span>✦ {{disposition}} dispozice</span>
+            <span>◊ {{area}} užitné plochy</span>
+            <span>⛶ {{floor}}</span>
         </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <a href="../" class="listing-back">← Zpět na nabídku</a>
+
+        <div class="listing-detail-grid">
+            <div class="listing-description">
+                <h2>O této nemovitosti</h2>
+{{description_html}}
+            </div>
+
+            <aside class="listing-info-panel">
+                <div class="listing-info-pricelabel">Cena</div>
+                <div class="listing-info-price">{{price}}</div>
+
+                <div class="listing-info-table">
+{{info_table_rows}}
+                </div>
+
+                <div class="listing-info-cta">
+                    <a href="../../contact.html" class="btn btn-primary">Mám zájem o tuto nabídku</a>
+                    <a href="../../contact.html" class="btn btn-outline">Domluvit prohlídku</a>
+                </div>
+            </aside>
+        </div>
+    </div>
+</section>
+
+<section class="listing-gallery-section">
+    <div class="container">
+        <h2 class="section-title">Galerie</h2>
+        <div class="listing-gallery">
+{{gallery_items}}
+        </div>
+    </div>
+</section>
+
+<section class="listing-specs-section">
+    <div class="container">
+        <h2 class="section-title">Specifikace</h2>
+        <div class="listing-specs-grid">
+{{spec_cards}}
+        </div>
+    </div>
+</section>
+
+<section class="listing-cta-block">
+    <div class="container">
+        <div class="section-eyebrow">Zaujala Vás tato nabídka?</div>
+        <h2>Připravím prohlídku i due&nbsp;diligence.</h2>
+        <p>Stačí mi krátká zpráva a já se Vám ozvu obvykle do 24 hodin. Připravím detailní podklady a domluvíme termín prohlídky, který Vám sedne.</p>
+        <a href="../../contact.html" class="btn btn-accent">Mám zájem o tuto nabídku →</a>
     </div>
 </section>
 
@@ -113,19 +145,19 @@
             </div>
             <div class="footer-col">
                 <h5 data-i18n="footer.nav">Navigace</h5>
-                <a href="../about.html" data-i18n="nav.about">O mně</a>
-                <a href="../services.html" data-i18n="nav.services">Služby</a>
-                <a href="../investors.html" data-i18n="nav.investors">Pro investory</a>
-                <a href="./" data-i18n="nav.listings">Nabídka</a>
-                <a href="../references.html" data-i18n="nav.testimonials">Reference</a>
-                <a href="../blog.html" data-i18n="nav.blog">Blog</a>
+                <a href="../../about.html" data-i18n="nav.about">O mně</a>
+                <a href="../../services.html" data-i18n="nav.services">Služby</a>
+                <a href="../../investors.html" data-i18n="nav.investors">Pro investory</a>
+                <a href="../" data-i18n="nav.listings">Nabídka</a>
+                <a href="../../references.html" data-i18n="nav.testimonials">Reference</a>
+                <a href="../../blog.html" data-i18n="nav.blog">Blog</a>
             </div>
             <div class="footer-col">
                 <h5 data-i18n="footer.products">Produkty</h5>
                 <a href="https://www.housio.app" target="_blank" rel="noopener noreferrer">Housio.App</a>
-                <a href="../investors.html" data-i18n="academy.eyebrow">Akademie investora</a>
-                <a href="../services.html" data-i18n="services.s3_title">Mentoring</a>
-                <a href="../contact.html" data-i18n="footer.consultation">Konzultace</a>
+                <a href="../../investors.html" data-i18n="academy.eyebrow">Akademie investora</a>
+                <a href="../../services.html" data-i18n="services.s3_title">Mentoring</a>
+                <a href="../../contact.html" data-i18n="footer.consultation">Konzultace</a>
             </div>
             <div class="footer-col">
                 <h5 data-i18n="footer.contact">Kontakt</h5>
@@ -142,6 +174,6 @@
     </div>
 </footer>
 
-<script src="../assets/script.js" defer></script>
+<script src="../../assets/script.js" defer></script>
 </body>
 </html>

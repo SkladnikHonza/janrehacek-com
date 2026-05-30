@@ -1,6 +1,8 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "buildCommand": "node build.js",
+  "outputDirectory": ".",
   "headers": [
     {
       "source": "/(.*)",
