@@ -287,10 +287,10 @@ function renderGallery(slug, type, images, title) {
         const hero = i === 0 ? ' is-hero' : '';
         const showOverlay = (i === visible.length - 1) && remaining > 0;
         const loading = i === 0 ? 'eager' : 'lazy';
-        return `            <a href="${src}" target="_blank" rel="noopener" class="listing-gallery-item${hero}" data-gallery-open data-index="${i}" aria-label="Otevřít fotku ${i + 1} z ${images.length}">
+        return `            <button type="button" class="listing-gallery-item${hero}" data-gallery-open data-index="${i}" aria-label="Otevřít fotku ${i + 1} z ${images.length}">
                 <img src="${src}" alt="${alt}" loading="${loading}">${showOverlay ? `
                 <span class="listing-gallery-more" aria-hidden="true">+${remaining} dalších</span>` : ''}
-            </a>`;
+            </button>`;
     }).join('\n');
 
     return `        <div class="listing-gallery-wrap">

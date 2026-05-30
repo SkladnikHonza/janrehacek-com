@@ -943,8 +943,9 @@ if (toggle) {
 
 // ===== LISTING GALLERY LIGHTBOX =====
 // Fullscreen viewer for the Airbnb-style detail-page gallery.
-// Triggered by [data-gallery-open] elements (tiles + "show all" button);
-// reads the full image list from data-gallery JSON on .listing-gallery.
+// Reads the image list from data-gallery JSON on .listing-gallery and
+// listens via delegation for [data-gallery-open] clicks anywhere in
+// the document (tiles, "show all" button, thumbnail strip).
 (function initListingLightbox() {
     const gallery = document.querySelector('.listing-gallery[data-gallery]');
     if (!gallery) return;
@@ -960,8 +961,10 @@ if (toggle) {
 
     let currentIndex = 0;
     let lastFocused = null;
+    let touchStartX = null;
+    let touchStartY = null;
 
-    // Build lightbox DOM once
+    // ===== Build the modal DOM (once) =====
     const lb = document.createElement('div');
     lb.className = 'lightbox';
     lb.setAttribute('role', 'dialog');
@@ -976,27 +979,69 @@ if (toggle) {
         <div class="lightbox-stage">
             <img class="lightbox-img" alt="">
         </div>
+        <div class="lightbox-thumbs" role="tablist" aria-label="Náhledy fotek"></div>
     `;
     document.body.appendChild(lb);
 
-    const imgEl    = lb.querySelector('.lightbox-img');
-    const counter  = lb.querySelector('.lightbox-counter');
-    const closeBtn = lb.querySelector('.lightbox-close');
-    const prevBtn  = lb.querySelector('.lightbox-prev');
-    const nextBtn  = lb.querySelector('.lightbox-next');
+    const imgEl     = lb.querySelector('.lightbox-img');
+    const counterEl = lb.querySelector('.lightbox-counter');
+    const closeBtn  = lb.querySelector('.lightbox-close');
+    const prevBtn   = lb.querySelector('.lightbox-prev');
+    const nextBtn   = lb.querySelector('.lightbox-next');
+    const stripEl   = lb.querySelector('.lightbox-thumbs');
 
+    // Populate the thumbnail strip
+    images.forEach((it, i) => {
+        const t = document.createElement('button');
+        t.type = 'button';
+        t.className = 'lightbox-thumb';
+        t.setAttribute('role', 'tab');
+        t.setAttribute('data-index', String(i));
+        t.setAttribute('aria-label', `Přejít na fotku ${i + 1}`);
+        t.innerHTML = `<img src="${it.src}" alt="" loading="lazy">`;
+        stripEl.appendChild(t);
+    });
+    const thumbEls = Array.from(stripEl.children);
+
+    // ===== Helpers =====
     function preload(i) {
         if (i < 0 || i >= images.length) return;
-        const img = new Image();
-        img.src = images[i].src;
+        const im = new Image();
+        im.src = images[i].src;
     }
 
     function show(index) {
-        currentIndex = (index + images.length) % images.length;
+        if (index < 0) index = 0;
+        if (index >= images.length) index = images.length - 1;
+        currentIndex = index;
         const item = images[currentIndex];
-        imgEl.src = item.src;
-        imgEl.alt = item.alt || '';
-        counter.textContent = `${currentIndex + 1} / ${images.length}`;
+
+        // Fade-out → swap → fade-in
+        imgEl.classList.add('is-loading');
+        const swap = () => {
+            imgEl.src = item.src;
+            imgEl.alt = item.alt || '';
+            imgEl.onload = () => imgEl.classList.remove('is-loading');
+            // Safety net if the browser fired load before listener attached
+            if (imgEl.complete) imgEl.classList.remove('is-loading');
+        };
+        // small RAF so the loading class actually paints
+        requestAnimationFrame(swap);
+
+        counterEl.textContent = `${currentIndex + 1} / ${images.length}`;
+        prevBtn.hidden = currentIndex === 0;
+        nextBtn.hidden = currentIndex === images.length - 1;
+
+        thumbEls.forEach((el, i) => {
+            el.classList.toggle('is-active', i === currentIndex);
+            el.setAttribute('aria-selected', i === currentIndex ? 'true' : 'false');
+        });
+        // Auto-scroll active thumbnail into view
+        const active = thumbEls[currentIndex];
+        if (active && active.scrollIntoView) {
+            active.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+        }
+
         preload(currentIndex + 1);
         preload(currentIndex - 1);
     }
@@ -1008,7 +1053,6 @@ if (toggle) {
         lb.setAttribute('aria-hidden', 'false');
         document.body.style.overflow = 'hidden';
         document.addEventListener('keydown', onKey);
-        // Defer focus so it lands after the dialog is painted
         requestAnimationFrame(() => closeBtn.focus());
     }
 
@@ -1023,36 +1067,66 @@ if (toggle) {
     }
 
     function onKey(e) {
-        if (e.key === 'Escape') { e.preventDefault(); close(); return; }
-        if (e.key === 'ArrowRight') { e.preventDefault(); show(currentIndex + 1); return; }
-        if (e.key === 'ArrowLeft')  { e.preventDefault(); show(currentIndex - 1); return; }
+        if (e.key === 'Escape')      { e.preventDefault(); close(); return; }
+        if (e.key === 'ArrowRight')  { e.preventDefault(); if (currentIndex < images.length - 1) show(currentIndex + 1); return; }
+        if (e.key === 'ArrowLeft')   { e.preventDefault(); if (currentIndex > 0) show(currentIndex - 1); return; }
         if (e.key === 'Tab') {
-            // Focus trap — cycle through prev / next / close
-            const focusables = [prevBtn, nextBtn, closeBtn];
+            // Focus trap — cycle through visible controls
+            const focusables = [closeBtn, prevBtn, nextBtn].filter(b => !b.hidden);
             const idx = focusables.indexOf(document.activeElement);
             e.preventDefault();
             const next = e.shiftKey
                 ? focusables[(idx - 1 + focusables.length) % focusables.length]
                 : focusables[(idx + 1) % focusables.length];
-            next.focus();
+            if (next) next.focus();
         }
     }
 
-    // Trigger: any tile or the "show all" button
-    document.querySelectorAll('[data-gallery-open]').forEach(el => {
-        el.addEventListener('click', (e) => {
-            e.preventDefault();
-            const idx = parseInt(el.getAttribute('data-index') || '0', 10);
-            open(Number.isFinite(idx) ? idx : 0);
-        });
+    // ===== Bindings =====
+
+    // Tile / "show all" / future triggers — event delegation on document
+    document.addEventListener('click', (e) => {
+        const trigger = e.target.closest('[data-gallery-open]');
+        if (!trigger) return;
+        e.preventDefault();
+        const idx = parseInt(trigger.getAttribute('data-index') || '0', 10);
+        open(Number.isFinite(idx) ? idx : 0);
     });
 
-    prevBtn.addEventListener('click', () => show(currentIndex - 1));
-    nextBtn.addEventListener('click', () => show(currentIndex + 1));
+    prevBtn.addEventListener('click', () => { if (currentIndex > 0) show(currentIndex - 1); });
+    nextBtn.addEventListener('click', () => { if (currentIndex < images.length - 1) show(currentIndex + 1); });
     closeBtn.addEventListener('click', close);
 
-    // Click on backdrop or empty stage area (but not the image itself) closes
+    // Thumbnail strip
+    stripEl.addEventListener('click', (e) => {
+        const thumb = e.target.closest('.lightbox-thumb');
+        if (!thumb) return;
+        e.stopPropagation();
+        const idx = parseInt(thumb.getAttribute('data-index') || '0', 10);
+        if (Number.isFinite(idx)) show(idx);
+    });
+
+    // Click on backdrop or empty stage area closes; clicks on image,
+    // strip, or buttons do not bubble here (or are filtered out).
     lb.addEventListener('click', (e) => {
         if (e.target === lb || e.target.classList.contains('lightbox-stage')) close();
+    });
+    imgEl.addEventListener('click', (e) => e.stopPropagation());
+
+    // Swipe navigation on touch devices
+    lb.addEventListener('touchstart', (e) => {
+        if (!e.touches.length) return;
+        touchStartX = e.touches[0].clientX;
+        touchStartY = e.touches[0].clientY;
+    }, { passive: true });
+    lb.addEventListener('touchend', (e) => {
+        if (touchStartX === null) return;
+        const t = e.changedTouches[0];
+        const dx = t.clientX - touchStartX;
+        const dy = t.clientY - touchStartY;
+        touchStartX = touchStartY = null;
+        if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy)) return;
+        if (dx < 0 && currentIndex < images.length - 1) show(currentIndex + 1);
+        else if (dx > 0 && currentIndex > 0) show(currentIndex - 1);
     });
 })();
