@@ -1355,3 +1355,65 @@ a.logo:hover { opacity: 0.7; }
     .listing-gallery-item.wide { grid-column: span 1; }
     .listing-specs-grid { grid-template-columns: 1fr; }
 }
+
+/* ===== LISTINGS — CATEGORIZED ENHANCEMENTS ===== */
+
+/* Honor EXIF orientation everywhere (belt + suspenders for iPhone HEIC->JPEG) */
+img { image-orientation: from-image; }
+
+/* Status-tinted badges on listing cards */
+.listing-card-badge.status-active   { color: #2d7a4a; }            /* green */
+.listing-card-badge.status-reserved { color: #c97c2e; }            /* warm orange */
+.listing-card-badge.status-closed   { color: var(--text-light); background: rgba(15,17,21,0.06); }
+
+/* Rental info-panel: kauce / provize / dostupnost block below price */
+.listing-info-rental-extras {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 14px 0 18px;
+    margin-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+    font-size: 13.5px;
+}
+.listing-info-rental-extras > div {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    color: var(--text-muted);
+}
+.listing-info-rental-extras > div strong {
+    font-weight: 600;
+    color: var(--text);
+}
+
+/* Filter tabs (Vše / Pronájem / Prodej) under page-header */
+.listings-tabs {
+    display: inline-flex;
+    gap: 0;
+    margin-top: 24px;
+    padding: 5px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+}
+.listings-tabs a {
+    padding: 8px 18px;
+    font-size: 13.5px;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-decoration: none;
+    border-radius: 100px;
+    transition: all 0.18s;
+}
+.listings-tabs a:hover { color: var(--text); }
+.listings-tabs a.active {
+    background: var(--text);
+    color: var(--bg);
+}
+
+/* Mobile spacing for tabs */
+@media (max-width: 500px) {
+    .listings-tabs { display: flex; width: 100%; }
+    .listings-tabs a { flex: 1; text-align: center; padding: 8px 12px; font-size: 12.5px; }
+}

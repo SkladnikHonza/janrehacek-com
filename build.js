@@ -1,17 +1,24 @@
 #!/usr/bin/env node
 /**
- * build.js — file-based listings generator
+ * build.js — file-based listings generator (categorized: pronajem / prodej)
  *
- * Reads every folder in images/listings/ (skipping ones starting with `_`)
- * as a property listing. Each folder must contain:
- *   - info.md       YAML frontmatter + Markdown body (Popis, Specifikace)
- *   - cover.jpg     hero / card cover photo
- *   - 01.jpg, ...   gallery photos (any count, sorted lexicographically)
+ * Folder structure: images/listings/{type}/{slug}/
+ *   - info.md       YAML frontmatter + Markdown body
+ *   - 01-uvodni.jpg cover photo (preferred name)
+ *   - 01.jpg ...    additional gallery photos
+ *
+ * Cover lookup order:
+ *   1) 01-uvodni.jpg (or .png / .webp)
+ *   2) first alphabetically sorted image — with warning
+ *
+ * Gallery = ALL image files in the folder (including the cover).
  *
  * Generates:
- *   - nabidka/index.html             grid of listing cards
- *   - nabidka/{slug}/index.html      detail page per listing
- *   - sitemap.xml                    static routes + dynamic listing URLs
+ *   - nabidka/index.html                       all listings (filter: null)
+ *   - nabidka/pronajem/index.html              rental listings
+ *   - nabidka/prodej/index.html                sale listings
+ *   - nabidka/{type}/{slug}/index.html         detail page per listing
+ *   - sitemap.xml                              static + dynamic routes
  *
  * Zero npm dependencies. Run: `node build.js`
  */
@@ -27,6 +34,10 @@ const OUTPUT_DIR = path.join(ROOT, 'nabidka');
 const SITEMAP_PATH = path.join(ROOT, 'sitemap.xml');
 const SITE_URL = 'https://janrehacek.com';
 
+const TYPES = ['pronajem', 'prodej'];   // recognized listing categories
+const IMG_EXT = /\.(jpe?g|png|webp)$/i;
+const COVER_NAME = /^01-uvodni\.(jpe?g|png|webp)$/i;
+
 const STATIC_ROUTES = [
     { loc: '/',           priority: '1.0', changefreq: 'monthly' },
     { loc: '/about',      priority: '0.8', changefreq: 'monthly' },
@@ -38,33 +49,67 @@ const STATIC_ROUTES = [
     { loc: '/contact',    priority: '0.9', changefreq: 'monthly' },
 ];
 
-// Icon mapping for spec cards (add more as needed)
-const SPEC_ICONS = {
-    'Rok rekonstrukce':   '⌂',
-    'Energetická třída':  '⚡',
-    'Výtah':              '⇕',
-    'Sklep':              '▦',
-    'Balkon':             '◐',
-    'Balkon / lodžie':    '◐',
-    'Lodžie':             '◐',
-    'Parkování':          '⌭',
-    'Parking':            '⌭',
-    'Garáž':              '⌭',
-    'Orientace':          '☀',
-    'Vybavení':           '✓',
-    'Typ stavby':         '⌂',
-    'Vlastnictví':        '◊',
-    'Stav':               '✦',
+// Index pages to generate (each filters listings by type or shows all)
+const INDEX_PAGES = [
+    { subdir: '',            depth: 1, filter: null,        h1: 'Aktuální nabídka <em>nemovitostí.</em>',  eyebrow: 'Nabídka nemovitostí' },
+    { subdir: 'pronajem/',   depth: 2, filter: 'pronajem',  h1: 'Aktuální <em>pronájmy.</em>',             eyebrow: 'Pronájem nemovitostí' },
+    { subdir: 'prodej/',     depth: 2, filter: 'prodej',    h1: 'Aktuální nabídka <em>k prodeji.</em>',    eyebrow: 'Prodej nemovitostí' },
+];
+
+// Type label shown on card badge
+const TYPE_LABEL = { pronajem: 'PRONÁJEM', prodej: 'PRODEJ' };
+
+// Status sorting + presentation
+const STATUS_ORDER = ['nova', 'aktivni', 'rezervovano', 'prodano', 'pronajato'];
+const STATUS_CARD_LABEL = {
+    nova:         'NOVÁ NABÍDKA',
+    aktivni:      null,            // active = use available_from or "AKTUÁLNÍ"
+    rezervovano:  'REZERVOVÁNO',
+    pronajato:    'PRONAJATO',
+    prodano:      'PRODÁNO',
+};
+const STATUS_CLASS = {
+    nova:         'status-active',
+    aktivni:      'status-active',
+    rezervovano:  'status-reserved',
+    pronajato:    'status-closed',
+    prodano:      'status-closed',
 };
 
-// Status badge config + sort order (active listings on top)
-const STATUS_BADGE = {
-    nova:         { label: 'Nová nabídka' },
-    aktivni:      { label: 'Aktivní' },
-    rezervovano:  { label: 'Rezervováno' },
-    prodano:      { label: 'Prodáno' },
+// Icon mapping for spec cards
+const SPEC_ICONS = {
+    'Rok rekonstrukce':     '⌂',
+    'Energetická třída':    '⚡',
+    'Výtah':                '⇕',
+    'Sklep':                '▦',
+    'Balkon':               '◐',
+    'Balkon / lodžie':      '◐',
+    'Lodžie':               '◐',
+    'Parkování':            '⌭',
+    'Parking':              '⌭',
+    'Garáž':                '⌭',
+    'Orientace':            '☀',
+    'Vybavení':             '✓',
+    'Typ stavby':           '⌂',
+    'Vlastnictví':          '◊',
+    'Stav':                 '✦',
+    'Podlahové vytápění':   '♨',
+    'Kuchyňská linka':      '⌂',
+    'Koupelna':             '◐',
+    'Okna':                 '⊞',
+    'Podlahy':              '▦',
+    'Omítky':               '✦',
+    'Rozvody':              '⚡',
 };
-const STATUS_ORDER = ['nova', 'aktivni', 'rezervovano', 'prodano'];
+
+// Recognized body section headings (aliases → canonical)
+const SECTION_ALIASES = {
+    'O této nemovitosti':   'description',
+    'Popis':                'description',
+    'Vybavení a stav':      'specs',
+    'Specifikace':          'specs',
+    'Podmínky pronájmu':    'rental_terms',  // currently unused (data lives in sidebar)
+};
 
 // ===== HELPERS =====
 function escapeHtml(s) {
@@ -76,103 +121,74 @@ function escapeHtml(s) {
         .replace(/"/g, '&quot;');
 }
 
-/** Minimal YAML frontmatter parser. Supports:
- *    key: "value"
- *    key: 42
- *    key:                  (nested map)
- *      subkey: "value"
- *  Returns { data, body }.
- */
+/** Minimal YAML frontmatter parser. */
 function parseFrontmatter(src) {
     const m = src.match(/^---\s*\r?\n([\s\S]*?)\r?\n---\s*\r?\n([\s\S]*)$/);
-    if (!m) throw new Error('Missing YAML frontmatter (--- ... ---)');
-    const yamlBlock = m[1];
-    const body = m[2];
+    if (!m) throw new Error('Missing YAML frontmatter');
     const data = {};
     let currentMap = null;
-
-    for (const rawLine of yamlBlock.split(/\r?\n/)) {
-        if (!rawLine.trim() || rawLine.trim().startsWith('#')) continue;
-
-        // Nested item: at least 2 spaces of indent
-        if (/^\s{2,}/.test(rawLine) && currentMap) {
-            const nm = rawLine.trim().match(/^([^:]+):\s*(.*)$/);
+    for (const line of m[1].split(/\r?\n/)) {
+        if (!line.trim() || line.trim().startsWith('#')) continue;
+        if (/^\s{2,}/.test(line) && currentMap) {
+            const nm = line.trim().match(/^([^:]+):\s*(.*)$/);
             if (nm) {
                 let v = nm[2].trim();
                 if ((v.startsWith('"') && v.endsWith('"')) ||
-                    (v.startsWith("'") && v.endsWith("'"))) {
-                    v = v.slice(1, -1);
-                }
+                    (v.startsWith("'") && v.endsWith("'"))) v = v.slice(1, -1);
                 currentMap[nm[1].trim()] = v;
             }
             continue;
         }
-
-        // Top-level key
-        const tm = rawLine.match(/^([a-z_][a-z0-9_]*):\s*(.*)$/);
+        const tm = line.match(/^([a-z_][a-z0-9_]*):\s*(.*)$/);
         if (!tm) continue;
         const key = tm[1];
         let val = tm[2].trim();
-
-        if (val === '') {
-            // Start of nested map
-            data[key] = {};
-            currentMap = data[key];
-            continue;
-        }
+        if (val === '') { data[key] = {}; currentMap = data[key]; continue; }
         currentMap = null;
-
-        // Strip surrounding quotes
         if ((val.startsWith('"') && val.endsWith('"')) ||
             (val.startsWith("'") && val.endsWith("'"))) {
             val = val.slice(1, -1);
-        } else if (/^-?\d+(\.\d+)?$/.test(val)) {
-            // Bare numeric → Number
-            val = Number(val);
         }
         data[key] = val;
     }
-    return { data, body };
+    return { data, body: m[2] };
 }
 
-/** Split Markdown body into named sections by H2 (## heading). */
-function parseMarkdownSections(body) {
+/** Split Markdown body by H2 headings; map heading → canonical key via SECTION_ALIASES. */
+function parseSections(body) {
     const out = {};
     if (!body) return out;
     const parts = body.split(/^##\s+/m);
-    // First part (before any ##) is intro, usually empty
     for (let i = 1; i < parts.length; i++) {
-        const chunk = parts[i];
-        const [heading, ...rest] = chunk.split('\n');
-        out[heading.trim()] = rest.join('\n').trim();
+        const [heading, ...rest] = parts[i].split('\n');
+        const canonical = SECTION_ALIASES[heading.trim()];
+        if (canonical) out[canonical] = rest.join('\n').trim();
     }
     return out;
 }
 
-/** Convert Popis text → multiple <p> blocks (blank-line separated). */
 function renderDescription(text) {
     if (!text) return '';
     return text.split(/\n\s*\n/)
-        .map(p => p.trim())
-        .filter(Boolean)
+        .map(p => p.trim()).filter(Boolean)
         .map(p => '                <p>' + escapeHtml(p) + '</p>')
         .join('\n');
 }
 
-/** Parse "- Label: Value" bullets into [{label, value}, ...]. */
 function parseSpecs(text) {
     if (!text) return [];
     return text.split('\n')
         .map(l => l.trim())
         .filter(l => l.startsWith('-'))
         .map(l => {
-            const m = l.match(/^-\s*([^:]+):\s*(.*)$/);
+            const m = l.match(/^-\s*\**\s*([^:*]+?)\s*\**\s*:\s*(.*)$/);
             return m ? { label: m[1].trim(), value: m[2].trim() } : null;
         })
         .filter(Boolean);
 }
 
 function renderSpecCards(specs) {
+    if (!specs.length) return '            <!-- No spec entries -->';
     return specs.map(s => {
         const icon = SPEC_ICONS[s.label] || '⌂';
         return `            <div class="listing-spec-card">
@@ -183,49 +199,109 @@ function renderSpecCards(specs) {
     }).join('\n');
 }
 
-function renderInfoTableRows(l) {
-    const rows = [
-        { label: 'Dispozice', value: l.disposition },
-        { label: 'Plocha',    value: l.area + ' m²' },
-        { label: 'Patro',     value: l.floor },
-        { label: 'Lokalita',  value: l.location_long || l.location_short },
-    ];
+/** Render info panel sidebar — variant based on type (rental shows kauce/provize/availability). */
+function renderInfoPanel(l) {
+    const isRental = l.type === 'pronajem';
+    const priceLabel = isRental ? 'Měsíční nájemné' : 'Cena';
+    const rows = [];
+
+    if (l.disposition)    rows.push(['Dispozice',  l.disposition]);
+    if (l.area)           rows.push(['Plocha',     l.area + ' m²']);
+    if (l.floor)          rows.push(['Patro',      l.floor]);
+    if (l.building_type)  rows.push(['Typ stavby', l.building_type]);
+    if (l.ownership)      rows.push(['Vlastnictví', l.ownership]);
+    if (l.condition)      rows.push(['Stav',       l.condition]);
+    if (l.location_long || l.location_short)
+        rows.push(['Lokalita', l.location_long || l.location_short]);
     if (l.info_extra && typeof l.info_extra === 'object') {
         for (const k of Object.keys(l.info_extra)) {
-            rows.push({ label: k, value: l.info_extra[k] });
+            rows.push([k, l.info_extra[k]]);
         }
     }
-    return rows.map(r =>
+
+    let rentalExtras = '';
+    if (isRental && (l.deposit || l.commission || l.available_from)) {
+        const items = [];
+        if (l.deposit)        items.push(`<div><span>Kauce</span><strong>${escapeHtml(l.deposit)}</strong></div>`);
+        if (l.commission)     items.push(`<div><span>Provize</span><strong>${escapeHtml(l.commission)}</strong></div>`);
+        if (l.available_from) items.push(`<div><span>Dostupnost</span><strong>${escapeHtml(l.available_from)}</strong></div>`);
+        rentalExtras = `                <div class="listing-info-rental-extras">\n                    ${items.join('\n                    ')}\n                </div>`;
+    }
+
+    const rowsHtml = rows.map(([label, value]) =>
         `                    <div class="listing-info-row">
-                        <span class="listing-info-label">${escapeHtml(r.label)}</span>
-                        <span class="listing-info-value">${escapeHtml(r.value)}</span>
+                        <span class="listing-info-label">${escapeHtml(label)}</span>
+                        <span class="listing-info-value">${escapeHtml(value)}</span>
                     </div>`
     ).join('\n');
+
+    return `                <div class="listing-info-pricelabel">${priceLabel}</div>
+                <div class="listing-info-price">${escapeHtml(l.price || 'Cena na vyžádání')}</div>
+${rentalExtras}
+                <div class="listing-info-table">
+${rowsHtml}
+                </div>`;
 }
 
-function listGalleryPhotos(slug) {
-    const dir = path.join(LISTINGS_DIR, slug);
+function listImages(slug, type) {
+    const dir = path.join(LISTINGS_DIR, type, slug);
     return fs.readdirSync(dir)
-        .filter(f => /^\d+\.(jpg|jpeg|png|webp)$/i.test(f)) // 01.jpg, 02.jpg, ...
+        .filter(f => IMG_EXT.test(f))
         .sort();
 }
 
-function renderGallery(slug, photos) {
-    if (photos.length === 0) return '            <!-- No gallery photos -->';
-    return photos.map((file, i) => {
-        // First and last span 2 columns for visual variety
-        const wide = (photos.length >= 3 && (i === 0 || i === photos.length - 1)) ? ' wide' : '';
-        const src = `../../images/listings/${slug}/${file}`;
+function findCover(images) {
+    const exact = images.find(f => COVER_NAME.test(f));
+    return exact || images[0] || null;
+}
+
+function renderGallery(slug, type, images) {
+    if (!images.length) return '            <!-- No gallery photos -->';
+    return images.map((file, i) => {
+        const wide = (images.length >= 3 && (i === 0 || i === images.length - 1)) ? ' wide' : '';
+        const src = `../../../images/listings/${type}/${slug}/${file}`;
         return `            <a href="${src}" target="_blank" rel="noopener" class="listing-gallery-item${wide}">
                 <img src="${src}" alt="${escapeHtml(file)}" loading="lazy">
             </a>`;
     }).join('\n');
 }
 
-function renderBadge(status) {
-    const info = STATUS_BADGE[status];
-    if (!info) return '';
-    return `                    <div class="listing-card-badge">${escapeHtml(info.label)}</div>`;
+function renderCardBadge(l) {
+    const typeLbl = TYPE_LABEL[l.type] || '';
+    const status = l.status || 'aktivni';
+    const klass = STATUS_CLASS[status] || 'status-active';
+    let text;
+
+    if (status === 'aktivni') {
+        // Combine type + availability cue
+        if (l.type === 'pronajem' && l.available_from) {
+            text = `${typeLbl} · ${String(l.available_from).toUpperCase()}`;
+        } else {
+            text = typeLbl;
+        }
+    } else if (status === 'pronajato' || status === 'prodano') {
+        text = STATUS_CARD_LABEL[status];
+    } else if (status === 'rezervovano') {
+        text = `${typeLbl} · ${STATUS_CARD_LABEL[status]}`;
+    } else if (status === 'nova') {
+        text = `${typeLbl} · ${STATUS_CARD_LABEL[status]}`;
+    } else {
+        text = typeLbl;
+    }
+    return `                    <div class="listing-card-badge ${klass}">${escapeHtml(text)}</div>`;
+}
+
+function renderCardMeta(l) {
+    const parts = [];
+    if (l.disposition)   parts.push(l.disposition);
+    if (l.area)          parts.push(l.area + ' m²');
+    if (l.floor)         parts.push(l.floor);
+    else if (l.building_type) parts.push(l.building_type);
+
+    return parts.map((p, i) => {
+        return (i === 0 ? '' : '                        <span class="sep">·</span>\n')
+             + `                        <span>${escapeHtml(p)}</span>`;
+    }).join('\n');
 }
 
 function renderTemplate(template, replacements) {
@@ -240,29 +316,48 @@ function readTemplate(name) {
     return fs.readFileSync(path.join(TEMPLATES_DIR, name), 'utf8');
 }
 
-function readListing(slug) {
-    const infoPath = path.join(LISTINGS_DIR, slug, 'info.md');
+function readListing(type, slug) {
+    const infoPath = path.join(LISTINGS_DIR, type, slug, 'info.md');
     if (!fs.existsSync(infoPath)) {
-        throw new Error(`Missing info.md in images/listings/${slug}/`);
+        throw new Error(`Missing info.md in images/listings/${type}/${slug}/`);
     }
-    const src = fs.readFileSync(infoPath, 'utf8');
-    const { data, body } = parseFrontmatter(src);
-    const sections = parseMarkdownSections(body);
+    const { data, body } = parseFrontmatter(fs.readFileSync(infoPath, 'utf8'));
+    const sections = parseSections(body);
+    const images = listImages(slug, type);
+    const cover = findCover(images);
+
+    if (data.type && data.type !== type) {
+        console.warn(`  ⚠ ${slug}: frontmatter type="${data.type}" disagrees with folder type="${type}"`);
+    }
+    if (!cover) {
+        console.warn(`  ⚠ ${slug}: no cover image found (looked for 01-uvodni.*, then any image)`);
+    } else if (!COVER_NAME.test(cover)) {
+        console.warn(`  ⚠ ${slug}: 01-uvodni.* not found — using "${cover}" as cover instead`);
+    }
+
     return {
         slug,
+        type,
         title: data.title || slug,
         status: data.status || 'aktivni',
         price: data.price || 'Cena na vyžádání',
+        deposit: data.deposit || '',
+        commission: data.commission || '',
+        available_from: data.available_from || '',
         location_short: data.location_short || '',
         location_long: data.location_long || data.location_short || '',
         disposition: data.disposition || '',
         area: data.area != null ? data.area : '',
         floor: data.floor || '',
+        building_type: data.building_type || '',
+        ownership: data.ownership || '',
+        condition: data.condition || '',
         short_description: data.short_description || '',
         info_extra: data.info_extra || null,
-        description: sections['Popis'] || '',
-        specs: parseSpecs(sections['Specifikace'] || ''),
-        gallery: listGalleryPhotos(slug),
+        description: sections.description || '',
+        specs: parseSpecs(sections.specs || ''),
+        cover,
+        gallery: images,
     };
 }
 
@@ -273,87 +368,118 @@ function build() {
         process.exit(1);
     }
 
-    // Discover listing slugs (skip _template, hidden, files)
-    const slugs = fs.readdirSync(LISTINGS_DIR)
-        .filter(f => !f.startsWith('_') && !f.startsWith('.'))
-        .filter(f => fs.statSync(path.join(LISTINGS_DIR, f)).isDirectory());
-
-    if (slugs.length === 0) {
-        console.warn(`⚠ No listing folders found in ${LISTINGS_DIR}`);
+    // Walk type subdirectories
+    const listings = [];
+    for (const type of TYPES) {
+        const typeDir = path.join(LISTINGS_DIR, type);
+        if (!fs.existsSync(typeDir)) continue;
+        const slugs = fs.readdirSync(typeDir)
+            .filter(f => !f.startsWith('_') && !f.startsWith('.'))
+            .filter(f => fs.statSync(path.join(typeDir, f)).isDirectory());
+        for (const slug of slugs) listings.push(readListing(type, slug));
     }
 
-    const listings = slugs.map(readListing)
-        .sort((a, b) => {
-            const ai = STATUS_ORDER.indexOf(a.status);
-            const bi = STATUS_ORDER.indexOf(b.status);
-            return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
-        });
+    listings.sort((a, b) => {
+        const ai = STATUS_ORDER.indexOf(a.status);
+        const bi = STATUS_ORDER.indexOf(b.status);
+        return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
+    });
 
-    console.log(`Found ${listings.length} listing(s): ${listings.map(l => l.slug).join(', ')}`);
+    console.log(`Found ${listings.length} listing(s): ${listings.map(l => `${l.type}/${l.slug}`).join(', ')}`);
 
-    // Load templates
-    const cardTpl = readTemplate('listing-card.html');
-    const indexTpl = readTemplate('listing-index.html');
+    const cardTpl   = readTemplate('listing-card.html');
+    const indexTpl  = readTemplate('listing-index.html');
     const detailTpl = readTemplate('listing-detail.html');
 
     fs.mkdirSync(OUTPUT_DIR, { recursive: true });
 
-    // Render detail pages
+    // Detail pages
     for (const l of listings) {
-        const detailDir = path.join(OUTPUT_DIR, l.slug);
-        fs.mkdirSync(detailDir, { recursive: true });
+        const dir = path.join(OUTPUT_DIR, l.type, l.slug);
+        fs.mkdirSync(dir, { recursive: true });
+        const coverSrc = `../../../images/listings/${l.type}/${l.slug}/${l.cover}`;
         const html = renderTemplate(detailTpl, {
+            base: '../../../',
             slug: l.slug,
+            type: l.type,
+            type_label: TYPE_LABEL[l.type] || '',
             title: escapeHtml(l.title),
             price: escapeHtml(l.price),
             location_short: escapeHtml(l.location_short),
             location_long: escapeHtml(l.location_long),
             disposition: escapeHtml(l.disposition),
             area: escapeHtml(l.area + ' m²'),
-            floor: escapeHtml(l.floor),
+            floor: escapeHtml(l.floor || ''),
             short_description: escapeHtml(l.short_description),
+            cover_src: coverSrc,
+            cover_filename: l.cover || '',
             description_html: renderDescription(l.description),
-            info_table_rows: renderInfoTableRows(l),
+            info_panel: renderInfoPanel(l),
             spec_cards: renderSpecCards(l.specs),
-            gallery_items: renderGallery(l.slug, l.gallery),
+            gallery_items: renderGallery(l.slug, l.type, l.gallery),
+            // Pre-built convenience strings for hero meta line
+            hero_meta_disposition: l.disposition ? `<span>✦ ${escapeHtml(l.disposition)} dispozice</span>` : '',
+            hero_meta_area:        l.area ? `<span>◊ ${escapeHtml(l.area)} m² užitné plochy</span>` : '',
+            hero_meta_floor:       l.floor ? `<span>⛶ ${escapeHtml(l.floor)}</span>` : (l.building_type ? `<span>⛶ ${escapeHtml(l.building_type)}</span>` : ''),
+            // Filter index path (rentals/sales) — used in the back link
+            type_index_path: `../`,    // detail is one level deep in /nabidka/{type}/
         });
-        fs.writeFileSync(path.join(detailDir, 'index.html'), html);
-        console.log(`  → nabidka/${l.slug}/index.html  (${l.gallery.length} gallery photo${l.gallery.length === 1 ? '' : 's'})`);
+        fs.writeFileSync(path.join(dir, 'index.html'), html);
+        console.log(`  → nabidka/${l.type}/${l.slug}/index.html  (${l.gallery.length} photo${l.gallery.length === 1 ? '' : 's'})`);
     }
 
-    // Render listing index
-    const cardsHtml = listings.map(l => renderTemplate(cardTpl, {
-        slug: l.slug,
-        title: escapeHtml(l.title),
-        price: escapeHtml(l.price),
-        location_short: escapeHtml(l.location_short),
-        disposition: escapeHtml(l.disposition),
-        area: escapeHtml(l.area + ' m²'),
-        floor: escapeHtml(l.floor),
-        short_description: escapeHtml(l.short_description),
-        cover_src: `../images/listings/${l.slug}/cover.jpg`,
-        cover_alt: escapeHtml(l.title),
-        badge: renderBadge(l.status),
-    })).join('\n');
-    fs.writeFileSync(
-        path.join(OUTPUT_DIR, 'index.html'),
-        renderTemplate(indexTpl, { cards: cardsHtml })
-    );
-    console.log(`  → nabidka/index.html`);
+    // Index pages (unified + per-type)
+    for (const page of INDEX_PAGES) {
+        const filtered = page.filter ? listings.filter(l => l.type === page.filter) : listings;
+        const base = '../'.repeat(page.depth);
+        // Card href depends on whether we're on unified index or filtered
+        const cardsHtml = filtered.map(l => {
+            const href = page.filter ? `${l.slug}/` : `${l.type}/${l.slug}/`;
+            const coverSrc = `${base}images/listings/${l.type}/${l.slug}/${l.cover}`;
+            return renderTemplate(cardTpl, {
+                href,
+                title: escapeHtml(l.title),
+                price: escapeHtml(l.price),
+                location_short: escapeHtml(l.location_short),
+                short_description: escapeHtml(l.short_description),
+                cover_src: coverSrc,
+                cover_alt: escapeHtml(l.title),
+                badge: renderCardBadge(l),
+                meta_line: renderCardMeta(l),
+            });
+        }).join('\n');
+
+        const outDir = path.join(OUTPUT_DIR, page.subdir);
+        fs.mkdirSync(outDir, { recursive: true });
+        const html = renderTemplate(indexTpl, {
+            base,
+            cards: cardsHtml || '            <!-- žádné nabídky v této kategorii -->',
+            eyebrow: page.eyebrow,
+            h1: page.h1,
+            empty_notice: filtered.length ? '' : '<p style="text-align:center;color:var(--text-muted);padding:60px 0;">Aktuálně zde nemáme žádnou nabídku. Mrkněte na další kategorie nebo nás <a href="' + base + 'contact.html" style="color:var(--accent-dark);font-weight:600;">kontaktujte</a>.</p>',
+        });
+        fs.writeFileSync(path.join(outDir, 'index.html'), html);
+        console.log(`  → nabidka/${page.subdir}index.html  (${filtered.length} card${filtered.length === 1 ? '' : 's'})`);
+    }
 
     // Sitemap
     const today = new Date().toISOString().split('T')[0];
-    const allUrls = [
+    const urls = [
         ...STATIC_ROUTES,
+        ...INDEX_PAGES.filter(p => p.subdir).map(p => ({
+            loc: '/nabidka/' + p.subdir.replace(/\/$/, ''),
+            priority: '0.8',
+            changefreq: 'weekly',
+        })),
         ...listings.map(l => ({
-            loc: `/nabidka/${l.slug}`,
+            loc: `/nabidka/${l.type}/${l.slug}`,
             priority: '0.7',
             changefreq: 'monthly',
         })),
     ];
     const sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n' +
         '<urlset xmlns="http://www.sitemap.org/schemas/sitemap/0.9">\n' +
-        allUrls.map(u =>
+        urls.map(u =>
             `  <url>
     <loc>${SITE_URL}${u.loc}</loc>
     <lastmod>${today}</lastmod>
@@ -363,7 +489,7 @@ function build() {
         ).join('\n') +
         '\n</urlset>\n';
     fs.writeFileSync(SITEMAP_PATH, sitemap);
-    console.log(`  → sitemap.xml (${allUrls.length} URLs)`);
+    console.log(`  → sitemap.xml (${urls.length} URLs)`);
 
     console.log('✓ Build complete');
 }

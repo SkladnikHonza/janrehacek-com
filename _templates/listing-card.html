@@ -1,4 +1,4 @@
-            <a href="{{slug}}/" class="listing-card">
+            <a href="{{href}}" class="listing-card">
                 <div class="listing-card-cover">
                     <img src="{{cover_src}}" alt="{{cover_alt}}">
 {{badge}}
@@ -8,11 +8,7 @@
                     <div class="listing-card-location">{{location_short}}</div>
                     <h3 class="listing-card-title">{{title}}</h3>
                     <div class="listing-card-meta">
-                        <span>{{disposition}}</span>
-                        <span class="sep">·</span>
-                        <span>{{area}}</span>
-                        <span class="sep">·</span>
-                        <span>{{floor}}</span>
+{{meta_line}}
                     </div>
                     <p class="listing-card-desc">{{short_description}}</p>
                     <span class="listing-card-link">Detail nabídky →</span>
