@@ -4,15 +4,13 @@
 window.translations = window.translations || {};
 
 window.translations.cs = {
-    "nav.about": "O mně", "nav.services": "Služby", "nav.investors": "Pro investory", "nav.housio": "Housio.App", "nav.academy": "Akademie", "nav.testimonials": "Reference", "nav.listings": "Nabídka", "nav.blog": "Blog", "nav.contact": "Kontakt",
+    "nav.about": "O mně", "nav.services": "Služby", "nav.investors": "Pro investory", "nav.housio": "Housio.App", "nav.academy": "Akademie", "nav.testimonials": "Reference", "nav.listings": "Nabídka", "nav.contact": "Kontakt",
     // New page-header keys (CZ only; other languages translate later)
     "page.about.title": "Příběh za jedním <em>jménem.</em>", "page.about.sub": "5+ let v realitních investicích, portfolio přes 100 milionů Kč a vlastní platforma Housio. Tady je celý příběh.",
     "page.services.title": "Tři oblasti, kde Vám <em>přinesu hodnotu.</em>", "page.services.sub": "Realitní obchod, investiční strategie, mentoring — provedu Vás celým procesem.",
     "page.investors.title": "Vzdělání, které jsem si <em>přál mít ve 20.</em>", "page.investors.sub": "Akademie investora, mentoring 1:1 a praktické know-how — bez balastu, s reálnými příklady z mého portfolia.",
     "page.references.title": "Co o spolupráci říkají <em>moji klienti.</em>", "page.references.sub": "Důvěra je v naší branži všechno. Tady je pár slov od lidí, kterým jsem pomohl.",
-    "page.blog.title": "Blog", "page.blog.sub": "Brzy tady najdete články o investicích, realitním trhu a budování majetku.",
     "page.contact.title": "Pojďme si <em>promluvit.</em>", "page.contact.sub": "První konzultace je vždy zdarma a nezávazná. Stačí mi krátce popsat, co řešíte.",
-    "blog.coming.title": "Stránka v přípravě", "blog.coming.text": "Pracuji na obsahu — první články se objeví brzy. Mezitím se podívejte na ostatní sekce nebo mě kontaktujte přímo.", "blog.coming.cta": "← Zpět na úvod",
     "landing.about.cta": "Celý příběh", "landing.services.cta": "Všechny služby", "landing.contact.eyebrow": "Spojme se", "landing.contact.title": "Rád si poslechnu, co řešíte.", "landing.contact.text": "První konzultace zdarma, do 24 hodin se Vám ozvu.", "landing.contact.cta": "Napsat zprávu",
     "hero.badge": "Investor & realitní expert",
     "hero.title": "Investice,<br>které mají <em>smysl.</em>",
@@ -150,7 +148,7 @@ window.translations.cs = {
 };
 
 window.translations.sk = {
-    "nav.about": "O mne", "nav.services": "Služby", "nav.investors": "Pre investorov", "nav.housio": "Housio", "nav.academy": "Akadémia", "nav.testimonials": "Referencie", "nav.listings": "Ponuka", "nav.blog": "Blog", "nav.contact": "Spojme sa",
+    "nav.about": "O mne", "nav.services": "Služby", "nav.investors": "Pre investorov", "nav.housio": "Housio", "nav.academy": "Akadémia", "nav.testimonials": "Referencie", "nav.listings": "Ponuka", "nav.contact": "Spojme sa",
     "hero.badge": "Investor & realitný expert",
     "hero.title": "Budujeme hodnotu.<br>Vzdelávame <em>investorov</em>.",
     "hero.subtitle": "Pomáham klientom i mladým investorom budovať majetok cez nehnuteľnosti a chytré investície.",
@@ -234,12 +232,6 @@ window.translations.sk = {
     "page.investors.sub":    "Akadémia investora, mentoring 1:1 a praktické know-how — bez balastu, s reálnymi príkladmi z môjho portfólia.",
     "page.references.title": "Čo o spolupráci hovoria <em>moji klienti.</em>",
     "page.references.sub":   "Dôvera je v našej branži všetko. Tu je pár slov od ľudí, ktorým som pomohol.",
-    "page.blog.title":       "Blog",
-    "page.blog.sub":         "Čoskoro tu nájdete články o investíciách, realitnom trhu a budovaní majetku.",
-    "blog.coming.title":     "Stránka sa pripravuje",
-    "blog.coming.text":      "Pracujem na obsahu — prvé články sa objavia čoskoro. Medzitým sa pozrite na ostatné sekcie alebo ma kontaktujte priamo.",
-    "blog.coming.cta":       "← Späť na úvod",
-
     // ===== LISTINGS (ponuka) =====
     "listings.header.description": "Starostlivo vybrané byty a domy z portfólia, ktoré prešli dôkladnou due diligence. Každú ponuku sprevádza kompletný servis od prvej prehliadky až po odovzdanie kľúčov.",
     "listings.eyebrow.all":  "Ponuka nehnuteľností",
@@ -301,7 +293,7 @@ window.translations.sk = {
 };
 
 window.translations.en = {
-    "nav.about": "About", "nav.services": "Services", "nav.investors": "For investors", "nav.housio": "Housio", "nav.academy": "Academy", "nav.testimonials": "References", "nav.listings": "Listings", "nav.blog": "Blog", "nav.contact": "Get in touch",
+    "nav.about": "About", "nav.services": "Services", "nav.investors": "For investors", "nav.housio": "Housio", "nav.academy": "Academy", "nav.testimonials": "References", "nav.listings": "Listings", "nav.contact": "Get in touch",
     "hero.badge": "Investor & Real Estate Expert",
     "hero.title": "We build value.<br>We educate <em>investors</em>.",
     "hero.subtitle": "I help clients and young investors build wealth through real estate and smart investments.",
@@ -385,12 +377,6 @@ window.translations.en = {
     "page.investors.sub":    "Investor Academy, 1:1 mentoring, and practical know-how — no fluff, real examples from my portfolio.",
     "page.references.title": "What <em>my clients say</em> about working with me.",
     "page.references.sub":   "Trust is everything in this industry. Here are a few words from people I've helped along the way.",
-    "page.blog.title":       "Blog",
-    "page.blog.sub":         "Soon you'll find articles here on investing, the real-estate market, and building wealth.",
-    "blog.coming.title":     "Coming soon",
-    "blog.coming.text":      "I'm working on the content — the first articles will land soon. In the meantime, explore the other sections or reach out directly.",
-    "blog.coming.cta":       "← Back to home",
-
     // ===== LISTINGS =====
     "listings.header.description": "Hand-picked apartments and houses from the portfolio, each one through thorough due diligence. Every listing comes with full-service support — from the first viewing to handing over the keys.",
     "listings.eyebrow.all":  "Property listings",
@@ -449,7 +435,7 @@ window.translations.en = {
 };
 
 window.translations.de = {
-    "nav.about": "Über mich", "nav.services": "Leistungen", "nav.investors": "Für Investoren", "nav.housio": "Housio", "nav.academy": "Akademie", "nav.testimonials": "Referenzen", "nav.listings": "Angebote", "nav.blog": "Blog", "nav.contact": "Kontakt",
+    "nav.about": "Über mich", "nav.services": "Leistungen", "nav.investors": "Für Investoren", "nav.housio": "Housio", "nav.academy": "Akademie", "nav.testimonials": "Referenzen", "nav.listings": "Angebote", "nav.contact": "Kontakt",
     "hero.badge": "Investor & Immobilienexperte",
     "hero.title": "Wir schaffen Werte.<br>Wir bilden <em>Investoren</em> aus.",
     "hero.subtitle": "Ich helfe Kunden und jungen Investoren, Vermögen durch Immobilien und kluge Investitionen aufzubauen.",
@@ -533,12 +519,6 @@ window.translations.de = {
     "page.investors.sub":    "Investor-Akademie, 1:1-Mentoring und praktisches Know-how — ohne Ballast, mit echten Beispielen aus meinem Portfolio.",
     "page.references.title": "Was <em>meine Kunden</em> über die Zusammenarbeit sagen.",
     "page.references.sub":   "Vertrauen ist in unserer Branche alles. Hier ein paar Worte von Menschen, denen ich helfen durfte.",
-    "page.blog.title":       "Blog",
-    "page.blog.sub":         "Bald finden Sie hier Artikel zu Investments, dem Immobilienmarkt und Vermögensaufbau.",
-    "blog.coming.title":     "Bald verfügbar",
-    "blog.coming.text":      "Ich arbeite an den Inhalten — die ersten Artikel folgen in Kürze. Schauen Sie sich in der Zwischenzeit die anderen Bereiche an oder kontaktieren Sie mich direkt.",
-    "blog.coming.cta":       "← Zurück zur Startseite",
-
     // ===== LISTINGS (Angebote) =====
     "listings.header.description": "Sorgfältig ausgewählte Wohnungen und Häuser aus dem Portfolio, die einer gründlichen Due Diligence unterzogen wurden. Jedes Angebot wird von einem Komplettservice begleitet — von der ersten Besichtigung bis zur Schlüsselübergabe.",
     "listings.eyebrow.all":  "Immobilienangebote",
@@ -600,7 +580,7 @@ window.translations.de = {
 window.translations = window.translations || {};
 
 window.translations.fr = {
-    "nav.about": "À propos", "nav.services": "Services", "nav.investors": "Pour investisseurs", "nav.housio": "Housio", "nav.academy": "Académie", "nav.testimonials": "Références", "nav.listings": "Annonces", "nav.blog": "Blog", "nav.contact": "Contact",
+    "nav.about": "À propos", "nav.services": "Services", "nav.investors": "Pour investisseurs", "nav.housio": "Housio", "nav.academy": "Académie", "nav.testimonials": "Références", "nav.listings": "Annonces", "nav.contact": "Contact",
     "hero.badge": "Investisseur & expert immobilier",
     "hero.title": "Nous créons de la valeur.<br>Nous formons les <em>investisseurs</em>.",
     "hero.subtitle": "J'aide mes clients et les jeunes investisseurs à bâtir un patrimoine grâce à l'immobilier et aux investissements intelligents.",
@@ -684,12 +664,6 @@ window.translations.fr = {
     "page.investors.sub":    "Académie de l'investisseur, mentorat 1:1 et savoir-faire pratique — sans superflu, avec de vrais exemples de mon portefeuille.",
     "page.references.title": "Ce que <em>mes clients</em> disent de notre collaboration.",
     "page.references.sub":   "Dans notre métier, la confiance est tout. Voici quelques mots de personnes que j'ai accompagnées.",
-    "page.blog.title":       "Blog",
-    "page.blog.sub":         "Bientôt, vous trouverez ici des articles sur l'investissement, le marché immobilier et la création de patrimoine.",
-    "blog.coming.title":     "Bientôt disponible",
-    "blog.coming.text":      "Je travaille sur le contenu — les premiers articles arrivent bientôt. En attendant, explorez les autres sections ou contactez-moi directement.",
-    "blog.coming.cta":       "← Retour à l'accueil",
-
     // ===== LISTINGS (annonces) =====
     "listings.header.description": "Appartements et maisons soigneusement sélectionnés dans le portefeuille, après une due diligence approfondie. Chaque annonce s'accompagne d'un service complet — de la première visite à la remise des clés.",
     "listings.eyebrow.all":  "Annonces immobilières",
@@ -748,7 +722,7 @@ window.translations.fr = {
 };
 
 window.translations.it = {
-    "nav.about": "Chi sono", "nav.services": "Servizi", "nav.investors": "Per investitori", "nav.housio": "Housio", "nav.academy": "Accademia", "nav.testimonials": "Referenze", "nav.listings": "Annunci", "nav.blog": "Blog", "nav.contact": "Contattami",
+    "nav.about": "Chi sono", "nav.services": "Servizi", "nav.investors": "Per investitori", "nav.housio": "Housio", "nav.academy": "Accademia", "nav.testimonials": "Referenze", "nav.listings": "Annunci", "nav.contact": "Contattami",
     "hero.badge": "Investitore & esperto immobiliare",
     "hero.title": "Costruiamo valore.<br>Formiamo gli <em>investitori</em>.",
     "hero.subtitle": "Aiuto clienti e giovani investitori a costruire patrimonio attraverso immobili e investimenti intelligenti.",
@@ -832,12 +806,6 @@ window.translations.it = {
     "page.investors.sub":    "Accademia dell'investitore, mentoring 1:1 e know-how pratico — senza fronzoli, con esempi reali dal mio portafoglio.",
     "page.references.title": "Cosa dicono i <em>miei clienti</em> della collaborazione.",
     "page.references.sub":   "Nel nostro settore, la fiducia è tutto. Ecco alcune parole di chi ho avuto il piacere di aiutare.",
-    "page.blog.title":       "Blog",
-    "page.blog.sub":         "Presto troverà qui articoli su investimenti, mercato immobiliare e costruzione del patrimonio.",
-    "blog.coming.title":     "In arrivo",
-    "blog.coming.text":      "Sto preparando i contenuti — i primi articoli arriveranno presto. Nel frattempo, esplori le altre sezioni o mi contatti direttamente.",
-    "blog.coming.cta":       "← Torna alla home",
-
     // ===== LISTINGS (annunci) =====
     "listings.header.description": "Appartamenti e case selezionati con cura dal portafoglio, dopo un'attenta due diligence. Ogni annuncio è accompagnato da un servizio completo — dalla prima visita alla consegna delle chiavi.",
     "listings.eyebrow.all":  "Annunci immobiliari",
@@ -896,7 +864,7 @@ window.translations.it = {
 };
 
 window.translations.es = {
-    "nav.about": "Sobre mí", "nav.services": "Servicios", "nav.investors": "Para inversores", "nav.housio": "Housio", "nav.academy": "Academia", "nav.testimonials": "Referencias", "nav.listings": "Inmuebles", "nav.blog": "Blog", "nav.contact": "Contacto",
+    "nav.about": "Sobre mí", "nav.services": "Servicios", "nav.investors": "Para inversores", "nav.housio": "Housio", "nav.academy": "Academia", "nav.testimonials": "Referencias", "nav.listings": "Inmuebles", "nav.contact": "Contacto",
     "hero.badge": "Inversor & experto inmobiliario",
     "hero.title": "Construimos valor.<br>Formamos a los <em>inversores</em>.",
     "hero.subtitle": "Ayudo a clientes y jóvenes inversores a construir patrimonio a través de inmuebles e inversiones inteligentes.",
@@ -980,12 +948,6 @@ window.translations.es = {
     "page.investors.sub":    "Academia del inversor, mentoring 1:1 y know-how práctico — sin paja, con ejemplos reales de mi cartera.",
     "page.references.title": "Lo que <em>mis clientes</em> dicen sobre nuestra colaboración.",
     "page.references.sub":   "En nuestro sector, la confianza lo es todo. Estas son algunas palabras de personas a las que he ayudado.",
-    "page.blog.title":       "Blog",
-    "page.blog.sub":         "Pronto encontrará aquí artículos sobre inversión, mercado inmobiliario y creación de patrimonio.",
-    "blog.coming.title":     "Próximamente",
-    "blog.coming.text":      "Estoy trabajando en el contenido — los primeros artículos llegarán pronto. Mientras tanto, explore las demás secciones o póngase en contacto directamente.",
-    "blog.coming.cta":       "← Volver al inicio",
-
     // ===== LISTINGS (inmuebles) =====
     "listings.header.description": "Pisos y casas cuidadosamente seleccionados del portafolio, tras una due diligence rigurosa. Cada inmueble va acompañado de un servicio integral — desde la primera visita hasta la entrega de llaves.",
     "listings.eyebrow.all":  "Inmuebles disponibles",
@@ -1044,7 +1006,7 @@ window.translations.es = {
 };
 
 window.translations.pl = {
-    "nav.about": "O mnie", "nav.services": "Usługi", "nav.investors": "Dla inwestorów", "nav.housio": "Housio", "nav.academy": "Akademia", "nav.testimonials": "Referencje", "nav.listings": "Oferty", "nav.blog": "Blog", "nav.contact": "Kontakt",
+    "nav.about": "O mnie", "nav.services": "Usługi", "nav.investors": "Dla inwestorów", "nav.housio": "Housio", "nav.academy": "Akademia", "nav.testimonials": "Referencje", "nav.listings": "Oferty", "nav.contact": "Kontakt",
     "hero.badge": "Inwestor & ekspert ds. nieruchomości",
     "hero.title": "Budujemy wartość.<br>Edukujemy <em>inwestorów</em>.",
     "hero.subtitle": "Pomagam klientom i młodym inwestorom budować majątek poprzez nieruchomości i mądre inwestycje.",
@@ -1128,12 +1090,6 @@ window.translations.pl = {
     "page.investors.sub":    "Akademia inwestora, mentoring 1:1 i praktyczne know-how — bez zbędnej teorii, z prawdziwymi przykładami z mojego portfela.",
     "page.references.title": "Co o współpracy mówią <em>moi klienci.</em>",
     "page.references.sub":   "W naszej branży zaufanie to wszystko. Oto kilka słów od osób, którym pomogłem.",
-    "page.blog.title":       "Blog",
-    "page.blog.sub":         "Już wkrótce znajdą tu Państwo artykuły o inwestycjach, rynku nieruchomości i budowaniu majątku.",
-    "blog.coming.title":     "Wkrótce dostępne",
-    "blog.coming.text":      "Pracuję nad treścią — pierwsze artykuły pojawią się wkrótce. Tymczasem zachęcam do zapoznania się z innymi sekcjami lub kontaktu bezpośredniego.",
-    "blog.coming.cta":       "← Powrót do strony głównej",
-
     // ===== LISTINGS (oferty) =====
     "listings.header.description": "Starannie wyselekcjonowane mieszkania i domy z portfela, które przeszły gruntowną due diligence. Każdej ofercie towarzyszy pełna obsługa — od pierwszego oglądania po przekazanie kluczy.",
     "listings.eyebrow.all":  "Oferty nieruchomości",
@@ -1201,7 +1157,7 @@ window.translations.pl = {
 window.translations = window.translations || {};
 
 window.translations.ru = {
-    "nav.about": "Обо мне", "nav.services": "Услуги", "nav.investors": "Для инвесторов", "nav.housio": "Housio", "nav.academy": "Академия", "nav.testimonials": "Отзывы", "nav.listings": "Объекты", "nav.blog": "Блог", "nav.contact": "Связаться",
+    "nav.about": "Обо мне", "nav.services": "Услуги", "nav.investors": "Для инвесторов", "nav.housio": "Housio", "nav.academy": "Академия", "nav.testimonials": "Отзывы", "nav.listings": "Объекты", "nav.contact": "Связаться",
     "hero.badge": "Инвестор и эксперт по недвижимости",
     "hero.title": "Создаём ценность.<br>Обучаем <em>инвесторов</em>.",
     "hero.subtitle": "Помогаю клиентам и молодым инвесторам строить капитал через недвижимость и умные инвестиции.",
@@ -1285,12 +1241,6 @@ window.translations.ru = {
     "page.investors.sub":    "Академия инвестора, менторинг 1:1 и практическое ноу-хау — без воды, с реальными примерами из моего портфеля.",
     "page.references.title": "Что <em>мои клиенты</em> говорят о сотрудничестве.",
     "page.references.sub":   "В нашей сфере доверие — это всё. Вот несколько слов от людей, которым я помог.",
-    "page.blog.title":       "Блог",
-    "page.blog.sub":         "Скоро здесь появятся статьи об инвестициях, рынке недвижимости и построении капитала.",
-    "blog.coming.title":     "Скоро здесь",
-    "blog.coming.text":      "Готовлю материалы — первые статьи появятся уже скоро. А пока загляните в другие разделы или свяжитесь со мной напрямую.",
-    "blog.coming.cta":       "← На главную",
-
     // ===== LISTINGS (объекты) =====
     "listings.header.description": "Тщательно отобранные квартиры и дома из портфеля, прошедшие глубокую due diligence. Каждое предложение сопровождается полным сервисом — от первого просмотра до передачи ключей.",
     "listings.eyebrow.all":  "Объекты недвижимости",
@@ -1355,7 +1305,7 @@ window.translations.ru = {
 };
 
 window.translations.ja = {
-    "nav.about": "私について", "nav.services": "サービス", "nav.investors": "投資家の方へ", "nav.housio": "Housio", "nav.academy": "アカデミー", "nav.testimonials": "推薦の声", "nav.listings": "物件一覧", "nav.blog": "ブログ", "nav.contact": "お問い合わせ",
+    "nav.about": "私について", "nav.services": "サービス", "nav.investors": "投資家の方へ", "nav.housio": "Housio", "nav.academy": "アカデミー", "nav.testimonials": "推薦の声", "nav.listings": "物件一覧", "nav.contact": "お問い合わせ",
     "hero.badge": "投資家・不動産専門家",
     "hero.title": "価値を築く。<br><em>投資家</em>を育てる。",
     "hero.subtitle": "クライアントと若い投資家が、不動産とスマートな投資を通じて資産を築くお手伝いをします。",
@@ -1439,12 +1389,6 @@ window.translations.ja = {
     "page.investors.sub":    "投資家アカデミー、1対1メンタリング、実践的なノウハウ — 余計な話は抜きで、私のポートフォリオから実例をご紹介します。",
     "page.references.title": "<em>クライアント様</em>から寄せられた声。",
     "page.references.sub":   "この業界では信頼がすべてです。これまでお手伝いした方々からの声をご紹介します。",
-    "page.blog.title":       "ブログ",
-    "page.blog.sub":         "投資、不動産市場、資産形成に関する記事を近日公開予定です。",
-    "blog.coming.title":     "近日公開",
-    "blog.coming.text":      "コンテンツを準備中です — 最初の記事はまもなく公開予定です。それまでは他のセクションをご覧いただくか、直接ご連絡ください。",
-    "blog.coming.cta":       "← トップへ戻る",
-
     // ===== LISTINGS (物件一覧) =====
     "listings.header.description": "ポートフォリオから厳選し、徹底的なデューデリジェンスを経たアパートメントと一戸建て。すべての物件で、初回内覧から鍵のお引き渡しまで一貫したサポートをご提供します。",
     "listings.eyebrow.all":  "不動産物件",
@@ -1500,7 +1444,7 @@ window.translations.ja = {
 };
 
 window.translations.zh = {
-    "nav.about": "关于我", "nav.services": "服务", "nav.investors": "投资人专区", "nav.housio": "Housio", "nav.academy": "学院", "nav.testimonials": "推荐", "nav.listings": "房源", "nav.blog": "博客", "nav.contact": "联系",
+    "nav.about": "关于我", "nav.services": "服务", "nav.investors": "投资人专区", "nav.housio": "Housio", "nav.academy": "学院", "nav.testimonials": "推荐", "nav.listings": "房源", "nav.contact": "联系",
     "hero.badge": "投资人 & 房地产专家",
     "hero.title": "构筑价值。<br>培育<em>投资人</em>。",
     "hero.subtitle": "我帮助客户和年轻投资人通过房地产和明智的投资构建财富。",
@@ -1584,12 +1528,6 @@ window.translations.zh = {
     "page.investors.sub":    "投资人学院、一对一辅导、实战经验 — 不空谈，全部来自我自己的真实案例。",
     "page.references.title": "<em>客户</em>对合作的真实评价。",
     "page.references.sub":   "在我们这一行，信任就是一切。以下是我曾帮助过的客户的真实留言。",
-    "page.blog.title":       "博客",
-    "page.blog.sub":         "投资、房地产市场与财富积累相关文章，敬请期待。",
-    "blog.coming.title":     "即将上线",
-    "blog.coming.text":      "内容正在准备中 — 首批文章即将上线。在此期间，请浏览其他栏目或直接与我联系。",
-    "blog.coming.cta":       "← 返回首页",
-
     // ===== LISTINGS (房源) =====
     "listings.header.description": "从投资组合中精选的公寓和住宅,均经过严格的尽职调查。每套房源均提供全程服务——从首次看房到交付钥匙。",
     "listings.eyebrow.all":  "房产房源",

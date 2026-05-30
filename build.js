@@ -45,7 +45,6 @@ const STATIC_ROUTES = [
     { loc: '/investors',  priority: '0.9', changefreq: 'monthly' },
     { loc: '/references', priority: '0.7', changefreq: 'monthly' },
     { loc: '/nabidka',    priority: '0.9', changefreq: 'weekly' },
-    { loc: '/blog',       priority: '0.6', changefreq: 'weekly' },
     { loc: '/contact',    priority: '0.9', changefreq: 'monthly' },
 ];
 
