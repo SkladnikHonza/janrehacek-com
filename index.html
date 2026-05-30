@@ -175,58 +175,89 @@ nav {
 }
 .lang-option.active .lang-option-check { opacity: 1; }
 
-/* ===== HERO - FULL BANNER STYLE ===== */
+/* ===== HERO — PREMIUM BANNER ===== */
 .hero {
-    padding: 0;
     position: relative;
+    width: 100%;
     min-height: calc(100vh - 76px);
-    display: flex;
-    align-items: stretch;
+    max-height: 760px;
     overflow: hidden;
+    background: var(--bg);
+    isolation: isolate;
 }
-.hero .container {
-    max-width: none;
-    width: 100%;
-    padding: 0;
-    margin: 0;
+.hero-photo {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
 }
-.hero-grid {
-    display: grid;
-    grid-template-columns: 1fr 1.1fr;
-    gap: 0;
-    align-items: stretch;
+.hero-photo img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: 76% 28%;
+    display: block;
+}
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+    background: linear-gradient(
+        to right,
+        rgba(250, 250, 247, 0.98) 0%,
+        rgba(250, 250, 247, 0.90) 28%,
+        rgba(250, 250, 247, 0.55) 48%,
+        rgba(250, 250, 247, 0.15) 65%,
+        rgba(250, 250, 247, 0)    82%
+    );
+}
+.hero-inner {
+    position: relative;
+    z-index: 2;
+    max-width: 1440px;
+    margin: 0 auto;
     min-height: calc(100vh - 76px);
+    max-height: 760px;
+    display: flex;
+    align-items: center;
+    padding: 88px 24px 96px 80px;
 }
 .hero-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 80px 80px 80px 64px;
-    background: var(--bg);
+    max-width: 620px;
+    width: 100%;
 }
 .badge {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(15, 17, 21, 0.08);
     border-radius: 100px;
-    padding: 6px 14px;
-    font-size: 12px;
-    font-weight: 500;
-    color: var(--text-muted);
-    margin-bottom: 24px;
-    align-self: flex-start;
+    padding: 8px 16px 8px 14px;
+    font-size: 11.5px;
+    font-weight: 600;
+    color: var(--accent-dark);
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    margin-bottom: 28px;
 }
-.badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--green); }
+.badge-dot {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent-dark);
+    box-shadow: 0 0 0 4px rgba(184, 137, 90, 0.15);
+}
 .hero h1 {
     font-family: 'Geist', sans-serif;
-    font-size: clamp(42px, 4.8vw, 64px);
+    font-size: clamp(40px, 5vw, 64px);
     font-weight: 600;
     line-height: 1.05;
     letter-spacing: -2.5px;
     margin-bottom: 24px;
+    color: var(--text);
 }
 .hero h1 em {
     font-style: normal;
@@ -234,156 +265,62 @@ nav {
     color: var(--accent-dark);
 }
 .hero-text {
-    font-size: 17px;
+    font-size: 18px;
     color: var(--text-muted);
-    max-width: 540px;
+    max-width: 520px;
     margin-bottom: 36px;
-    line-height: 1.65;
+    line-height: 1.6;
 }
-.hero-actions { display: flex; gap: 12px; flex-wrap: wrap; }
-.hero-meta {
+.hero-actions {
     display: flex;
-    gap: 24px;
-    margin-top: 32px;
-    font-size: 13px;
-    color: var(--text-light);
+    gap: 12px;
     flex-wrap: wrap;
+    align-items: center;
 }
-.hero-meta span { display: flex; align-items: center; gap: 6px; }
-.hero-meta span::before { content: "✓"; color: var(--green); font-weight: 600; }
-
-.hero-visual {
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(135deg, #c4a584 0%, #8a6a48 100%);
-    min-height: calc(100vh - 76px);
-    box-shadow: -20px 0 60px -20px rgba(0,0,0,0.15);
+.hero-actions .btn {
+    padding: 14px 26px;
+    font-size: 14.5px;
+    font-weight: 600;
 }
-
-/* === PHOTO FRAME - FULL BANNER === */
-.photo-frame {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    background: linear-gradient(135deg, #c4a584 0%, #8a6a48 100%);
+.btn-play {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 22px 9px 10px;
+    background: rgba(255, 255, 255, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    color: var(--text);
+    border: 1px solid var(--border-strong);
+    border-radius: 100px;
+    font-size: 14.5px;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.2s;
 }
-.photo-frame img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: center 30%;
-    display: block;
+.btn-play:hover {
+    background: white;
+    border-color: var(--text);
+    transform: translateY(-1px);
 }
-.photo-placeholder {
-    position: absolute;
-    inset: 0;
-    display: flex;
-    flex-direction: column;
+.btn-play-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--text);
+    color: var(--bg);
+    display: inline-flex;
     align-items: center;
     justify-content: center;
-    text-align: center;
-    gap: 20px;
-    padding: 40px;
-    background:
-        radial-gradient(circle at 30% 20%, rgba(255,255,255,0.15) 0%, transparent 50%),
-        linear-gradient(135deg, #c4a584 0%, #8a6a48 100%);
-}
-.photo-initials {
-    font-family: 'Geist', sans-serif;
-    font-size: 180px;
-    font-weight: 600;
-    color: rgba(255,255,255,0.95);
-    letter-spacing: -6px;
-    line-height: 1;
-    text-shadow: 0 4px 30px rgba(0,0,0,0.15);
-}
-.photo-hint {
-    font-size: 15px;
-    color: rgba(255,255,255,0.8);
-    text-align: center;
-    line-height: 1.5;
-    border: 1px dashed rgba(255,255,255,0.4);
-    padding: 14px 26px;
-    border-radius: 100px;
-    backdrop-filter: blur(10px);
-    max-width: 320px;
-}
-/* Subtle gradient overlay for text legibility when photo is added */
-.photo-frame::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, transparent 50%, rgba(0,0,0,0.35) 100%);
-    pointer-events: none;
-    z-index: 1;
-}
-.photo-badge {
-    position: absolute;
-    bottom: 36px;
-    left: 36px;
-    right: 36px;
-    background: rgba(255, 255, 255, 0.96);
-    backdrop-filter: blur(20px);
-    border-radius: var(--radius);
-    padding: 18px 22px;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.18);
-    z-index: 2;
-    max-width: 380px;
-}
-.photo-badge-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: var(--green);
     flex-shrink: 0;
-    box-shadow: 0 0 0 5px rgba(45, 122, 74, 0.18);
 }
-.photo-badge-title {
-    font-weight: 600;
-    font-size: 16px;
-    color: var(--text);
-    line-height: 1.2;
+.btn-play-icon svg {
+    width: 10px;
+    height: 10px;
+    margin-left: 1px;
+    fill: currentColor;
 }
-.photo-badge-sub {
-    font-size: 13px;
-    color: var(--text-muted);
-    margin-top: 3px;
-}
-.visual-header {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--border);
-    margin-bottom: 20px;
-}
-.avatar {
-    width: 54px; height: 54px;
-    border-radius: 50%;
-    background: linear-gradient(135deg, var(--accent) 0%, var(--accent-dark) 100%);
-    display: flex; align-items: center; justify-content: center;
-    color: white; font-weight: 700; font-size: 18px;
-    font-family: 'Plus Jakarta Sans', sans-serif;
-    letter-spacing: 0.5px;
-}
-.avatar-info .name { font-weight: 600; font-size: 15px; }
-.avatar-info .title { font-size: 13px; color: var(--text-muted); }
-.metric {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 0;
-    border-bottom: 1px solid var(--border);
-}
-.metric:last-child { border-bottom: none; }
-.metric-label { font-size: 13px; color: var(--text-muted); }
-.metric-value { font-weight: 600; font-size: 15px; }
-.metric-value.positive { color: var(--green); }
 
 /* ===== STATS BAR ===== */
 .stats {
@@ -810,30 +747,50 @@ footer {
 @media (max-width: 900px) {
     .nav-links { display: none; }
     .menu-toggle { display: block; }
-    .hero { min-height: auto; padding: 0; }
-    .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 0;
+
+    .hero {
         min-height: auto;
+        max-height: none;
+        display: flex;
+        flex-direction: column;
     }
-    .hero-content {
-        padding: 50px 24px 60px;
-        order: 2;
+    .hero-photo {
+        position: relative;
+        inset: auto;
+        width: 100%;
+        height: 58vh;
+        min-height: 380px;
+        max-height: 560px;
     }
-    .hero-visual {
-        order: 1;
-        min-height: 60vh;
-        max-height: 600px;
-        box-shadow: 0 20px 60px -20px rgba(0,0,0,0.15);
+    .hero-photo img {
+        object-position: 68% 20%;
     }
-    .photo-initials { font-size: 110px; letter-spacing: -4px; }
-    .photo-badge {
-        bottom: 20px;
-        left: 20px;
-        right: 20px;
-        padding: 14px 18px;
-        max-width: none;
+    .hero-overlay {
+        background: linear-gradient(
+            to bottom,
+            rgba(250, 250, 247, 0)    0%,
+            rgba(250, 250, 247, 0)    45%,
+            rgba(250, 250, 247, 0.55) 75%,
+            rgba(250, 250, 247, 0.95) 94%,
+            #fafaf7                   100%
+        );
     }
+    .hero-inner {
+        position: relative;
+        z-index: 3;
+        max-width: 100%;
+        min-height: auto;
+        max-height: none;
+        padding: 0 24px 56px;
+        margin-top: -56px;
+    }
+    .hero-content { max-width: 100%; }
+    .hero h1 {
+        font-size: clamp(34px, 8vw, 50px);
+        letter-spacing: -1.6px;
+    }
+    .hero-text { font-size: 16px; max-width: 100%; }
+
     .about-grid, .housio-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
     .services-grid, .testimonials-grid, .academy-grid { grid-template-columns: 1fr; }
     .stats-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
@@ -845,9 +802,15 @@ footer {
 @media (max-width: 500px) {
     .footer-grid { grid-template-columns: 1fr; }
     .stats-grid { grid-template-columns: 1fr; }
-    .hero-content { padding: 40px 20px 50px; }
-    .hero-visual { min-height: 50vh; }
-    .photo-initials { font-size: 90px; }
+    .hero-photo { height: 60vh; min-height: 360px; }
+    .hero-inner { padding: 0 20px 48px; margin-top: -48px; }
+    .hero-actions { gap: 10px; }
+    .hero-actions .btn,
+    .hero-actions .btn-play {
+        flex: 1 1 100%;
+        justify-content: center;
+        text-align: center;
+    }
 }
 </style>
 </head>
@@ -937,33 +900,26 @@ footer {
 
 <!-- HERO -->
 <section class="hero">
-    <div class="container">
-        <div class="hero-grid">
-            <div class="hero-content">
-                <div class="badge"><span class="badge-dot"></span> <span data-i18n="hero.badge">Aktuálně přijímám nové klienty</span></div>
-                <h1 data-i18n-html="hero.title">Investice,<br>které mají <em>smysl.</em></h1>
-                <p class="hero-text" data-i18n-html="hero.subtitle">Jsem Jan Řeháček — investor, realitní expert a zakladatel platformy <strong style="color:var(--text)">Housio</strong>. Pomáhám klientům i nové generaci investorů budovat dlouhodobý majetek skrze nemovitosti a chytré investice.</p>
-                <div class="hero-actions">
-                    <a href="#contact" class="btn btn-primary" data-i18n="hero.cta1">Domluvit konzultaci →</a>
-                    <a href="#services" class="btn btn-outline" data-i18n="hero.cta2">Prozkoumat služby</a>
-                </div>
-                <div class="hero-meta">
-                    <span data-i18n="hero.meta1">12+ let praxe</span>
-                    <span data-i18n="hero.meta2">Bez závazků</span>
-                    <span data-i18n="hero.meta3">První konzultace zdarma</span>
-                </div>
+    <div class="hero-photo">
+        <img src="images/jan-rehacek.jpg" alt="Jan Řeháček — Investor & realitní expert">
+    </div>
+    <div class="hero-overlay"></div>
+    <div class="hero-inner">
+        <div class="hero-content">
+            <div class="badge">
+                <span class="badge-dot"></span>
+                <span data-i18n="hero.badge">Investor &amp; realitní expert</span>
             </div>
-            <div class="hero-visual">
-                <div class="photo-frame">
-                    <img src="images/jan-rehacek.jpg" alt="Jan Řeháček — Investor & realitní expert">
-                    <div class="photo-badge">
-                        <div class="photo-badge-dot"></div>
-                        <div>
-                            <div class="photo-badge-title">Jan Řeháček</div>
-                            <div class="photo-badge-sub" data-i18n="hero.badge_role">Investor & realitní expert</div>
-                        </div>
-                    </div>
-                </div>
+            <h1 data-i18n-html="hero.title">Investice,<br>které mají <em>smysl.</em></h1>
+            <p class="hero-text" data-i18n="hero.subtitle">Jsem Jan Řeháček — investor, realitní expert a zakladatel platformy Housio. Pomáhám klientům i nové generaci investorů budovat dlouhodobý majetek skrze nemovitosti a chytré investice.</p>
+            <div class="hero-actions">
+                <a href="#contact" class="btn btn-primary" data-i18n="hero.cta1">Domluvit schůzku</a>
+                <a href="#video" class="btn-play" aria-label="Přehrát video">
+                    <span class="btn-play-icon" aria-hidden="true">
+                        <svg viewBox="0 0 10 12" xmlns="http://www.w3.org/2000/svg"><path d="M0 0 L10 6 L0 12 Z"/></svg>
+                    </span>
+                    <span data-i18n="hero.cta2">Přehrát video</span>
+                </a>
             </div>
         </div>
     </div>
@@ -1339,10 +1295,10 @@ window.translations = window.translations || {};
 
 window.translations.cs = {
     "nav.about": "O mně", "nav.services": "Služby", "nav.housio": "Housio", "nav.academy": "Akademie", "nav.testimonials": "Reference", "nav.contact": "Spojme se",
-    "hero.badge": "Aktuálně přijímám nové klienty",
+    "hero.badge": "Investor & realitní expert",
     "hero.title": "Investice,<br>které mají <em>smysl.</em>",
-    "hero.subtitle": "Jsem Jan Řeháček — investor, realitní expert a zakladatel platformy <strong style=\"color:var(--text)\">Housio</strong>. Pomáhám klientům i nové generaci investorů budovat dlouhodobý majetek skrze nemovitosti a chytré investice.",
-    "hero.cta1": "Domluvit konzultaci →", "hero.cta2": "Prozkoumat služby",
+    "hero.subtitle": "Jsem Jan Řeháček — investor, realitní expert a zakladatel platformy Housio. Pomáhám klientům i nové generaci investorů budovat dlouhodobý majetek skrze nemovitosti a chytré investice.",
+    "hero.cta1": "Domluvit schůzku", "hero.cta2": "Přehrát video",
     "hero.meta1": "12+ let praxe", "hero.meta2": "Bez závazků", "hero.meta3": "První konzultace zdarma",
     "hero.badge_role": "Investor & realitní expert",
     "stats.years": "Let zkušeností", "stats.deals": "Realizovaných obchodů", "stats.capital": "Spravovaný kapitál", "stats.satisfaction": "Spokojených klientů",
@@ -1412,10 +1368,10 @@ window.translations.cs = {
 
 window.translations.sk = {
     "nav.about": "O mne", "nav.services": "Služby", "nav.housio": "Housio", "nav.academy": "Akadémia", "nav.testimonials": "Referencie", "nav.contact": "Spojme sa",
-    "hero.badge": "Aktuálne prijímam nových klientov",
-    "hero.title": "Investície,<br>ktoré majú <em>zmysel.</em>",
-    "hero.subtitle": "Som Jan Řeháček — investor, realitný expert a zakladateľ platformy <strong style=\"color:var(--text)\">Housio</strong>. Pomáham klientom i novej generácii investorov budovať dlhodobý majetok cez nehnuteľnosti a chytré investície.",
-    "hero.cta1": "Dohodnúť konzultáciu →", "hero.cta2": "Preskúmať služby",
+    "hero.badge": "Investor & realitný expert",
+    "hero.title": "Budujeme hodnotu.<br>Vzdelávame <em>investorov</em>.",
+    "hero.subtitle": "Pomáham klientom i mladým investorom budovať majetok cez nehnuteľnosti a chytré investície.",
+    "hero.cta1": "Dohodnúť stretnutie", "hero.cta2": "Prehrať video",
     "hero.meta1": "12+ rokov praxe", "hero.meta2": "Bez záväzkov", "hero.meta3": "Prvá konzultácia zdarma",
     "hero.badge_role": "Investor & realitný expert",
     "stats.years": "Rokov skúseností", "stats.deals": "Realizovaných obchodov", "stats.capital": "Spravovaný kapitál", "stats.satisfaction": "Spokojných klientov",
@@ -1485,10 +1441,10 @@ window.translations.sk = {
 
 window.translations.en = {
     "nav.about": "About", "nav.services": "Services", "nav.housio": "Housio", "nav.academy": "Academy", "nav.testimonials": "References", "nav.contact": "Get in touch",
-    "hero.badge": "Currently accepting new clients",
-    "hero.title": "Investments<br>that <em>make sense.</em>",
-    "hero.subtitle": "I'm Jan Řeháček — investor, real estate expert and founder of <strong style=\"color:var(--text)\">Housio</strong>. I help clients and the new generation of investors build long-term wealth through real estate and smart investments.",
-    "hero.cta1": "Book a consultation →", "hero.cta2": "Explore services",
+    "hero.badge": "Investor & Real Estate Expert",
+    "hero.title": "We build value.<br>We educate <em>investors</em>.",
+    "hero.subtitle": "I help clients and young investors build wealth through real estate and smart investments.",
+    "hero.cta1": "Book a meeting", "hero.cta2": "Play video",
     "hero.meta1": "12+ years experience", "hero.meta2": "No commitments", "hero.meta3": "First consultation free",
     "hero.badge_role": "Investor & Real Estate Expert",
     "stats.years": "Years of experience", "stats.deals": "Closed deals", "stats.capital": "Capital under management", "stats.satisfaction": "Satisfied clients",
@@ -1558,10 +1514,10 @@ window.translations.en = {
 
 window.translations.de = {
     "nav.about": "Über mich", "nav.services": "Leistungen", "nav.housio": "Housio", "nav.academy": "Akademie", "nav.testimonials": "Referenzen", "nav.contact": "Kontakt",
-    "hero.badge": "Aktuell nehme ich neue Kunden an",
-    "hero.title": "Investitionen,<br>die <em>Sinn ergeben.</em>",
-    "hero.subtitle": "Ich bin Jan Řeháček — Investor, Immobilienexperte und Gründer der Plattform <strong style=\"color:var(--text)\">Housio</strong>. Ich helfe Kunden und der neuen Investorengeneration, langfristiges Vermögen durch Immobilien und kluge Investitionen aufzubauen.",
-    "hero.cta1": "Beratung vereinbaren →", "hero.cta2": "Leistungen entdecken",
+    "hero.badge": "Investor & Immobilienexperte",
+    "hero.title": "Wir schaffen Werte.<br>Wir bilden <em>Investoren</em> aus.",
+    "hero.subtitle": "Ich helfe Kunden und jungen Investoren, Vermögen durch Immobilien und kluge Investitionen aufzubauen.",
+    "hero.cta1": "Termin vereinbaren", "hero.cta2": "Video abspielen",
     "hero.meta1": "12+ Jahre Erfahrung", "hero.meta2": "Unverbindlich", "hero.meta3": "Erstberatung kostenlos",
     "hero.badge_role": "Investor & Immobilienexperte",
     "stats.years": "Jahre Erfahrung", "stats.deals": "Realisierte Geschäfte", "stats.capital": "Verwaltetes Kapital", "stats.satisfaction": "Zufriedene Kunden",
@@ -1634,10 +1590,10 @@ window.translations = window.translations || {};
 
 window.translations.fr = {
     "nav.about": "À propos", "nav.services": "Services", "nav.housio": "Housio", "nav.academy": "Académie", "nav.testimonials": "Références", "nav.contact": "Contact",
-    "hero.badge": "Actuellement, j'accepte de nouveaux clients",
-    "hero.title": "Investissements<br>qui <em>ont du sens.</em>",
-    "hero.subtitle": "Je suis Jan Řeháček — investisseur, expert immobilier et fondateur de <strong style=\"color:var(--text)\">Housio</strong>. J'aide mes clients et la nouvelle génération d'investisseurs à bâtir un patrimoine à long terme grâce à l'immobilier et aux investissements intelligents.",
-    "hero.cta1": "Réserver une consultation →", "hero.cta2": "Explorer les services",
+    "hero.badge": "Investisseur & expert immobilier",
+    "hero.title": "Nous créons de la valeur.<br>Nous formons les <em>investisseurs</em>.",
+    "hero.subtitle": "J'aide mes clients et les jeunes investisseurs à bâtir un patrimoine grâce à l'immobilier et aux investissements intelligents.",
+    "hero.cta1": "Prendre rendez-vous", "hero.cta2": "Lire la vidéo",
     "hero.meta1": "12+ ans d'expérience", "hero.meta2": "Sans engagement", "hero.meta3": "Première consultation gratuite",
     "hero.badge_role": "Investisseur & expert immobilier",
     "stats.years": "Années d'expérience", "stats.deals": "Transactions réalisées", "stats.capital": "Capital géré", "stats.satisfaction": "Clients satisfaits",
@@ -1707,10 +1663,10 @@ window.translations.fr = {
 
 window.translations.it = {
     "nav.about": "Chi sono", "nav.services": "Servizi", "nav.housio": "Housio", "nav.academy": "Accademia", "nav.testimonials": "Referenze", "nav.contact": "Contattami",
-    "hero.badge": "Attualmente accetto nuovi clienti",
-    "hero.title": "Investimenti<br>che hanno <em>senso.</em>",
-    "hero.subtitle": "Sono Jan Řeháček — investitore, esperto immobiliare e fondatore di <strong style=\"color:var(--text)\">Housio</strong>. Aiuto i miei clienti e la nuova generazione di investitori a costruire un patrimonio duraturo attraverso immobili e investimenti intelligenti.",
-    "hero.cta1": "Prenota una consulenza →", "hero.cta2": "Esplora i servizi",
+    "hero.badge": "Investitore & esperto immobiliare",
+    "hero.title": "Costruiamo valore.<br>Formiamo gli <em>investitori</em>.",
+    "hero.subtitle": "Aiuto clienti e giovani investitori a costruire patrimonio attraverso immobili e investimenti intelligenti.",
+    "hero.cta1": "Fissa un incontro", "hero.cta2": "Riproduci video",
     "hero.meta1": "12+ anni di esperienza", "hero.meta2": "Senza impegno", "hero.meta3": "Prima consulenza gratis",
     "hero.badge_role": "Investitore & esperto immobiliare",
     "stats.years": "Anni di esperienza", "stats.deals": "Operazioni concluse", "stats.capital": "Capitale gestito", "stats.satisfaction": "Clienti soddisfatti",
@@ -1780,10 +1736,10 @@ window.translations.it = {
 
 window.translations.es = {
     "nav.about": "Sobre mí", "nav.services": "Servicios", "nav.housio": "Housio", "nav.academy": "Academia", "nav.testimonials": "Referencias", "nav.contact": "Contacto",
-    "hero.badge": "Actualmente acepto nuevos clientes",
-    "hero.title": "Inversiones<br>que tienen <em>sentido.</em>",
-    "hero.subtitle": "Soy Jan Řeháček — inversor, experto inmobiliario y fundador de <strong style=\"color:var(--text)\">Housio</strong>. Ayudo a clientes y a la nueva generación de inversores a construir patrimonio duradero a través de inmuebles e inversiones inteligentes.",
-    "hero.cta1": "Reservar consulta →", "hero.cta2": "Explorar servicios",
+    "hero.badge": "Inversor & experto inmobiliario",
+    "hero.title": "Construimos valor.<br>Formamos a los <em>inversores</em>.",
+    "hero.subtitle": "Ayudo a clientes y jóvenes inversores a construir patrimonio a través de inmuebles e inversiones inteligentes.",
+    "hero.cta1": "Concertar reunión", "hero.cta2": "Reproducir vídeo",
     "hero.meta1": "12+ años de experiencia", "hero.meta2": "Sin compromiso", "hero.meta3": "Primera consulta gratis",
     "hero.badge_role": "Inversor & experto inmobiliario",
     "stats.years": "Años de experiencia", "stats.deals": "Operaciones cerradas", "stats.capital": "Capital gestionado", "stats.satisfaction": "Clientes satisfechos",
@@ -1853,10 +1809,10 @@ window.translations.es = {
 
 window.translations.pl = {
     "nav.about": "O mnie", "nav.services": "Usługi", "nav.housio": "Housio", "nav.academy": "Akademia", "nav.testimonials": "Referencje", "nav.contact": "Kontakt",
-    "hero.badge": "Obecnie przyjmuję nowych klientów",
-    "hero.title": "Inwestycje,<br>które mają <em>sens.</em>",
-    "hero.subtitle": "Jestem Jan Řeháček — inwestor, ekspert ds. nieruchomości i założyciel platformy <strong style=\"color:var(--text)\">Housio</strong>. Pomagam klientom i nowemu pokoleniu inwestorów budować długoterminowy majątek poprzez nieruchomości i mądre inwestycje.",
-    "hero.cta1": "Umów konsultację →", "hero.cta2": "Poznaj usługi",
+    "hero.badge": "Inwestor & ekspert ds. nieruchomości",
+    "hero.title": "Budujemy wartość.<br>Edukujemy <em>inwestorów</em>.",
+    "hero.subtitle": "Pomagam klientom i młodym inwestorom budować majątek poprzez nieruchomości i mądre inwestycje.",
+    "hero.cta1": "Umów spotkanie", "hero.cta2": "Odtwórz wideo",
     "hero.meta1": "12+ lat doświadczenia", "hero.meta2": "Bez zobowiązań", "hero.meta3": "Pierwsza konsultacja gratis",
     "hero.badge_role": "Inwestor & ekspert ds. nieruchomości",
     "stats.years": "Lat doświadczenia", "stats.deals": "Zrealizowanych transakcji", "stats.capital": "Zarządzany kapitał", "stats.satisfaction": "Zadowolonych klientów",
@@ -1929,10 +1885,10 @@ window.translations = window.translations || {};
 
 window.translations.ru = {
     "nav.about": "Обо мне", "nav.services": "Услуги", "nav.housio": "Housio", "nav.academy": "Академия", "nav.testimonials": "Отзывы", "nav.contact": "Связаться",
-    "hero.badge": "Сейчас принимаю новых клиентов",
-    "hero.title": "Инвестиции,<br>которые имеют <em>смысл.</em>",
-    "hero.subtitle": "Я Ян Ржегачек — инвестор, эксперт по недвижимости и основатель платформы <strong style=\"color:var(--text)\">Housio</strong>. Помогаю клиентам и новому поколению инвесторов строить долгосрочное состояние через недвижимость и умные инвестиции.",
-    "hero.cta1": "Записаться на консультацию →", "hero.cta2": "Узнать услуги",
+    "hero.badge": "Инвестор и эксперт по недвижимости",
+    "hero.title": "Создаём ценность.<br>Обучаем <em>инвесторов</em>.",
+    "hero.subtitle": "Помогаю клиентам и молодым инвесторам строить капитал через недвижимость и умные инвестиции.",
+    "hero.cta1": "Назначить встречу", "hero.cta2": "Смотреть видео",
     "hero.meta1": "12+ лет опыта", "hero.meta2": "Без обязательств", "hero.meta3": "Первая консультация бесплатно",
     "hero.badge_role": "Инвестор и эксперт по недвижимости",
     "stats.years": "Лет опыта", "stats.deals": "Совершённых сделок", "stats.capital": "Капитал в управлении", "stats.satisfaction": "Довольных клиентов",
@@ -2002,10 +1958,10 @@ window.translations.ru = {
 
 window.translations.ja = {
     "nav.about": "私について", "nav.services": "サービス", "nav.housio": "Housio", "nav.academy": "アカデミー", "nav.testimonials": "推薦の声", "nav.contact": "お問い合わせ",
-    "hero.badge": "現在、新規クライアントを受け付けています",
-    "hero.title": "意味のある<br><em>投資を。</em>",
-    "hero.subtitle": "ヤン・ジェハーチェクです。投資家、不動産専門家、そして<strong style=\"color:var(--text)\">Housio</strong>の創設者です。クライアントと新世代の投資家が、不動産とスマートな投資を通じて長期的な資産を築くお手伝いをします。",
-    "hero.cta1": "コンサルティング予約 →", "hero.cta2": "サービスを見る",
+    "hero.badge": "投資家・不動産専門家",
+    "hero.title": "価値を築く。<br><em>投資家</em>を育てる。",
+    "hero.subtitle": "クライアントと若い投資家が、不動産とスマートな投資を通じて資産を築くお手伝いをします。",
+    "hero.cta1": "ミーティング予約", "hero.cta2": "動画を再生",
     "hero.meta1": "12年以上の経験", "hero.meta2": "契約なし", "hero.meta3": "初回コンサル無料",
     "hero.badge_role": "投資家・不動産専門家",
     "stats.years": "年の経験", "stats.deals": "成約件数", "stats.capital": "運用資産", "stats.satisfaction": "顧客満足度",
@@ -2075,10 +2031,10 @@ window.translations.ja = {
 
 window.translations.zh = {
     "nav.about": "关于我", "nav.services": "服务", "nav.housio": "Housio", "nav.academy": "学院", "nav.testimonials": "推荐", "nav.contact": "联系",
-    "hero.badge": "目前正在接受新客户",
-    "hero.title": "<em>有意义</em>的<br>投资。",
-    "hero.subtitle": "我是Jan Řeháček —— 投资人、房地产专家及<strong style=\"color:var(--text)\">Housio</strong>平台创始人。我帮助客户和新一代投资人通过房地产和明智投资构建长期财富。",
-    "hero.cta1": "预约咨询 →", "hero.cta2": "了解服务",
+    "hero.badge": "投资人 & 房地产专家",
+    "hero.title": "构筑价值。<br>培育<em>投资人</em>。",
+    "hero.subtitle": "我帮助客户和年轻投资人通过房地产和明智的投资构建财富。",
+    "hero.cta1": "预约会面", "hero.cta2": "播放视频",
     "hero.meta1": "12年以上经验", "hero.meta2": "无承诺", "hero.meta3": "首次咨询免费",
     "hero.badge_role": "投资人 & 房地产专家",
     "stats.years": "年的经验", "stats.deals": "完成的交易", "stats.capital": "管理资本", "stats.satisfaction": "满意客户",
