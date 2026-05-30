@@ -82,11 +82,11 @@
 
 <section>
     <div class="container">
-        <a href="{{type_index_path}}" class="listing-back">← Zpět na nabídku</a>
+        <a href="{{type_index_path}}" class="listing-back" data-i18n="listings.detail.back">← Zpět na nabídku</a>
 
         <div class="listing-detail-grid">
             <div class="listing-description">
-                <h2>O této nemovitosti</h2>
+                <h2 data-i18n="listings.detail.about">O této nemovitosti</h2>
 {{description_html}}
             </div>
 
@@ -94,8 +94,8 @@
 {{info_panel}}
 
                 <div class="listing-info-cta">
-                    <a href="{{base}}contact.html" class="btn btn-primary">Mám zájem o tuto nabídku</a>
-                    <a href="{{base}}contact.html" class="btn btn-outline">Domluvit prohlídku</a>
+                    <a href="{{base}}contact.html" class="btn btn-primary" data-i18n="listings.detail.cta_interest">Mám zájem o tuto nabídku</a>
+                    <a href="{{base}}contact.html" class="btn btn-outline" data-i18n="listings.detail.cta_tour">Domluvit prohlídku</a>
                 </div>
             </aside>
         </div>
@@ -104,14 +104,14 @@
 
 <section class="listing-gallery-section">
     <div class="container">
-        <h2 class="section-title">Galerie</h2>
+        <h2 class="section-title" data-i18n="listings.detail.gallery">Galerie</h2>
 {{gallery_items}}
     </div>
 </section>
 
 <section class="listing-specs-section">
     <div class="container">
-        <h2 class="section-title">Vybavení a stav</h2>
+        <h2 class="section-title" data-i18n="listings.detail.specs">Vybavení a stav</h2>
         <div class="listing-specs-grid">
 {{spec_cards}}
         </div>
@@ -120,10 +120,10 @@
 
 <section class="listing-cta-block">
     <div class="container">
-        <div class="section-eyebrow">Zaujala Vás tato nabídka?</div>
-        <h2>Připravím prohlídku i&nbsp;detailní podklady.</h2>
-        <p>Stačí mi krátká zpráva a já se Vám ozvu obvykle do 24 hodin. Domluvíme termín prohlídky, který Vám sedne.</p>
-        <a href="{{base}}contact.html" class="btn btn-accent">Mám zájem o tuto nabídku →</a>
+        <div class="section-eyebrow" data-i18n="listings.detail.cta_eyebrow">Zaujala Vás tato nabídka?</div>
+        <h2 data-i18n-html="listings.detail.cta_title">Připravím prohlídku i&nbsp;detailní podklady.</h2>
+        <p data-i18n="listings.detail.cta_text">Stačí mi krátká zpráva a já se Vám ozvu obvykle do 24 hodin. Domluvíme termín prohlídky, který Vám sedne.</p>
+        <a href="{{base}}contact.html" class="btn btn-accent" data-i18n="listings.detail.cta_more">Mám zájem o tuto nabídku →</a>
     </div>
 </section>
 

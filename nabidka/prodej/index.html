@@ -68,14 +68,14 @@
 
 <header class="page-header">
     <div class="container">
-        <div class="page-header-eyebrow">Prodej nemovitostí</div>
-        <h1>Aktuální nabídka <em>k prodeji.</em></h1>
-        <p class="page-header-text">Pečlivě vybrané byty a domy z portfolia, které prošly důkladnou due diligence. Každá nabídka je doprovázena kompletním servisem od první prohlídky až po předání klíčů.</p>
+        <div class="page-header-eyebrow" data-i18n="listings.eyebrow.sale">Prodej nemovitostí</div>
+        <h1 data-i18n-html="listings.h1.sale">Aktuální nabídka <em>k prodeji.</em></h1>
+        <p class="page-header-text" data-i18n="listings.header.description">Pečlivě vybrané byty a domy z portfolia, které prošly důkladnou due diligence. Každá nabídka je doprovázena kompletním servisem od první prohlídky až po předání klíčů.</p>
 
         <nav class="listings-tabs" aria-label="Filtr nabídek">
-            <a href="/nabidka/">Vše</a>
-            <a href="/nabidka/pronajem/">Pronájem</a>
-            <a href="/nabidka/prodej/" class="active" aria-current="page">Prodej</a>
+            <a href="/nabidka/" data-i18n="listings.tabs.all">Vše</a>
+            <a href="/nabidka/pronajem/" data-i18n="listings.tabs.rent">Pronájem</a>
+            <a href="/nabidka/prodej/" class="active" aria-current="page" data-i18n="listings.tabs.sale">Prodej</a>
         </nav>
     </div>
 </header>
@@ -85,7 +85,7 @@
         <div class="listing-grid">
             <!-- žádné nabídky v této kategorii -->
         </div>
-        <p style="text-align:center;color:var(--text-muted);padding:60px 0;">Aktuálně zde nemáme žádnou nabídku. Mrkněte na další kategorie nebo nás <a href="../../contact.html" style="color:var(--accent-dark);font-weight:600;">kontaktujte</a>.</p>
+        <p class="listings-empty" data-i18n-html="listings.empty.text" style="text-align:center;color:var(--text-muted);padding:60px 0;">Aktuálně zde nemáme žádnou nabídku. Mrkněte na další kategorie nebo nás <a href="../../contact.html" style="color:var(--accent-dark);font-weight:600;">kontaktujte</a>.</p>
     </div>
 </section>
 

@@ -49,16 +49,18 @@ const STATIC_ROUTES = [
     { loc: '/contact',    priority: '0.9', changefreq: 'monthly' },
 ];
 
-// Index pages to generate (each filters listings by type or shows all)
+// Index pages to generate (each filters listings by type or shows all).
 // `tab` matches one of the filter-nav tabs ('vse' | 'pronajem' | 'prodej') for active highlight.
+// `eyebrow_key` / `h1_key` are i18n keys; the CZ string in `eyebrow` / `h1` is the build-time default.
 const INDEX_PAGES = [
-    { subdir: '',            depth: 1, filter: null,        tab: 'vse',      h1: 'Aktuální nabídka <em>nemovitostí.</em>',  eyebrow: 'Nabídka nemovitostí' },
-    { subdir: 'pronajem/',   depth: 2, filter: 'pronajem',  tab: 'pronajem', h1: 'Aktuální <em>pronájmy.</em>',             eyebrow: 'Pronájem nemovitostí' },
-    { subdir: 'prodej/',     depth: 2, filter: 'prodej',    tab: 'prodej',   h1: 'Aktuální nabídka <em>k prodeji.</em>',    eyebrow: 'Prodej nemovitostí' },
+    { subdir: '',          depth: 1, filter: null,       tab: 'vse',      eyebrow_key: 'listings.eyebrow.all',  h1_key: 'listings.h1.all',  eyebrow: 'Nabídka nemovitostí',  h1: 'Aktuální nabídka <em>nemovitostí.</em>' },
+    { subdir: 'pronajem/', depth: 2, filter: 'pronajem', tab: 'pronajem', eyebrow_key: 'listings.eyebrow.rent', h1_key: 'listings.h1.rent', eyebrow: 'Pronájem nemovitostí', h1: 'Aktuální <em>pronájmy.</em>' },
+    { subdir: 'prodej/',   depth: 2, filter: 'prodej',   tab: 'prodej',   eyebrow_key: 'listings.eyebrow.sale', h1_key: 'listings.h1.sale', eyebrow: 'Prodej nemovitostí',   h1: 'Aktuální nabídka <em>k prodeji.</em>' },
 ];
 
-// Type label shown on card badge
+// Type label shown on card badge (CZ default; i18n keys: listings.type.{rent,sale})
 const TYPE_LABEL = { pronajem: 'PRONÁJEM', prodej: 'PRODEJ' };
+const TYPE_I18N  = { pronajem: 'listings.type.rent', prodej: 'listings.type.sale' };
 
 // Status sorting + presentation
 const STATUS_ORDER = ['nova', 'aktivni', 'rezervovano', 'prodano', 'pronajato'];
@@ -68,6 +70,13 @@ const STATUS_CARD_LABEL = {
     rezervovano:  'REZERVOVÁNO',
     pronajato:    'PRONAJATO',
     prodano:      'PRODÁNO',
+};
+const STATUS_I18N = {
+    nova:         'listings.status.new',
+    aktivni:      null,
+    rezervovano:  'listings.status.reserved',
+    pronajato:    'listings.status.rented',
+    prodano:      'listings.status.sold',
 };
 const STATUS_CLASS = {
     nova:         'status-active',
@@ -200,10 +209,23 @@ function renderSpecCards(specs) {
     }).join('\n');
 }
 
+// Canonical info-panel labels → i18n keys (CZ default text is the literal map key).
+// Custom info_extra keys from info.md fall through as raw labels (no i18n).
+const INFO_LABEL_I18N = {
+    'Dispozice':   'listings.info.disposition',
+    'Plocha':      'listings.info.area',
+    'Patro':       'listings.info.floor',
+    'Typ stavby':  'listings.info.buildingType',
+    'Vlastnictví': 'listings.info.ownership',
+    'Stav':        'listings.info.condition',
+    'Lokalita':    'listings.info.location',
+};
+
 /** Render info panel sidebar — variant based on type (rental shows kauce/provize/availability). */
 function renderInfoPanel(l) {
     const isRental = l.type === 'pronajem';
-    const priceLabel = isRental ? 'Měsíční nájemné' : 'Cena';
+    const priceLabel    = isRental ? 'Měsíční nájemné' : 'Cena';
+    const priceLabelKey = isRental ? 'listings.info.priceLabel.rent' : 'listings.info.priceLabel.sale';
     const rows = [];
 
     if (l.disposition)    rows.push(['Dispozice',  l.disposition]);
@@ -220,24 +242,29 @@ function renderInfoPanel(l) {
         }
     }
 
+    const labelAttr = (label) => INFO_LABEL_I18N[label] ? ` data-i18n="${INFO_LABEL_I18N[label]}"` : '';
+
     let rentalExtras = '';
     if (isRental && (l.deposit || l.commission || l.available_from)) {
         const items = [];
-        if (l.deposit)        items.push(`<div><span>Kauce</span><strong>${escapeHtml(l.deposit)}</strong></div>`);
-        if (l.commission)     items.push(`<div><span>Provize</span><strong>${escapeHtml(l.commission)}</strong></div>`);
-        if (l.available_from) items.push(`<div><span>Dostupnost</span><strong>${escapeHtml(l.available_from)}</strong></div>`);
+        if (l.deposit)        items.push(`<div><span data-i18n="listings.info.deposit">Kauce</span><strong>${escapeHtml(l.deposit)}</strong></div>`);
+        if (l.commission)     items.push(`<div><span data-i18n="listings.info.commission">Provize</span><strong>${escapeHtml(l.commission)}</strong></div>`);
+        if (l.available_from) items.push(`<div><span data-i18n="listings.info.availableFrom">Dostupnost</span><strong>${escapeHtml(l.available_from)}</strong></div>`);
         rentalExtras = `                <div class="listing-info-rental-extras">\n                    ${items.join('\n                    ')}\n                </div>`;
     }
 
     const rowsHtml = rows.map(([label, value]) =>
         `                    <div class="listing-info-row">
-                        <span class="listing-info-label">${escapeHtml(label)}</span>
+                        <span class="listing-info-label"${labelAttr(label)}>${escapeHtml(label)}</span>
                         <span class="listing-info-value">${escapeHtml(value)}</span>
                     </div>`
     ).join('\n');
 
-    return `                <div class="listing-info-pricelabel">${priceLabel}</div>
-                <div class="listing-info-price">${escapeHtml(l.price || 'Cena na vyžádání')}</div>
+    const priceText = l.price || 'Cena na vyžádání';
+    const priceAttr = l.price ? '' : ' data-i18n="listings.info.priceOnRequest"';
+
+    return `                <div class="listing-info-pricelabel" data-i18n="${priceLabelKey}">${priceLabel}</div>
+                <div class="listing-info-price"${priceAttr}>${escapeHtml(priceText)}</div>
 ${rentalExtras}
                 <div class="listing-info-table">
 ${rowsHtml}
@@ -256,7 +283,11 @@ function findCover(images) {
     return exact || images[0] || null;
 }
 
-/** Czech plural for the "Zobrazit … X fotek" button. */
+/**
+ * Czech-default plural for the "Zobrazit … X fotek" button.
+ * The runtime JS re-renders this string per language via Intl.PluralRules,
+ * keyed off data-i18n-key="listings.photos" + data-i18n-count="{n}".
+ */
 function pluralizePhotos(n) {
     if (n === 1)              return 'Zobrazit fotku';
     if (n >= 2 && n <= 4)     return `Zobrazit všechny ${n} fotky`;
@@ -289,7 +320,7 @@ function renderGallery(slug, type, images, title) {
         const loading = i === 0 ? 'eager' : 'lazy';
         return `            <button type="button" class="listing-gallery-item${hero}" data-gallery-open data-index="${i}" aria-label="Otevřít fotku ${i + 1} z ${images.length}">
                 <img src="${src}" alt="${alt}" loading="${loading}">${showOverlay ? `
-                <span class="listing-gallery-more" aria-hidden="true">+${remaining} dalších</span>` : ''}
+                <span class="listing-gallery-more" aria-hidden="true" data-i18n-key="listings.photos.more" data-i18n-count="${remaining}">+${remaining} dalších</span>` : ''}
             </button>`;
     }).join('\n');
 
@@ -299,34 +330,38 @@ ${tiles}
             </div>
             <button type="button" class="listing-gallery-showall" data-gallery-open data-index="0" aria-label="${escapeHtml(pluralizePhotos(images.length))}">
                 <svg viewBox="0 0 20 20" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M3 3h6v6H3V3zm8 0h6v6h-6V3zM3 11h6v6H3v-6zm8 0h6v6h-6v-6z"/></svg>
-                <span>${escapeHtml(pluralizePhotos(images.length))}</span>
+                <span data-i18n-key="listings.photos" data-i18n-count="${images.length}">${escapeHtml(pluralizePhotos(images.length))}</span>
             </button>
         </div>`;
 }
 
 function renderCardBadge(l) {
-    const typeLbl = TYPE_LABEL[l.type] || '';
-    const status = l.status || 'aktivni';
-    const klass = STATUS_CLASS[status] || 'status-active';
-    let text;
+    const typeLbl  = TYPE_LABEL[l.type] || '';
+    const typeKey  = TYPE_I18N[l.type] || '';
+    const status   = l.status || 'aktivni';
+    const klass    = STATUS_CLASS[status] || 'status-active';
+    const typeSpan = typeLbl ? `<span data-i18n="${typeKey}">${escapeHtml(typeLbl)}</span>` : '';
 
+    // Build a "[type] · [extra]" pair. The status word is i18n-aware via
+    // STATUS_I18N; available_from text comes from info.md and stays raw.
+    let extraSpan = '';
     if (status === 'aktivni') {
-        // Combine type + availability cue
         if (l.type === 'pronajem' && l.available_from) {
-            text = `${typeLbl} · ${String(l.available_from).toUpperCase()}`;
-        } else {
-            text = typeLbl;
+            extraSpan = `<span>${escapeHtml(String(l.available_from).toUpperCase())}</span>`;
         }
     } else if (status === 'pronajato' || status === 'prodano') {
-        text = STATUS_CARD_LABEL[status];
-    } else if (status === 'rezervovano') {
-        text = `${typeLbl} · ${STATUS_CARD_LABEL[status]}`;
-    } else if (status === 'nova') {
-        text = `${typeLbl} · ${STATUS_CARD_LABEL[status]}`;
-    } else {
-        text = typeLbl;
+        // Closed states: status word replaces the type word
+        const statusLbl = STATUS_CARD_LABEL[status];
+        const statusKey = STATUS_I18N[status];
+        return `                    <div class="listing-card-badge ${klass}"><span data-i18n="${statusKey}">${escapeHtml(statusLbl)}</span></div>`;
+    } else if (status === 'rezervovano' || status === 'nova') {
+        const statusLbl = STATUS_CARD_LABEL[status];
+        const statusKey = STATUS_I18N[status];
+        extraSpan = `<span data-i18n="${statusKey}">${escapeHtml(statusLbl)}</span>`;
     }
-    return `                    <div class="listing-card-badge ${klass}">${escapeHtml(text)}</div>`;
+
+    const sep = extraSpan ? '<span class="badge-sep"> · </span>' : '';
+    return `                    <div class="listing-card-badge ${klass}">${typeSpan}${sep}${extraSpan}</div>`;
 }
 
 function renderCardMeta(l) {
@@ -342,7 +377,11 @@ function renderCardMeta(l) {
     }).join('\n');
 }
 
-/** Czech plural for "X aktivních nabídek": 1 → nabídka, 2-4 → nabídky, else nabídek. */
+/**
+ * Czech-default plural for "X aktivních nabídek".
+ * Runtime JS re-renders this per language via Intl.PluralRules, keyed off
+ * data-i18n-key="listings.count" + data-i18n-count="{n}".
+ */
 function pluralizeOffers(n) {
     if (n === 1)              return `${n} aktivní nabídka`;
     if (n >= 2 && n <= 4)     return `${n} aktivní nabídky`;
@@ -360,12 +399,12 @@ function renderCategoryCards(counts) {
                     </svg>
                 </div>
                 <div class="category-card-body">
-                    <div class="category-card-eyebrow">Nabídka pronájmů</div>
-                    <h2 class="category-card-title">Pronájem</h2>
-                    <p class="category-card-subtitle">Byty a domy k pronajmutí přímo od majitele — bez provize, ihned k nastěhování.</p>
+                    <div class="category-card-eyebrow" data-i18n="listings.cat.rent.eyebrow">Nabídka pronájmů</div>
+                    <h2 class="category-card-title" data-i18n="listings.cat.rent.title">Pronájem</h2>
+                    <p class="category-card-subtitle" data-i18n="listings.cat.rent.desc">Byty a domy k pronajmutí přímo od majitele — bez provize, ihned k nastěhování.</p>
                 </div>
                 <div class="category-card-meta">
-                    <span>${pluralizeOffers(counts.pronajem)}</span>
+                    <span data-i18n-key="listings.count" data-i18n-count="${counts.pronajem}">${pluralizeOffers(counts.pronajem)}</span>
                     <span class="category-card-arrow">→</span>
                 </div>
             </a>
@@ -378,12 +417,12 @@ function renderCategoryCards(counts) {
                     </svg>
                 </div>
                 <div class="category-card-body">
-                    <div class="category-card-eyebrow">Nabídka k prodeji</div>
-                    <h2 class="category-card-title">Prodej</h2>
-                    <p class="category-card-subtitle">Pečlivě vybrané byty a domy k investici i k bydlení po důkladné due diligence.</p>
+                    <div class="category-card-eyebrow" data-i18n="listings.cat.sale.eyebrow">Nabídka k prodeji</div>
+                    <h2 class="category-card-title" data-i18n="listings.cat.sale.title">Prodej</h2>
+                    <p class="category-card-subtitle" data-i18n="listings.cat.sale.desc">Pečlivě vybrané byty a domy k investici i k bydlení po důkladné due diligence.</p>
                 </div>
                 <div class="category-card-meta">
-                    <span>${pluralizeOffers(counts.prodej)}</span>
+                    <span data-i18n-key="listings.count" data-i18n-count="${counts.prodej}">${pluralizeOffers(counts.prodej)}</span>
                     <span class="category-card-arrow">→</span>
                 </div>
             </a>
@@ -392,15 +431,15 @@ function renderCategoryCards(counts) {
 
 /** Secondary filter nav under the hero. `activeTab` is one of 'vse' | 'pronajem' | 'prodej'. */
 function renderFilterNav(activeTab, showLabel) {
-    const tab = (key, href, label) =>
-        `<a href="${href}"${key === activeTab ? ' class="active" aria-current="page"' : ''}>${label}</a>`;
+    const tab = (key, href, label, i18nKey) =>
+        `<a href="${href}"${key === activeTab ? ' class="active" aria-current="page"' : ''} data-i18n="${i18nKey}">${label}</a>`;
     const label = showLabel
-        ? '        <div class="listings-tabs-label">Nebo si projděte všechny nabídky</div>\n'
+        ? '        <div class="listings-tabs-label" data-i18n="listings.tabs.label">Nebo si projděte všechny nabídky</div>\n'
         : '';
     return `${label}        <nav class="listings-tabs" aria-label="Filtr nabídek">
-            ${tab('vse',      '/nabidka/',          'Vše')}
-            ${tab('pronajem', '/nabidka/pronajem/', 'Pronájem')}
-            ${tab('prodej',   '/nabidka/prodej/',   'Prodej')}
+            ${tab('vse',      '/nabidka/',          'Vše',      'listings.tabs.all')}
+            ${tab('pronajem', '/nabidka/pronajem/', 'Pronájem', 'listings.tabs.rent')}
+            ${tab('prodej',   '/nabidka/prodej/',   'Prodej',   'listings.tabs.sale')}
         </nav>`;
 }
 
@@ -562,10 +601,14 @@ function build() {
             base,
             cards: cardsHtml || '            <!-- žádné nabídky v této kategorii -->',
             eyebrow: page.eyebrow,
+            eyebrow_key: page.eyebrow_key,
             h1: page.h1,
+            h1_key: page.h1_key,
             category_cards: isRoot ? renderCategoryCards(counts) : '',
             filter_nav: renderFilterNav(page.tab, isRoot),
-            empty_notice: filtered.length ? '' : '<p style="text-align:center;color:var(--text-muted);padding:60px 0;">Aktuálně zde nemáme žádnou nabídku. Mrkněte na další kategorie nebo nás <a href="' + base + 'contact.html" style="color:var(--accent-dark);font-weight:600;">kontaktujte</a>.</p>',
+            empty_notice: filtered.length
+                ? ''
+                : '<p class="listings-empty" data-i18n-html="listings.empty.text" style="text-align:center;color:var(--text-muted);padding:60px 0;">Aktuálně zde nemáme žádnou nabídku. Mrkněte na další kategorie nebo nás <a href="' + base + 'contact.html" style="color:var(--accent-dark);font-weight:600;">kontaktujte</a>.</p>',
         });
         fs.writeFileSync(path.join(outDir, 'index.html'), html);
         console.log(`  → nabidka/${page.subdir}index.html  (${filtered.length} card${filtered.length === 1 ? '' : 's'})`);
