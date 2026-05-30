@@ -334,18 +334,8 @@ nav {
     color: var(--text);
     line-height: 1;
     letter-spacing: -2px;
-    /* Stop a long number ("243 600 Kč") from overflowing on tablet */
-    white-space: nowrap;
 }
 .stats-grid-5 .stat-num { font-size: 46px; letter-spacing: -1.6px; }
-.stat-num-big { font-size: inherit; }
-.stat-num-unit {
-    font-size: 0.6em;
-    font-weight: 500;
-    color: var(--text-muted);
-    letter-spacing: -0.5px;
-    margin-left: 2px;
-}
 .stat-label {
     font-size: 13px;
     color: var(--text-muted);
