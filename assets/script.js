@@ -147,7 +147,31 @@ window.translations.cs = {
     "listings.empty.text": "Aktuálně zde nemáme žádnou nabídku. Mrkněte na další kategorie nebo nás <a href=\"contact.html\" style=\"color:var(--accent-dark);font-weight:600;\">kontaktujte</a>.",
     "investors.placeholder.title": "Brzy zde najdete aktuální nabídky",
     "investors.placeholder.text": "Pracuji na první sérii investičních příležitostí. Pokud máte zájem o spolupráci nebo chcete být první, kdo se dozví o nových projektech, ozvěte se.",
-    "investors.placeholder.cta": "Domluvit schůzku"
+    "investors.placeholder.cta": "Domluvit schůzku",
+    "listing.investicni.eyebrow": "INVESTIČNÍ PŘÍLEŽITOSTI",
+    "listing.investicni.heading": "Investiční příležitosti pro vážné <em>investory.</em>",
+    "listing.investicni.subtitle": "Činžovní domy, bytové jednotky a celé projekty — pečlivě vybrané nemovitosti s důrazem na výnos a likviditu.",
+    "listing.investicni.counter.one":   "{n} aktivní příležitost",
+    "listing.investicni.counter.few":   "{n} aktivní příležitosti",
+    "listing.investicni.counter.other": "{n} aktivních příležitostí",
+    "listing.detail.cta.viewing": "Domluvit prohlídku",
+    "listing.detail.investment_case.title": "Investiční potenciál",
+    "listing.detail.investment_case.disclaimer": "Čísla jsou orientační, vycházejí z aktuálních lokálních benchmarků. Přesná kalkulace dle individuálního projektu rekonstrukce a strategie prodeje.",
+    "listing.detail.state.label": "Stav nemovitosti",
+    "listing.detail.units": "Bytové jednotky",
+    "listing.detail.declaration": "Prohlášení vlastníka",
+    "listing.detail.declaration.ready": "Připraveno",
+    "listing.detail.state.renovation": "K rekonstrukci",
+    "listing.detail.occupancy.empty": "Bez nájemníků",
+    "listing.detail.visualization_badge": "Vizualizace po rekonstrukci",
+    "listings.type.invest": "INVESTICE",
+    "listings.info.pricePerSqm": "Cena za m²",
+    "listings.info.areaTotal": "Celková plocha",
+    "listings.info.occupancy": "Obsazenost",
+    "listings.info.priceLabel.invest": "Cena",
+    "listing.detail.highlights.title": "Hlavní výhody projektu",
+    "listing.detail.intent.title": "Investiční záměr",
+    "listing.detail.state.title": "Stav nemovitosti"
 };
 
 window.translations.sk = {
@@ -294,7 +318,31 @@ window.translations.sk = {
     "listings.empty.text": "Aktuálne tu nemáme žiadnu ponuku. Pozrite si ďalšie kategórie alebo nás <a href=\"contact.html\" style=\"color:var(--accent-dark);font-weight:600;\">kontaktujte</a>.",
     "investors.placeholder.title": "Čoskoro tu nájdete aktuálne ponuky",
     "investors.placeholder.text": "Pracujem na prvej sérii investičných príležitostí. Ak máte záujem o spoluprácu alebo chcete byť prví, kto sa dozvie o nových projektoch, ozvite sa.",
-    "investors.placeholder.cta": "Dohodnúť stretnutie"
+    "investors.placeholder.cta": "Dohodnúť stretnutie",
+    "listing.investicni.eyebrow": "INVESTIČNÉ PRÍLEŽITOSTI",
+    "listing.investicni.heading": "Investičné príležitosti pre vážnych <em>investorov.</em>",
+    "listing.investicni.subtitle": "Bytové domy, bytové jednotky a celé projekty — starostlivo vybrané nehnuteľnosti s dôrazom na výnos a likviditu.",
+    "listing.investicni.counter.one":   "{n} aktívna príležitosť",
+    "listing.investicni.counter.few":   "{n} aktívne príležitosti",
+    "listing.investicni.counter.other": "{n} aktívnych príležitostí",
+    "listing.detail.cta.viewing": "Dohodnúť prehliadku",
+    "listing.detail.investment_case.title": "Investičný potenciál",
+    "listing.detail.investment_case.disclaimer": "Čísla sú orientačné, vychádzajú z aktuálnych lokálnych benchmarkov. Presná kalkulácia podľa individuálneho projektu rekonštrukcie a stratégie predaja.",
+    "listing.detail.state.label": "Stav nehnuteľnosti",
+    "listing.detail.units": "Bytové jednotky",
+    "listing.detail.declaration": "Vyhlásenie vlastníka",
+    "listing.detail.declaration.ready": "Pripravené",
+    "listing.detail.state.renovation": "Na rekonštrukciu",
+    "listing.detail.occupancy.empty": "Bez nájomníkov",
+    "listing.detail.visualization_badge": "Vizualizácia po rekonštrukcii",
+    "listings.type.invest": "INVESTÍCIA",
+    "listings.info.pricePerSqm": "Cena za m²",
+    "listings.info.areaTotal": "Celková plocha",
+    "listings.info.occupancy": "Obsadenosť",
+    "listings.info.priceLabel.invest": "Cena",
+    "listing.detail.highlights.title": "Hlavné výhody projektu",
+    "listing.detail.intent.title": "Investičný zámer",
+    "listing.detail.state.title": "Stav nehnuteľnosti"
 };
 
 window.translations.en = {
@@ -438,7 +486,30 @@ window.translations.en = {
     "listings.empty.text": "There are no listings in this category right now. Take a look at the other categories or <a href=\"contact.html\" style=\"color:var(--accent-dark);font-weight:600;\">get in touch</a>.",
     "investors.placeholder.title": "Live opportunities coming soon",
     "investors.placeholder.text": "I'm putting together the first round of investment opportunities. If you'd like to collaborate or be the first to hear about new projects, get in touch.",
-    "investors.placeholder.cta": "Book a meeting"
+    "investors.placeholder.cta": "Book a meeting",
+    "listing.investicni.eyebrow": "INVESTMENT OPPORTUNITIES",
+    "listing.investicni.heading": "Investment opportunities for serious <em>investors.</em>",
+    "listing.investicni.subtitle": "Apartment buildings, individual flats, and entire projects — carefully chosen properties with a focus on yield and liquidity.",
+    "listing.investicni.counter.one":   "{n} active opportunity",
+    "listing.investicni.counter.other": "{n} active opportunities",
+    "listing.detail.cta.viewing": "Book a viewing",
+    "listing.detail.investment_case.title": "Investment potential",
+    "listing.detail.investment_case.disclaimer": "Figures are indicative and based on current local benchmarks. Exact calculation depends on the specific refurbishment project and exit strategy.",
+    "listing.detail.state.label": "Property condition",
+    "listing.detail.units": "Residential units",
+    "listing.detail.declaration": "Owner declaration",
+    "listing.detail.declaration.ready": "Ready",
+    "listing.detail.state.renovation": "Awaiting renovation",
+    "listing.detail.occupancy.empty": "Vacant",
+    "listing.detail.visualization_badge": "Post-renovation visualization",
+    "listings.type.invest": "INVESTMENT",
+    "listings.info.pricePerSqm": "Price per m²",
+    "listings.info.areaTotal": "Total area",
+    "listings.info.occupancy": "Occupancy",
+    "listings.info.priceLabel.invest": "Price",
+    "listing.detail.highlights.title": "Project highlights",
+    "listing.detail.intent.title": "Investment thesis",
+    "listing.detail.state.title": "Property condition"
 };
 
 window.translations.de = {
@@ -582,7 +653,30 @@ window.translations.de = {
     "listings.empty.text": "In dieser Kategorie gibt es derzeit keine Angebote. Schauen Sie in andere Kategorien oder <a href=\"contact.html\" style=\"color:var(--accent-dark);font-weight:600;\">kontaktieren Sie uns</a>.",
     "investors.placeholder.title": "Aktuelle Angebote folgen in Kürze",
     "investors.placeholder.text": "Ich stelle gerade die erste Serie von Investmentchancen zusammen. Wenn Sie zusammenarbeiten oder als Erste über neue Projekte informiert werden möchten, melden Sie sich.",
-    "investors.placeholder.cta": "Termin vereinbaren"
+    "investors.placeholder.cta": "Termin vereinbaren",
+    "listing.investicni.eyebrow": "INVESTMENTCHANCEN",
+    "listing.investicni.heading": "Investmentchancen für ernsthafte <em>Investoren.</em>",
+    "listing.investicni.subtitle": "Mehrfamilienhäuser, einzelne Wohnungen und ganze Projekte — sorgfältig ausgewählte Immobilien mit Fokus auf Rendite und Liquidität.",
+    "listing.investicni.counter.one":   "{n} aktive Möglichkeit",
+    "listing.investicni.counter.other": "{n} aktive Möglichkeiten",
+    "listing.detail.cta.viewing": "Besichtigung vereinbaren",
+    "listing.detail.investment_case.title": "Investmentpotenzial",
+    "listing.detail.investment_case.disclaimer": "Die Zahlen sind Richtwerte basierend auf aktuellen lokalen Benchmarks. Die genaue Kalkulation hängt vom konkreten Sanierungsprojekt und der Verkaufsstrategie ab.",
+    "listing.detail.state.label": "Zustand der Immobilie",
+    "listing.detail.units": "Wohneinheiten",
+    "listing.detail.declaration": "Eigentümererklärung",
+    "listing.detail.declaration.ready": "Bereit",
+    "listing.detail.state.renovation": "Sanierungsbedürftig",
+    "listing.detail.occupancy.empty": "Leerstehend",
+    "listing.detail.visualization_badge": "Visualisierung nach Sanierung",
+    "listings.type.invest": "INVESTMENT",
+    "listings.info.pricePerSqm": "Preis pro m²",
+    "listings.info.areaTotal": "Gesamtfläche",
+    "listings.info.occupancy": "Belegung",
+    "listings.info.priceLabel.invest": "Preis",
+    "listing.detail.highlights.title": "Projektvorteile",
+    "listing.detail.intent.title": "Investmentstrategie",
+    "listing.detail.state.title": "Zustand der Immobilie"
 };
 
 // PART 2: FR, IT, ES, PL
@@ -729,7 +823,30 @@ window.translations.fr = {
     "listings.empty.text": "Aucune annonce dans cette catégorie pour le moment. Découvrez les autres catégories ou <a href=\"contact.html\" style=\"color:var(--accent-dark);font-weight:600;\">contactez-nous</a>.",
     "investors.placeholder.title": "Les opportunités en direct arrivent bientôt",
     "investors.placeholder.text": "Je prépare la première série d'opportunités d'investissement. Si vous souhaitez collaborer ou être parmi les premiers informés des nouveaux projets, contactez-moi.",
-    "investors.placeholder.cta": "Prendre rendez-vous"
+    "investors.placeholder.cta": "Prendre rendez-vous",
+    "listing.investicni.eyebrow": "OPPORTUNITÉS D'INVESTISSEMENT",
+    "listing.investicni.heading": "Opportunités d'investissement pour les <em>investisseurs avertis.</em>",
+    "listing.investicni.subtitle": "Immeubles de rapport, appartements et projets complets — des biens soigneusement sélectionnés avec un accent sur le rendement et la liquidité.",
+    "listing.investicni.counter.one":   "{n} opportunité active",
+    "listing.investicni.counter.other": "{n} opportunités actives",
+    "listing.detail.cta.viewing": "Réserver une visite",
+    "listing.detail.investment_case.title": "Potentiel d'investissement",
+    "listing.detail.investment_case.disclaimer": "Les chiffres sont indicatifs, basés sur les références locales actuelles. Le calcul exact dépend du projet de rénovation et de la stratégie de vente.",
+    "listing.detail.state.label": "État du bien",
+    "listing.detail.units": "Unités d'habitation",
+    "listing.detail.declaration": "Déclaration de copropriété",
+    "listing.detail.declaration.ready": "Prêt",
+    "listing.detail.state.renovation": "À rénover",
+    "listing.detail.occupancy.empty": "Vacant",
+    "listing.detail.visualization_badge": "Visualisation après rénovation",
+    "listings.type.invest": "INVESTISSEMENT",
+    "listings.info.pricePerSqm": "Prix au m²",
+    "listings.info.areaTotal": "Surface totale",
+    "listings.info.occupancy": "Occupation",
+    "listings.info.priceLabel.invest": "Prix",
+    "listing.detail.highlights.title": "Atouts du projet",
+    "listing.detail.intent.title": "Stratégie d'investissement",
+    "listing.detail.state.title": "État du bien"
 };
 
 window.translations.it = {
@@ -873,7 +990,30 @@ window.translations.it = {
     "listings.empty.text": "Al momento non ci sono annunci in questa categoria. Date un'occhiata alle altre categorie o <a href=\"contact.html\" style=\"color:var(--accent-dark);font-weight:600;\">contattateci</a>.",
     "investors.placeholder.title": "A breve troverà qui le opportunità attive",
     "investors.placeholder.text": "Sto preparando la prima serie di opportunità di investimento. Se desidera collaborare o essere tra i primi a conoscere i nuovi progetti, mi contatti.",
-    "investors.placeholder.cta": "Prenotare un incontro"
+    "investors.placeholder.cta": "Prenotare un incontro",
+    "listing.investicni.eyebrow": "OPPORTUNITÀ DI INVESTIMENTO",
+    "listing.investicni.heading": "Opportunità di investimento per <em>investitori seri.</em>",
+    "listing.investicni.subtitle": "Palazzi a reddito, singoli appartamenti e progetti completi — immobili selezionati con cura, con un focus su rendimento e liquidità.",
+    "listing.investicni.counter.one":   "{n} opportunità attiva",
+    "listing.investicni.counter.other": "{n} opportunità attive",
+    "listing.detail.cta.viewing": "Prenotare una visita",
+    "listing.detail.investment_case.title": "Potenziale di investimento",
+    "listing.detail.investment_case.disclaimer": "Le cifre sono indicative e basate sui benchmark locali attuali. Il calcolo esatto dipende dallo specifico progetto di ristrutturazione e dalla strategia di vendita.",
+    "listing.detail.state.label": "Stato dell'immobile",
+    "listing.detail.units": "Unità abitative",
+    "listing.detail.declaration": "Dichiarazione del proprietario",
+    "listing.detail.declaration.ready": "Pronto",
+    "listing.detail.state.renovation": "Da ristrutturare",
+    "listing.detail.occupancy.empty": "Vacante",
+    "listing.detail.visualization_badge": "Visualizzazione post-ristrutturazione",
+    "listings.type.invest": "INVESTIMENTO",
+    "listings.info.pricePerSqm": "Prezzo al m²",
+    "listings.info.areaTotal": "Superficie totale",
+    "listings.info.occupancy": "Occupazione",
+    "listings.info.priceLabel.invest": "Prezzo",
+    "listing.detail.highlights.title": "Punti di forza del progetto",
+    "listing.detail.intent.title": "Strategia di investimento",
+    "listing.detail.state.title": "Stato dell'immobile"
 };
 
 window.translations.es = {
@@ -1017,7 +1157,30 @@ window.translations.es = {
     "listings.empty.text": "Ahora mismo no hay inmuebles en esta categoría. Eche un vistazo a otras categorías o <a href=\"contact.html\" style=\"color:var(--accent-dark);font-weight:600;\">contáctenos</a>.",
     "investors.placeholder.title": "Próximamente: oportunidades activas",
     "investors.placeholder.text": "Estoy preparando la primera serie de oportunidades de inversión. Si desea colaborar o ser de los primeros en conocer los nuevos proyectos, póngase en contacto.",
-    "investors.placeholder.cta": "Concertar una reunión"
+    "investors.placeholder.cta": "Concertar una reunión",
+    "listing.investicni.eyebrow": "OPORTUNIDADES DE INVERSIÓN",
+    "listing.investicni.heading": "Oportunidades de inversión para <em>inversores serios.</em>",
+    "listing.investicni.subtitle": "Edificios de renta, viviendas individuales y proyectos completos — inmuebles cuidadosamente seleccionados con foco en rentabilidad y liquidez.",
+    "listing.investicni.counter.one":   "{n} oportunidad activa",
+    "listing.investicni.counter.other": "{n} oportunidades activas",
+    "listing.detail.cta.viewing": "Reservar una visita",
+    "listing.detail.investment_case.title": "Potencial de inversión",
+    "listing.detail.investment_case.disclaimer": "Las cifras son orientativas y se basan en los benchmarks locales actuales. El cálculo exacto depende del proyecto concreto de reforma y la estrategia de salida.",
+    "listing.detail.state.label": "Estado del inmueble",
+    "listing.detail.units": "Unidades residenciales",
+    "listing.detail.declaration": "Declaración del propietario",
+    "listing.detail.declaration.ready": "Listo",
+    "listing.detail.state.renovation": "Para reformar",
+    "listing.detail.occupancy.empty": "Vacante",
+    "listing.detail.visualization_badge": "Visualización tras reforma",
+    "listings.type.invest": "INVERSIÓN",
+    "listings.info.pricePerSqm": "Precio por m²",
+    "listings.info.areaTotal": "Superficie total",
+    "listings.info.occupancy": "Ocupación",
+    "listings.info.priceLabel.invest": "Precio",
+    "listing.detail.highlights.title": "Aspectos clave del proyecto",
+    "listing.detail.intent.title": "Estrategia de inversión",
+    "listing.detail.state.title": "Estado del inmueble"
 };
 
 window.translations.pl = {
@@ -1167,7 +1330,32 @@ window.translations.pl = {
     "listings.empty.text": "Obecnie nie mamy ofert w tej kategorii. Zajrzyjcie do innych kategorii lub <a href=\"contact.html\" style=\"color:var(--accent-dark);font-weight:600;\">skontaktujcie się z nami</a>.",
     "investors.placeholder.title": "Wkrótce znajdą tu Państwo aktualne oferty",
     "investors.placeholder.text": "Przygotowuję pierwszą serię okazji inwestycyjnych. Jeśli są Państwo zainteresowani współpracą lub chcą jako pierwsi dowiedzieć się o nowych projektach, proszę o kontakt.",
-    "investors.placeholder.cta": "Umów spotkanie"
+    "investors.placeholder.cta": "Umów spotkanie",
+    "listing.investicni.eyebrow": "OKAZJE INWESTYCYJNE",
+    "listing.investicni.heading": "Okazje inwestycyjne dla <em>poważnych inwestorów.</em>",
+    "listing.investicni.subtitle": "Kamienice, mieszkania i całe projekty — starannie wybrane nieruchomości z naciskiem na rentowność i płynność.",
+    "listing.investicni.counter.one":   "{n} aktywna okazja",
+    "listing.investicni.counter.few":   "{n} aktywne okazje",
+    "listing.investicni.counter.many":  "{n} aktywnych okazji",
+    "listing.investicni.counter.other": "{n} aktywnych okazji",
+    "listing.detail.cta.viewing": "Umów oglądanie",
+    "listing.detail.investment_case.title": "Potencjał inwestycyjny",
+    "listing.detail.investment_case.disclaimer": "Liczby mają charakter orientacyjny i bazują na aktualnych lokalnych benchmarkach. Dokładna kalkulacja zależy od konkretnego projektu remontu i strategii sprzedaży.",
+    "listing.detail.state.label": "Stan nieruchomości",
+    "listing.detail.units": "Lokale mieszkalne",
+    "listing.detail.declaration": "Oświadczenie właściciela",
+    "listing.detail.declaration.ready": "Gotowe",
+    "listing.detail.state.renovation": "Do remontu",
+    "listing.detail.occupancy.empty": "Bez najemców",
+    "listing.detail.visualization_badge": "Wizualizacja po remoncie",
+    "listings.type.invest": "INWESTYCJA",
+    "listings.info.pricePerSqm": "Cena za m²",
+    "listings.info.areaTotal": "Powierzchnia całkowita",
+    "listings.info.occupancy": "Obłożenie",
+    "listings.info.priceLabel.invest": "Cena",
+    "listing.detail.highlights.title": "Najważniejsze atuty projektu",
+    "listing.detail.intent.title": "Strategia inwestycyjna",
+    "listing.detail.state.title": "Stan nieruchomości"
 };
 
 // PART 3: RU, JA, ZH
@@ -1320,7 +1508,32 @@ window.translations.ru = {
     "listings.empty.text": "В этой категории сейчас нет предложений. Посмотрите другие категории или <a href=\"contact.html\" style=\"color:var(--accent-dark);font-weight:600;\">свяжитесь с нами</a>.",
     "investors.placeholder.title": "Актуальные предложения появятся скоро",
     "investors.placeholder.text": "Готовлю первую серию инвестиционных возможностей. Если хотите сотрудничать или первыми узнать о новых проектах, напишите мне.",
-    "investors.placeholder.cta": "Назначить встречу"
+    "investors.placeholder.cta": "Назначить встречу",
+    "listing.investicni.eyebrow": "ИНВЕСТИЦИОННЫЕ ВОЗМОЖНОСТИ",
+    "listing.investicni.heading": "Инвестиционные возможности для <em>серьёзных инвесторов.</em>",
+    "listing.investicni.subtitle": "Доходные дома, отдельные квартиры и целые проекты — тщательно отобранная недвижимость с фокусом на доходность и ликвидность.",
+    "listing.investicni.counter.one":   "{n} активная возможность",
+    "listing.investicni.counter.few":   "{n} активные возможности",
+    "listing.investicni.counter.many":  "{n} активных возможностей",
+    "listing.investicni.counter.other": "{n} активных возможностей",
+    "listing.detail.cta.viewing": "Записаться на просмотр",
+    "listing.detail.investment_case.title": "Инвестиционный потенциал",
+    "listing.detail.investment_case.disclaimer": "Цифры ориентировочные, основаны на актуальных локальных бенчмарках. Точный расчёт зависит от конкретного проекта реконструкции и стратегии продажи.",
+    "listing.detail.state.label": "Состояние недвижимости",
+    "listing.detail.units": "Жилые единицы",
+    "listing.detail.declaration": "Декларация собственника",
+    "listing.detail.declaration.ready": "Готово",
+    "listing.detail.state.renovation": "Под реконструкцию",
+    "listing.detail.occupancy.empty": "Без арендаторов",
+    "listing.detail.visualization_badge": "Визуализация после ремонта",
+    "listings.type.invest": "ИНВЕСТИЦИЯ",
+    "listings.info.pricePerSqm": "Цена за м²",
+    "listings.info.areaTotal": "Общая площадь",
+    "listings.info.occupancy": "Заполняемость",
+    "listings.info.priceLabel.invest": "Цена",
+    "listing.detail.highlights.title": "Преимущества проекта",
+    "listing.detail.intent.title": "Инвестиционная стратегия",
+    "listing.detail.state.title": "Состояние недвижимости"
 };
 
 window.translations.ja = {
@@ -1461,7 +1674,29 @@ window.translations.ja = {
     "listings.empty.text": "このカテゴリーには現在物件がありません。他のカテゴリーをご覧いただくか、<a href=\"contact.html\" style=\"color:var(--accent-dark);font-weight:600;\">お問い合わせ</a>ください。",
     "investors.placeholder.title": "現在募集中の案件は近日公開",
     "investors.placeholder.text": "現在、最初の投資案件シリーズを準備中です。協業をご希望の方、または新規プロジェクトをいち早く知りたい方は、お気軽にお問い合わせください。",
-    "investors.placeholder.cta": "面談を予約する"
+    "investors.placeholder.cta": "面談を予約する",
+    "listing.investicni.eyebrow": "投資機会",
+    "listing.investicni.heading": "本気の<em>投資家のための</em>投資機会。",
+    "listing.investicni.subtitle": "賃貸用建物、個別住戸、プロジェクト全体 — 利回りと流動性を重視して厳選した物件。",
+    "listing.investicni.counter.other": "募集中の物件 {n} 件",
+    "listing.detail.cta.viewing": "内見を予約する",
+    "listing.detail.investment_case.title": "投資ポテンシャル",
+    "listing.detail.investment_case.disclaimer": "数値は目安です。地域のベンチマークに基づいています。正確な計算は、個別のリノベーション計画と販売戦略によって異なります。",
+    "listing.detail.state.label": "物件の状態",
+    "listing.detail.units": "住戸数",
+    "listing.detail.declaration": "所有者宣言",
+    "listing.detail.declaration.ready": "準備完了",
+    "listing.detail.state.renovation": "改装予定",
+    "listing.detail.occupancy.empty": "入居者なし",
+    "listing.detail.visualization_badge": "改装後イメージ",
+    "listings.type.invest": "投資",
+    "listings.info.pricePerSqm": "1m²あたりの価格",
+    "listings.info.areaTotal": "総面積",
+    "listings.info.occupancy": "入居状況",
+    "listings.info.priceLabel.invest": "価格",
+    "listing.detail.highlights.title": "プロジェクトの主な利点",
+    "listing.detail.intent.title": "投資戦略",
+    "listing.detail.state.title": "物件の状態"
 };
 
 window.translations.zh = {
@@ -1602,7 +1837,29 @@ window.translations.zh = {
     "listings.empty.text": "此类别目前暂无房源。请查看其他类别或<a href=\"contact.html\" style=\"color:var(--accent-dark);font-weight:600;\">联系我们</a>。",
     "investors.placeholder.title": "在售机会即将上线",
     "investors.placeholder.text": "我正在筹备首批投资机会。若有意合作或希望第一时间获知新项目，请与我联系。",
-    "investors.placeholder.cta": "预约会面"
+    "investors.placeholder.cta": "预约会面",
+    "listing.investicni.eyebrow": "投资机会",
+    "listing.investicni.heading": "为<em>认真投资人</em>而设的投资机会。",
+    "listing.investicni.subtitle": "公寓楼、单元住宅及整体项目 —— 注重收益与流动性的精选物业。",
+    "listing.investicni.counter.other": "{n} 个在售机会",
+    "listing.detail.cta.viewing": "预约看房",
+    "listing.detail.investment_case.title": "投资潜力",
+    "listing.detail.investment_case.disclaimer": "数据为参考值，基于当前本地基准。具体计算需视改造方案与销售策略而定。",
+    "listing.detail.state.label": "物业状态",
+    "listing.detail.units": "住宅单元",
+    "listing.detail.declaration": "业主声明",
+    "listing.detail.declaration.ready": "已就绪",
+    "listing.detail.state.renovation": "待改造",
+    "listing.detail.occupancy.empty": "无租户",
+    "listing.detail.visualization_badge": "改造后效果图",
+    "listings.type.invest": "投资",
+    "listings.info.pricePerSqm": "每平方米价格",
+    "listings.info.areaTotal": "总面积",
+    "listings.info.occupancy": "入住情况",
+    "listings.info.priceLabel.invest": "价格",
+    "listing.detail.highlights.title": "项目亮点",
+    "listing.detail.intent.title": "投资策略",
+    "listing.detail.state.title": "物业状态"
 };
 
 
@@ -1788,6 +2045,7 @@ if (toggle) {
         <button type="button" class="lightbox-btn lightbox-next" aria-label="Další fotka (šipka vpravo)">›</button>
         <div class="lightbox-stage">
             <img class="lightbox-img" alt="">
+            <span class="listing-watermark lightbox-watermark" data-i18n="listing.detail.visualization_badge" hidden>Vizualizace po rekonstrukci</span>
         </div>
         <div class="lightbox-thumbs" role="tablist" aria-label="Náhledy fotek"></div>
     `;
@@ -1799,6 +2057,7 @@ if (toggle) {
     const prevBtn   = lb.querySelector('.lightbox-prev');
     const nextBtn   = lb.querySelector('.lightbox-next');
     const stripEl   = lb.querySelector('.lightbox-thumbs');
+    const watermarkEl = lb.querySelector('.lightbox-watermark');
 
     // Populate the thumbnail strip
     images.forEach((it, i) => {
@@ -1825,6 +2084,9 @@ if (toggle) {
         if (index >= images.length) index = images.length - 1;
         currentIndex = index;
         const item = images[currentIndex];
+
+        // Watermark only on AI-visualization slides
+        if (watermarkEl) watermarkEl.hidden = !item.watermark;
 
         // Fade-out → swap → fade-in
         imgEl.classList.add('is-loading');

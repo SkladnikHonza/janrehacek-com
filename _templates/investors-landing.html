@@ -1,16 +1,20 @@
 <!DOCTYPE html>
+<!--
+   GENERATED FILE — do not edit by hand.
+   Produced by build.js using template _templates/investors-landing.html.
+-->
 <html lang="cs">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Reference — Jan Řeháček</title>
-<meta name="description" content="Co o spolupráci říkají klienti Jana Řeháčka. Konkrétní příběhy investorů, kteří s Janem postavili portfolio nemovitostí.">
-<link rel="canonical" href="https://janrehacek.com/references">
+<title>Investiční příležitosti | Jan Řeháček</title>
+<meta name="description" content="Investiční příležitosti pro vážné investory — činžovní domy, bytové jednotky a celé projekty s důrazem na výnos a likviditu.">
+<link rel="canonical" href="https://janrehacek.com/investors">
 
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://janrehacek.com/references">
-<meta property="og:title" content="Reference — Jan Řeháček">
-<meta property="og:description" content="Co o spolupráci říkají klienti Jana Řeháčka. Konkrétní příběhy investorů, kteří s Janem postavili portfolio nemovitostí.">
+<meta property="og:url" content="https://janrehacek.com/investors">
+<meta property="og:title" content="Investiční příležitosti | Jan Řeháček">
+<meta property="og:description" content="Investiční příležitosti pro vážné investory — činžovní domy, bytové jednotky a celé projekty.">
 <meta property="og:image" content="https://janrehacek.com/images/jan-rehacek.png">
 <meta property="og:locale" content="cs_CZ">
 <meta name="twitter:card" content="summary_large_image">
@@ -18,22 +22,22 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="{{base}}assets/styles.css">
 </head>
 <body>
 
 <nav>
     <div class="nav-inner">
-        <a href="index.html" class="logo">Jan Řeháček<span>.</span></a>
+        <a href="{{base}}index.html" class="logo">Jan Řeháček<span>.</span></a>
         <ul class="nav-links">
-            <li><a href="about.html" data-i18n="nav.about">O mně</a></li>
-            <li><a href="services.html" data-i18n="nav.services">Služby</a></li>
-            <li><a href="investors/" data-i18n="nav.investors">Pro investory</a></li>
-            <li><a href="nabidka/" data-i18n="nav.listings">Nabídka</a></li>
+            <li><a href="{{base}}about.html" data-i18n="nav.about">O mně</a></li>
+            <li><a href="{{base}}services.html" data-i18n="nav.services">Služby</a></li>
+            <li><a href="{{base}}investors/" class="active" data-i18n="nav.investors">Pro investory</a></li>
+            <li><a href="{{base}}nabidka/" data-i18n="nav.listings">Nabídka</a></li>
             <li><a href="https://www.housio.app" target="_blank" rel="noopener noreferrer" class="external" data-i18n="nav.housio">Housio.App</a></li>
-            <li><a href="references.html" class="active" data-i18n="nav.testimonials">Reference</a></li>
+            <li><a href="{{base}}references.html" data-i18n="nav.testimonials">Reference</a></li>
             <li><a href="https://www.ahana.cz" target="_blank" rel="noopener noreferrer" class="external">Ahana</a></li>
-            <li><a href="contact.html" class="btn btn-primary" data-i18n="nav.contact">Kontakt</a></li>
+            <li><a href="{{base}}contact.html" class="btn btn-primary" data-i18n="nav.contact">Kontakt</a></li>
             <li>
                 <div class="lang-switcher" id="langSwitcher">
                     <div class="lang-current" onclick="toggleLangMenu()">
@@ -63,60 +67,19 @@
 
 <header class="page-header">
     <div class="container">
-        <div class="page-header-eyebrow" data-i18n="testimonials.eyebrow">Reference</div>
-        <h1 data-i18n-html="page.references.title">Co o spolupráci říkají <em>moji klienti.</em></h1>
-        <p class="page-header-text" data-i18n="testimonials.subtitle">Důvěra je v naší branži všechno. Tady je pár slov od lidí, kterým jsem pomohl.</p>
+        <div class="page-header-eyebrow" data-i18n="{{eyebrow_key}}">{{eyebrow}}</div>
+        <h1 data-i18n-html="{{h1_key}}">{{h1}}</h1>
+        <p class="page-header-text" data-i18n="listing.investicni.subtitle">Činžovní domy, bytové jednotky a celé projekty — pečlivě vybrané nemovitosti s důrazem na výnos a likviditu.</p>
+        <div class="listings-counter-row">{{counter}}</div>
     </div>
 </header>
 
-<section id="testimonials">
+<section class="listings-section">
     <div class="container">
-        <div class="testimonials-grid">
-            <div class="testimonial">
-                <div class="testimonial-stars">★★★★★</div>
-                <div class="testimonial-quote" data-i18n="testimonials.q1">"Jan mi pomohl postavit portfolio třech bytů během dvou let. Přístup je profesionální a vždy hraje fair. Doporučuji každému, kdo to s investicemi myslí vážně."</div>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">MN</div>
-                    <div>
-                        <div class="testimonial-name">Martin Novák</div>
-                        <div class="testimonial-role" data-i18n="testimonials.r1">Investor, klient od 2022</div>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial">
-                <div class="testimonial-stars">★★★★★</div>
-                <div class="testimonial-quote" data-i18n="testimonials.q2">"Bez Janovy Akademie bych do toho nikdy nešla. Konkrétní rady, žádná teorie. Za rok mám první výnosovou nemovitost."</div>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">PŠ</div>
-                    <div>
-                        <div class="testimonial-name">Petra Šimková</div>
-                        <div class="testimonial-role" data-i18n="testimonials.r2">Začínající investorka</div>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial">
-                <div class="testimonial-stars">★★★★★</div>
-                <div class="testimonial-quote" data-i18n="testimonials.q3">"Spolupráce na úrovni. Jan se umí dívat do budoucna a vidí příležitosti, které ostatní přehlížejí. Skvělá kombinace zkušenosti a vize."</div>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">TK</div>
-                    <div>
-                        <div class="testimonial-name">Tomáš Krejčí</div>
-                        <div class="testimonial-role" data-i18n="testimonials.r3">Podnikatel, klient od 2020</div>
-                    </div>
-                </div>
-            </div>
-            <div class="testimonial">
-                <div class="testimonial-stars">★★★★★</div>
-                <div class="testimonial-quote" data-i18n="testimonials.q4">"Mentoring s Janem byla nejlepší investice do sebe za posledních pět let. Naučil mě myslet jako investor, ne jako spekulant."</div>
-                <div class="testimonial-author">
-                    <div class="testimonial-avatar">LH</div>
-                    <div>
-                        <div class="testimonial-name">Lukáš Horák</div>
-                        <div class="testimonial-role" data-i18n="testimonials.r4">Účastník mentoringu</div>
-                    </div>
-                </div>
-            </div>
+        <div class="listing-grid investor-grid">
+{{cards}}
         </div>
+        {{grid_or_placeholder}}
     </div>
 </section>
 
@@ -129,18 +92,18 @@
             </div>
             <div class="footer-col">
                 <h5 data-i18n="footer.nav">Navigace</h5>
-                <a href="about.html" data-i18n="nav.about">O mně</a>
-                <a href="services.html" data-i18n="nav.services">Služby</a>
-                <a href="investors/" data-i18n="nav.investors">Pro investory</a>
-                <a href="references.html" data-i18n="nav.testimonials">Reference</a>
+                <a href="{{base}}about.html" data-i18n="nav.about">O mně</a>
+                <a href="{{base}}services.html" data-i18n="nav.services">Služby</a>
+                <a href="{{base}}investors/" data-i18n="nav.investors">Pro investory</a>
+                <a href="{{base}}references.html" data-i18n="nav.testimonials">Reference</a>
                 <a href="https://www.ahana.cz" target="_blank" rel="noopener noreferrer">Ahana</a>
             </div>
             <div class="footer-col">
                 <h5 data-i18n="footer.products">Produkty</h5>
                 <a href="https://www.housio.app" target="_blank" rel="noopener noreferrer">Housio.App</a>
-                <a href="investors/" data-i18n="academy.eyebrow">Investiční příležitosti</a>
-                <a href="services.html" data-i18n="services.s3_title">Mentoring</a>
-                <a href="contact.html" data-i18n="footer.consultation">Konzultace</a>
+                <a href="{{base}}investors/" data-i18n="academy.eyebrow">Investiční příležitosti</a>
+                <a href="{{base}}services.html" data-i18n="services.s3_title">Mentoring</a>
+                <a href="{{base}}contact.html" data-i18n="footer.consultation">Konzultace</a>
             </div>
             <div class="footer-col">
                 <h5 data-i18n="footer.contact">Kontakt</h5>
@@ -157,6 +120,6 @@
     </div>
 </footer>
 
-<script src="assets/script.js" defer></script>
+<script src="{{base}}assets/script.js" defer></script>
 </body>
 </html>

@@ -1827,3 +1827,286 @@ a.logo:hover { opacity: 0.7; }
     .category-card-meta { margin-top: 24px; padding-top: 18px; }
     .listings-tabs-label { margin-top: 28px; }
 }
+
+/* ===== INVESTOR LISTINGS (/investors) ===== */
+
+/* Counter next to subtitle */
+.listings-counter-row { margin-top: 18px; }
+.listings-counter {
+    display: inline-block;
+    font-family: 'Manrope', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent-dark);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 6px 14px;
+    background: rgba(212, 165, 116, 0.10);
+    border: 1px solid rgba(212, 165, 116, 0.30);
+    border-radius: 100px;
+}
+
+/* Slight visual distinction for the investor grid (vs nabidka) */
+.listing-grid.investor-grid {
+    grid-template-columns: repeat(2, 1fr);   /* fewer, bigger cards */
+    gap: 32px;
+}
+@media (max-width: 900px) {
+    .listing-grid.investor-grid { grid-template-columns: 1fr; }
+}
+
+/* Watermark overlay on cover when cover_is_visualization=true */
+.listing-watermark {
+    position: absolute;
+    z-index: 3;
+    background: rgba(0, 0, 0, 0.60);
+    color: white;
+    font-family: 'Manrope', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 7px 14px;
+    pointer-events: none;
+}
+/* Position on hero/thumbnail (gallery) — pinned to bottom-left */
+.listing-gallery-item .listing-watermark {
+    left: 10px;
+    bottom: 10px;
+    border-radius: 4px;
+}
+/* Position on landing card — bottom strip, full width feels too heavy */
+.listing-watermark-card {
+    left: 10px;
+    bottom: 10px;
+    border-radius: 4px;
+    font-size: 10.5px;
+    padding: 6px 10px;
+}
+/* Inside the lightbox the watermark sits on the photo itself */
+.lightbox-stage .listing-watermark {
+    left: 14px;
+    bottom: 14px;
+    border-radius: 4px;
+}
+
+/* ===== INVESTOR DETAIL PAGE ===== */
+
+/* Top header (replaces the dark hero used by rent/sale detail) */
+.listing-investor-header {
+    padding: 40px 0 28px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 32px;
+}
+.listing-investor-header .page-header-eyebrow { margin-bottom: 12px; }
+.listing-investor-title {
+    font-family: 'Geist', sans-serif;
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -1.6px;
+    margin-bottom: 14px;
+}
+.listing-investor-location {
+    font-size: 16px;
+    color: var(--text-muted);
+}
+
+/* State badge inside the info panel sidebar */
+.listing-info-state-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    margin: 16px 0;
+}
+.listing-info-state-badge {
+    display: inline-block;
+    padding: 5px 12px;
+    background: rgba(212, 165, 116, 0.15);
+    color: var(--accent-dark);
+    border: 1px solid rgba(212, 165, 116, 0.35);
+    border-radius: 100px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Highlights bullet list */
+.listing-highlights-section { padding: 16px 0 48px; }
+.listing-highlights {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px 32px;
+    font-size: 15.5px;
+    color: var(--text);
+}
+.listing-highlights li {
+    padding-left: 26px;
+    position: relative;
+    line-height: 1.5;
+}
+.listing-highlights li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--accent-dark);
+    font-weight: 700;
+}
+@media (max-width: 700px) {
+    .listing-highlights { grid-template-columns: 1fr; }
+}
+
+/* Investment-case dark box — Housio-mockup-style */
+.listing-investment-case-section { padding: 16px 0 48px; }
+.investment-case {
+    background: var(--bg-dark);
+    color: white;
+    border-radius: var(--radius);
+    padding: 32px 36px;
+    margin: 20px 0 18px;
+}
+.investment-case-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+    gap: 18px;
+}
+.investment-case-row:last-child { border-bottom: 0; }
+.investment-case-label {
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.65);
+    flex: 1;
+}
+.investment-case-value {
+    font-family: 'Geist', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: white;
+    white-space: nowrap;
+}
+.investment-case-row.is-highlight {
+    padding-top: 22px;
+    padding-bottom: 4px;
+    border-bottom: 0;
+    margin-top: 8px;
+    border-top: 1px solid rgba(212, 165, 116, 0.40);
+}
+.investment-case-row.is-highlight .investment-case-label {
+    color: rgba(255, 255, 255, 0.90);
+    font-weight: 600;
+}
+.investment-case-row.is-highlight .investment-case-value {
+    color: var(--accent);
+    font-size: 26px;
+    letter-spacing: -0.5px;
+}
+.investment-case-disclaimer {
+    margin-top: 18px;
+    font-size: 13px;
+    color: var(--text-muted);
+    font-style: italic;
+    line-height: 1.55;
+}
+@media (max-width: 600px) {
+    .investment-case { padding: 24px 22px; }
+    .investment-case-row { flex-direction: column; align-items: flex-start; gap: 4px; }
+    .investment-case-value { font-size: 16px; }
+    .investment-case-row.is-highlight .investment-case-value { font-size: 22px; }
+}
+
+/* Investment intent — paragraphs + accent-bordered blockquote */
+.listing-intent-section { padding: 16px 0 48px; }
+.listing-intent-body p {
+    font-size: 16.5px;
+    line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 14px;
+}
+.listing-quote {
+    margin: 24px 0 6px;
+    padding: 18px 24px;
+    border-left: 3px solid var(--accent-dark);
+    background: rgba(212, 165, 116, 0.06);
+    border-radius: 0 8px 8px 0;
+    font-style: italic;
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* State-of-the-property prose */
+.listing-state-section { padding: 16px 0 56px; }
+.listing-state-body p {
+    font-size: 16.5px;
+    line-height: 1.7;
+    color: var(--text);
+    margin-bottom: 14px;
+}
+
+/* Investor info panel — bigger price emphasis */
+.listing-info-panel .listing-info-pricelabel { font-size: 12px; }
+.listing-info-panel .listing-info-price {
+    font-family: 'Geist', sans-serif;
+    font-size: clamp(26px, 3vw, 34px);
+    font-weight: 600;
+    letter-spacing: -1px;
+    color: var(--text);
+}
+
+/* Sticky CTA on mobile — only shown on investor detail pages */
+.listing-detail-cta-sticky {
+    display: none;
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 50;
+    padding: 12px 18px calc(12px + env(safe-area-inset-bottom));
+    background: rgba(255, 255, 255, 0.98);
+    border-top: 1px solid var(--border);
+    box-shadow: 0 -8px 24px rgba(0, 0, 0, 0.08);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+}
+.listing-detail-cta-sticky-price {
+    font-family: 'Geist', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.4px;
+    color: var(--text);
+    flex: 1;
+}
+@media (max-width: 900px) {
+    .listing-detail-cta-sticky {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+    .listing-detail-cta-sticky .btn {
+        padding: 12px 18px;
+        font-size: 14px;
+        white-space: nowrap;
+    }
+    /* Avoid bottom content getting hidden under the sticky bar */
+    body.has-sticky-cta { padding-bottom: 72px; }
+}
+
+/* Watermark inside the lightbox stage — sits on top of the photo */
+.lightbox-watermark {
+    left: 14px;
+    bottom: 14px;
+    border-radius: 4px;
+    font-size: 11px;
+    padding: 7px 14px;
+}
+.lightbox-watermark[hidden] { display: none; }

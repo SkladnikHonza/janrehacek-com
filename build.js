@@ -34,7 +34,7 @@ const OUTPUT_DIR = path.join(ROOT, 'nabidka');
 const SITEMAP_PATH = path.join(ROOT, 'sitemap.xml');
 const SITE_URL = 'https://janrehacek.com';
 
-const TYPES = ['pronajem', 'prodej'];   // recognized listing categories
+const TYPES = ['pronajem', 'prodej', 'investicni'];   // recognized listing categories
 const IMG_EXT = /\.(jpe?g|png|webp)$/i;
 const COVER_NAME = /^01-uvodni\.(jpe?g|png|webp)$/i;
 
@@ -42,24 +42,38 @@ const STATIC_ROUTES = [
     { loc: '/',           priority: '1.0', changefreq: 'monthly' },
     { loc: '/about',      priority: '0.8', changefreq: 'monthly' },
     { loc: '/services',   priority: '0.9', changefreq: 'monthly' },
-    { loc: '/investors',  priority: '0.9', changefreq: 'monthly' },
+    { loc: '/investors',  priority: '0.9', changefreq: 'weekly' },
     { loc: '/references', priority: '0.7', changefreq: 'monthly' },
     { loc: '/nabidka',    priority: '0.9', changefreq: 'weekly' },
     { loc: '/contact',    priority: '0.9', changefreq: 'monthly' },
 ];
 
+// Per-type output configuration for DETAIL pages.
+//   outputBase — path under ROOT where `{slug}/index.html` lives
+//   base       — relative `../` prefix from that index.html back to ROOT
+//   template   — which template file in _templates/ to use
+const DETAIL_OUTPUT = {
+    pronajem:   { outputBase: 'nabidka/pronajem', base: '../../../', template: 'listing-detail.html' },
+    prodej:     { outputBase: 'nabidka/prodej',   base: '../../../', template: 'listing-detail.html' },
+    investicni: { outputBase: 'investors',         base: '../../',    template: 'listing-detail-investor.html' },
+};
+
 // Index pages to generate (each filters listings by type or shows all).
-// `tab` matches one of the filter-nav tabs ('vse' | 'pronajem' | 'prodej') for active highlight.
-// `eyebrow_key` / `h1_key` are i18n keys; the CZ string in `eyebrow` / `h1` is the build-time default.
+//   outputBase — path under ROOT where `index.html` lives (no trailing /)
+//   depth      — number of `../` to reach ROOT
+//   filter     — null = all 'nabidka' types; ['investicni'] = single-type
+//   template   — listing-index.html (nabidka grid) | investors-landing.html
+//   typeUrl    — absolute URL the cards on this page link into
 const INDEX_PAGES = [
-    { subdir: '',          depth: 1, filter: null,       tab: 'vse',      eyebrow_key: 'listings.eyebrow.all',  h1_key: 'listings.h1.all',  eyebrow: 'Nabídka nemovitostí',  h1: 'Aktuální nabídka <em>nemovitostí.</em>' },
-    { subdir: 'pronajem/', depth: 2, filter: 'pronajem', tab: 'pronajem', eyebrow_key: 'listings.eyebrow.rent', h1_key: 'listings.h1.rent', eyebrow: 'Pronájem nemovitostí', h1: 'Aktuální <em>pronájmy.</em>' },
-    { subdir: 'prodej/',   depth: 2, filter: 'prodej',   tab: 'prodej',   eyebrow_key: 'listings.eyebrow.sale', h1_key: 'listings.h1.sale', eyebrow: 'Prodej nemovitostí',   h1: 'Aktuální nabídka <em>k prodeji.</em>' },
+    { outputBase: 'nabidka',          depth: 1, filter: null,       tab: 'vse',      template: 'listing-index.html',     typeUrlBase: '/nabidka',  eyebrow_key: 'listings.eyebrow.all',  h1_key: 'listings.h1.all',  eyebrow: 'Nabídka nemovitostí',  h1: 'Aktuální nabídka <em>nemovitostí.</em>' },
+    { outputBase: 'nabidka/pronajem', depth: 2, filter: 'pronajem', tab: 'pronajem', template: 'listing-index.html',     typeUrlBase: '/nabidka',  eyebrow_key: 'listings.eyebrow.rent', h1_key: 'listings.h1.rent', eyebrow: 'Pronájem nemovitostí', h1: 'Aktuální <em>pronájmy.</em>' },
+    { outputBase: 'nabidka/prodej',   depth: 2, filter: 'prodej',   tab: 'prodej',   template: 'listing-index.html',     typeUrlBase: '/nabidka',  eyebrow_key: 'listings.eyebrow.sale', h1_key: 'listings.h1.sale', eyebrow: 'Prodej nemovitostí',   h1: 'Aktuální nabídka <em>k prodeji.</em>' },
+    { outputBase: 'investors',        depth: 1, filter: 'investicni', tab: null,     template: 'investors-landing.html', typeUrlBase: '/investors', eyebrow_key: 'listing.investicni.eyebrow', h1_key: 'listing.investicni.heading', eyebrow: 'INVESTIČNÍ PŘÍLEŽITOSTI', h1: 'Investiční příležitosti pro vážné <em>investory.</em>' },
 ];
 
-// Type label shown on card badge (CZ default; i18n keys: listings.type.{rent,sale})
-const TYPE_LABEL = { pronajem: 'PRONÁJEM', prodej: 'PRODEJ' };
-const TYPE_I18N  = { pronajem: 'listings.type.rent', prodej: 'listings.type.sale' };
+// Card badge type label (CZ default; i18n keys: listings.type.{rent,sale,invest})
+const TYPE_LABEL = { pronajem: 'PRONÁJEM', prodej: 'PRODEJ',     investicni: 'INVESTICE' };
+const TYPE_I18N  = { pronajem: 'listings.type.rent', prodej: 'listings.type.sale', investicni: 'listings.type.invest' };
 
 // Status sorting + presentation
 const STATUS_ORDER = ['nova', 'aktivni', 'rezervovano', 'prodano', 'pronajato'];
@@ -114,10 +128,15 @@ const SPEC_ICONS = {
 // Recognized body section headings (aliases → canonical)
 const SECTION_ALIASES = {
     'O této nemovitosti':   'description',
+    'O nemovitosti':        'description',
     'Popis':                'description',
     'Vybavení a stav':      'specs',
     'Specifikace':          'specs',
     'Podmínky pronájmu':    'rental_terms',  // currently unused (data lives in sidebar)
+    'Hlavní výhody projektu': 'highlights',
+    'Investiční záměr':       'investment_intent',
+    'Stav nemovitosti':       'state_description',
+    'Investiční potenciál':   'investment_case_md',  // markdown body fallback if frontmatter map absent
 };
 
 // ===== HELPERS =====
@@ -176,11 +195,19 @@ function parseSections(body) {
     return out;
 }
 
+/** Minimal markdown inline: **bold** + *italic* + escape. Safe for body prose. */
+function renderInline(s) {
+    let out = escapeHtml(s);
+    out = out.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+    out = out.replace(/(?<!\*)\*([^*\n]+)\*(?!\*)/g, '<em>$1</em>');
+    return out;
+}
+
 function renderDescription(text) {
     if (!text) return '';
     return text.split(/\n\s*\n/)
         .map(p => p.trim()).filter(Boolean)
-        .map(p => '                <p>' + escapeHtml(p) + '</p>')
+        .map(p => '                <p>' + renderInline(p) + '</p>')
         .join('\n');
 }
 
@@ -219,6 +246,130 @@ const INFO_LABEL_I18N = {
     'Stav':        'listings.info.condition',
     'Lokalita':    'listings.info.location',
 };
+
+/**
+ * Investicni info panel — investment-oriented sidebar with property metrics.
+ * Layout: large price → property metrics → state badge → CTA.
+ */
+function renderInvestorInfoPanel(l) {
+    const rows = [];
+    if (l.price_per_sqm)        rows.push(['Cena za m²',           l.price_per_sqm, 'listings.info.pricePerSqm']);
+    if (l.size_total)           rows.push(['Celková plocha',       l.size_total,    'listings.info.areaTotal']);
+    if (l.units != null && l.units !== '') rows.push(['Bytové jednotky', String(l.units), 'listing.detail.units']);
+    if (l.occupancy)            rows.push(['Obsazenost',            l.occupancy,     'listings.info.occupancy']);
+    if (l.declaration_of_owner) rows.push(['Prohlášení vlastníka',  l.declaration_of_owner, 'listing.detail.declaration']);
+    if (l.location_long)        rows.push(['Lokalita',              l.location_long, 'listings.info.location']);
+
+    const rowsHtml = rows.map(([label, value, key]) =>
+        `                    <div class="listing-info-row">
+                        <span class="listing-info-label" data-i18n="${key}">${escapeHtml(label)}</span>
+                        <span class="listing-info-value">${escapeHtml(value)}</span>
+                    </div>`
+    ).join('\n');
+
+    const stateBadge = l.state
+        ? `                <div class="listing-info-state-row">
+                    <span class="listing-info-label" data-i18n="listing.detail.state.label">Stav nemovitosti</span>
+                    <span class="listing-info-state-badge" data-i18n="listing.detail.state.renovation">${escapeHtml(l.state)}</span>
+                </div>`
+        : '';
+
+    return `                <div class="listing-info-pricelabel" data-i18n="listings.info.priceLabel.invest">Cena</div>
+                <div class="listing-info-price">${escapeHtml(l.price || 'Cena na vyžádání')}</div>
+${stateBadge}
+                <div class="listing-info-table">
+${rowsHtml}
+                </div>`;
+}
+
+/** Highlights bullet-list section (parsed from `## Hlavní výhody projektu` body). */
+function renderHighlights(text) {
+    if (!text) return '';
+    const items = text.split('\n')
+        .map(l => l.trim())
+        .filter(l => l.startsWith('-'))
+        .map(l => '                    <li>' + escapeHtml(l.replace(/^-\s*/, '')) + '</li>')
+        .join('\n');
+    if (!items) return '';
+    return `        <section class="listing-highlights-section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="listing.detail.highlights.title">Hlavní výhody projektu</h2>
+                <ul class="listing-highlights">
+${items}
+                </ul>
+            </div>
+        </section>`;
+}
+
+/** Investment-case dark box (uses frontmatter investment_case map). */
+function renderInvestmentCase(ic) {
+    if (!ic || typeof ic !== 'object') return '';
+    const rows = [];
+    if (ic.buy_price_per_sqm)    rows.push(['Cena za m² (nákup)',                ic.buy_price_per_sqm,    false]);
+    if (ic.market_price_per_sqm) rows.push(['Tržní cena za m² po rekonstrukci',  ic.market_price_per_sqm, false]);
+    if (ic.estimated_resale)     rows.push(['Předpokládaná prodejní cena',       ic.estimated_resale,     false]);
+    if (ic.gross_margin)         rows.push(['Hrubá marže',                       ic.gross_margin,         true]);
+    if (!rows.length) return '';
+    const rowsHtml = rows.map(([label, value, highlight]) =>
+        `                    <div class="investment-case-row${highlight ? ' is-highlight' : ''}">
+                        <span class="investment-case-label">${escapeHtml(label)}</span>
+                        <span class="investment-case-value">${escapeHtml(value)}</span>
+                    </div>`
+    ).join('\n');
+    return `        <section class="listing-investment-case-section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="listing.detail.investment_case.title">Investiční potenciál</h2>
+                <div class="investment-case">
+${rowsHtml}
+                </div>
+                <p class="investment-case-disclaimer" data-i18n="listing.detail.investment_case.disclaimer">Čísla jsou orientační, vycházejí z aktuálních lokálních benchmarků. Přesná kalkulace dle individuálního projektu rekonstrukce a strategie prodeje.</p>
+            </div>
+        </section>`;
+}
+
+/** Investment-intent section: paragraphs + optional blockquote (markdown `> ` lines). */
+function renderInvestmentIntent(text) {
+    if (!text) return '';
+    const blocks = text.split(/\n\s*\n/).map(p => p.trim()).filter(Boolean);
+    const html = blocks.map(b => {
+        if (b.startsWith('>')) {
+            // Strip leading '>' on each line, leading/trailing surrounding *…* (markdown italic),
+            // and tidy the Czech curly quotes that wrap the quote body.
+            let quote = b.split('\n')
+                .map(l => l.replace(/^>\s*/, ''))
+                .join(' ')
+                .trim()
+                .replace(/^[*_]+|[*_]+$/g, '')
+                .trim();
+            // The quoted text itself stays — including its inner Czech „…" pair
+            return '                <blockquote class="listing-quote">' + renderInline(quote) + '</blockquote>';
+        }
+        return '                <p>' + renderInline(b) + '</p>';
+    }).join('\n');
+    return `        <section class="listing-intent-section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="listing.detail.intent.title">Investiční záměr</h2>
+                <div class="listing-intent-body">
+${html}
+                </div>
+            </div>
+        </section>`;
+}
+
+/** Generic "Stav nemovitosti" prose section. */
+function renderStateDescription(text) {
+    if (!text) return '';
+    const html = text.split(/\n\s*\n/).map(p => p.trim()).filter(Boolean)
+        .map(p => '                <p>' + renderInline(p) + '</p>').join('\n');
+    return `        <section class="listing-state-section">
+            <div class="container">
+                <h2 class="section-title" data-i18n="listing.detail.state.title">Stav nemovitosti</h2>
+                <div class="listing-state-body">
+${html}
+                </div>
+            </div>
+        </section>`;
+}
 
 /** Render info panel sidebar — variant based on type (rental shows kauce/provize/availability). */
 function renderInfoPanel(l) {
@@ -297,28 +448,35 @@ function pluralizePhotos(n) {
  * Airbnb-style gallery: hero tile (left, 2 rows tall) + 2×2 thumbnails (right).
  * Shows up to 5 tiles; the 5th carries a "+N dalších" overlay when more remain.
  * Full image list is embedded as JSON in data-gallery for the lightbox JS.
+ * `imgPathPrefix` is the relative prefix from the detail page back to /images/.
+ * `isVisualization` toggles the "Vizualizace po rekonstrukci" watermark on the cover tile.
  */
-function renderGallery(slug, type, images, title) {
+function renderGallery(slug, type, images, title, imgPathPrefix, isVisualization) {
     if (!images.length) return '            <!-- No gallery photos -->';
+    imgPathPrefix = imgPathPrefix || '../../../';
     const titleEsc = escapeHtml(title);
     const visible = images.slice(0, 5);
     const remaining = Math.max(0, images.length - visible.length);
 
-    // Lightbox payload — every image with a readable alt
+    // Lightbox payload — every image with a readable alt and a watermark flag.
     const galleryData = images.map((file, i) => ({
-        src: `../../../images/listings/${type}/${slug}/${file}`,
+        src: `${imgPathPrefix}images/listings/${type}/${slug}/${file}`,
         alt: i === 0 ? title : `${title} — foto ${i + 1}`,
+        watermark: i === 0 && isVisualization,
     }));
     const dataAttr = escapeHtml(JSON.stringify(galleryData));
 
+    const watermarkBadge = '<span class="listing-watermark" aria-hidden="true" data-i18n="listing.detail.visualization_badge">Vizualizace po rekonstrukci</span>';
+
     const tiles = visible.map((file, i) => {
-        const src  = `../../../images/listings/${type}/${slug}/${file}`;
+        const src  = `${imgPathPrefix}images/listings/${type}/${slug}/${file}`;
         const alt  = i === 0 ? titleEsc : `${titleEsc} — foto ${i + 1}`;
         const hero = i === 0 ? ' is-hero' : '';
         const showOverlay = (i === visible.length - 1) && remaining > 0;
         const loading = i === 0 ? 'eager' : 'lazy';
+        const wm = i === 0 && isVisualization ? `\n                ${watermarkBadge}` : '';
         return `            <button type="button" class="listing-gallery-item${hero}" data-gallery-open data-index="${i}" aria-label="Otevřít fotku ${i + 1} z ${images.length}">
-                <img src="${src}" alt="${alt}" loading="${loading}">${showOverlay ? `
+                <img src="${src}" alt="${alt}" loading="${loading}">${wm}${showOverlay ? `
                 <span class="listing-gallery-more" aria-hidden="true" data-i18n-key="listings.photos.more" data-i18n-count="${remaining}">+${remaining} dalších</span>` : ''}
             </button>`;
     }).join('\n');
@@ -385,6 +543,13 @@ function pluralizeOffers(n) {
     if (n === 1)              return `${n} aktivní nabídka`;
     if (n >= 2 && n <= 4)     return `${n} aktivní nabídky`;
     return `${n} aktivních nabídek`;
+}
+
+/** Czech-default plural for "X aktivních příležitostí" (investor landing counter). */
+function pluralizeInvestorOffers(n) {
+    if (n === 1)              return `${n} aktivní příležitost`;
+    if (n >= 2 && n <= 4)     return `${n} aktivní příležitosti`;
+    return `${n} aktivních příležitostí`;
 }
 
 /** Big category-choice cards shown only on /nabidka/ root, above the secondary filter tabs. */
@@ -482,8 +647,9 @@ function readListing(type, slug) {
         deposit: data.deposit || '',
         commission: data.commission || '',
         available_from: data.available_from || '',
-        location_short: data.location_short || '',
-        location_long: data.location_long || data.location_short || '',
+        location: data.location || '',
+        location_short: data.location_short || data.location || '',
+        location_long: data.location_long || data.location_short || data.location || '',
         disposition: data.disposition || '',
         area: data.area != null ? data.area : '',
         floor: data.floor || '',
@@ -492,7 +658,20 @@ function readListing(type, slug) {
         condition: data.condition || '',
         short_description: data.short_description || '',
         info_extra: data.info_extra || null,
-        description: sections.description || '',
+        // Investicni-specific frontmatter fields
+        price_per_sqm: data.price_per_sqm || '',
+        size_total: data.size_total || '',
+        units: data.units || '',
+        state: data.state || '',
+        occupancy: data.occupancy || '',
+        declaration_of_owner: data.declaration_of_owner || '',
+        cta: data.cta || '',
+        cover_is_visualization: String(data.cover_is_visualization).toLowerCase() === 'true',
+        investment_case: data.investment_case || null,
+        description:        sections.description || '',
+        highlights:         sections.highlights || '',
+        investment_intent:  sections.investment_intent || '',
+        state_description:  sections.state_description || '',
         specs: parseSpecs(sections.specs || ''),
         cover,
         gallery: images,
@@ -525,19 +704,33 @@ function build() {
 
     console.log(`Found ${listings.length} listing(s): ${listings.map(l => `${l.type}/${l.slug}`).join(', ')}`);
 
-    const cardTpl   = readTemplate('listing-card.html');
-    const indexTpl  = readTemplate('listing-index.html');
-    const detailTpl = readTemplate('listing-detail.html');
+    const cardTpl = readTemplate('listing-card.html');
+    // Detail templates lazily loaded by type
+    const detailTplCache = {};
+    const detailTplFor = (type) => {
+        const tplFile = DETAIL_OUTPUT[type].template;
+        if (!detailTplCache[tplFile]) detailTplCache[tplFile] = readTemplate(tplFile);
+        return detailTplCache[tplFile];
+    };
+    // Index templates lazily loaded by name
+    const indexTplCache = {};
+    const indexTplFor = (name) => {
+        if (!indexTplCache[name]) indexTplCache[name] = readTemplate(name);
+        return indexTplCache[name];
+    };
 
-    fs.mkdirSync(OUTPUT_DIR, { recursive: true });
-
-    // Detail pages
+    // Detail pages — output path + template depend on listing type
     for (const l of listings) {
-        const dir = path.join(OUTPUT_DIR, l.type, l.slug);
+        const cfg = DETAIL_OUTPUT[l.type];
+        if (!cfg) { console.warn(`  ⚠ ${l.type}/${l.slug}: no DETAIL_OUTPUT config`); continue; }
+        const dir = path.join(ROOT, cfg.outputBase, l.slug);
         fs.mkdirSync(dir, { recursive: true });
-        const coverSrc = `../../../images/listings/${l.type}/${l.slug}/${l.cover}`;
-        const html = renderTemplate(detailTpl, {
-            base: '../../../',
+
+        const coverSrc = `${cfg.base}images/listings/${l.type}/${l.slug}/${l.cover}`;
+        const isInvest = l.type === 'investicni';
+
+        const html = renderTemplate(detailTplFor(l.type), {
+            base: cfg.base,
             slug: l.slug,
             type: l.type,
             type_label: TYPE_LABEL[l.type] || '',
@@ -551,35 +744,62 @@ function build() {
             short_description: escapeHtml(l.short_description),
             cover_src: coverSrc,
             cover_filename: l.cover || '',
+            cover_watermark_class: l.cover_is_visualization ? ' has-watermark' : '',
+            cover_watermark_overlay: l.cover_is_visualization
+                ? '    <span class="listing-watermark listing-watermark-hero" aria-hidden="true" data-i18n="listing.detail.visualization_badge">Vizualizace po rekonstrukci</span>'
+                : '',
             description_html: renderDescription(l.description),
-            info_panel: renderInfoPanel(l),
+            info_panel: isInvest ? renderInvestorInfoPanel(l) : renderInfoPanel(l),
             spec_cards: renderSpecCards(l.specs),
-            gallery_items: renderGallery(l.slug, l.type, l.gallery, l.title),
-            // Pre-built convenience strings for hero meta line
+            gallery_items: renderGallery(l.slug, l.type, l.gallery, l.title, cfg.base, l.cover_is_visualization),
+            // Investicni-only sections
+            highlights_section:        isInvest ? renderHighlights(l.highlights) : '',
+            investment_case_section:   isInvest ? renderInvestmentCase(l.investment_case) : '',
+            investment_intent_section: isInvest ? renderInvestmentIntent(l.investment_intent) : '',
+            state_section:             isInvest ? renderStateDescription(l.state_description) : '',
+            // Sticky CTA for mobile (investicni only)
+            sticky_cta: isInvest
+                ? `        <div class="listing-detail-cta-sticky">
+            <div class="listing-detail-cta-sticky-price">${escapeHtml(l.price)}</div>
+            <a href="${cfg.base}contact.html" class="btn btn-primary" data-i18n="listing.detail.cta.viewing">${escapeHtml(l.cta || 'Domluvit prohlídku')}</a>
+        </div>`
+                : '',
+            // Pre-built convenience strings for hero meta line (nabidka templates only)
             hero_meta_disposition: l.disposition ? `<span>✦ ${escapeHtml(l.disposition)} dispozice</span>` : '',
             hero_meta_area:        l.area ? `<span>◊ ${escapeHtml(l.area)} m² užitné plochy</span>` : '',
             hero_meta_floor:       l.floor ? `<span>⛶ ${escapeHtml(l.floor)}</span>` : (l.building_type ? `<span>⛶ ${escapeHtml(l.building_type)}</span>` : ''),
-            // Back link → filtered type index (absolute so it works with cleanUrls trailingSlash:false)
-            type_index_path: `/nabidka/${l.type}/`,
+            // Back link → type-level landing page
+            type_index_path: isInvest ? '/investors/' : `/nabidka/${l.type}/`,
         });
+
         fs.writeFileSync(path.join(dir, 'index.html'), html);
-        console.log(`  → nabidka/${l.type}/${l.slug}/index.html  (${l.gallery.length} photo${l.gallery.length === 1 ? '' : 's'})`);
+        console.log(`  → ${cfg.outputBase}/${l.slug}/index.html  (${l.gallery.length} photo${l.gallery.length === 1 ? '' : 's'})`);
     }
 
-    // Counts per type — fed into the big category-choice cards on the root page.
+    // Counts per type — fed into the big category-choice cards on the root nabidka page.
     const counts = {
-        pronajem: listings.filter(l => l.type === 'pronajem').length,
-        prodej:   listings.filter(l => l.type === 'prodej').length,
+        pronajem:   listings.filter(l => l.type === 'pronajem').length,
+        prodej:     listings.filter(l => l.type === 'prodej').length,
+        investicni: listings.filter(l => l.type === 'investicni').length,
     };
 
     // Index pages (unified + per-type)
+    const NABIDKA_TYPES = new Set(['pronajem', 'prodej']);
     for (const page of INDEX_PAGES) {
-        const filtered = page.filter ? listings.filter(l => l.type === page.filter) : listings;
-        const isRoot = page.filter === null;
+        // For nabidka root (filter:null) → only pronajem + prodej, not investicni
+        const filtered = page.filter
+            ? listings.filter(l => l.type === page.filter)
+            : listings.filter(l => NABIDKA_TYPES.has(l.type));
+        const isNabidkaRoot = page.outputBase === 'nabidka' && page.filter === null;
+        const isInvestorLanding = page.template === 'investors-landing.html';
         const base = '../'.repeat(page.depth);
+
         // Card href is always absolute → works with cleanUrls regardless of trailing slash
         const cardsHtml = filtered.map(l => {
-            const href = `/nabidka/${l.type}/${l.slug}/`;
+            // investicni cards link into /investors/{slug}/, others into /nabidka/{type}/{slug}/
+            const href = l.type === 'investicni'
+                ? `/investors/${l.slug}/`
+                : `/nabidka/${l.type}/${l.slug}/`;
             const coverSrc = `${base}images/listings/${l.type}/${l.slug}/${l.cover}`;
             return renderTemplate(cardTpl, {
                 href,
@@ -589,41 +809,66 @@ function build() {
                 short_description: escapeHtml(l.short_description),
                 cover_src: coverSrc,
                 cover_alt: escapeHtml(l.title),
+                cover_watermark: l.cover_is_visualization
+                    ? '                    <span class="listing-watermark listing-watermark-card" aria-hidden="true" data-i18n="listing.detail.visualization_badge">Vizualizace po rekonstrukci</span>'
+                    : '',
                 badge: renderCardBadge(l),
                 meta_line: renderCardMeta(l),
             });
         }).join('\n');
 
-        const outDir = path.join(OUTPUT_DIR, page.subdir);
+        const outDir = path.join(ROOT, page.outputBase);
         fs.mkdirSync(outDir, { recursive: true });
-        const html = renderTemplate(indexTpl, {
+
+        // Placeholder for empty investor landing (uses .coming-soon block)
+        const investorEmpty = isInvestorLanding && !filtered.length
+            ? `        <section class="coming-soon">
+            <div class="coming-soon-inner">
+                <span class="coming-soon-icon" aria-hidden="true">⌂</span>
+                <h2 data-i18n="investors.placeholder.title">Brzy zde najdete aktuální nabídky</h2>
+                <p data-i18n="investors.placeholder.text">Pracuji na první sérii investičních příležitostí. Pokud máte zájem o spolupráci nebo chcete být první, kdo se dozví o nových projektech, ozvěte se.</p>
+                <a href="${base}contact.html" class="btn btn-primary" data-i18n="investors.placeholder.cta" style="padding: 14px 28px; font-size: 14.5px; font-weight: 600;">Domluvit schůzku</a>
+            </div>
+        </section>`
+            : '';
+
+        const replacements = {
             base,
             cards: cardsHtml || '            <!-- žádné nabídky v této kategorii -->',
             eyebrow: page.eyebrow,
             eyebrow_key: page.eyebrow_key,
             h1: page.h1,
             h1_key: page.h1_key,
-            category_cards: isRoot ? renderCategoryCards(counts) : '',
-            filter_nav: renderFilterNav(page.tab, isRoot),
-            empty_notice: filtered.length
-                ? ''
-                : '<p class="listings-empty" data-i18n-html="listings.empty.text" style="text-align:center;color:var(--text-muted);padding:60px 0;">Aktuálně zde nemáme žádnou nabídku. Mrkněte na další kategorie nebo nás <a href="' + base + 'contact.html" style="color:var(--accent-dark);font-weight:600;">kontaktujte</a>.</p>',
-        });
+            category_cards: isNabidkaRoot ? renderCategoryCards(counts) : '',
+            filter_nav: !isInvestorLanding ? renderFilterNav(page.tab, isNabidkaRoot) : '',
+            counter: filtered.length
+                ? `<span class="listings-counter" data-i18n-key="listing.investicni.counter" data-i18n-count="${filtered.length}">${pluralizeInvestorOffers(filtered.length)}</span>`
+                : '',
+            grid_or_placeholder: investorEmpty,
+            empty_notice: !isInvestorLanding && !filtered.length
+                ? '<p class="listings-empty" data-i18n-html="listings.empty.text" style="text-align:center;color:var(--text-muted);padding:60px 0;">Aktuálně zde nemáme žádnou nabídku. Mrkněte na další kategorie nebo nás <a href="' + base + 'contact.html" style="color:var(--accent-dark);font-weight:600;">kontaktujte</a>.</p>'
+                : '',
+        };
+
+        const html = renderTemplate(indexTplFor(page.template), replacements);
         fs.writeFileSync(path.join(outDir, 'index.html'), html);
-        console.log(`  → nabidka/${page.subdir}index.html  (${filtered.length} card${filtered.length === 1 ? '' : 's'})`);
+        console.log(`  → ${page.outputBase}/index.html  (${filtered.length} card${filtered.length === 1 ? '' : 's'})`);
     }
 
     // Sitemap
     const today = new Date().toISOString().split('T')[0];
     const urls = [
         ...STATIC_ROUTES,
-        ...INDEX_PAGES.filter(p => p.subdir).map(p => ({
-            loc: '/nabidka/' + p.subdir.replace(/\/$/, ''),
-            priority: '0.8',
-            changefreq: 'weekly',
-        })),
+        // Sub-landing pages (per-type indexes). 'nabidka' and 'investors' are
+        // already in STATIC_ROUTES; only emit the deeper 'nabidka/pronajem' and
+        // 'nabidka/prodej' filtered indexes.
+        ...INDEX_PAGES
+            .filter(p => p.outputBase !== 'nabidka' && p.outputBase !== 'investors')
+            .map(p => ({ loc: '/' + p.outputBase, priority: '0.8', changefreq: 'weekly' })),
         ...listings.map(l => ({
-            loc: `/nabidka/${l.type}/${l.slug}`,
+            loc: l.type === 'investicni'
+                ? `/investors/${l.slug}`
+                : `/nabidka/${l.type}/${l.slug}`,
             priority: '0.7',
             changefreq: 'monthly',
         })),
