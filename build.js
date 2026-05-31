@@ -552,6 +552,33 @@ function pluralizeInvestorOffers(n) {
     return `${n} aktivních příležitostí`;
 }
 
+/**
+ * Shorten a price string for the mobile sticky CTA bar.
+ * "15 900 000 Kč" → "15,9 mil Kč";  "13 900 Kč / měsíc" → "13,9 tis. Kč / měsíc"
+ * Falls back to the original string if no numeric token can be parsed.
+ */
+function shortenPriceForSticky(s) {
+    if (!s) return '';
+    const digits = (s.match(/\d+/g) || []).join('');
+    if (!digits) return s;
+    const n = parseInt(digits, 10);
+    if (!Number.isFinite(n)) return s;
+    // Currency: take the last alpha token (Kč, EUR, …). Default to Kč.
+    const curMatch = s.match(/(Kč|CZK|EUR|€|USD|\$)/i);
+    const currency = curMatch ? curMatch[0] : 'Kč';
+    // Trailing qualifier like "/ měsíc"
+    const suffixMatch = s.match(/\/\s*\S+\s*$/);
+    const suffix = suffixMatch ? ' ' + suffixMatch[0].trim() : '';
+    const fmt = (val, unit) => {
+        let str = val.toFixed(1);
+        if (str.endsWith('.0')) str = str.slice(0, -2);
+        return `${str.replace('.', ',')} ${unit} ${currency}${suffix}`;
+    };
+    if (n >= 1_000_000) return fmt(n / 1_000_000, 'mil');
+    if (n >= 1_000)     return fmt(n / 1_000,     'tis.');
+    return s;
+}
+
 /** Big category-choice cards shown only on /nabidka/ root, above the secondary filter tabs. */
 function renderCategoryCards(counts) {
     return `        <div class="category-choice">
@@ -760,7 +787,7 @@ function build() {
             // Sticky CTA for mobile (investicni only)
             sticky_cta: isInvest
                 ? `        <div class="listing-detail-cta-sticky">
-            <div class="listing-detail-cta-sticky-price">${escapeHtml(l.price)}</div>
+            <div class="listing-detail-cta-sticky-price">${escapeHtml(shortenPriceForSticky(l.price))}</div>
             <a href="${cfg.base}contact.html" class="btn btn-primary" data-i18n="listing.detail.cta.viewing">${escapeHtml(l.cta || 'Domluvit prohlídku')}</a>
         </div>`
                 : '',

@@ -2,8 +2,8 @@
 type: investicni
 title: Bytový dům — 4 jednotky + zahrada + parkovací stání
 location: Petřvald, Josefa Rohla 549
-price: 13 900 000 Kč
-price_per_sqm: 34 750 Kč/m²
+price: 15 900 000 Kč
+price_per_sqm: 39 750 Kč/m²
 size_total: 400+ m²
 units: 4
 state: K rekonstrukci
@@ -25,10 +25,10 @@ gallery:
   - 12.jpg
 cta: Domluvit prohlídku
 investment_case:
-  buy_price_per_sqm: 34 750 Kč
+  buy_price_per_sqm: 39 750 Kč
   market_price_per_sqm: 70 000 Kč
   estimated_resale: 30 000 000 Kč
-  gross_margin: 16 100 000 Kč
+  gross_margin: 14 100 000 Kč
 ---
 
 ## O nemovitosti
@@ -52,11 +52,11 @@ Součástí nemovitosti je **prostorná zahrada** poskytující nájemníkům mo
 
 | | Hodnota |
 |---|---|
-| Nákupní cena | 13 900 000 Kč |
-| Cena za m² (nákup) | ~34 750 Kč |
+| Nákupní cena | 15 900 000 Kč |
+| Cena za m² (nákup) | ~39 750 Kč |
 | Tržní cena za m² v lokalitě (po rekonstrukci) | ~70 000 Kč |
 | Předpokládaná prodejní cena po rozdělení na 3–4 jednotky | ~30 000 000 Kč |
-| **Hrubá marže** | **~16 100 000 Kč** |
+| **Hrubá marže** | **~14 100 000 Kč** |
 
 *Čísla jsou orientační, vychází z aktuálních lokálních benchmarků. Přesná kalkulace dle individuálního projektu rekonstrukce a strategie prodeje.*
 
