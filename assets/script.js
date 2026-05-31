@@ -176,6 +176,7 @@ window.translations.cs = {
 
 window.translations.sk = {
     "nav.about": "O mne", "nav.services": "Služby", "nav.investors": "Pre investorov", "nav.housio": "Housio", "nav.academy": "Akadémia", "nav.testimonials": "Referencie", "nav.listings": "Ponuka", "nav.contact": "Spojme sa",
+    "landing.contact.eyebrow": "SPOJME SA", "landing.contact.title": "Rád si vypočujem, čo riešite.", "landing.contact.text": "Prvá konzultácia zdarma, do 24 hodín sa Vám ozvem.", "landing.contact.cta": "Napísať správu",
     "hero.badge": "Investor & realitný expert",
     "hero.title": "Budujeme hodnotu.<br>Vzdelávame <em>investorov</em>.",
     "hero.subtitle": "Pomáham klientom i mladým investorom budovať majetok cez nehnuteľnosti a chytré investície.",
@@ -347,6 +348,7 @@ window.translations.sk = {
 
 window.translations.en = {
     "nav.about": "About", "nav.services": "Services", "nav.investors": "For investors", "nav.housio": "Housio", "nav.academy": "Academy", "nav.testimonials": "References", "nav.listings": "Listings", "nav.contact": "Get in touch",
+    "landing.contact.eyebrow": "LET'S CONNECT", "landing.contact.title": "I'd love to hear what you're working on.", "landing.contact.text": "First consultation free, I'll reply within 24 hours.", "landing.contact.cta": "Send a message",
     "hero.badge": "Investor & Real Estate Expert",
     "hero.title": "We build value.<br>We educate <em>investors</em>.",
     "hero.subtitle": "I help clients and young investors build wealth through real estate and smart investments.",
@@ -514,6 +516,7 @@ window.translations.en = {
 
 window.translations.de = {
     "nav.about": "Über mich", "nav.services": "Leistungen", "nav.investors": "Für Investoren", "nav.housio": "Housio", "nav.academy": "Akademie", "nav.testimonials": "Referenzen", "nav.listings": "Angebote", "nav.contact": "Kontakt",
+    "landing.contact.eyebrow": "KONTAKT AUFNEHMEN", "landing.contact.title": "Ich höre Ihnen gerne zu.", "landing.contact.text": "Erstberatung kostenlos, Antwort innerhalb von 24 Stunden.", "landing.contact.cta": "Nachricht senden",
     "hero.badge": "Investor & Immobilienexperte",
     "hero.title": "Wir schaffen Werte.<br>Wir bilden <em>Investoren</em> aus.",
     "hero.subtitle": "Ich helfe Kunden und jungen Investoren, Vermögen durch Immobilien und kluge Investitionen aufzubauen.",
@@ -684,6 +687,7 @@ window.translations = window.translations || {};
 
 window.translations.fr = {
     "nav.about": "À propos", "nav.services": "Services", "nav.investors": "Pour investisseurs", "nav.housio": "Housio", "nav.academy": "Académie", "nav.testimonials": "Références", "nav.listings": "Annonces", "nav.contact": "Contact",
+    "landing.contact.eyebrow": "CONTACTONS-NOUS", "landing.contact.title": "J'aimerais entendre votre projet.", "landing.contact.text": "Première consultation gratuite, réponse sous 24 heures.", "landing.contact.cta": "Envoyer un message",
     "hero.badge": "Investisseur & expert immobilier",
     "hero.title": "Nous créons de la valeur.<br>Nous formons les <em>investisseurs</em>.",
     "hero.subtitle": "J'aide mes clients et les jeunes investisseurs à bâtir un patrimoine grâce à l'immobilier et aux investissements intelligents.",
@@ -851,6 +855,7 @@ window.translations.fr = {
 
 window.translations.it = {
     "nav.about": "Chi sono", "nav.services": "Servizi", "nav.investors": "Per investitori", "nav.housio": "Housio", "nav.academy": "Accademia", "nav.testimonials": "Referenze", "nav.listings": "Annunci", "nav.contact": "Contattami",
+    "landing.contact.eyebrow": "METTIAMOCI IN CONTATTO", "landing.contact.title": "Mi piacerebbe sentire il tuo progetto.", "landing.contact.text": "Prima consulenza gratuita, risposta entro 24 ore.", "landing.contact.cta": "Invia un messaggio",
     "hero.badge": "Investitore & esperto immobiliare",
     "hero.title": "Costruiamo valore.<br>Formiamo gli <em>investitori</em>.",
     "hero.subtitle": "Aiuto clienti e giovani investitori a costruire patrimonio attraverso immobili e investimenti intelligenti.",
@@ -1018,6 +1023,7 @@ window.translations.it = {
 
 window.translations.es = {
     "nav.about": "Sobre mí", "nav.services": "Servicios", "nav.investors": "Para inversores", "nav.housio": "Housio", "nav.academy": "Academia", "nav.testimonials": "Referencias", "nav.listings": "Inmuebles", "nav.contact": "Contacto",
+    "landing.contact.eyebrow": "CONECTEMOS", "landing.contact.title": "Me encantaría escuchar tu proyecto.", "landing.contact.text": "Primera consulta gratuita, respuesta en 24 horas.", "landing.contact.cta": "Enviar mensaje",
     "hero.badge": "Inversor & experto inmobiliario",
     "hero.title": "Construimos valor.<br>Formamos a los <em>inversores</em>.",
     "hero.subtitle": "Ayudo a clientes y jóvenes inversores a construir patrimonio a través de inmuebles e inversiones inteligentes.",
@@ -1185,6 +1191,7 @@ window.translations.es = {
 
 window.translations.pl = {
     "nav.about": "O mnie", "nav.services": "Usługi", "nav.investors": "Dla inwestorów", "nav.housio": "Housio", "nav.academy": "Akademia", "nav.testimonials": "Referencje", "nav.listings": "Oferty", "nav.contact": "Kontakt",
+    "landing.contact.eyebrow": "SKONTAKTUJMY SIĘ", "landing.contact.title": "Chętnie wysłucham, nad czym pracujesz.", "landing.contact.text": "Pierwsza konsultacja gratis, odpowiem w ciągu 24 godzin.", "landing.contact.cta": "Wyślij wiadomość",
     "hero.badge": "Inwestor & ekspert ds. nieruchomości",
     "hero.title": "Budujemy wartość.<br>Edukujemy <em>inwestorów</em>.",
     "hero.subtitle": "Pomagam klientom i młodym inwestorom budować majątek poprzez nieruchomości i mądre inwestycje.",
@@ -1363,6 +1370,7 @@ window.translations = window.translations || {};
 
 window.translations.ru = {
     "nav.about": "Обо мне", "nav.services": "Услуги", "nav.investors": "Для инвесторов", "nav.housio": "Housio", "nav.academy": "Академия", "nav.testimonials": "Отзывы", "nav.listings": "Объекты", "nav.contact": "Связаться",
+    "landing.contact.eyebrow": "СВЯЖЕМСЯ", "landing.contact.title": "Буду рад услышать о вашем проекте.", "landing.contact.text": "Первая консультация бесплатно, отвечу в течение 24 часов.", "landing.contact.cta": "Написать сообщение",
     "hero.badge": "Инвестор и эксперт по недвижимости",
     "hero.title": "Создаём ценность.<br>Обучаем <em>инвесторов</em>.",
     "hero.subtitle": "Помогаю клиентам и молодым инвесторам строить капитал через недвижимость и умные инвестиции.",
@@ -1538,6 +1546,7 @@ window.translations.ru = {
 
 window.translations.ja = {
     "nav.about": "私について", "nav.services": "サービス", "nav.investors": "投資家の方へ", "nav.housio": "Housio", "nav.academy": "アカデミー", "nav.testimonials": "推薦の声", "nav.listings": "物件一覧", "nav.contact": "お問い合わせ",
+    "landing.contact.eyebrow": "ご相談はこちら", "landing.contact.title": "お話をお聞かせください。", "landing.contact.text": "初回相談無料、24時間以内にご返信いたします。", "landing.contact.cta": "メッセージを送る",
     "hero.badge": "投資家・不動産専門家",
     "hero.title": "価値を築く。<br><em>投資家</em>を育てる。",
     "hero.subtitle": "クライアントと若い投資家が、不動産とスマートな投資を通じて資産を築くお手伝いをします。",
@@ -1701,6 +1710,7 @@ window.translations.ja = {
 
 window.translations.zh = {
     "nav.about": "关于我", "nav.services": "服务", "nav.investors": "投资人专区", "nav.housio": "Housio", "nav.academy": "学院", "nav.testimonials": "推荐", "nav.listings": "房源", "nav.contact": "联系",
+    "landing.contact.eyebrow": "联系我们", "landing.contact.title": "期待听到您的项目。", "landing.contact.text": "首次咨询免费，24小时内回复。", "landing.contact.cta": "发送消息",
     "hero.badge": "投资人 & 房地产专家",
     "hero.title": "构筑价值。<br>培育<em>投资人</em>。",
     "hero.subtitle": "我帮助客户和年轻投资人通过房地产和明智的投资构建财富。",
