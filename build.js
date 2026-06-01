@@ -771,6 +771,7 @@ function build() {
             short_description: escapeHtml(l.short_description),
             cover_src: coverSrc,
             cover_filename: l.cover || '',
+            og_image_type: /\.png$/i.test(l.cover || '') ? 'image/png' : (/\.webp$/i.test(l.cover || '') ? 'image/webp' : 'image/jpeg'),
             cover_watermark_class: l.cover_is_visualization ? ' has-watermark' : '',
             cover_watermark_overlay: l.cover_is_visualization
                 ? '    <span class="listing-watermark listing-watermark-hero" aria-hidden="true" data-i18n="listing.detail.visualization_badge">Vizualizace po rekonstrukci</span>'
