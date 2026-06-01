@@ -372,109 +372,111 @@ section { padding: 100px 0; }
 
 /* ===== ABOUT ===== */
 .founder-layer {
-    padding: 72px 0 84px;
-    background:
-        linear-gradient(135deg, #0f1115 0%, #163640 52%, #f5f0e8 52%, #fafaf7 100%);
+    padding: 86px 0 108px;
+    background: var(--bg);
     border-bottom: 1px solid var(--border);
     overflow: hidden;
 }
-.founder-layer-shell {
+.founder-layer-grid {
     display: grid;
-    grid-template-columns: minmax(0, 0.95fr) minmax(420px, 1.05fr);
-    gap: 56px;
+    grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+    gap: 86px;
     align-items: center;
 }
 .founder-layer-copy {
-    color: white;
-    max-width: 560px;
+    position: relative;
+    padding: 24px 0 24px 34px;
+    border-left: 1px solid rgba(184, 137, 90, 0.36);
+}
+.founder-layer-copy::before {
+    content: '';
+    position: absolute;
+    left: -5px;
+    top: 34px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: var(--accent-dark);
 }
 .founder-layer-kicker {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    color: #8fc9a5;
+    color: #1f4e5f;
     font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 2px;
+    font-weight: 800;
+    letter-spacing: 2.1px;
     text-transform: uppercase;
-    margin-bottom: 18px;
-}
-.founder-layer-kicker::before {
-    content: '';
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #8fc9a5;
+    margin-bottom: 20px;
 }
 .founder-layer h2 {
     font-family: 'Geist', sans-serif;
-    font-size: clamp(34px, 4vw, 54px);
+    font-size: clamp(36px, 4.25vw, 54px);
     font-weight: 600;
-    line-height: 1.05;
-    letter-spacing: -1.8px;
+    line-height: 1.06;
+    letter-spacing: -2px;
     margin-bottom: 22px;
-    color: white;
+    color: var(--text);
+    max-width: 600px;
+}
+.founder-layer h2 span {
+    color: #1f4e5f;
 }
 .founder-layer p {
-    color: rgba(255, 255, 255, 0.74);
-    font-size: 17px;
-    line-height: 1.75;
-    margin-bottom: 30px;
+    color: var(--text-muted);
+    font-size: 18px;
+    line-height: 1.78;
+    margin-bottom: 34px;
+    max-width: 570px;
 }
-.founder-layer-link {
-    display: inline-flex;
+.founder-layer-signature {
+    display: flex;
     align-items: center;
-    gap: 8px;
-    color: #0f1115;
-    background: #8fc9a5;
-    border-radius: 100px;
-    padding: 13px 22px;
+    gap: 18px;
+    width: fit-content;
+    padding-top: 24px;
+    border-top: 1px solid var(--border);
     text-decoration: none;
-    font-size: 14px;
-    font-weight: 700;
-    transition: transform 0.2s, background 0.2s;
+    color: inherit;
+    transition: opacity 0.2s;
 }
-.founder-layer-link::after {
-    content: '↗';
-    font-size: 12px;
+.founder-layer-signature:hover {
+    opacity: 0.72;
 }
-.founder-layer-link:hover {
-    background: white;
-    transform: translateY(-1px);
+.founder-layer-signature img {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    filter: grayscale(0.08) saturate(0.88);
+    border: 1px solid rgba(31, 78, 95, 0.16);
+}
+.founder-layer-signature small {
+    display: block;
+    color: var(--accent-dark);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.6px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+.founder-layer-signature strong {
+    display: block;
+    font-family: 'Geist', sans-serif;
+    color: var(--text);
+    font-size: 18px;
+    letter-spacing: -0.4px;
 }
 .founder-layer-visual {
     position: relative;
-    min-height: 520px;
+    height: 600px;
 }
 .founder-layer-photo {
-    width: min(100%, 680px);
-    height: 520px;
-    object-fit: cover;
-    object-position: 62% 34%;
-    display: block;
-    margin-left: auto;
-    border-radius: 18px;
-    box-shadow: 0 34px 90px -40px rgba(15, 17, 21, 0.42);
-}
-.founder-logo-card {
-    position: absolute;
-    left: 0;
-    bottom: 34px;
-    width: min(340px, 52%);
-    min-width: 260px;
-    background: rgba(255, 255, 255, 0.94);
-    border: 1px solid rgba(15, 17, 21, 0.08);
-    border-radius: 14px;
-    padding: 14px;
-    box-shadow: 0 24px 70px -30px rgba(15, 17, 21, 0.36);
-}
-.founder-logo-card img {
     width: 100%;
-    aspect-ratio: 1379 / 752;
+    height: 100%;
     object-fit: cover;
-    object-position: center;
+    object-position: 56% 38%;
     display: block;
-    border-radius: 10px;
+    border-radius: 18px;
+    box-shadow: 0 32px 105px -62px rgba(16, 17, 21, 0.5);
 }
 .about-grid {
     display: grid;
@@ -891,34 +893,25 @@ footer {
     .hero-text { font-size: 16px; max-width: 100%; }
 
     .founder-layer {
-        padding: 56px 0 64px;
-        background: linear-gradient(180deg, #0f1115 0%, #163640 58%, #fafaf7 58%, #fafaf7 100%);
+        padding: 60px 0 64px;
     }
-    .founder-layer-shell {
+    .founder-layer-grid {
         grid-template-columns: 1fr;
-        gap: 34px;
+        gap: 38px;
     }
     .founder-layer-copy {
-        max-width: 100%;
+        padding: 20px 0 20px 26px;
     }
     .founder-layer h2 {
         font-size: clamp(32px, 7vw, 46px);
         letter-spacing: -1.4px;
     }
     .founder-layer-visual {
-        min-height: auto;
+        height: min(68vw, 560px);
+        min-height: 380px;
     }
     .founder-layer-photo {
-        width: 100%;
-        height: min(68vw, 520px);
-        min-height: 380px;
-        object-position: 62% 28%;
-    }
-    .founder-logo-card {
-        left: 18px;
-        bottom: 18px;
-        width: min(330px, calc(100% - 36px));
-        min-width: 0;
+        object-position: 56% 32%;
     }
     .about-grid, .housio-grid, .contact-grid { grid-template-columns: 1fr; gap: 40px; }
     .services-grid, .testimonials-grid, .academy-grid { grid-template-columns: 1fr; }
@@ -950,21 +943,26 @@ footer {
     .founder-layer {
         padding: 46px 0 54px;
     }
+    .founder-layer-copy {
+        padding-left: 22px;
+    }
     .founder-layer-copy p {
         font-size: 15.5px;
     }
+    .founder-layer-signature {
+        gap: 14px;
+        padding-top: 18px;
+    }
+    .founder-layer-signature img {
+        width: 46px;
+        height: 46px;
+    }
     .founder-layer-photo {
-        height: 420px;
-        min-height: 0;
         border-radius: 14px;
     }
-    .founder-logo-card {
-        position: relative;
-        left: auto;
-        bottom: auto;
-        width: 100%;
-        margin-top: 12px;
-        padding: 10px;
+    .founder-layer-visual {
+        height: 420px;
+        min-height: 0;
     }
     .hero-actions { gap: 10px; }
     .hero-actions .btn,
