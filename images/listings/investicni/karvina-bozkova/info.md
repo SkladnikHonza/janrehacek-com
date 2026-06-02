@@ -2,6 +2,7 @@
 type: investicni
 title: Investiční byt 2+1, 58 m² v osobním vlastnictví — Karviná
 status: nova
+price: 2 390 000 Kč
 size_total: 58 m² (vč. sklepa)
 location_short: Karviná — Božkova
 location_long: Karviná, Božkova 553/11, byt č. 12
