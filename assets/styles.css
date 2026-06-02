@@ -511,6 +511,7 @@ section { padding: 100px 0; }
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
+.services-grid-2 { grid-template-columns: repeat(2, 1fr); }
 .service-card {
     background: var(--bg-card);
     border: 1px solid var(--border);
