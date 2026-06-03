@@ -451,7 +451,7 @@ function pluralizePhotos(n) {
  * `imgPathPrefix` is the relative prefix from the detail page back to /images/.
  * `isVisualization` toggles the "Vizualizace po rekonstrukci" watermark on the cover tile.
  */
-function renderGallery(slug, type, images, title, imgPathPrefix, isVisualization) {
+function renderGallery(slug, type, images, title, imgPathPrefix, isVisualization, heroRibbon) {
     if (!images.length) return '            <!-- No gallery photos -->';
     imgPathPrefix = imgPathPrefix || '../../../';
     const titleEsc = escapeHtml(title);
@@ -475,8 +475,9 @@ function renderGallery(slug, type, images, title, imgPathPrefix, isVisualization
         const showOverlay = (i === visible.length - 1) && remaining > 0;
         const loading = i === 0 ? 'eager' : 'lazy';
         const wm = i === 0 && isVisualization ? `\n                ${watermarkBadge}` : '';
+        const rb = i === 0 && heroRibbon ? `\n                ${heroRibbon}` : '';
         return `            <button type="button" class="listing-gallery-item${hero}" data-gallery-open data-index="${i}" aria-label="Otevřít fotku ${i + 1} z ${images.length}">
-                <img src="${src}" alt="${alt}" loading="${loading}">${wm}${showOverlay ? `
+                <img src="${src}" alt="${alt}" loading="${loading}">${wm}${rb}${showOverlay ? `
                 <span class="listing-gallery-more" aria-hidden="true" data-i18n-key="listings.photos.more" data-i18n-count="${remaining}">+${remaining} dalších</span>` : ''}
             </button>`;
     }).join('\n');
@@ -755,6 +756,9 @@ function build() {
 
         const coverSrc = `${cfg.base}images/listings/${l.type}/${l.slug}/${l.cover}`;
         const isInvest = l.type === 'investicni';
+        const reservedRibbon = l.status === 'rezervovano'
+            ? '<span class="listing-ribbon" data-i18n="listings.status.reserved">REZERVOVÁNO</span>'
+            : '';
 
         const html = renderTemplate(detailTplFor(l.type), {
             base: cfg.base,
@@ -771,6 +775,7 @@ function build() {
             short_description: escapeHtml(l.short_description),
             cover_src: coverSrc,
             cover_filename: l.cover || '',
+            status_ribbon: isInvest ? '' : reservedRibbon,
             og_image_type: /\.png$/i.test(l.cover || '') ? 'image/png' : (/\.webp$/i.test(l.cover || '') ? 'image/webp' : 'image/jpeg'),
             cover_watermark_class: l.cover_is_visualization ? ' has-watermark' : '',
             cover_watermark_overlay: l.cover_is_visualization
@@ -779,7 +784,7 @@ function build() {
             description_html: renderDescription(l.description),
             info_panel: isInvest ? renderInvestorInfoPanel(l) : renderInfoPanel(l),
             spec_cards: renderSpecCards(l.specs),
-            gallery_items: renderGallery(l.slug, l.type, l.gallery, l.title, cfg.base, l.cover_is_visualization),
+            gallery_items: renderGallery(l.slug, l.type, l.gallery, l.title, cfg.base, l.cover_is_visualization, isInvest ? reservedRibbon : ''),
             // Investicni-only sections
             highlights_section:        isInvest ? renderHighlights(l.highlights) : '',
             investment_case_section:   isInvest ? renderInvestmentCase(l.investment_case) : '',
