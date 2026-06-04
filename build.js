@@ -149,6 +149,21 @@ function escapeHtml(s) {
         .replace(/"/g, '&quot;');
 }
 
+/**
+ * Shared-term i18n attribute for short panel/spec labels & values.
+ * Returns ` data-i18n="T.<text>"` only for texts containing a real word
+ * (≥3 letters); pure numbers/units/prices (56 m², 3+1, 2 390 000 Kč) get no
+ * key and keep the Czech default in every language. Skips texts with chars
+ * unsafe for an attribute/key.
+ */
+function ti(text) {
+    if (text == null) return '';
+    const s = String(text);
+    if (/["<>&]/.test(s)) return '';
+    if (!/\p{L}{3,}/u.test(s)) return '';
+    return ` data-i18n="T.${s}"`;
+}
+
 /** Minimal YAML frontmatter parser. */
 function parseFrontmatter(src) {
     const m = src.match(/^---\s*\r?\n([\s\S]*?)\r?\n---\s*\r?\n([\s\S]*)$/);
@@ -231,8 +246,8 @@ function renderSpecCards(specs) {
         const icon = SPEC_ICONS[s.label] || '⌂';
         return `            <div class="listing-spec-card">
                 <div class="listing-spec-icon">${icon}</div>
-                <div class="listing-spec-label">${escapeHtml(s.label)}</div>
-                <div class="listing-spec-value">${escapeHtml(s.value)}</div>
+                <div class="listing-spec-label"${ti(s.label)}>${escapeHtml(s.label)}</div>
+                <div class="listing-spec-value"${ti(s.value)}>${escapeHtml(s.value)}</div>
             </div>`;
     }).join('\n');
 }
@@ -265,7 +280,7 @@ function renderInvestorInfoPanel(l) {
     const rowsHtml = rows.map(([label, value, key]) =>
         `                    <div class="listing-info-row">
                         <span class="listing-info-label" data-i18n="${key}">${escapeHtml(label)}</span>
-                        <span class="listing-info-value">${escapeHtml(value)}</span>
+                        <span class="listing-info-value"${ti(value)}>${escapeHtml(value)}</span>
                     </div>`
     ).join('\n');
 
@@ -395,7 +410,7 @@ function renderInfoPanel(l) {
         }
     }
 
-    const labelAttr = (label) => INFO_LABEL_I18N[label] ? ` data-i18n="${INFO_LABEL_I18N[label]}"` : '';
+    const labelAttr = (label) => INFO_LABEL_I18N[label] ? ` data-i18n="${INFO_LABEL_I18N[label]}"` : ti(label);
 
     let rentalExtras = '';
     if (isRental && (l.deposit || l.commission || l.available_from)) {
@@ -409,7 +424,7 @@ function renderInfoPanel(l) {
     const rowsHtml = rows.map(([label, value]) =>
         `                    <div class="listing-info-row">
                         <span class="listing-info-label"${labelAttr(label)}>${escapeHtml(label)}</span>
-                        <span class="listing-info-value">${escapeHtml(value)}</span>
+                        <span class="listing-info-value"${ti(value)}>${escapeHtml(value)}</span>
                     </div>`
     ).join('\n');
 
