@@ -73,7 +73,7 @@
     <div class="listing-hero-overlay"></div>
     <div class="listing-hero-content">
         <div class="listing-hero-eyebrow">{{price}} · {{location_short}}</div>
-        <h1>{{title}}</h1>
+        <h1 data-i18n="{{title_key}}">{{title}}</h1>
         <div class="listing-hero-meta">
             {{hero_meta_disposition}}
             {{hero_meta_area}}
@@ -114,7 +114,7 @@
 <section class="listing-specs-section">
     <div class="container">
         <h2 class="section-title" data-i18n="listings.detail.specs">Vybavení a stav</h2>
-        <div class="listing-specs-grid">
+        <div class="listing-specs-grid" data-i18n-html="{{specs_key}}">
 {{spec_cards}}
         </div>
     </div>
@@ -168,5 +168,6 @@
 </footer>
 
 <script src="{{base}}assets/script.js" defer></script>
+<script src="{{base}}assets/listings-i18n.js" defer></script>
 </body>
 </html>

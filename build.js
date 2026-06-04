@@ -203,12 +203,14 @@ function renderInline(s) {
     return out;
 }
 
-function renderDescription(text) {
+function renderDescription(text, i18nKey) {
     if (!text) return '';
-    return text.split(/\n\s*\n/)
+    const ps = text.split(/\n\s*\n/)
         .map(p => p.trim()).filter(Boolean)
         .map(p => '                <p>' + renderInline(p) + '</p>')
         .join('\n');
+    if (!i18nKey) return ps;
+    return `            <div data-i18n-html="${i18nKey}">\n${ps}\n            </div>`;
 }
 
 function parseSpecs(text) {
@@ -283,7 +285,7 @@ ${rowsHtml}
 }
 
 /** Highlights bullet-list section (parsed from `## Hlavní výhody projektu` body). */
-function renderHighlights(text) {
+function renderHighlights(text, i18nKey) {
     if (!text) return '';
     const items = text.split('\n')
         .map(l => l.trim())
@@ -291,10 +293,11 @@ function renderHighlights(text) {
         .map(l => '                    <li>' + escapeHtml(l.replace(/^-\s*/, '')) + '</li>')
         .join('\n');
     if (!items) return '';
+    const hlAttr = i18nKey ? ` data-i18n-html="${i18nKey}"` : '';
     return `        <section class="listing-highlights-section">
             <div class="container">
                 <h2 class="section-title" data-i18n="listing.detail.highlights.title">Hlavní výhody projektu</h2>
-                <ul class="listing-highlights">
+                <ul class="listing-highlights"${hlAttr}>
 ${items}
                 </ul>
             </div>
@@ -328,7 +331,7 @@ ${rowsHtml}
 }
 
 /** Investment-intent section: paragraphs + optional blockquote (markdown `> ` lines). */
-function renderInvestmentIntent(text) {
+function renderInvestmentIntent(text, i18nKey) {
     if (!text) return '';
     const blocks = text.split(/\n\s*\n/).map(p => p.trim()).filter(Boolean);
     const html = blocks.map(b => {
@@ -349,7 +352,7 @@ function renderInvestmentIntent(text) {
     return `        <section class="listing-intent-section">
             <div class="container">
                 <h2 class="section-title" data-i18n="listing.detail.intent.title">Investiční záměr</h2>
-                <div class="listing-intent-body">
+                <div class="listing-intent-body"${i18nKey ? ` data-i18n-html="${i18nKey}"` : ''}>
 ${html}
                 </div>
             </div>
@@ -357,14 +360,14 @@ ${html}
 }
 
 /** Generic "Stav nemovitosti" prose section. */
-function renderStateDescription(text) {
+function renderStateDescription(text, i18nKey) {
     if (!text) return '';
     const html = text.split(/\n\s*\n/).map(p => p.trim()).filter(Boolean)
         .map(p => '                <p>' + renderInline(p) + '</p>').join('\n');
     return `        <section class="listing-state-section">
             <div class="container">
                 <h2 class="section-title" data-i18n="listing.detail.state.title">Stav nemovitosti</h2>
-                <div class="listing-state-body">
+                <div class="listing-state-body"${i18nKey ? ` data-i18n-html="${i18nKey}"` : ''}>
 ${html}
                 </div>
             </div>
@@ -759,6 +762,7 @@ function build() {
         const reservedRibbon = l.status === 'rezervovano'
             ? '<span class="listing-ribbon" data-i18n="listings.status.reserved">REZERVOVÁNO</span>'
             : '';
+        const kp = `L.${l.type}.${l.slug}`;   // i18n key prefix for this listing's translatable content
 
         const html = renderTemplate(detailTplFor(l.type), {
             base: cfg.base,
@@ -766,6 +770,7 @@ function build() {
             type: l.type,
             type_label: TYPE_LABEL[l.type] || '',
             title: escapeHtml(l.title),
+            title_key: `${kp}.title`,
             price: escapeHtml(l.price),
             location_short: escapeHtml(l.location_short),
             location_long: escapeHtml(l.location_long),
@@ -781,15 +786,16 @@ function build() {
             cover_watermark_overlay: l.cover_is_visualization
                 ? '    <span class="listing-watermark listing-watermark-hero" aria-hidden="true" data-i18n="listing.detail.visualization_badge">Vizualizace po rekonstrukci</span>'
                 : '',
-            description_html: renderDescription(l.description),
+            description_html: renderDescription(l.description, `${kp}.desc`),
             info_panel: isInvest ? renderInvestorInfoPanel(l) : renderInfoPanel(l),
             spec_cards: renderSpecCards(l.specs),
+            specs_key: `${kp}.specs`,
             gallery_items: renderGallery(l.slug, l.type, l.gallery, l.title, cfg.base, l.cover_is_visualization, isInvest ? reservedRibbon : ''),
             // Investicni-only sections
-            highlights_section:        isInvest ? renderHighlights(l.highlights) : '',
+            highlights_section:        isInvest ? renderHighlights(l.highlights, `${kp}.hl`) : '',
             investment_case_section:   isInvest ? renderInvestmentCase(l.investment_case) : '',
-            investment_intent_section: isInvest ? renderInvestmentIntent(l.investment_intent) : '',
-            state_section:             isInvest ? renderStateDescription(l.state_description) : '',
+            investment_intent_section: isInvest ? renderInvestmentIntent(l.investment_intent, `${kp}.intent`) : '',
+            state_section:             isInvest ? renderStateDescription(l.state_description, `${kp}.state`) : '',
             // Sticky CTA for mobile (investicni only)
             sticky_cta: isInvest
                 ? `        <div class="listing-detail-cta-sticky">
@@ -837,9 +843,11 @@ function build() {
             return renderTemplate(cardTpl, {
                 href,
                 title: escapeHtml(l.title),
+                title_key: `L.${l.type}.${l.slug}.title`,
                 price: escapeHtml(l.price),
                 location_short: escapeHtml(l.location_short),
                 short_description: escapeHtml(l.short_description),
+                short_key: `L.${l.type}.${l.slug}.short`,
                 cover_src: coverSrc,
                 cover_alt: escapeHtml(l.title),
                 cover_watermark: l.cover_is_visualization
