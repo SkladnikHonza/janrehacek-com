@@ -274,12 +274,15 @@ function renderInvestorInfoPanel(l) {
     if (l.size_total)           rows.push(['Celková plocha',       l.size_total,    'listings.info.areaTotal']);
     if (l.units != null && l.units !== '') rows.push(['Bytové jednotky', String(l.units), 'listing.detail.units']);
     if (l.occupancy)            rows.push(['Obsazenost',            l.occupancy,     'listings.info.occupancy']);
+    if (l.info_extra && typeof l.info_extra === 'object') {
+        for (const k of Object.keys(l.info_extra)) rows.push([k, l.info_extra[k]]);
+    }
     if (l.declaration_of_owner) rows.push(['Prohlášení vlastníka',  l.declaration_of_owner, 'listing.detail.declaration']);
     if (l.location_long)        rows.push(['Lokalita',              l.location_long, 'listings.info.location']);
 
     const rowsHtml = rows.map(([label, value, key]) =>
         `                    <div class="listing-info-row">
-                        <span class="listing-info-label" data-i18n="${key}">${escapeHtml(label)}</span>
+                        <span class="listing-info-label"${key ? ` data-i18n="${key}"` : ti(label)}>${escapeHtml(label)}</span>
                         <span class="listing-info-value"${ti(value)}>${escapeHtml(value)}</span>
                     </div>`
     ).join('\n');

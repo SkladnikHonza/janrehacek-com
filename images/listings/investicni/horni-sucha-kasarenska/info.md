@@ -8,6 +8,9 @@ size_total: cca 368 m²
 units: 6
 state: K rekonstrukci
 declaration_of_owner: Připraveno
+info_extra:
+  Pozemek: 1 500 m²
+  Počet garáží: 3
 location_short: Horní Suchá — Kasárenská
 location_long: Horní Suchá, ul. Kasárenská
 short_description: Činžovní dům se 6 bytovými jednotkami v Horní Suché. Zpracované Prohlášení vlastníka, potenciál rozprodeje po jednotkách i stabilní nájemní výnos.
