@@ -692,6 +692,7 @@ function readListing(type, slug) {
         type,
         title: data.title || slug,
         status: data.status || 'aktivni',
+        order: (data.order != null && data.order !== '') ? Number(data.order) : null,
         price: data.price || 'Cena na vyžádání',
         deposit: data.deposit || '',
         commission: data.commission || '',
@@ -745,10 +746,17 @@ function build() {
         for (const slug of slugs) listings.push(readListing(type, slug));
     }
 
+    // Sort by status group, then by explicit `order` (lower = earlier; default 100).
+    // Stable sort keeps the existing relative order for listings without `order`.
     listings.sort((a, b) => {
         const ai = STATUS_ORDER.indexOf(a.status);
         const bi = STATUS_ORDER.indexOf(b.status);
-        return (ai === -1 ? 99 : ai) - (bi === -1 ? 99 : bi);
+        const sa = ai === -1 ? 99 : ai;
+        const sb = bi === -1 ? 99 : bi;
+        if (sa !== sb) return sa - sb;
+        const oa = (a.order != null && !Number.isNaN(a.order)) ? a.order : 100;
+        const ob = (b.order != null && !Number.isNaN(b.order)) ? b.order : 100;
+        return oa - ob;
     });
 
     console.log(`Found ${listings.length} listing(s): ${listings.map(l => `${l.type}/${l.slug}`).join(', ')}`);

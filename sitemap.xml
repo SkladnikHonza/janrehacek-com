@@ -55,6 +55,12 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://janrehacek.com/nabidka/prodej/ostrava-poruba-oty-synka</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://janrehacek.com/nabidka/prodej/horni-sucha-kasarenska</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
@@ -74,12 +80,6 @@
   </url>
   <url>
     <loc>https://janrehacek.com/nabidka/prodej/ostrava-michalkovice-vojtesska</loc>
-    <lastmod>2026-06-12</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://janrehacek.com/nabidka/prodej/ostrava-poruba-oty-synka</loc>
     <lastmod>2026-06-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
