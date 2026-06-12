@@ -2,6 +2,7 @@
 type: prodej
 title: Prostorný byt 4+1 po rekonstrukci, 80 m² — Ostrava-Poruba
 status: nova
+price: 7 490 000 Kč
 location_short: Ostrava-Poruba — Oty Synka
 location_long: Ostrava-Poruba, Oty Synka
 disposition: 4+1
@@ -31,7 +32,7 @@ Dispozice 4+1 je ideální pro rodinu s dětmi — prostorný obývací pokoj a 
 
 **Bonus navíc — nadstandardní úložné prostory.** Součástí nabídky je možnost převzít dlouhodobý pronájem samostatné mandlovny o výměře **11 m²**, která se nachází přímo v domě a dnes slouží jako soukromý sklad. Tento prostor představuje významnou přidanou hodnotu bytu — lze jej využít jako velký sklep, dílnu či hobby místnost nebo sklad sezónních věcí, sportovního vybavení, kočárků, kol a pneumatik. Celkově tak k bytu získáváte dalších 11 m² užitné plochy navíc.
 
-Cena je na vyžádání, k dispozici je možnost financování hypotečním úvěrem. Pokud hledáte prostorný byt v Ostravě-Porubě, který nabízí komfortní bydlení bez nutnosti dalších investic, neváhejte nás kontaktovat a domluvte si osobní prohlídku.
+K dispozici je možnost financování hypotečním úvěrem. Pokud hledáte prostorný byt v Ostravě-Porubě, který nabízí komfortní bydlení bez nutnosti dalších investic, neváhejte nás kontaktovat a domluvte si osobní prohlídku.
 
 ## Vybavení a stav
 
