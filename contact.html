@@ -106,24 +106,30 @@
                     </div>
                 </div>
             </div>
-            <form class="contact-form" onsubmit="event.preventDefault(); alert((window.translations && window.translations[document.documentElement.lang] && window.translations[document.documentElement.lang]['contact.success']) || 'Děkuji za zprávu!'); this.reset();">
+            <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                <!-- Web3Forms: nahraď hodnotu access_key svým klíčem z https://web3forms.com (zdarma, přijde e-mailem). Poptávky pak chodí na invest@janrehacek.com. -->
+                <input type="hidden" name="access_key" value="REPLACE_WITH_WEB3FORMS_ACCESS_KEY">
+                <input type="hidden" name="subject" value="Nová poptávka z janrehacek.com">
+                <input type="hidden" name="from_name" value="Web janrehacek.com">
+                <!-- honeypot proti spamu -->
+                <input type="checkbox" name="botcheck" style="display:none !important;" tabindex="-1" autocomplete="off">
                 <div class="form-row">
                     <div class="form-group">
                         <label data-i18n="form.name">Jméno *</label>
-                        <input type="text" required data-i18n-placeholder="form.name_ph" placeholder="Vaše jméno">
+                        <input type="text" name="name" required data-i18n-placeholder="form.name_ph" placeholder="Vaše jméno">
                     </div>
                     <div class="form-group">
                         <label data-i18n="form.email">E-mail *</label>
-                        <input type="email" required data-i18n-placeholder="form.email_ph" placeholder="vase@email.cz">
+                        <input type="email" name="email" required data-i18n-placeholder="form.email_ph" placeholder="vase@email.cz">
                     </div>
                 </div>
                 <div class="form-group">
                     <label data-i18n="form.phone">Telefon</label>
-                    <input type="tel" placeholder="+420 ...">
+                    <input type="tel" name="phone" placeholder="+420 ...">
                 </div>
                 <div class="form-group">
                     <label data-i18n="form.interest">O co máte zájem?</label>
-                    <select>
+                    <select name="interest">
                         <option data-i18n="form.opt1">Realitní investice</option>
                         <option data-i18n="form.opt2">Investiční poradenství</option>
                         <option data-i18n="form.opt3">Mentoring & akademie</option>
@@ -133,7 +139,7 @@
                 </div>
                 <div class="form-group">
                     <label data-i18n="form.message">Vaše zpráva *</label>
-                    <textarea required data-i18n-placeholder="form.message_ph" placeholder="Krátce mi popište, co řešíte..."></textarea>
+                    <textarea name="message" required data-i18n-placeholder="form.message_ph" placeholder="Krátce mi popište, co řešíte..."></textarea>
                 </div>
                 <button type="submit" class="btn-submit" data-i18n="form.submit">Odeslat zprávu →</button>
             </form>
@@ -167,7 +173,6 @@
                 <h5 data-i18n="footer.contact">Kontakt</h5>
                 <a href="mailto:invest@janrehacek.com">invest@janrehacek.com</a>
                 <a href="tel:+420608177099">+420 608 177 099</a>
-                <a href="#">LinkedIn</a>
                 <a href="https://www.instagram.com/skladnikhonza" target="_blank" rel="noopener noreferrer">Instagram</a>
             </div>
         </div>
@@ -179,5 +184,30 @@
 </footer>
 
 <script src="assets/script.js" defer></script>
+<script>
+// Odeslání kontaktního formuláře přes Web3Forms (AJAX – stránka se nereloadne)
+(function () {
+  var form = document.getElementById('contactForm');
+  if (!form) return;
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var btn = form.querySelector('button[type="submit"]');
+    var original = btn ? btn.textContent : '';
+    if (btn) { btn.disabled = true; btn.textContent = '…'; }
+    var lang = document.documentElement.lang;
+    var t = (window.translations && window.translations[lang]) || {};
+    var okMsg = t['contact.success'] || 'Děkuji za zprávu! Brzy se Vám ozvu.';
+    var errMsg = t['contact.error'] || 'Zprávu se nepodařilo odeslat. Zkuste to prosím znovu nebo napište přímo na invest@janrehacek.com.';
+    fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(form) })
+      .then(function (r) { return r.json(); })
+      .then(function (json) {
+        if (json && json.success) { alert(okMsg); form.reset(); }
+        else { alert(errMsg); }
+      })
+      .catch(function () { alert(errMsg); })
+      .finally(function () { if (btn) { btn.disabled = false; btn.textContent = original; } });
+  });
+})();
+</script>
 </body>
 </html>

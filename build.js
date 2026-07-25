@@ -42,6 +42,7 @@ const STATIC_ROUTES = [
     { loc: '/',           priority: '1.0', changefreq: 'monthly' },
     { loc: '/about',      priority: '0.8', changefreq: 'monthly' },
     { loc: '/services',   priority: '0.9', changefreq: 'monthly' },
+    { loc: '/housio',     priority: '0.8', changefreq: 'monthly' },
     { loc: '/investors',  priority: '0.9', changefreq: 'weekly' },
     { loc: '/references', priority: '0.7', changefreq: 'monthly' },
     { loc: '/nabidka',    priority: '0.9', changefreq: 'weekly' },
@@ -901,6 +902,7 @@ function build() {
 
         const replacements = {
             base,
+            canonical: `https://janrehacek.com/${page.outputBase}`,
             cards: cardsHtml || '            <!-- žádné nabídky v této kategorii -->',
             eyebrow: page.eyebrow,
             eyebrow_key: page.eyebrow_key,
@@ -941,7 +943,7 @@ function build() {
         })),
     ];
     const sitemap = '<?xml version="1.0" encoding="UTF-8"?>\n' +
-        '<urlset xmlns="http://www.sitemap.org/schemas/sitemap/0.9">\n' +
+        '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' +
         urls.map(u =>
             `  <url>
     <loc>${SITE_URL}${u.loc}</loc>

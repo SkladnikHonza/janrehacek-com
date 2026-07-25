@@ -4,6 +4,7 @@
 window.translations = window.translations || {};
 
 window.translations.cs = {
+    "housio.founder.eyebrow": "Proč vzniklo Housio", "housio.founder.title": "Nástroj, který jsem sám potřeboval.", "housio.founder.text": "Když moje portfolio narostlo, přestaly mi stačit tabulky. Chtěl jsem jedno místo, kde vidím cash flow, smlouvy i výnosy — a žádné se mi nelíbilo. Tak jsem si ho postavil. Dnes Housio používám každý den a se mnou stovky majitelů napříč Evropou.", "housio.more": "Více o Housio →", "housio.f5": "<strong>Evidence nájemníků a jednotek</strong> — vše přehledně na jednom místě", "housio.f6": "<strong>Přílohy a dokumenty</strong> — smlouvy, faktury i protokoly u každé nemovitosti", "housio.page.features_title": "Vše pro správu vašeho portfolia.", "housio.page.cta.title": "Vyzkoušejte Housio zdarma.", "housio.page.cta.text": "Založení účtu je zdarma a zabere dvě minuty. Spravujte své nemovitosti chytře — jako já.",
     "nav.about": "O mně", "nav.services": "Služby", "nav.investors": "Pro investory", "nav.housio": "Housio.App", "nav.academy": "Akademie", "nav.testimonials": "Reference", "nav.listings": "Nabídka", "nav.contact": "Kontakt",
     // New page-header keys (CZ only; other languages translate later)
     "page.about.title": "Příběh za jedním <em>jménem.</em>", "page.about.sub": "5+ let v realitních investicích, portfolio přes 100 milionů Kč a vlastní platforma Housio. Tady je celý příběh.",
@@ -175,11 +176,13 @@ window.translations.cs = {
 };
 
 window.translations.sk = {
+    "housio.founder.eyebrow": "Prečo vzniklo Housio", "housio.founder.title": "Nástroj, ktorý som sám potreboval.", "housio.founder.text": "Keď moje portfólio narástlo, tabuľky prestali stačiť. Chcel som jedno miesto, kde vidím cash flow, zmluvy aj výnosy — a žiadne sa mi nepáčilo. Tak som si ho postavil. Dnes Housio používam každý deň a so mnou stovky majiteľov naprieč Európou.", "housio.more": "Viac o Housio →", "housio.f5": "<strong>Evidencia nájomníkov a jednotiek</strong> — všetko prehľadne na jednom mieste", "housio.f6": "<strong>Prílohy a dokumenty</strong> — zmluvy, faktúry aj protokoly pri každej nehnuteľnosti", "housio.page.features_title": "Všetko pre správu vášho portfólia.", "housio.page.cta.title": "Vyskúšajte Housio zadarmo.", "housio.page.cta.text": "Založenie účtu je zadarmo a zaberie dve minúty. Spravujte svoje nehnuteľnosti chytro — ako ja.",
+    "page.contact.title": "Poďme sa <em>porozprávať.</em>", "page.contact.sub": "Prvá konzultácia je vždy zdarma a nezáväzná. Stačí mi krátko opísať, čo riešite.", "landing.about.cta": "Celý príbeh", "landing.services.cta": "Všetky služby",
     "nav.about": "O mne", "nav.services": "Služby", "nav.investors": "Pre investorov", "nav.housio": "Housio", "nav.academy": "Akadémia", "nav.testimonials": "Referencie", "nav.listings": "Ponuka", "nav.contact": "Spojme sa",
     "landing.contact.eyebrow": "SPOJME SA", "landing.contact.title": "Rád si vypočujem, čo riešite.", "landing.contact.text": "Prvá konzultácia zdarma, do 24 hodín sa Vám ozvem.", "landing.contact.cta": "Napísať správu",
     "hero.badge": "Investor & realitný expert",
-    "hero.title": "Budujeme hodnotu.<br>Vzdelávame <em>investorov</em>.",
-    "hero.subtitle": "Pomáham klientom i mladým investorom budovať majetok cez nehnuteľnosti a chytré investície.",
+    "hero.title": "Investície,<br>ktoré dávajú <em>zmysel.</em>",
+    "hero.subtitle": "Som Jan Řeháček — investor, realitný expert a zakladateľ platformy Housio. Pomáham klientom i novej generácii investorov budovať dlhodobý majetok cez nehnuteľnosti a chytré investície.",
     "hero.cta1": "Dohodnúť stretnutie", "hero.cta2": "Prehrať video",
     "hero.meta1": "5+ rokov praxe", "hero.meta2": "Bez záväzkov", "hero.meta3": "Prvá konzultácia zdarma",
     "hero.badge_role": "Investor & realitný expert",
@@ -347,11 +350,13 @@ window.translations.sk = {
 };
 
 window.translations.en = {
+    "housio.founder.eyebrow": "Why Housio was born", "housio.founder.title": "The tool I needed myself.", "housio.founder.text": "As my portfolio grew, spreadsheets stopped being enough. I wanted one place to see cash flow, contracts and returns — and I didn't like any of the options out there. So I built my own. Today I use Housio every day, along with hundreds of owners across Europe.", "housio.more": "More about Housio →", "housio.f5": "<strong>Tenant & unit records</strong> — everything clearly in one place", "housio.f6": "<strong>Attachments & documents</strong> — contracts, invoices and handover reports for every property", "housio.page.features_title": "Everything to manage your portfolio.", "housio.page.cta.title": "Try Housio for free.", "housio.page.cta.text": "Creating an account is free and takes two minutes. Manage your properties smartly — just like I do.",
+    "page.contact.title": "Let's <em>talk.</em>", "page.contact.sub": "The first consultation is always free and without obligation. Just briefly describe what you're dealing with.", "landing.about.cta": "Full story", "landing.services.cta": "All services",
     "nav.about": "About", "nav.services": "Services", "nav.investors": "For investors", "nav.housio": "Housio", "nav.academy": "Academy", "nav.testimonials": "References", "nav.listings": "Listings", "nav.contact": "Get in touch",
     "landing.contact.eyebrow": "LET'S CONNECT", "landing.contact.title": "I'd love to hear what you're working on.", "landing.contact.text": "First consultation free, I'll reply within 24 hours.", "landing.contact.cta": "Send a message",
     "hero.badge": "Investor & Real Estate Expert",
-    "hero.title": "We build value.<br>We educate <em>investors</em>.",
-    "hero.subtitle": "I help clients and young investors build wealth through real estate and smart investments.",
+    "hero.title": "Investments<br>that make <em>sense.</em>",
+    "hero.subtitle": "I'm Jan Řeháček — investor, real estate expert and founder of the Housio platform. I help clients and a new generation of investors build long-term wealth through real estate and smart investments.",
     "hero.cta1": "Book a meeting", "hero.cta2": "Play video",
     "hero.meta1": "5+ years experience", "hero.meta2": "No commitments", "hero.meta3": "First consultation free",
     "hero.badge_role": "Investor & Real Estate Expert",
@@ -515,11 +520,13 @@ window.translations.en = {
 };
 
 window.translations.de = {
+    "housio.founder.eyebrow": "Warum Housio entstand", "housio.founder.title": "Das Werkzeug, das ich selbst brauchte.", "housio.founder.text": "Als mein Portfolio wuchs, reichten Tabellen nicht mehr aus. Ich wollte einen Ort für Cashflow, Verträge und Renditen — und keine Lösung gefiel mir. Also baute ich meine eigene. Heute nutze ich Housio täglich, zusammen mit Hunderten von Eigentümern in ganz Europa.", "housio.more": "Mehr über Housio →", "housio.f5": "<strong>Mieter- und Einheitenverwaltung</strong> — alles übersichtlich an einem Ort", "housio.f6": "<strong>Anhänge und Dokumente</strong> — Verträge, Rechnungen und Übergabeprotokolle für jede Immobilie", "housio.page.features_title": "Alles für die Verwaltung Ihres Portfolios.", "housio.page.cta.title": "Testen Sie Housio kostenlos.", "housio.page.cta.text": "Ein Konto zu erstellen ist kostenlos und dauert zwei Minuten. Verwalten Sie Ihre Immobilien clever — so wie ich.",
+    "page.contact.title": "Lassen Sie uns <em>sprechen.</em>", "page.contact.sub": "Die Erstberatung ist immer kostenlos und unverbindlich. Beschreiben Sie kurz, worum es geht.", "landing.about.cta": "Ganze Geschichte", "landing.services.cta": "Alle Leistungen",
     "nav.about": "Über mich", "nav.services": "Leistungen", "nav.investors": "Für Investoren", "nav.housio": "Housio", "nav.academy": "Akademie", "nav.testimonials": "Referenzen", "nav.listings": "Angebote", "nav.contact": "Kontakt",
     "landing.contact.eyebrow": "KONTAKT AUFNEHMEN", "landing.contact.title": "Ich höre Ihnen gerne zu.", "landing.contact.text": "Erstberatung kostenlos, Antwort innerhalb von 24 Stunden.", "landing.contact.cta": "Nachricht senden",
     "hero.badge": "Investor & Immobilienexperte",
-    "hero.title": "Wir schaffen Werte.<br>Wir bilden <em>Investoren</em> aus.",
-    "hero.subtitle": "Ich helfe Kunden und jungen Investoren, Vermögen durch Immobilien und kluge Investitionen aufzubauen.",
+    "hero.title": "Investitionen<br>mit <em>Sinn.</em>",
+    "hero.subtitle": "Ich bin Jan Řeháček — Investor, Immobilienexperte und Gründer der Plattform Housio. Ich helfe Kunden und einer neuen Generation von Investoren, langfristiges Vermögen durch Immobilien und kluge Investitionen aufzubauen.",
     "hero.cta1": "Termin vereinbaren", "hero.cta2": "Video abspielen",
     "hero.meta1": "5+ Jahre Erfahrung", "hero.meta2": "Unverbindlich", "hero.meta3": "Erstberatung kostenlos",
     "hero.badge_role": "Investor & Immobilienexperte",
@@ -686,11 +693,13 @@ window.translations.de = {
 window.translations = window.translations || {};
 
 window.translations.fr = {
+    "housio.founder.eyebrow": "Pourquoi Housio est né", "housio.founder.title": "L'outil dont j'avais moi-même besoin.", "housio.founder.text": "À mesure que mon portefeuille grandissait, les tableurs ne suffisaient plus. Je voulais un seul endroit pour voir les flux, les contrats et les rendements — et aucune solution ne me convenait. Alors je l'ai créé. Aujourd'hui j'utilise Housio chaque jour, avec des centaines de propriétaires partout en Europe.", "housio.more": "En savoir plus sur Housio →", "housio.f5": "<strong>Suivi des locataires et des lots</strong> — tout au clair au même endroit", "housio.f6": "<strong>Pièces jointes et documents</strong> — contrats, factures et états des lieux pour chaque bien", "housio.page.features_title": "Tout pour gérer votre portefeuille.", "housio.page.cta.title": "Essayez Housio gratuitement.", "housio.page.cta.text": "Créer un compte est gratuit et prend deux minutes. Gérez vos biens intelligemment — comme moi.",
+    "page.contact.title": "<em>Discutons.</em>", "page.contact.sub": "La première consultation est toujours gratuite et sans engagement. Décrivez brièvement votre projet.", "landing.about.cta": "Toute l'histoire", "landing.services.cta": "Tous les services",
     "nav.about": "À propos", "nav.services": "Services", "nav.investors": "Pour investisseurs", "nav.housio": "Housio", "nav.academy": "Académie", "nav.testimonials": "Références", "nav.listings": "Annonces", "nav.contact": "Contact",
     "landing.contact.eyebrow": "CONTACTONS-NOUS", "landing.contact.title": "J'aimerais entendre votre projet.", "landing.contact.text": "Première consultation gratuite, réponse sous 24 heures.", "landing.contact.cta": "Envoyer un message",
     "hero.badge": "Investisseur & expert immobilier",
-    "hero.title": "Nous créons de la valeur.<br>Nous formons les <em>investisseurs</em>.",
-    "hero.subtitle": "J'aide mes clients et les jeunes investisseurs à bâtir un patrimoine grâce à l'immobilier et aux investissements intelligents.",
+    "hero.title": "Des investissements<br>qui ont du <em>sens.</em>",
+    "hero.subtitle": "Je suis Jan Řeháček — investisseur, expert immobilier et fondateur de la plateforme Housio. J'aide mes clients et une nouvelle génération d'investisseurs à bâtir un patrimoine durable grâce à l'immobilier et aux investissements intelligents.",
     "hero.cta1": "Prendre rendez-vous", "hero.cta2": "Lire la vidéo",
     "hero.meta1": "5+ ans d'expérience", "hero.meta2": "Sans engagement", "hero.meta3": "Première consultation gratuite",
     "hero.badge_role": "Investisseur & expert immobilier",
@@ -854,11 +863,13 @@ window.translations.fr = {
 };
 
 window.translations.it = {
+    "housio.founder.eyebrow": "Perché è nato Housio", "housio.founder.title": "Lo strumento di cui avevo bisogno io stesso.", "housio.founder.text": "Con la crescita del mio portafoglio, i fogli di calcolo non bastavano più. Volevo un unico posto per vedere flussi di cassa, contratti e rendimenti — e nessuna soluzione mi convinceva. Così l'ho creato. Oggi uso Housio ogni giorno, insieme a centinaia di proprietari in tutta Europa.", "housio.more": "Scopri di più su Housio →", "housio.f5": "<strong>Anagrafica di inquilini e unità</strong> — tutto chiaro in un unico posto", "housio.f6": "<strong>Allegati e documenti</strong> — contratti, fatture e verbali di consegna per ogni immobile", "housio.page.features_title": "Tutto per gestire il tuo portafoglio.", "housio.page.cta.title": "Prova Housio gratis.", "housio.page.cta.text": "Creare un account è gratuito e richiede due minuti. Gestisci i tuoi immobili in modo intelligente — come faccio io.",
+    "page.contact.title": "<em>Parliamone.</em>", "page.contact.sub": "La prima consulenza è sempre gratuita e senza impegno. Descrivi brevemente di cosa hai bisogno.", "landing.about.cta": "Tutta la storia", "landing.services.cta": "Tutti i servizi",
     "nav.about": "Chi sono", "nav.services": "Servizi", "nav.investors": "Per investitori", "nav.housio": "Housio", "nav.academy": "Accademia", "nav.testimonials": "Referenze", "nav.listings": "Annunci", "nav.contact": "Contattami",
     "landing.contact.eyebrow": "METTIAMOCI IN CONTATTO", "landing.contact.title": "Mi piacerebbe sentire il tuo progetto.", "landing.contact.text": "Prima consulenza gratuita, risposta entro 24 ore.", "landing.contact.cta": "Invia un messaggio",
     "hero.badge": "Investitore & esperto immobiliare",
-    "hero.title": "Costruiamo valore.<br>Formiamo gli <em>investitori</em>.",
-    "hero.subtitle": "Aiuto clienti e giovani investitori a costruire patrimonio attraverso immobili e investimenti intelligenti.",
+    "hero.title": "Investimenti<br>che hanno <em>senso.</em>",
+    "hero.subtitle": "Sono Jan Řeháček — investitore, esperto immobiliare e fondatore della piattaforma Housio. Aiuto i clienti e una nuova generazione di investitori a costruire un patrimonio duraturo attraverso immobili e investimenti intelligenti.",
     "hero.cta1": "Fissa un incontro", "hero.cta2": "Riproduci video",
     "hero.meta1": "5+ anni di esperienza", "hero.meta2": "Senza impegno", "hero.meta3": "Prima consulenza gratis",
     "hero.badge_role": "Investitore & esperto immobiliare",
@@ -1022,11 +1033,13 @@ window.translations.it = {
 };
 
 window.translations.es = {
+    "housio.founder.eyebrow": "Por qué nació Housio", "housio.founder.title": "La herramienta que yo mismo necesitaba.", "housio.founder.text": "A medida que crecía mi cartera, las hojas de cálculo dejaron de bastar. Quería un único lugar para ver el flujo de caja, los contratos y la rentabilidad — y ninguna solución me convencía. Así que la construí. Hoy uso Housio cada día, junto a cientos de propietarios por toda Europa.", "housio.more": "Más sobre Housio →", "housio.f5": "<strong>Registro de inquilinos y unidades</strong> — todo claro en un solo lugar", "housio.f6": "<strong>Adjuntos y documentos</strong> — contratos, facturas y actas de entrega de cada inmueble", "housio.page.features_title": "Todo para gestionar tu cartera.", "housio.page.cta.title": "Prueba Housio gratis.", "housio.page.cta.text": "Crear una cuenta es gratis y lleva dos minutos. Gestiona tus inmuebles de forma inteligente — como yo.",
+    "page.contact.title": "<em>Hablemos.</em>", "page.contact.sub": "La primera consulta es siempre gratuita y sin compromiso. Solo describe brevemente lo que necesitas.", "landing.about.cta": "Toda la historia", "landing.services.cta": "Todos los servicios",
     "nav.about": "Sobre mí", "nav.services": "Servicios", "nav.investors": "Para inversores", "nav.housio": "Housio", "nav.academy": "Academia", "nav.testimonials": "Referencias", "nav.listings": "Inmuebles", "nav.contact": "Contacto",
     "landing.contact.eyebrow": "CONECTEMOS", "landing.contact.title": "Me encantaría escuchar tu proyecto.", "landing.contact.text": "Primera consulta gratuita, respuesta en 24 horas.", "landing.contact.cta": "Enviar mensaje",
     "hero.badge": "Inversor & experto inmobiliario",
-    "hero.title": "Construimos valor.<br>Formamos a los <em>inversores</em>.",
-    "hero.subtitle": "Ayudo a clientes y jóvenes inversores a construir patrimonio a través de inmuebles e inversiones inteligentes.",
+    "hero.title": "Inversiones<br>que tienen <em>sentido.</em>",
+    "hero.subtitle": "Soy Jan Řeháček — inversor, experto inmobiliario y fundador de la plataforma Housio. Ayudo a clientes y a una nueva generación de inversores a construir un patrimonio duradero a través de inmuebles e inversiones inteligentes.",
     "hero.cta1": "Concertar reunión", "hero.cta2": "Reproducir vídeo",
     "hero.meta1": "5+ años de experiencia", "hero.meta2": "Sin compromiso", "hero.meta3": "Primera consulta gratis",
     "hero.badge_role": "Inversor & experto inmobiliario",
@@ -1190,11 +1203,13 @@ window.translations.es = {
 };
 
 window.translations.pl = {
+    "housio.founder.eyebrow": "Dlaczego powstało Housio", "housio.founder.title": "Narzędzie, którego sam potrzebowałem.", "housio.founder.text": "Gdy moje portfolio rosło, arkusze przestały wystarczać. Chciałem jedno miejsce, w którym widzę cash flow, umowy i zyski — i żadne rozwiązanie mi nie odpowiadało. Więc je zbudowałem. Dziś używam Housio codziennie, razem z setkami właścicieli w całej Europie.", "housio.more": "Więcej o Housio →", "housio.f5": "<strong>Ewidencja najemców i lokali</strong> — wszystko przejrzyście w jednym miejscu", "housio.f6": "<strong>Załączniki i dokumenty</strong> — umowy, faktury i protokoły dla każdej nieruchomości", "housio.page.features_title": "Wszystko do zarządzania Twoim portfolio.", "housio.page.cta.title": "Wypróbuj Housio za darmo.", "housio.page.cta.text": "Założenie konta jest darmowe i zajmuje dwie minuty. Zarządzaj nieruchomościami mądrze — tak jak ja.",
+    "page.contact.title": "<em>Porozmawiajmy.</em>", "page.contact.sub": "Pierwsza konsultacja jest zawsze bezpłatna i niezobowiązująca. Wystarczy krótko opisać, czym się zajmujesz.", "landing.about.cta": "Cała historia", "landing.services.cta": "Wszystkie usługi",
     "nav.about": "O mnie", "nav.services": "Usługi", "nav.investors": "Dla inwestorów", "nav.housio": "Housio", "nav.academy": "Akademia", "nav.testimonials": "Referencje", "nav.listings": "Oferty", "nav.contact": "Kontakt",
     "landing.contact.eyebrow": "SKONTAKTUJMY SIĘ", "landing.contact.title": "Chętnie wysłucham, nad czym pracujesz.", "landing.contact.text": "Pierwsza konsultacja gratis, odpowiem w ciągu 24 godzin.", "landing.contact.cta": "Wyślij wiadomość",
     "hero.badge": "Inwestor & ekspert ds. nieruchomości",
-    "hero.title": "Budujemy wartość.<br>Edukujemy <em>inwestorów</em>.",
-    "hero.subtitle": "Pomagam klientom i młodym inwestorom budować majątek poprzez nieruchomości i mądre inwestycje.",
+    "hero.title": "Inwestycje,<br>które mają <em>sens.</em>",
+    "hero.subtitle": "Jestem Jan Řeháček — inwestor, ekspert ds. nieruchomości i założyciel platformy Housio. Pomagam klientom i nowemu pokoleniu inwestorów budować długoterminowy majątek poprzez nieruchomości i mądre inwestycje.",
     "hero.cta1": "Umów spotkanie", "hero.cta2": "Odtwórz wideo",
     "hero.meta1": "5+ lat doświadczenia", "hero.meta2": "Bez zobowiązań", "hero.meta3": "Pierwsza konsultacja gratis",
     "hero.badge_role": "Inwestor & ekspert ds. nieruchomości",
@@ -1369,11 +1384,13 @@ window.translations.pl = {
 window.translations = window.translations || {};
 
 window.translations.ru = {
+    "housio.founder.eyebrow": "Почему появился Housio", "housio.founder.title": "Инструмент, который был нужен мне самому.", "housio.founder.text": "Когда мой портфель вырос, таблиц стало не хватать. Я хотел одно место, где видны денежный поток, договоры и доходность — и ни одно решение мне не подходило. Поэтому я создал своё. Сегодня я использую Housio каждый день, вместе с сотнями владельцев по всей Европе.", "housio.more": "Подробнее о Housio →", "housio.f5": "<strong>Учёт арендаторов и объектов</strong> — всё наглядно в одном месте", "housio.f6": "<strong>Вложения и документы</strong> — договоры, счета и акты по каждой недвижимости", "housio.page.features_title": "Всё для управления вашим портфелем.", "housio.page.cta.title": "Попробуйте Housio бесплатно.", "housio.page.cta.text": "Создание аккаунта бесплатно и занимает две минуты. Управляйте недвижимостью умно — как я.",
+    "page.contact.title": "<em>Давайте поговорим.</em>", "page.contact.sub": "Первая консультация всегда бесплатна и ни к чему не обязывает. Просто кратко опишите, что вас интересует.", "landing.about.cta": "Вся история", "landing.services.cta": "Все услуги",
     "nav.about": "Обо мне", "nav.services": "Услуги", "nav.investors": "Для инвесторов", "nav.housio": "Housio", "nav.academy": "Академия", "nav.testimonials": "Отзывы", "nav.listings": "Объекты", "nav.contact": "Связаться",
     "landing.contact.eyebrow": "СВЯЖЕМСЯ", "landing.contact.title": "Буду рад услышать о вашем проекте.", "landing.contact.text": "Первая консультация бесплатно, отвечу в течение 24 часов.", "landing.contact.cta": "Написать сообщение",
     "hero.badge": "Инвестор и эксперт по недвижимости",
-    "hero.title": "Создаём ценность.<br>Обучаем <em>инвесторов</em>.",
-    "hero.subtitle": "Помогаю клиентам и молодым инвесторам строить капитал через недвижимость и умные инвестиции.",
+    "hero.title": "Инвестиции,<br>которые имеют <em>смысл.</em>",
+    "hero.subtitle": "Я Jan Řeháček — инвестор, эксперт по недвижимости и основатель платформы Housio. Помогаю клиентам и новому поколению инвесторов создавать долгосрочный капитал через недвижимость и умные инвестиции.",
     "hero.cta1": "Назначить встречу", "hero.cta2": "Смотреть видео",
     "hero.meta1": "5+ лет опыта", "hero.meta2": "Без обязательств", "hero.meta3": "Первая консультация бесплатно",
     "hero.badge_role": "Инвестор и эксперт по недвижимости",
@@ -1545,11 +1562,13 @@ window.translations.ru = {
 };
 
 window.translations.ja = {
+    "housio.founder.eyebrow": "Housio が生まれた理由", "housio.founder.title": "自分自身が必要としたツール。", "housio.founder.text": "ポートフォリオが大きくなると、表計算では足りなくなりました。キャッシュフロー、契約、利回りを一箇所で見たかったのですが、しっくりくるものがありませんでした。そこで自分で作りました。今では毎日 Housio を使い、ヨーロッパ中の数百人のオーナーも一緒に使っています。", "housio.more": "Housio について詳しく →", "housio.f5": "<strong>入居者・住戸の管理</strong> — すべてを一箇所でわかりやすく", "housio.f6": "<strong>添付ファイルと書類</strong> — 物件ごとに契約書・請求書・引渡書を保管", "housio.page.features_title": "ポートフォリオ管理に必要なすべて。", "housio.page.cta.title": "Housio を無料でお試しください。", "housio.page.cta.text": "アカウント作成は無料で、2分で完了します。私と同じように、賢く不動産を管理しましょう。",
+    "page.contact.title": "<em>お話ししましょう。</em>", "page.contact.sub": "初回のご相談は常に無料で、義務は一切ありません。ご状況を簡単にお聞かせください。", "landing.about.cta": "詳しく読む", "landing.services.cta": "すべてのサービス",
     "nav.about": "私について", "nav.services": "サービス", "nav.investors": "投資家の方へ", "nav.housio": "Housio", "nav.academy": "アカデミー", "nav.testimonials": "推薦の声", "nav.listings": "物件一覧", "nav.contact": "お問い合わせ",
     "landing.contact.eyebrow": "ご相談はこちら", "landing.contact.title": "お話をお聞かせください。", "landing.contact.text": "初回相談無料、24時間以内にご返信いたします。", "landing.contact.cta": "メッセージを送る",
     "hero.badge": "投資家・不動産専門家",
-    "hero.title": "価値を築く。<br><em>投資家</em>を育てる。",
-    "hero.subtitle": "クライアントと若い投資家が、不動産とスマートな投資を通じて資産を築くお手伝いをします。",
+    "hero.title": "意味のある<br><em>投資。</em>",
+    "hero.subtitle": "投資家、不動産の専門家、そしてプラットフォーム「Housio」の創設者、Jan Řeháček です。クライアントと新しい世代の投資家が、不動産とスマートな投資を通じて長期的な資産を築くお手伝いをします。",
     "hero.cta1": "ミーティング予約", "hero.cta2": "動画を再生",
     "hero.meta1": "5年以上の経験", "hero.meta2": "契約なし", "hero.meta3": "初回コンサル無料",
     "hero.badge_role": "投資家・不動産専門家",
@@ -1709,11 +1728,13 @@ window.translations.ja = {
 };
 
 window.translations.zh = {
+    "housio.founder.eyebrow": "Housio 的由来", "housio.founder.title": "我自己需要的工具。", "housio.founder.text": "随着我的资产组合增长，表格已经不够用了。我想要一个能同时查看现金流、合同和收益的地方——但没有一款让我满意。于是我自己动手做了一个。如今我每天都在用 Housio，还有全欧洲数百位业主与我一同使用。", "housio.more": "了解更多 Housio →", "housio.f5": "<strong>租户与房源管理</strong> — 一目了然，集中管理", "housio.f6": "<strong>附件与文档</strong> — 每套房产的合同、发票和交接单", "housio.page.features_title": "管理资产组合所需的一切。", "housio.page.cta.title": "免费试用 Housio。", "housio.page.cta.text": "注册免费，只需两分钟。像我一样，聪明地管理你的房产。",
+    "page.contact.title": "<em>聊一聊吧。</em>", "page.contact.sub": "首次咨询始终免费且无任何义务。只需简单描述您的需求即可。", "landing.about.cta": "完整故事", "landing.services.cta": "全部服务",
     "nav.about": "关于我", "nav.services": "服务", "nav.investors": "投资人专区", "nav.housio": "Housio", "nav.academy": "学院", "nav.testimonials": "推荐", "nav.listings": "房源", "nav.contact": "联系",
     "landing.contact.eyebrow": "联系我们", "landing.contact.title": "期待听到您的项目。", "landing.contact.text": "首次咨询免费，24小时内回复。", "landing.contact.cta": "发送消息",
     "hero.badge": "投资人 & 房地产专家",
-    "hero.title": "构筑价值。<br>培育<em>投资人</em>。",
-    "hero.subtitle": "我帮助客户和年轻投资人通过房地产和明智的投资构建财富。",
+    "hero.title": "有意义的<br><em>投资。</em>",
+    "hero.subtitle": "我是 Jan Řeháček — 投资人、房地产专家以及 Housio 平台的创始人。我帮助客户和新一代投资人通过房地产和明智的投资构建长期财富。",
     "hero.cta1": "预约会面", "hero.cta2": "播放视频",
     "hero.meta1": "5年以上经验", "hero.meta2": "无承诺", "hero.meta3": "首次咨询免费",
     "hero.badge_role": "投资人 & 房地产专家",
