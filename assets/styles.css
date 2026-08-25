@@ -2275,3 +2275,438 @@ a.logo:hover { opacity: 0.7; }
     padding: 7px 14px;
 }
 .lightbox-watermark[hidden] { display: none; }
+
+/* ===== PRO MAKLÉŘE — PARTNERSKÝ PROGRAM (pro-maklere.html) ===== */
+.partner-hero-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 32px;
+}
+.partner-chips {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 34px;
+}
+.partner-chip {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 11px 20px;
+    display: inline-flex;
+    align-items: baseline;
+    gap: 9px;
+}
+.partner-chip b {
+    font-family: 'Geist', sans-serif;
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: -0.6px;
+    color: var(--accent-dark);
+}
+.partner-chip span { font-size: 13.5px; font-weight: 500; color: var(--text-muted); }
+
+/* --- kalkulačka výdělku (dark card) --- */
+.partner-calc-section { padding: 90px 0; background: var(--bg); }
+.partner-calc {
+    background: var(--bg-dark);
+    color: white;
+    border-radius: 22px;
+    padding: 52px 48px 34px;
+    position: relative;
+    overflow: hidden;
+}
+.partner-calc::before,
+.partner-apply::before {
+    content: '';
+    position: absolute;
+    right: -120px;
+    top: -140px;
+    width: 460px;
+    height: 460px;
+    background: radial-gradient(circle, rgba(212, 165, 116, 0.20) 0%, transparent 66%);
+    pointer-events: none;
+}
+.partner-calc-grid {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 56px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+.partner-calc-title {
+    font-family: 'Geist', sans-serif;
+    font-size: clamp(28px, 3.2vw, 40px);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+}
+.partner-calc-lead {
+    color: rgba(255,255,255,0.7);
+    font-size: 16px;
+    margin-top: 12px;
+    max-width: 430px;
+}
+.partner-calc-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    margin: 34px 0 14px;
+}
+.partner-calc-label {
+    text-transform: uppercase;
+    font-size: 11.5px;
+    letter-spacing: 1.6px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.6);
+}
+.partner-calc-label-plan { display: block; margin: 30px 0 12px; }
+.partner-calc-num {
+    font-family: 'Geist', sans-serif;
+    font-size: 22px;
+    font-weight: 600;
+    color: var(--accent);
+}
+.partner-range {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 6px;
+    border-radius: 999px;
+    background: rgba(255,255,255,0.18);
+    outline: none;
+    cursor: pointer;
+}
+.partner-range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 4px solid white;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+    cursor: pointer;
+}
+.partner-range::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 4px solid white;
+    cursor: pointer;
+}
+.partner-plans { display: flex; gap: 8px; }
+.partner-plan {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 10px;
+    padding: 11px 8px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.75);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.partner-plan span { font-size: 11px; font-weight: 500; opacity: 0.65; }
+.partner-plan:hover { background: rgba(255,255,255,0.14); }
+.partner-plan.active {
+    background: white;
+    border-color: white;
+    color: var(--text);
+}
+.partner-calc-result {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.13);
+    border-radius: 16px;
+    padding: 30px 26px;
+    text-align: center;
+}
+.partner-calc-cap {
+    text-transform: uppercase;
+    font-size: 11.5px;
+    letter-spacing: 1.6px;
+    font-weight: 600;
+    color: rgba(255,255,255,0.6);
+}
+.partner-calc-total {
+    font-family: 'Geist', sans-serif;
+    font-size: clamp(36px, 5vw, 52px);
+    font-weight: 600;
+    letter-spacing: -2px;
+    line-height: 1;
+    color: var(--accent);
+    margin: 10px 0 6px;
+}
+.partner-calc-per { font-size: 13.5px; color: rgba(255,255,255,0.55); margin-bottom: 18px; }
+.partner-calc-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 14px;
+    padding: 13px 0;
+    text-align: left;
+    border-top: 1px solid rgba(255,255,255,0.12);
+}
+.partner-calc-line span { font-size: 13.5px; color: rgba(255,255,255,0.72); }
+.partner-calc-line b {
+    font-family: 'Geist', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+.partner-calc-note {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    font-size: 12.5px;
+    color: rgba(255,255,255,0.45);
+    margin-top: 26px;
+}
+
+/* --- jak to funguje + provize --- */
+.partner-steps-section { padding: 100px 0; background: var(--bg-card); }
+.partner-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+.partner-step {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 30px;
+    transition: all 0.3s;
+}
+.partner-step:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 50px -20px rgba(0,0,0,0.12);
+}
+.partner-step-num {
+    width: 38px;
+    height: 38px;
+    border-radius: var(--radius-sm);
+    background: var(--text);
+    color: var(--bg);
+    font-family: 'Geist', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.partner-step h3 {
+    font-family: 'Geist', sans-serif;
+    font-size: 21px;
+    font-weight: 600;
+    letter-spacing: -0.7px;
+    margin-bottom: 10px;
+}
+.partner-step p { color: var(--text-muted); font-size: 14.5px; line-height: 1.7; }
+.partner-terms {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    overflow: hidden;
+    margin-top: 22px;
+    background: var(--bg);
+}
+.partner-term {
+    padding: 34px 26px;
+    text-align: center;
+    border-left: 1px solid var(--border);
+}
+.partner-term:first-child { border-left: none; }
+.partner-term-big {
+    font-family: 'Geist', sans-serif;
+    font-size: clamp(32px, 4vw, 44px);
+    font-weight: 600;
+    letter-spacing: -2px;
+    line-height: 1;
+    color: var(--accent-dark);
+}
+.partner-term h3 {
+    font-family: 'Geist', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    margin: 12px 0 6px;
+}
+.partner-term p { font-size: 13.5px; color: var(--text-muted); }
+
+/* --- výhody --- */
+.partner-benefits-section { padding: 100px 0; background: var(--bg); }
+.partner-benefits {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+}
+.partner-benefit {
+    display: flex;
+    gap: 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 28px;
+    transition: all 0.3s;
+}
+.partner-benefit:hover {
+    border-color: var(--accent);
+    transform: translateY(-4px);
+    box-shadow: 0 20px 50px -20px rgba(0,0,0,0.12);
+}
+.partner-benefit .service-icon { flex-shrink: 0; margin-bottom: 0; }
+.partner-benefit h3 {
+    font-family: 'Geist', sans-serif;
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: -0.6px;
+    margin-bottom: 7px;
+}
+.partner-benefit p { color: var(--text-muted); font-size: 14.5px; line-height: 1.7; }
+
+/* --- přihláška (dark card) --- */
+.partner-apply-section { padding: 100px 0; background: var(--bg-card); }
+.partner-apply {
+    background: var(--bg-dark);
+    color: white;
+    border-radius: 22px;
+    padding: 56px 52px;
+    position: relative;
+    overflow: hidden;
+}
+.partner-apply-grid {
+    display: grid;
+    grid-template-columns: 1fr 340px;
+    gap: 50px;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+.partner-apply-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.14);
+    border-radius: 100px;
+    padding: 6px 14px;
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 1.4px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+}
+.partner-apply-title {
+    font-family: 'Geist', sans-serif;
+    font-size: clamp(28px, 3.4vw, 42px);
+    font-weight: 600;
+    line-height: 1.1;
+    letter-spacing: -1.6px;
+}
+.partner-apply-lead {
+    color: rgba(255,255,255,0.75);
+    font-size: 17px;
+    margin-top: 14px;
+    max-width: 460px;
+}
+.partner-apply-list { list-style: none; margin-top: 24px; display: grid; gap: 11px; }
+.partner-apply-list li {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    font-size: 15px;
+    color: rgba(255,255,255,0.9);
+}
+.partner-apply-list li::before { content: "✓"; color: var(--accent); font-weight: 600; }
+.partner-apply-cta { text-align: center; }
+.partner-apply-btn {
+    display: block;
+    width: 100%;
+    padding: 16px 26px;
+    font-size: 15px;
+    font-weight: 600;
+}
+.partner-apply-note {
+    margin-top: 16px;
+    font-size: 12.5px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.5);
+}
+
+/* --- FAQ --- */
+.partner-faq-section { padding: 100px 0; background: var(--bg); }
+.partner-faq-title { text-align: center; max-width: none; margin: 0 auto 40px; }
+.partner-faq { max-width: 760px; margin: 0 auto; display: grid; gap: 12px; }
+.partner-faq details {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 0 26px;
+}
+.partner-faq summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    font-family: 'Geist', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+}
+.partner-faq summary::-webkit-details-marker { display: none; }
+.partner-faq summary::after {
+    content: "+";
+    color: var(--accent-dark);
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1;
+}
+.partner-faq details[open] summary::after { content: "–"; }
+.partner-faq details p {
+    padding-bottom: 22px;
+    margin-top: -4px;
+    color: var(--text-muted);
+    font-size: 14.5px;
+    line-height: 1.7;
+}
+
+/* --- responzivita --- */
+@media (max-width: 1240px) and (min-width: 901px) {
+    .nav-links { gap: 20px; }
+    .nav-links a { font-size: 13.5px; }
+}
+@media (max-width: 900px) {
+    .partner-calc-grid,
+    .partner-apply-grid,
+    .partner-benefits { grid-template-columns: 1fr; }
+    .partner-steps { grid-template-columns: 1fr; }
+    .partner-terms { grid-template-columns: 1fr; }
+    .partner-term { border-left: none; border-top: 1px solid var(--border); }
+    .partner-term:first-child { border-top: none; }
+    .partner-calc { padding: 34px 26px 26px; }
+    .partner-apply { padding: 38px 28px; }
+    .partner-calc-section,
+    .partner-steps-section,
+    .partner-benefits-section,
+    .partner-apply-section,
+    .partner-faq-section { padding: 60px 0; }
+}
+@media (max-width: 500px) {
+    .partner-chip { padding: 10px 16px; }
+    .partner-plan { font-size: 13px; padding: 10px 6px; }
+    .partner-plan span { font-size: 10.5px; }
+    .partner-calc-result { padding: 24px 20px; }
+    .partner-benefit { flex-direction: column; gap: 16px; }
+}

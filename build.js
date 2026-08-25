@@ -43,6 +43,7 @@ const STATIC_ROUTES = [
     { loc: '/about',      priority: '0.8', changefreq: 'monthly' },
     { loc: '/services',   priority: '0.9', changefreq: 'monthly' },
     { loc: '/housio',     priority: '0.8', changefreq: 'monthly' },
+    { loc: '/pro-maklere', priority: '0.8', changefreq: 'monthly' },
     { loc: '/investors',  priority: '0.9', changefreq: 'weekly' },
     { loc: '/references', priority: '0.7', changefreq: 'monthly' },
     { loc: '/nabidka',    priority: '0.9', changefreq: 'weekly' },
