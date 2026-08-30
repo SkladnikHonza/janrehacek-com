@@ -3,6 +3,12 @@
   "trailingSlash": false,
   "buildCommand": "node build.js",
   "outputDirectory": ".",
+  "rewrites": [
+    {
+      "source": "/google95dfeb17934d2c89.html",
+      "destination": "/google95dfeb17934d2c89"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
