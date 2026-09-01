@@ -32,7 +32,7 @@ const LISTINGS_DIR = path.join(ROOT, 'images', 'listings');
 const TEMPLATES_DIR = path.join(ROOT, '_templates');
 const OUTPUT_DIR = path.join(ROOT, 'nabidka');
 const SITEMAP_PATH = path.join(ROOT, 'sitemap.xml');
-const SITE_URL = 'https://janrehacek.com';
+const SITE_URL = 'https://www.janrehacek.com';
 
 const TYPES = ['pronajem', 'prodej', 'investicni'];   // recognized listing categories
 const IMG_EXT = /\.(jpe?g|png|webp)$/i;
@@ -903,7 +903,7 @@ function build() {
 
         const replacements = {
             base,
-            canonical: `https://janrehacek.com/${page.outputBase}`,
+            canonical: `https://www.janrehacek.com/${page.outputBase}`,
             cards: cardsHtml || '            <!-- žádné nabídky v této kategorii -->',
             eyebrow: page.eyebrow,
             eyebrow_key: page.eyebrow_key,
