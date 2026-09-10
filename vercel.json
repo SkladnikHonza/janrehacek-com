@@ -5,6 +5,14 @@
   "outputDirectory": ".",
   "rewrites": [
     {
+      "source": "/admin",
+      "destination": "https://housio-crm-admin.vercel.app/"
+    },
+    {
+      "source": "/admin/:match*",
+      "destination": "https://housio-crm-admin.vercel.app/:match*"
+    },
+    {
       "source": "/google95dfeb17934d2c89.html",
       "destination": "/google95dfeb17934d2c89"
     }
