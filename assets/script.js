@@ -60,7 +60,7 @@ window.translations.cs = {
     "partner.apply.li1": "Schválení do pár dnů",
     "partner.apply.li2": "Basic zdarma na rok",
     "partner.apply.li3": "Vlastní odkaz, kód a přehled výdělků",
-    "partner.apply.note": "Přihlášku vyplníte přímo na housio.online — Housio je platforma, kterou jsem založil a sám používám pro správu svého portfolia.",
+    "partner.apply.note": "Přihlášku vyplníte přímo na housio.app — Housio je platforma, kterou jsem založil a sám používám pro správu svého portfolia.",
     "partner.faq.title": "Časté dotazy",
     "partner.faq1.q": "Kolik mě to stojí?",
     "partner.faq1.a": "Nic. Členství v programu je zdarma, žádné vstupní ani měsíční poplatky. Navíc dostanete Basic na rok zdarma.",
@@ -298,7 +298,7 @@ window.translations.sk = {
     "partner.apply.li1": "Schválenie do pár dní",
     "partner.apply.li2": "Basic zadarmo na rok",
     "partner.apply.li3": "Vlastný odkaz, kód a prehľad zárobkov",
-    "partner.apply.note": "Prihlášku vyplníte priamo na housio.online — Housio je platforma, ktorú som založil a sám používam na správu svojho portfólia.",
+    "partner.apply.note": "Prihlášku vyplníte priamo na housio.app — Housio je platforma, ktorú som založil a sám používam na správu svojho portfólia.",
     "partner.faq.title": "Časté otázky",
     "partner.faq1.q": "Koľko ma to stojí?",
     "partner.faq1.a": "Nič. Členstvo v programe je zadarmo, žiadne vstupné ani mesačné poplatky. Navyše dostanete Basic na rok zadarmo.",
@@ -538,7 +538,7 @@ window.translations.en = {
     "partner.apply.li1": "Approval within a few days",
     "partner.apply.li2": "Basic free for a year",
     "partner.apply.li3": "Your own link, code, and earnings dashboard",
-    "partner.apply.note": "You fill in the application directly on housio.online — Housio is the platform I founded and use myself to manage my own portfolio.",
+    "partner.apply.note": "You fill in the application directly on housio.app — Housio is the platform I founded and use myself to manage my own portfolio.",
     "partner.faq.title": "Frequently asked questions",
     "partner.faq1.q": "What does it cost me?",
     "partner.faq1.a": "Nothing. Joining the program is free — no entry or monthly fees. On top of that, you get Basic free for a year.",
@@ -774,7 +774,7 @@ window.translations.de = {
     "partner.apply.li1": "Freigabe innerhalb weniger Tage",
     "partner.apply.li2": "Basic ein Jahr gratis",
     "partner.apply.li3": "Eigener Link, Code und Verdienstübersicht",
-    "partner.apply.note": "Das Bewerbungsformular füllen Sie direkt auf housio.online aus — Housio ist die Plattform, die ich gegründet habe und selbst für mein Portfolio nutze.",
+    "partner.apply.note": "Das Bewerbungsformular füllen Sie direkt auf housio.app aus — Housio ist die Plattform, die ich gegründet habe und selbst für mein Portfolio nutze.",
     "partner.faq.title": "Häufige Fragen",
     "partner.faq1.q": "Was kostet mich das?",
     "partner.faq1.a": "Nichts. Die Teilnahme am Programm ist kostenlos, ohne Einstiegs- oder Monatsgebühren. Zusätzlich erhalten Sie Basic ein Jahr lang gratis.",
@@ -1013,7 +1013,7 @@ window.translations.fr = {
     "partner.apply.li1": "Validation en quelques jours",
     "partner.apply.li2": "Basic offert pendant un an",
     "partner.apply.li3": "Votre lien, votre code et votre tableau de gains",
-    "partner.apply.note": "Vous remplissez la candidature directement sur housio.online — Housio est la plateforme que j'ai fondée et que j'utilise moi-même pour gérer mon portefeuille.",
+    "partner.apply.note": "Vous remplissez la candidature directement sur housio.app — Housio est la plateforme que j'ai fondée et que j'utilise moi-même pour gérer mon portefeuille.",
     "partner.faq.title": "Questions fréquentes",
     "partner.faq1.q": "Combien cela me coûte-t-il ?",
     "partner.faq1.a": "Rien. L'adhésion au programme est gratuite, sans frais d'entrée ni frais mensuels. En plus, vous recevez Basic offert pendant un an.",
@@ -1249,7 +1249,7 @@ window.translations.it = {
     "partner.apply.li1": "Approvazione in pochi giorni",
     "partner.apply.li2": "Basic gratis per un anno",
     "partner.apply.li3": "Link personale, codice e pannello dei guadagni",
-    "partner.apply.note": "Compili la candidatura direttamente su housio.online — Housio è la piattaforma che ho fondato e che uso io stesso per gestire il mio portafoglio.",
+    "partner.apply.note": "Compili la candidatura direttamente su housio.app — Housio è la piattaforma che ho fondato e che uso io stesso per gestire il mio portafoglio.",
     "partner.faq.title": "Domande frequenti",
     "partner.faq1.q": "Quanto mi costa?",
     "partner.faq1.a": "Nulla. L'adesione al programma è gratuita, senza costi di ingresso né mensili. Inoltre riceve Basic gratis per un anno.",
@@ -1485,7 +1485,7 @@ window.translations.es = {
     "partner.apply.li1": "Aprobación en pocos días",
     "partner.apply.li2": "Basic gratis un año",
     "partner.apply.li3": "Tu propio enlace, código y panel de ingresos",
-    "partner.apply.note": "Rellenas la solicitud directamente en housio.online — Housio es la plataforma que fundé y que yo mismo uso para gestionar mi cartera.",
+    "partner.apply.note": "Rellenas la solicitud directamente en housio.app — Housio es la plataforma que fundé y que yo mismo uso para gestionar mi cartera.",
     "partner.faq.title": "Preguntas frecuentes",
     "partner.faq1.q": "¿Cuánto me cuesta?",
     "partner.faq1.a": "Nada. La membresía en el programa es gratuita, sin cuotas de entrada ni mensuales. Además recibes Basic gratis durante un año.",
@@ -1721,7 +1721,7 @@ window.translations.pl = {
     "partner.apply.li1": "Zatwierdzenie w kilka dni",
     "partner.apply.li2": "Basic za darmo na rok",
     "partner.apply.li3": "Własny link, kod i podgląd zarobków",
-    "partner.apply.note": "Zgłoszenie wypełnisz bezpośrednio na housio.online — Housio to platforma, którą założyłem i której sam używam do zarządzania swoim portfelem.",
+    "partner.apply.note": "Zgłoszenie wypełnisz bezpośrednio na housio.app — Housio to platforma, którą założyłem i której sam używam do zarządzania swoim portfelem.",
     "partner.faq.title": "Częste pytania",
     "partner.faq1.q": "Ile mnie to kosztuje?",
     "partner.faq1.a": "Nic. Udział w programie jest bezpłatny, bez opłat wstępnych i miesięcznych. Dodatkowo dostajesz Basic na rok za darmo.",
@@ -1968,7 +1968,7 @@ window.translations.ru = {
     "partner.apply.li1": "Одобрение за несколько дней",
     "partner.apply.li2": "Basic бесплатно на год",
     "partner.apply.li3": "Персональная ссылка, промокод и кабинет с доходами",
-    "partner.apply.note": "Заявку вы заполните прямо на housio.online — Housio это платформа, которую я основал и сам использую для управления своим портфелем.",
+    "partner.apply.note": "Заявку вы заполните прямо на housio.app — Housio это платформа, которую я основал и сам использую для управления своим портфелем.",
     "partner.faq.title": "Частые вопросы",
     "partner.faq1.q": "Сколько это мне стоит?",
     "partner.faq1.a": "Ничего. Участие в программе бесплатное, без вступительных и ежемесячных взносов. Более того, вы получаете Basic на год бесплатно.",
@@ -2212,7 +2212,7 @@ window.translations.ja = {
     "partner.apply.li1": "数日以内に承認",
     "partner.apply.li2": "Basic が1年間無料",
     "partner.apply.li3": "専用リンク・コード・収益の管理画面",
-    "partner.apply.note": "お申し込みは housio.online で直接ご記入いただきます。Housio は私が創業し、自分のポートフォリオ管理にも使っているプラットフォームです。",
+    "partner.apply.note": "お申し込みは housio.app で直接ご記入いただきます。Housio は私が創業し、自分のポートフォリオ管理にも使っているプラットフォームです。",
     "partner.faq.title": "よくある質問",
     "partner.faq1.q": "費用はかかりますか？",
     "partner.faq1.a": "かかりません。プログラムへの参加は無料で、初期費用も月額費用もありません。さらに Basic プランが1年間無料です。",
@@ -2444,7 +2444,7 @@ window.translations.zh = {
     "partner.apply.li1": "几天内完成审核",
     "partner.apply.li2": "Basic 免费用一年",
     "partner.apply.li3": "专属链接、折扣码与收益后台",
-    "partner.apply.note": "申请表请直接在 housio.online 填写。Housio 是我创办并亲自用来管理自有房产组合的平台。",
+    "partner.apply.note": "申请表请直接在 housio.app 填写。Housio 是我创办并亲自用来管理自有房产组合的平台。",
     "partner.faq.title": "常见问题",
     "partner.faq1.q": "我需要花钱吗？",
     "partner.faq1.a": "不需要。加入计划完全免费，没有入门费也没有月费，还额外赠送一年免费的 Basic 套餐。",
@@ -2698,12 +2698,13 @@ function setLanguage(lang) {
 
     try { localStorage.setItem('preferredLang', lang); } catch(e) {}
 
-    // Odkazy na partnersky program Housio → jazykova mutace housio.online
-    // (housio.online umi cs/en/de/it/es/uk/ru/fr; sk vedeme na cs, ostatni na en)
-    const HOUSIO_LANG = { cs:'', sk:'', en:'en', de:'de', fr:'fr', it:'it', es:'es', ru:'ru', pl:'en', ja:'en', zh:'en' };
+    // Odkazy na partnersky program Housio → jazykova mutace housio.app
+    // (housio.online/partneri vraci 404, partnerska stranka je jen na housio.app;
+    //  ta umi cs/en/de/it/es/ru/fr/pl; sk vedeme na cs, ja a zh na en)
+    const HOUSIO_LANG = { cs:'', sk:'', en:'en', de:'de', fr:'fr', it:'it', es:'es', ru:'ru', pl:'pl', ja:'en', zh:'en' };
     document.querySelectorAll('[data-housio-partner]').forEach(el => {
         const seg = HOUSIO_LANG[lang] === undefined ? 'en' : HOUSIO_LANG[lang];
-        el.setAttribute('href', 'https://www.housio.online' + (seg ? '/' + seg : '') + '/partneri');
+        el.setAttribute('href', 'https://www.housio.app' + (seg ? '/' + seg : '') + '/partneri');
     });
 
     const sw = document.getElementById('langSwitcher');

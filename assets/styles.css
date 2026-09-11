@@ -83,6 +83,10 @@ nav {
     color: var(--bg);
 }
 .btn-primary:hover { background: var(--accent); color: var(--text); }
+/* V navigaci přebíjelo `.nav-links a { color: var(--text) }` barvu tlačítka,
+   takže tlačítko Kontakt mělo černý text na černém pozadí. */
+.nav-links a.btn-primary { color: var(--bg); }
+.nav-links a.btn-primary:hover { color: var(--text); }
 .btn-outline {
     background: transparent;
     color: var(--text);
