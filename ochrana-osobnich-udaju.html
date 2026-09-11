@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="cs" data-title-key="meta.privacy.title">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ochrana osobních údajů | Jan Řeháček</title>
+<meta name="description" content="Jak US Europe Group s.r.o. zachází s údaji z kontaktního formuláře webu janrehacek.com a jaká máte práva.">
+<link rel="canonical" href="https://www.janrehacek.com/ochrana-osobnich-udaju">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Jan Řeháček">
+<meta property="og:url" content="https://www.janrehacek.com/ochrana-osobnich-udaju">
+<meta property="og:title" content="Ochrana osobních údajů | Jan Řeháček">
+<meta property="og:description" content="Jak US Europe Group s.r.o. zachází s údaji z kontaktního formuláře webu janrehacek.com a jaká máte práva.">
+<meta property="og:image" content="https://www.janrehacek.com/images/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="800">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:locale" content="cs_CZ">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+<noscript><style>@media (max-width:900px){.nav-links{display:flex!important;flex-wrap:wrap;gap:12px 18px;padding:12px 0 0}.nav-inner{flex-wrap:wrap}.menu-toggle{display:none!important}}</style></noscript>
+</head>
+<body>
+<a href="#obsah" class="skip-link" data-i18n="a11y.skip">Přeskočit na obsah</a>
+
+<nav>
+    <div class="nav-inner">
+        <a href="/" class="logo">Jan Řeháček<span>.</span></a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/about" data-i18n="nav.about">O mně</a></li>
+            <li><a href="/services" data-i18n="nav.services">Služby</a></li>
+            <li><a href="/investors" data-i18n="nav.investors">Pro investory</a></li>
+            <li><a href="/pro-maklere" data-i18n="nav.partners">Pro makléře</a></li>
+            <li><a href="/nabidka" data-i18n="nav.listings">Nabídka</a></li>
+            <li><a href="/references" data-i18n="nav.testimonials">Reference</a></li>
+            <li><a href="/housio" data-i18n="nav.housio">Housio</a></li>
+            <li><a href="https://www.ahana.cz" target="_blank" rel="noopener noreferrer" class="external">Ahana</a></li>
+            <li><a href="/contact" class="btn btn-primary" data-i18n="nav.contact">Kontakt</a></li>
+            <li>
+                <div class="lang-switcher" id="langSwitcher">
+                    <button type="button" class="lang-current" onclick="toggleLangMenu()" aria-haspopup="true" aria-expanded="false" aria-label="Jazyk / Language">
+                        <span class="lang-flag" id="langCurrentFlag">🇨🇿</span>
+                        <span id="langCurrentCode">CZ</span>
+                        <span class="lang-arrow" aria-hidden="true">▼</span>
+                    </button>
+                    <div class="lang-dropdown">
+                        <button type="button" class="lang-option" data-lang="cs" lang="cs" onclick="setLanguage('cs')"><span class="lang-option-flag">🇨🇿</span><span class="lang-option-name">Čeština</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="sk" lang="sk" onclick="setLanguage('sk')"><span class="lang-option-flag">🇸🇰</span><span class="lang-option-name">Slovenčina</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="en" lang="en" onclick="setLanguage('en')"><span class="lang-option-flag">🇬🇧</span><span class="lang-option-name">English</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="de" lang="de" onclick="setLanguage('de')"><span class="lang-option-flag">🇩🇪</span><span class="lang-option-name">Deutsch</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="fr" lang="fr" onclick="setLanguage('fr')"><span class="lang-option-flag">🇫🇷</span><span class="lang-option-name">Français</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="it" lang="it" onclick="setLanguage('it')"><span class="lang-option-flag">🇮🇹</span><span class="lang-option-name">Italiano</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="es" lang="es" onclick="setLanguage('es')"><span class="lang-option-flag">🇪🇸</span><span class="lang-option-name">Español</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="pl" lang="pl" onclick="setLanguage('pl')"><span class="lang-option-flag">🇵🇱</span><span class="lang-option-name">Polski</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="ru" lang="ru" onclick="setLanguage('ru')"><span class="lang-option-flag">🇷🇺</span><span class="lang-option-name">Русский</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="ja" lang="ja" onclick="setLanguage('ja')"><span class="lang-option-flag">🇯🇵</span><span class="lang-option-name">日本語</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="zh" lang="zh" onclick="setLanguage('zh')"><span class="lang-option-flag">🇨🇳</span><span class="lang-option-name">中文</span><span class="lang-option-check">✓</span></button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <button type="button" class="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+    </div>
+</nav>
+
+<main id="obsah">
+
+<header class="page-header">
+    <div class="container">
+        <div class="page-header-eyebrow" data-i18n="privacy.eyebrow">Právní informace</div>
+        <h1 data-i18n-html="privacy.title">Ochrana osobních <em>údajů.</em></h1>
+        <p class="page-header-text" data-i18n="privacy.sub">Jak zacházíme s údaji, které nám pošlete přes web janrehacek.com.</p>
+    </div>
+</header>
+
+<section class="legal-section">
+    <div class="container">
+        <div class="legal-body" lang="cs">
+            <h2>Kdo údaje zpracovává</h2>
+            <p>Správcem osobních údajů je US Europe Group s.r.o., IČO 06779808, se sídlem Třebovická 5050/78, 722 00 Ostrava.
+            Kontakt: <a href="mailto:invest@janrehacek.com">invest@janrehacek.com</a>, <a href="tel:+420608177099">+420 608 177 099</a>.</p>
+
+            <h2>Jaké údaje a proč</h2>
+            <p>Když nám napíšete přes kontaktní formulář, zpracováváme jméno, e-mail, telefon (pokud ho vyplníte), obsah zprávy,
+            zvolené téma a stránku, ze které jste formulář otevřeli. Údaje použijeme jen k tomu, abychom Vám odpověděli a vyřídili
+            Váš dotaz — například domluvili schůzku nebo prohlídku nemovitosti. Právním základem je jednání o smlouvě na Vaši žádost
+            a oprávněný zájem odpovědět na dotaz, se kterým se na nás obracíte (čl. 6 odst. 1 písm. b) a f) GDPR).</p>
+
+            <h2>Kdo další k údajům má přístup</h2>
+            <p>Zprávu z formuláře doručuje do naší e-mailové schránky služba Web3Forms. Web běží na hostingu Vercel.
+            Údaje neprodáváme ani nepředáváme jiným firmám pro marketing.</p>
+
+            <h2>Jak dlouho údaje uchováváme</h2>
+            <p>Po dobu nutnou k vyřízení dotazu a případné navazující spolupráce. Pokud spolupráce nevznikne,
+            zprávu smažeme, jakmile přestane být potřeba.</p>
+
+            <h2>Měření návštěvnosti a cookies</h2>
+            <p>Web měří návštěvnost službou Vercel Web Analytics, která návštěvy počítá anonymně a bez cookies.
+            Reklamní ani sledovací cookies nepoužíváme. Prohlížeč si pro Vás pamatuje jen zvolený jazyk webu.</p>
+
+            <h2>Vaše práva</h2>
+            <p>Máte právo na přístup ke svým údajům, jejich opravu nebo výmaz, omezení zpracování a přenositelnost
+            a můžete vznést námitku proti zpracování. Stačí napsat na <a href="mailto:invest@janrehacek.com">invest@janrehacek.com</a>.
+            Pokud máte za to, že s údaji zacházíme v rozporu s předpisy, můžete se obrátit na Úřad pro ochranu osobních údajů
+            (<a href="https://uoou.gov.cz" target="_blank" rel="noopener">uoou.gov.cz</a>).</p>
+
+            <p class="legal-updated">Platné od 11. 9. 2026.</p>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo" style="color:white;">Jan Řeháček<span>.</span></div>
+                <p data-i18n="footer.brand">Investor, realitní expert a zakladatel platformy Housio. Buduji majetek a vzdělávám novou generaci investorů.</p>
+            </div>
+            <div class="footer-col">
+                <h2 class="footer-title" data-i18n="footer.nav">Navigace</h2>
+                <a href="/about" data-i18n="nav.about">O mně</a>
+                <a href="/services" data-i18n="nav.services">Služby</a>
+                <a href="/investors" data-i18n="nav.investors">Pro investory</a>
+                <a href="/pro-maklere" data-i18n="nav.partners">Pro makléře</a>
+                <a href="/nabidka" data-i18n="nav.listings">Nabídka</a>
+                <a href="/references" data-i18n="nav.testimonials">Reference</a>
+                <a href="https://www.ahana.cz" target="_blank" rel="noopener noreferrer">Ahana</a>
+            </div>
+            <div class="footer-col">
+                <h2 class="footer-title" data-i18n="footer.products">Produkty</h2>
+                <a href="https://www.housio.app?utm_source=janrehacek.com&utm_medium=referral" target="_blank" rel="noopener">Housio.App</a>
+                <a href="/investors" data-i18n="academy.eyebrow">Investiční příležitosti</a>
+                <a href="/services" data-i18n="nav.services">Služby</a>
+                <a href="/contact" data-i18n="footer.consultation">Konzultace</a>
+            </div>
+            <div class="footer-col">
+                <h2 class="footer-title" data-i18n="footer.contact">Kontakt</h2>
+                <a href="mailto:invest@janrehacek.com">invest@janrehacek.com</a>
+                <a href="tel:+420608177099">+420 608 177 099</a>
+                <a href="https://www.instagram.com/skladnikhonza" target="_blank" rel="noopener noreferrer">Instagram</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span data-i18n="footer.rights">© 2026 Jan Řeháček. Všechna práva vyhrazena.</span>
+            <span data-i18n="footer.tagline">Vytvořeno s vizí pro novou generaci investorů.</span>
+        </div>
+        <p class="footer-legal" data-i18n-html="footer.operator">Provozovatel webu: US Europe Group s.r.o., IČO 06779808, Třebovická 5050/78, 722 00 Ostrava · <a href="/ochrana-osobnich-udaju">Ochrana osobních údajů</a></p>
+    </div>
+</footer>
+
+<script src="/assets/script.js" defer></script>
+    <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>

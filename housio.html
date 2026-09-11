@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="cs" data-title-key="meta.housio.title">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +8,7 @@
 <link rel="canonical" href="https://www.janrehacek.com/housio">
 
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Jan Řeháček">
 <meta property="og:url" content="https://www.janrehacek.com/housio">
 <meta property="og:title" content="Housio — správa nemovitostí | Jan Řeháček">
 <meta property="og:description" content="Housio — SaaS platforma pro správu nemovitostí, kterou postavil investor Jan Řeháček a sám ji denně používá. Cash flow, smlouvy, reporty. Vyzkoušejte zdarma.">
@@ -21,56 +22,60 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="/assets/styles.css">
+<noscript><style>@media (max-width:900px){.nav-links{display:flex!important;flex-wrap:wrap;gap:12px 18px;padding:12px 0 0}.nav-inner{flex-wrap:wrap}.menu-toggle{display:none!important}}</style></noscript>
 </head>
 <body>
+<a href="#obsah" class="skip-link" data-i18n="a11y.skip">Přeskočit na obsah</a>
 
 <nav>
     <div class="nav-inner">
-        <a href="index.html" class="logo">Jan Řeháček<span>.</span></a>
-        <ul class="nav-links">
-            <li><a href="about.html" data-i18n="nav.about">O mně</a></li>
-            <li><a href="services.html" data-i18n="nav.services">Služby</a></li>
-            <li><a href="investors/" data-i18n="nav.investors">Pro investory</a></li>
-            <li><a href="pro-maklere.html" data-i18n="nav.partners">Pro makléře</a></li>
-            <li><a href="nabidka/" data-i18n="nav.listings">Nabídka</a></li>
-            <li><a href="references.html" data-i18n="nav.testimonials">Reference</a></li>
-            <li><a href="https://www.housio.app" target="_blank" rel="noopener noreferrer" class="external" data-i18n="nav.housio">Housio.App</a></li>
+        <a href="/" class="logo">Jan Řeháček<span>.</span></a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/about" data-i18n="nav.about">O mně</a></li>
+            <li><a href="/services" data-i18n="nav.services">Služby</a></li>
+            <li><a href="/investors" data-i18n="nav.investors">Pro investory</a></li>
+            <li><a href="/pro-maklere" data-i18n="nav.partners">Pro makléře</a></li>
+            <li><a href="/nabidka" data-i18n="nav.listings">Nabídka</a></li>
+            <li><a href="/references" data-i18n="nav.testimonials">Reference</a></li>
+            <li><a href="/housio" data-i18n="nav.housio">Housio</a></li>
             <li><a href="https://www.ahana.cz" target="_blank" rel="noopener noreferrer" class="external">Ahana</a></li>
-            <li><a href="contact.html" class="btn btn-primary" data-i18n="nav.contact">Kontakt</a></li>
+            <li><a href="/contact" class="btn btn-primary" data-i18n="nav.contact">Kontakt</a></li>
             <li>
                 <div class="lang-switcher" id="langSwitcher">
-                    <div class="lang-current" onclick="toggleLangMenu()">
+                    <button type="button" class="lang-current" onclick="toggleLangMenu()" aria-haspopup="true" aria-expanded="false" aria-label="Jazyk / Language">
                         <span class="lang-flag" id="langCurrentFlag">🇨🇿</span>
                         <span id="langCurrentCode">CZ</span>
-                        <span class="lang-arrow">▼</span>
-                    </div>
+                        <span class="lang-arrow" aria-hidden="true">▼</span>
+                    </button>
                     <div class="lang-dropdown">
-                        <div class="lang-option" data-lang="cs" onclick="setLanguage('cs')"><span class="lang-option-flag">🇨🇿</span><span class="lang-option-name">Čeština</span><span class="lang-option-check">✓</span></div>
-                        <div class="lang-option" data-lang="sk" onclick="setLanguage('sk')"><span class="lang-option-flag">🇸🇰</span><span class="lang-option-name">Slovenčina</span><span class="lang-option-check">✓</span></div>
-                        <div class="lang-option" data-lang="en" onclick="setLanguage('en')"><span class="lang-option-flag">🇬🇧</span><span class="lang-option-name">English</span><span class="lang-option-check">✓</span></div>
-                        <div class="lang-option" data-lang="de" onclick="setLanguage('de')"><span class="lang-option-flag">🇩🇪</span><span class="lang-option-name">Deutsch</span><span class="lang-option-check">✓</span></div>
-                        <div class="lang-option" data-lang="fr" onclick="setLanguage('fr')"><span class="lang-option-flag">🇫🇷</span><span class="lang-option-name">Français</span><span class="lang-option-check">✓</span></div>
-                        <div class="lang-option" data-lang="it" onclick="setLanguage('it')"><span class="lang-option-flag">🇮🇹</span><span class="lang-option-name">Italiano</span><span class="lang-option-check">✓</span></div>
-                        <div class="lang-option" data-lang="es" onclick="setLanguage('es')"><span class="lang-option-flag">🇪🇸</span><span class="lang-option-name">Español</span><span class="lang-option-check">✓</span></div>
-                        <div class="lang-option" data-lang="pl" onclick="setLanguage('pl')"><span class="lang-option-flag">🇵🇱</span><span class="lang-option-name">Polski</span><span class="lang-option-check">✓</span></div>
-                        <div class="lang-option" data-lang="ru" onclick="setLanguage('ru')"><span class="lang-option-flag">🇷🇺</span><span class="lang-option-name">Русский</span><span class="lang-option-check">✓</span></div>
-                        <div class="lang-option" data-lang="ja" onclick="setLanguage('ja')"><span class="lang-option-flag">🇯🇵</span><span class="lang-option-name">日本語</span><span class="lang-option-check">✓</span></div>
-                        <div class="lang-option" data-lang="zh" onclick="setLanguage('zh')"><span class="lang-option-flag">🇨🇳</span><span class="lang-option-name">中文</span><span class="lang-option-check">✓</span></div>
+                        <button type="button" class="lang-option" data-lang="cs" lang="cs" onclick="setLanguage('cs')"><span class="lang-option-flag">🇨🇿</span><span class="lang-option-name">Čeština</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="sk" lang="sk" onclick="setLanguage('sk')"><span class="lang-option-flag">🇸🇰</span><span class="lang-option-name">Slovenčina</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="en" lang="en" onclick="setLanguage('en')"><span class="lang-option-flag">🇬🇧</span><span class="lang-option-name">English</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="de" lang="de" onclick="setLanguage('de')"><span class="lang-option-flag">🇩🇪</span><span class="lang-option-name">Deutsch</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="fr" lang="fr" onclick="setLanguage('fr')"><span class="lang-option-flag">🇫🇷</span><span class="lang-option-name">Français</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="it" lang="it" onclick="setLanguage('it')"><span class="lang-option-flag">🇮🇹</span><span class="lang-option-name">Italiano</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="es" lang="es" onclick="setLanguage('es')"><span class="lang-option-flag">🇪🇸</span><span class="lang-option-name">Español</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="pl" lang="pl" onclick="setLanguage('pl')"><span class="lang-option-flag">🇵🇱</span><span class="lang-option-name">Polski</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="ru" lang="ru" onclick="setLanguage('ru')"><span class="lang-option-flag">🇷🇺</span><span class="lang-option-name">Русский</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="ja" lang="ja" onclick="setLanguage('ja')"><span class="lang-option-flag">🇯🇵</span><span class="lang-option-name">日本語</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="zh" lang="zh" onclick="setLanguage('zh')"><span class="lang-option-flag">🇨🇳</span><span class="lang-option-name">中文</span><span class="lang-option-check">✓</span></button>
                     </div>
                 </div>
             </li>
         </ul>
-        <button class="menu-toggle">☰</button>
+        <button type="button" class="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">☰</button>
     </div>
 </nav>
+
+<main id="obsah">
 
 <!-- PAGE HEADER -->
 <header class="page-header">
     <div class="container">
         <div class="page-header-eyebrow" data-i18n="housio.eyebrow">Můj produkt</div>
         <h1 data-i18n-html="housio.title">Housio — <em style="color:var(--accent-dark)">správa nemovitostí. Jednoduše.</em></h1>
-        <p class="page-header-text" data-i18n="housio.subtitle">SaaS platforma, kterou používám sám pro správu svého portfolia. Dnes na ní pracují stovky majitelů napříč Evropou.</p>
+        <p class="page-header-text" data-i18n="housio.subtitle">SaaS platforma, kterou používám sám pro správu svého portfolia. Postavená pro pronajímatele v celé Evropě.</p>
     </div>
 </header>
 
@@ -95,7 +100,7 @@
                     </div>
                     <div class="housio-feature">
                         <div class="feature-check">✓</div>
-                        <span data-i18n-html="housio.f4"><strong>Multi-jazyk & multi-měna</strong> — pro celou EU, 8 jazyků, 4+ měny</span>
+                        <span data-i18n-html="housio.f4"><strong>Multi-jazyk & multi-měna</strong> — pro celou EU, 10 jazyků, 8 měn</span>
                     </div>
                     <div class="housio-feature">
                         <div class="feature-check">✓</div>
@@ -107,8 +112,8 @@
                     </div>
                 </div>
                 <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:28px;">
-                    <a href="https://www.housio.online" target="_blank" rel="noopener noreferrer" class="btn btn-accent" data-i18n="housio.cta2">Vyzkoušet zdarma</a>
-                    <a href="https://www.housio.app/" target="_blank" rel="noopener noreferrer" class="btn btn-ghost" data-i18n="housio.cta1">Otevřít Housio →</a>
+                    <a href="https://www.housio.online?utm_source=janrehacek.com&utm_medium=referral" target="_blank" rel="noopener" class="btn btn-accent" data-i18n="housio.cta2">Vyzkoušet zdarma</a>
+                    <a href="https://www.housio.app/?utm_source=janrehacek.com&utm_medium=referral" target="_blank" rel="noopener" class="btn btn-ghost" data-i18n="housio.cta1">Prohlédnout Housio →</a>
                 </div>
             </div>
             <div class="housio-mockup">
@@ -138,6 +143,41 @@
     </div>
 </section>
 
+<!-- CENÍK (podle housio.app a src/lib/plans.js v Housiu — při změně cen upravit i zde) -->
+<section id="cenik" class="housio-pricing-section">
+    <div class="container">
+        <div class="section-eyebrow" data-i18n="housio.pricing.eyebrow">Ceník</div>
+        <h2 class="section-title" data-i18n="housio.pricing.title">Začněte zdarma. Plaťte, až portfolio poroste.</h2>
+        <div class="housio-pricing">
+            <div class="housio-plan">
+                <h3>Free</h3>
+                <div class="housio-plan-price" data-i18n="housio.pricing.price.free">0 Kč</div>
+                <div class="housio-plan-per" data-i18n="housio.pricing.per">měsíčně</div>
+                <p data-i18n="housio.pricing.free">Trvale zdarma, ne zkušební verze. Pro 1 nemovitost a 1 nájemníka.</p>
+            </div>
+            <div class="housio-plan">
+                <h3>Basic</h3>
+                <div class="housio-plan-price" data-i18n="housio.pricing.price.basic">299 Kč</div>
+                <div class="housio-plan-per" data-i18n="housio.pricing.per">měsíčně</div>
+                <p data-i18n="housio.pricing.basic">Až 15 nemovitostí.</p>
+            </div>
+            <div class="housio-plan is-featured">
+                <h3>Pro</h3>
+                <div class="housio-plan-price" data-i18n="housio.pricing.price.pro">599 Kč</div>
+                <div class="housio-plan-per" data-i18n="housio.pricing.per">měsíčně</div>
+                <p data-i18n="housio.pricing.pro">16 až 25 nemovitostí.</p>
+            </div>
+            <div class="housio-plan">
+                <h3>Business</h3>
+                <div class="housio-plan-price" data-i18n="housio.pricing.price.business">999 Kč</div>
+                <div class="housio-plan-per" data-i18n="housio.pricing.per">měsíčně</div>
+                <p data-i18n="housio.pricing.business">Pro větší portfolia nad 25 nemovitostí a týmy až 3 lidí.</p>
+            </div>
+        </div>
+        <p class="housio-pricing-note" data-i18n="housio.pricing.note">Ceny za měsíc při platbě na webu. Při roční platbě máte dva měsíce zdarma.</p>
+    </div>
+</section>
+
 <!-- FOUNDER STORY (light) -->
 <section id="founder" style="padding:100px 0;background:var(--bg);">
     <div class="container">
@@ -146,12 +186,12 @@
                 <div class="section-eyebrow" data-i18n="housio.founder.eyebrow">Proč vzniklo Housio</div>
                 <h2 class="section-title" data-i18n="housio.founder.title">Nástroj, který jsem sám potřeboval.</h2>
                 <div class="about-text">
-                    <p data-i18n="housio.founder.text">Když moje portfolio narostlo, přestaly mi stačit tabulky. Chtěl jsem jedno místo, kde vidím cash flow, smlouvy i výnosy — a žádné se mi nelíbilo. Tak jsem si ho postavil. Dnes Housio používám každý den a se mnou stovky majitelů napříč Evropou.</p>
+                    <p data-i18n="housio.founder.text">Když moje portfolio narostlo, přestaly mi stačit tabulky. Chtěl jsem jedno místo, kde vidím cash flow, smlouvy i výnosy — a žádné se mi nelíbilo. Tak jsem si ho postavil. Dnes Housio používám každý den a je připravené pro pronajímatele v celé Evropě.</p>
                 </div>
-                <a href="https://www.housio.online" target="_blank" rel="noopener noreferrer" class="teaser-link" data-i18n="housio.cta2">Vyzkoušet zdarma</a>
+                <a href="https://www.housio.online?utm_source=janrehacek.com&utm_medium=referral" target="_blank" rel="noopener" class="teaser-link" data-i18n="housio.cta2">Vyzkoušet zdarma</a>
             </div>
             <div style="position:relative;min-height:340px;border-radius:18px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,0.12);">
-                <img src="images/jan-rehacek.jpg" alt="Jan Řeháček — zakladatel Housio" style="width:100%;height:100%;object-fit:cover;display:block;">
+                <img src="/images/jan-rehacek.jpg" alt="Jan Řeháček — zakladatel Housio" style="width:100%;height:100%;object-fit:cover;display:block;">
             </div>
         </div>
     </div>
@@ -164,11 +204,13 @@
         <h2 class="section-title" data-i18n="housio.page.cta.title" style="margin:0 auto 14px;">Vyzkoušejte Housio zdarma.</h2>
         <p data-i18n="housio.page.cta.text" style="font-size:17px;color:var(--text-muted);max-width:560px;margin:0 auto 32px;">Založení účtu je zdarma a zabere dvě minuty. Spravujte své nemovitosti chytře — jako já.</p>
         <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;">
-            <a href="https://www.housio.online" target="_blank" rel="noopener noreferrer" class="btn btn-primary" data-i18n="housio.cta2" style="padding:14px 28px;font-size:14.5px;font-weight:600;">Vyzkoušet zdarma</a>
-            <a href="https://www.housio.app/" target="_blank" rel="noopener noreferrer" class="teaser-link" data-i18n="housio.cta1">Otevřít Housio →</a>
+            <a href="https://www.housio.online?utm_source=janrehacek.com&utm_medium=referral" target="_blank" rel="noopener" class="btn btn-primary" data-i18n="housio.cta2" style="padding:14px 28px;font-size:14.5px;font-weight:600;">Vyzkoušet zdarma</a>
+            <a href="https://www.housio.app/?utm_source=janrehacek.com&utm_medium=referral" target="_blank" rel="noopener" class="teaser-link" data-i18n="housio.cta1">Prohlédnout Housio →</a>
         </div>
     </div>
 </section>
+
+</main>
 
 <!-- FOOTER -->
 <footer>
@@ -179,23 +221,24 @@
                 <p data-i18n="footer.brand">Investor, realitní expert a zakladatel platformy Housio. Buduji majetek a vzdělávám novou generaci investorů.</p>
             </div>
             <div class="footer-col">
-                <h5 data-i18n="footer.nav">Navigace</h5>
-                <a href="about.html" data-i18n="nav.about">O mně</a>
-                <a href="services.html" data-i18n="nav.services">Služby</a>
-                <a href="investors/" data-i18n="nav.investors">Pro investory</a>
-                <a href="pro-maklere.html" data-i18n="nav.partners">Pro makléře</a>
-                <a href="references.html" data-i18n="nav.testimonials">Reference</a>
+                <h2 class="footer-title" data-i18n="footer.nav">Navigace</h2>
+                <a href="/about" data-i18n="nav.about">O mně</a>
+                <a href="/services" data-i18n="nav.services">Služby</a>
+                <a href="/investors" data-i18n="nav.investors">Pro investory</a>
+                <a href="/pro-maklere" data-i18n="nav.partners">Pro makléře</a>
+                <a href="/nabidka" data-i18n="nav.listings">Nabídka</a>
+                <a href="/references" data-i18n="nav.testimonials">Reference</a>
                 <a href="https://www.ahana.cz" target="_blank" rel="noopener noreferrer">Ahana</a>
             </div>
             <div class="footer-col">
-                <h5 data-i18n="footer.products">Produkty</h5>
-                <a href="https://www.housio.app" target="_blank" rel="noopener noreferrer" data-i18n="nav.housio">Housio.App</a>
-                <a href="investors/" data-i18n="academy.eyebrow">Investiční příležitosti</a>
-                <a href="services.html" data-i18n="nav.services">Služby</a>
-                <a href="contact.html" data-i18n="footer.consultation">Konzultace</a>
+                <h2 class="footer-title" data-i18n="footer.products">Produkty</h2>
+                <a href="https://www.housio.app?utm_source=janrehacek.com&utm_medium=referral" target="_blank" rel="noopener" data-i18n="nav.housio">Housio.App</a>
+                <a href="/investors" data-i18n="academy.eyebrow">Investiční příležitosti</a>
+                <a href="/services" data-i18n="nav.services">Služby</a>
+                <a href="/contact" data-i18n="footer.consultation">Konzultace</a>
             </div>
             <div class="footer-col">
-                <h5 data-i18n="footer.contact">Kontakt</h5>
+                <h2 class="footer-title" data-i18n="footer.contact">Kontakt</h2>
                 <a href="mailto:invest@janrehacek.com">invest@janrehacek.com</a>
                 <a href="tel:+420608177099">+420 608 177 099</a>
                 <a href="https://www.instagram.com/skladnikhonza" target="_blank" rel="noopener noreferrer">Instagram</a>
@@ -205,10 +248,11 @@
             <span data-i18n="footer.rights">© 2026 Jan Řeháček. Všechna práva vyhrazena.</span>
             <span data-i18n="footer.tagline">Vytvořeno s vizí pro novou generaci investorů.</span>
         </div>
+        <p class="footer-legal" data-i18n-html="footer.operator">Provozovatel webu: US Europe Group s.r.o., IČO 06779808, Třebovická 5050/78, 722 00 Ostrava · <a href="/ochrana-osobnich-udaju">Ochrana osobních údajů</a></p>
     </div>
 </footer>
 
-<script src="assets/script.js" defer></script>
+<script src="/assets/script.js" defer></script>
     <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html lang="cs">
+<html lang="cs" data-title-key="meta.contact.title">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kontakt — Jan Řeháček</title>
-<meta name="description" content="Kontaktujte Jana Řeháčka. První konzultace je vždy zdarma a nezávazná, reakce do 24 hodin.">
+<title>Kontakt a konzultace zdarma | Jan Řeháček</title>
+<meta name="description" content="Napište Janu Řeháčkovi. První konzultace k nákupu, prodeji či správě investiční nemovitosti je zdarma a nezávazná — odpověď obvykle do 24 hodin.">
 <link rel="canonical" href="https://www.janrehacek.com/contact">
 
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Jan Řeháček">
 <meta property="og:url" content="https://www.janrehacek.com/contact">
-<meta property="og:title" content="Kontakt — Jan Řeháček">
-<meta property="og:description" content="Kontaktujte Jana Řeháčka. První konzultace je vždy zdarma a nezávazná, reakce do 24 hodin.">
+<meta property="og:title" content="Kontakt a konzultace zdarma | Jan Řeháček">
+<meta property="og:description" content="Napište Janu Řeháčkovi. První konzultace k nákupu, prodeji či správě investiční nemovitosti je zdarma a nezávazná — odpověď obvykle do 24 hodin.">
 <meta property="og:image" content="https://www.janrehacek.com/images/og-default.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="800">
@@ -21,49 +22,53 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/styles.css">
+<link rel="stylesheet" href="/assets/styles.css">
+<noscript><style>@media (max-width:900px){.nav-links{display:flex!important;flex-wrap:wrap;gap:12px 18px;padding:12px 0 0}.nav-inner{flex-wrap:wrap}.menu-toggle{display:none!important}}</style></noscript>
 </head>
 <body>
+<a href="#obsah" class="skip-link" data-i18n="a11y.skip">Přeskočit na obsah</a>
 
 <nav>
     <div class="nav-inner">
-        <a href="index.html" class="logo">Jan Řeháček<span>.</span></a>
-        <ul class="nav-links">
-            <li><a href="about.html" data-i18n="nav.about">O mně</a></li>
-            <li><a href="services.html" data-i18n="nav.services">Služby</a></li>
-            <li><a href="investors/" data-i18n="nav.investors">Pro investory</a></li>
-            <li><a href="pro-maklere.html" data-i18n="nav.partners">Pro makléře</a></li>
-            <li><a href="nabidka/" data-i18n="nav.listings">Nabídka</a></li>
-            <li><a href="references.html" data-i18n="nav.testimonials">Reference</a></li>
-            <li><a href="https://www.housio.app" target="_blank" rel="noopener noreferrer" class="external" data-i18n="nav.housio">Housio.App</a></li>
+        <a href="/" class="logo">Jan Řeháček<span>.</span></a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/about" data-i18n="nav.about">O mně</a></li>
+            <li><a href="/services" data-i18n="nav.services">Služby</a></li>
+            <li><a href="/investors" data-i18n="nav.investors">Pro investory</a></li>
+            <li><a href="/pro-maklere" data-i18n="nav.partners">Pro makléře</a></li>
+            <li><a href="/nabidka" data-i18n="nav.listings">Nabídka</a></li>
+            <li><a href="/references" data-i18n="nav.testimonials">Reference</a></li>
+            <li><a href="/housio" data-i18n="nav.housio">Housio</a></li>
             <li><a href="https://www.ahana.cz" target="_blank" rel="noopener noreferrer" class="external">Ahana</a></li>
-            <li><a href="contact.html" class="btn btn-primary active" data-i18n="nav.contact">Kontakt</a></li>
+            <li><a href="/contact" class="btn btn-primary active" data-i18n="nav.contact">Kontakt</a></li>
             <li>
                 <div class="lang-switcher" id="langSwitcher">
-                    <div class="lang-current" onclick="toggleLangMenu()">
+                    <button type="button" class="lang-current" onclick="toggleLangMenu()" aria-haspopup="true" aria-expanded="false" aria-label="Jazyk / Language">
                         <span class="lang-flag" id="langCurrentFlag">🇨🇿</span>
                         <span id="langCurrentCode">CZ</span>
-                        <span class="lang-arrow">▼</span>
-                    </div>
+                        <span class="lang-arrow" aria-hidden="true">▼</span>
+                    </button>
                     <div class="lang-dropdown">
-                        <div class="lang-option" data-lang="cs" onclick="setLanguage('cs')"><span class="lang-option-flag">🇨🇿</span><span class="lang-option-name">Čeština</span><span class="lang-option-check">✓</span></div>
-                        <div class="lang-option" data-lang="sk" onclick="setLanguage('sk')"><span class="lang-option-flag">🇸🇰</span><span class="lang-option-name">Slovenčina</span><span class="lang-option-check">✓</span></div>
-                        <div class="lang-option" data-lang="en" onclick="setLanguage('en')"><span class="lang-option-flag">🇬🇧</span><span class="lang-option-name">English</span><span class="lang-option-check">✓</span></div>
-                        <div class="lang-option" data-lang="de" onclick="setLanguage('de')"><span class="lang-option-flag">🇩🇪</span><span class="lang-option-name">Deutsch</span><span class="lang-option-check">✓</span></div>
-                        <div class="lang-option" data-lang="fr" onclick="setLanguage('fr')"><span class="lang-option-flag">🇫🇷</span><span class="lang-option-name">Français</span><span class="lang-option-check">✓</span></div>
-                        <div class="lang-option" data-lang="it" onclick="setLanguage('it')"><span class="lang-option-flag">🇮🇹</span><span class="lang-option-name">Italiano</span><span class="lang-option-check">✓</span></div>
-                        <div class="lang-option" data-lang="es" onclick="setLanguage('es')"><span class="lang-option-flag">🇪🇸</span><span class="lang-option-name">Español</span><span class="lang-option-check">✓</span></div>
-                        <div class="lang-option" data-lang="pl" onclick="setLanguage('pl')"><span class="lang-option-flag">🇵🇱</span><span class="lang-option-name">Polski</span><span class="lang-option-check">✓</span></div>
-                        <div class="lang-option" data-lang="ru" onclick="setLanguage('ru')"><span class="lang-option-flag">🇷🇺</span><span class="lang-option-name">Русский</span><span class="lang-option-check">✓</span></div>
-                        <div class="lang-option" data-lang="ja" onclick="setLanguage('ja')"><span class="lang-option-flag">🇯🇵</span><span class="lang-option-name">日本語</span><span class="lang-option-check">✓</span></div>
-                        <div class="lang-option" data-lang="zh" onclick="setLanguage('zh')"><span class="lang-option-flag">🇨🇳</span><span class="lang-option-name">中文</span><span class="lang-option-check">✓</span></div>
+                        <button type="button" class="lang-option" data-lang="cs" lang="cs" onclick="setLanguage('cs')"><span class="lang-option-flag">🇨🇿</span><span class="lang-option-name">Čeština</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="sk" lang="sk" onclick="setLanguage('sk')"><span class="lang-option-flag">🇸🇰</span><span class="lang-option-name">Slovenčina</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="en" lang="en" onclick="setLanguage('en')"><span class="lang-option-flag">🇬🇧</span><span class="lang-option-name">English</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="de" lang="de" onclick="setLanguage('de')"><span class="lang-option-flag">🇩🇪</span><span class="lang-option-name">Deutsch</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="fr" lang="fr" onclick="setLanguage('fr')"><span class="lang-option-flag">🇫🇷</span><span class="lang-option-name">Français</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="it" lang="it" onclick="setLanguage('it')"><span class="lang-option-flag">🇮🇹</span><span class="lang-option-name">Italiano</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="es" lang="es" onclick="setLanguage('es')"><span class="lang-option-flag">🇪🇸</span><span class="lang-option-name">Español</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="pl" lang="pl" onclick="setLanguage('pl')"><span class="lang-option-flag">🇵🇱</span><span class="lang-option-name">Polski</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="ru" lang="ru" onclick="setLanguage('ru')"><span class="lang-option-flag">🇷🇺</span><span class="lang-option-name">Русский</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="ja" lang="ja" onclick="setLanguage('ja')"><span class="lang-option-flag">🇯🇵</span><span class="lang-option-name">日本語</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="zh" lang="zh" onclick="setLanguage('zh')"><span class="lang-option-flag">🇨🇳</span><span class="lang-option-name">中文</span><span class="lang-option-check">✓</span></button>
                     </div>
                 </div>
             </li>
         </ul>
-        <button class="menu-toggle">☰</button>
+        <button type="button" class="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">☰</button>
     </div>
 </nav>
+
+<main id="obsah">
 
 <header class="page-header">
     <div class="container">
@@ -82,21 +87,21 @@
                     <div class="contact-detail-icon">✉</div>
                     <div>
                         <div class="contact-detail-label" data-i18n="contact.email">E-mail</div>
-                        <div class="contact-detail-value">invest@janrehacek.com</div>
+                        <div class="contact-detail-value"><a href="mailto:invest@janrehacek.com">invest@janrehacek.com</a></div>
                     </div>
                 </div>
                 <div class="contact-detail">
                     <div class="contact-detail-icon">☎</div>
                     <div>
                         <div class="contact-detail-label" data-i18n="contact.phone">Telefon</div>
-                        <div class="contact-detail-value">+420 608 177 099</div>
+                        <div class="contact-detail-value"><a href="tel:+420608177099">+420 608 177 099</a></div>
                     </div>
                 </div>
                 <div class="contact-detail">
                     <div class="contact-detail-icon">⌂</div>
                     <div>
                         <div class="contact-detail-label" data-i18n="contact.office">Sídlo</div>
-                        <div class="contact-detail-value" data-i18n="contact.office_value">Praha, Česká republika</div>
+                        <div class="contact-detail-value" data-i18n="contact.office_value">Ostrava, Česká republika</div>
                     </div>
                 </div>
                 <div class="contact-detail">
@@ -110,27 +115,33 @@
             <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
                 <!-- Web3Forms: nahraď hodnotu access_key svým klíčem z https://web3forms.com (zdarma, přijde e-mailem). Poptávky pak chodí na invest@janrehacek.com. -->
                 <input type="hidden" name="access_key" value="REPLACE_WITH_WEB3FORMS_ACCESS_KEY">
-                <input type="hidden" name="subject" value="Nová poptávka z janrehacek.com">
+                <input type="hidden" name="subject" id="f-subject" value="Nová poptávka z janrehacek.com">
                 <input type="hidden" name="from_name" value="Web janrehacek.com">
+                <!-- bez JavaScriptu se po odeslání vrátí na web, ne na technickou odpověď Web3Forms -->
+                <input type="hidden" name="redirect" value="https://www.janrehacek.com/dekuji">
+                <!-- odkud poptávka přišla: konkrétní nabídka a předchozí stránka (doplní skript níže) -->
+                <input type="hidden" name="nabidka" id="f-nabidka" value="">
+                <input type="hidden" name="odkud" id="f-odkud" value="">
                 <!-- honeypot proti spamu -->
                 <input type="checkbox" name="botcheck" style="display:none !important;" tabindex="-1" autocomplete="off">
+                <p class="form-context" id="formContext" hidden></p>
                 <div class="form-row">
                     <div class="form-group">
-                        <label data-i18n="form.name">Jméno *</label>
-                        <input type="text" name="name" required data-i18n-placeholder="form.name_ph" placeholder="Vaše jméno">
+                        <label for="f-name" data-i18n="form.name">Jméno *</label>
+                        <input id="f-name" type="text" name="name" required autocomplete="name" data-i18n-placeholder="form.name_ph" placeholder="Vaše jméno">
                     </div>
                     <div class="form-group">
-                        <label data-i18n="form.email">E-mail *</label>
-                        <input type="email" name="email" required data-i18n-placeholder="form.email_ph" placeholder="vase@email.cz">
+                        <label for="f-email" data-i18n="form.email">E-mail *</label>
+                        <input id="f-email" type="email" name="email" required autocomplete="email" data-i18n-placeholder="form.email_ph" placeholder="vase@email.cz">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label data-i18n="form.phone">Telefon</label>
-                    <input type="tel" name="phone" placeholder="+420 ...">
+                    <label for="f-phone" data-i18n="form.phone">Telefon</label>
+                    <input id="f-phone" type="tel" name="phone" autocomplete="tel" placeholder="+420 ...">
                 </div>
                 <div class="form-group">
-                    <label data-i18n="form.interest">O co máte zájem?</label>
-                    <select name="interest">
+                    <label for="f-interest" data-i18n="form.interest">O co máte zájem?</label>
+                    <select id="f-interest" name="interest">
                         <option data-i18n="form.opt1">Realitní investice</option>
                         <option data-i18n="form.opt2">Investiční poradenství</option>
                         <option data-i18n="form.opt3">Mentoring & akademie</option>
@@ -139,14 +150,17 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label data-i18n="form.message">Vaše zpráva *</label>
-                    <textarea name="message" required data-i18n-placeholder="form.message_ph" placeholder="Krátce mi popište, co řešíte..."></textarea>
+                    <label for="f-message" data-i18n="form.message">Vaše zpráva *</label>
+                    <textarea id="f-message" name="message" required data-i18n-placeholder="form.message_ph" placeholder="Krátce mi popište, co řešíte..."></textarea>
                 </div>
                 <button type="submit" class="btn-submit" data-i18n="form.submit">Odeslat zprávu →</button>
+                <p class="form-note" data-i18n-html="form.privacy">Údaje z formuláře použijeme jen k odpovědi na Vaši zprávu. <a href="/ochrana-osobnich-udaju">Ochrana osobních údajů</a></p>
             </form>
         </div>
     </div>
 </section>
+
+</main>
 
 <footer>
     <div class="container">
@@ -156,23 +170,24 @@
                 <p data-i18n="footer.brand">Investor, realitní expert a zakladatel platformy Housio. Buduji majetek a vzdělávám novou generaci investorů.</p>
             </div>
             <div class="footer-col">
-                <h5 data-i18n="footer.nav">Navigace</h5>
-                <a href="about.html" data-i18n="nav.about">O mně</a>
-                <a href="services.html" data-i18n="nav.services">Služby</a>
-                <a href="investors/" data-i18n="nav.investors">Pro investory</a>
-                <a href="pro-maklere.html" data-i18n="nav.partners">Pro makléře</a>
-                <a href="references.html" data-i18n="nav.testimonials">Reference</a>
+                <h2 class="footer-title" data-i18n="footer.nav">Navigace</h2>
+                <a href="/about" data-i18n="nav.about">O mně</a>
+                <a href="/services" data-i18n="nav.services">Služby</a>
+                <a href="/investors" data-i18n="nav.investors">Pro investory</a>
+                <a href="/pro-maklere" data-i18n="nav.partners">Pro makléře</a>
+                <a href="/nabidka" data-i18n="nav.listings">Nabídka</a>
+                <a href="/references" data-i18n="nav.testimonials">Reference</a>
                 <a href="https://www.ahana.cz" target="_blank" rel="noopener noreferrer">Ahana</a>
             </div>
             <div class="footer-col">
-                <h5 data-i18n="footer.products">Produkty</h5>
-                <a href="https://www.housio.app" target="_blank" rel="noopener noreferrer">Housio.App</a>
-                <a href="investors/" data-i18n="academy.eyebrow">Investiční příležitosti</a>
-                <a href="services.html" data-i18n="nav.services">Služby</a>
-                <a href="contact.html" data-i18n="footer.consultation">Konzultace</a>
+                <h2 class="footer-title" data-i18n="footer.products">Produkty</h2>
+                <a href="https://www.housio.app?utm_source=janrehacek.com&utm_medium=referral" target="_blank" rel="noopener">Housio.App</a>
+                <a href="/investors" data-i18n="academy.eyebrow">Investiční příležitosti</a>
+                <a href="/services" data-i18n="nav.services">Služby</a>
+                <a href="/contact" data-i18n="footer.consultation">Konzultace</a>
             </div>
             <div class="footer-col">
-                <h5 data-i18n="footer.contact">Kontakt</h5>
+                <h2 class="footer-title" data-i18n="footer.contact">Kontakt</h2>
                 <a href="mailto:invest@janrehacek.com">invest@janrehacek.com</a>
                 <a href="tel:+420608177099">+420 608 177 099</a>
                 <a href="https://www.instagram.com/skladnikhonza" target="_blank" rel="noopener noreferrer">Instagram</a>
@@ -182,32 +197,77 @@
             <span data-i18n="footer.rights">© 2026 Jan Řeháček. Všechna práva vyhrazena.</span>
             <span data-i18n="footer.tagline">Vytvořeno s vizí pro novou generaci investorů.</span>
         </div>
+        <p class="footer-legal" data-i18n-html="footer.operator">Provozovatel webu: US Europe Group s.r.o., IČO 06779808, Třebovická 5050/78, 722 00 Ostrava · <a href="/ochrana-osobnich-udaju">Ochrana osobních údajů</a></p>
     </div>
 </footer>
 
-<script src="assets/script.js" defer></script>
+<script src="/assets/script.js" defer></script>
 <script>
 // Odeslání kontaktního formuláře přes Web3Forms (AJAX – stránka se nereloadne)
 (function () {
   var form = document.getElementById('contactForm');
   if (!form) return;
+  var tr = function (k, d) {
+    var slovnik = window.translations && window.translations[(document.documentElement.lang || 'cs').split('-')[0]];
+    return (slovnik && slovnik[k]) || d;
+  };
+
+  // Odkud zájemce přišel. Detail nabídky si v script.js pamatuje svůj název,
+  // takže poptávka nese konkrétní nemovitost, ne jen „Realitní investice“.
+  var odkud = document.getElementById('f-odkud');
+  if (odkud) odkud.value = document.referrer || '';
+  try {
+    var n = JSON.parse(sessionStorage.getItem('posledniNabidka') || 'null');
+    var ref = document.referrer ? new URL(document.referrer) : null;
+    if (n && ref && ref.origin === location.origin && ref.pathname.replace(/\/$/, '') === n.url) {
+      document.getElementById('f-nabidka').value = n.title + ' — ' + location.origin + n.url;
+      document.getElementById('f-subject').value = 'Poptávka: ' + n.title;
+      var ctx = document.getElementById('formContext');
+      var popisek = document.createElement('span');
+      popisek.setAttribute('data-i18n', 'contact.about_listing');
+      popisek.textContent = tr('contact.about_listing', 'Píšete k nabídce:');
+      var nazev = document.createElement('strong');
+      nazev.textContent = ' ' + n.title;
+      ctx.appendChild(popisek);
+      ctx.appendChild(nazev);
+      ctx.hidden = false;
+    }
+  } catch (e) {}
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
+    var data = new FormData(form);
+    var errMsg = tr('contact.error', 'Zprávu se nepodařilo odeslat. Zkuste to prosím znovu nebo napište přímo na invest@janrehacek.com.');
+
+    // Dokud formulář nemá klíč Web3Forms, otevře se e-mail s předvyplněnou zprávou.
+    // Dřív se ukázala chyba a poptávka se ztratila.
+    if (/^REPLACE_/.test(data.get('access_key') || '')) {
+      var radky = [
+        'Jméno: ' + (data.get('name') || ''),
+        'E-mail: ' + (data.get('email') || ''),
+        'Telefon: ' + (data.get('phone') || ''),
+        'Zájem: ' + (data.get('interest') || '')
+      ];
+      if (data.get('nabidka')) radky.push('Nabídka: ' + data.get('nabidka'));
+      radky.push('', data.get('message') || '');
+      location.href = 'mailto:invest@janrehacek.com?subject=' + encodeURIComponent(data.get('subject') || 'Poptávka z janrehacek.com') +
+        '&body=' + encodeURIComponent(radky.join('\n'));
+      alert(tr('contact.mailto', 'Otevřel se Vám e-mail s předvyplněnou zprávou — stačí ho odeslat. Pokud se neotevřel, napište prosím přímo na invest@janrehacek.com.'));
+      return;
+    }
+
     var btn = form.querySelector('button[type="submit"]');
     var original = btn ? btn.textContent : '';
     if (btn) { btn.disabled = true; btn.textContent = '…'; }
-    var lang = document.documentElement.lang;
-    var t = (window.translations && window.translations[lang]) || {};
-    var okMsg = t['contact.success'] || 'Děkuji za zprávu! Brzy se Vám ozvu.';
-    var errMsg = t['contact.error'] || 'Zprávu se nepodařilo odeslat. Zkuste to prosím znovu nebo napište přímo na invest@janrehacek.com.';
-    fetch('https://api.web3forms.com/submit', { method: 'POST', body: new FormData(form) })
+    var hotovo = function () { if (btn) { btn.disabled = false; btn.textContent = original; } };
+    fetch('https://api.web3forms.com/submit', { method: 'POST', body: data })
       .then(function (r) { return r.json(); })
       .then(function (json) {
-        if (json && json.success) { alert(okMsg); form.reset(); }
-        else { alert(errMsg); }
+        // Vlastní stránka s poděkováním → odeslané poptávky jdou spočítat v analytice
+        if (json && json.success) { location.href = '/dekuji'; }
+        else { alert(errMsg); hotovo(); }
       })
-      .catch(function () { alert(errMsg); })
-      .finally(function () { if (btn) { btn.disabled = false; btn.textContent = original; } });
+      .catch(function () { alert(errMsg); hotovo(); });
   });
 })();
 </script>

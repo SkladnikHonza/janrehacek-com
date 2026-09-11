@@ -2,7 +2,14 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "buildCommand": "node build.js",
-  "outputDirectory": ".",
+  "outputDirectory": "dist",
+  "redirects": [
+    {
+      "source": "/nabidka/havirov-jarosova",
+      "destination": "/nabidka/pronajem/havirov-jarosova",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/admin",
@@ -32,11 +39,24 @@
         {
           "key": "Referrer-Policy",
           "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
         }
       ]
     },
     {
       "source": "/images/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
       "headers": [
         {
           "key": "Cache-Control",

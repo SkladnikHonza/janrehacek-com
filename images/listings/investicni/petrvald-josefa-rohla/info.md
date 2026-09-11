@@ -1,8 +1,10 @@
 ---
 type: investicni
-title: Bytový dům — 4 jednotky + zahrada + parkovací stání
+title: Bytový dům se 4 jednotkami, zahradou a parkováním — Petřvald
 short_description: Bytový dům se 4 bytovými jednotkami, vlastní zahradou a parkovacím stáním v klidné části Petřvaldu. Připravené prohlášení vlastníka, potenciál rozprodeje po jednotkách a hrubá marže až 14,1 mil. Kč.
-location: Petřvald, Josefa Rohla 549
+status: aktivni
+location_short: Petřvald — Josefa Rohla
+location_long: Petřvald, Josefa Rohla 549
 price: 15 900 000 Kč
 price_per_sqm: 39 750 Kč/m²
 size_total: 400+ m²
@@ -10,20 +12,7 @@ units: 4
 state: K rekonstrukci
 occupancy: Bez nájemníků
 declaration_of_owner: Připraveno
-cover: 01-uvodni.jpg
 cover_is_visualization: true
-gallery:
-  - 02.jpg
-  - 03.jpg
-  - 04.jpg
-  - 05.jpg
-  - 06.jpg
-  - 07.jpg
-  - 08.jpg
-  - 09.jpg
-  - 10.jpg
-  - 11.jpg
-  - 12.jpg
 cta: Domluvit prohlídku
 investment_case:
   buy_price_per_sqm: 39 750 Kč

@@ -1,55 +1,77 @@
 # janrehacek.com
 
 Osobní web Jana Řeháčka — investor, realitní expert, zakladatel platformy Housio.
+Statický web bez backendu, nasazený na Vercelu.
 
-## Struktura souborů
+**Repozitář je veřejný.** Nepatří sem osobní údaje, seznamy kontaktů, hesla ani klíče.
+
+## Struktura
 
 ```
 /
-├── index.html          # Hlavní stránka (vše v jednom souboru)
-├── images/
-│   └── jan-rehacek.jpg # Profilová fotka
-├── vercel.json         # Konfigurace pro Vercel
-├── robots.txt          # SEO - pro vyhledávače
-└── sitemap.xml         # SEO - mapa stránek
+├── index.html, about.html, services.html, references.html,
+│   contact.html, housio.html, pro-maklere.html   # ručně psané stránky
+├── 404.html, dekuji.html        # chybová stránka a poděkování po odeslání formuláře
+├── assets/
+│   ├── styles.css
+│   ├── script.js                # logika webu + překlady (11 jazyků)
+│   └── listings-i18n.js         # překlady textů nabídek (viz níže)
+├── images/listings/{pronajem,prodej,investicni}/<slug>/
+│   ├── info.md                  # data nabídky (YAML hlavička + Markdown)
+│   ├── 01-uvodni.jpg …          # fotky; titulní se jmenuje 01-uvodni.*
+│   └── _nahled/                 # zmenšené verze fotek pro karty a galerii
+├── _templates/                  # šablony pro build.js
+├── build.js                     # generátor nabídek, sitemapy a složky dist/
+└── vercel.json
 ```
 
-## Jak nasadit na Vercel
+## Jak se web staví
 
-1. Přihlas se na https://vercel.com (přes GitHub nebo email)
-2. Klikni na "Add New..." → "Project"
-3. Vyber "Import" → nahraj celou složku jako ZIP nebo přes GitHub
-4. Vercel automaticky detekuje statický web → klikni "Deploy"
-5. Hotovo. Web pojede na adrese typu: `janrehacek-xyz.vercel.app`
+`node build.js`:
 
-## Jak nastavit doménu janrehacek.com
+1. z `info.md` a `_templates/` vygeneruje `nabidka/` a `investors/` a karty
+   nabídek na hlavní stránce (mezi značkami `NABIDKY:START` a `NABIDKY:END`),
+2. vytvoří `sitemap.xml`,
+3. do `dist/` zkopíruje jen veřejné soubory (bez README, build.js, šablon
+   a `info.md`) a k odkazům na CSS, JS a fotky přidá `?v=<otisk>`, takže
+   prohlížeče můžou soubory držet dlouho v cache a po změně si stáhnou novou verzi.
 
-### Ve Vercel:
-1. Settings → Domains → Add → `janrehacek.com`
-2. Vercel ti ukáže konkrétní DNS záznamy
+Vercel spouští totéž a servíruje složku `dist/`. Po změně nabídky nebo šablony
+pusť `node build.js` i lokálně před commitem, ať repozitář odpovídá webu.
+Vygenerované stránky v `nabidka/` a `investors/` ručně neupravuj — build je přepíše.
 
-### Ve Webglobe (správa DNS):
-Nastav tyto A/CNAME záznamy podle pokynů Vercelu:
+Build skončí chybou, když v `info.md` chybí povinné pole nebo je tam neznámý
+nadpis sekce — radši neprojde, než aby na webu zmizela cena nebo popis.
 
-- `A` záznam: `@` → `76.76.21.21`
-- `CNAME` záznam: `www` → `cname.vercel-dns.com`
+## Nová nebo upravená nabídka
 
-DNS propagace trvá obvykle 5 minut až 24 hodin.
+1. Složka `images/listings/<typ>/<slug>/` s `info.md` a fotkami. Fotky nahrávej
+   zmenšené (do ~400 kB), nikdy originál z fotoaparátu — zůstal by navždy v historii.
+2. Zmenšené verze do `_nahled/` se dělají lokálně na Macu (nástroj `sips`, postup
+   je popsaný v `build.js`). Když chybí, web použije originál.
+3. **Překlady:** `assets/listings-i18n.js` se negeneruje. Překlady nových nebo
+   změněných textů (klíče `L.<typ>.<slug>.*` a `T.<český text>`) je potřeba doplnit
+   ručně nebo je nechat přeložit AI. `node build.js` na konci vypíše klíče,
+   kterým překlad chybí.
+4. Když nabídka zmizí nebo se přejmenuje, přidej do `vercel.json` → `redirects`
+   přesměrování ze staré adresy (jinak lidé z Googlu skončí na 404).
 
-## Jak upravit obsah
+## Doména a DNS
 
-- **Text**: Otevři `index.html` v editoru (VS Code, Sublime, atd.) a edituj
-- **Překlady**: Najdi v `index.html` sekci `window.translations.cs` (a další jazyky)
-- **Fotka**: Nahraď soubor `images/jan-rehacek.jpg`
-- **Po úpravě**: nahraj znovu na Vercel (přetáhni soubory nebo přes Git)
+DNS je u Webglobe. Hodnoty záznamů ber vždy z Vercel → projekt → Settings →
+Domains, neopisuj je odsud — Vercel je občas mění.
 
-## Funkce stránky
+## Kontaktní formulář
 
-- 11 jazyků: CZ, SK, EN, DE, FR, IT, ES, PL, RU, JA, ZH
-- Auto-detekce jazyka prohlížeče
-- Responzivní design (mobil, tablet, desktop)
-- SEO optimalizace (sitemap, robots.txt, hreflang)
-- Plně statická — žádný backend nepotřebuje
+Odesílá se přes Web3Forms na invest@janrehacek.com. Klíč patří do `contact.html`
+(pole `access_key`). Dokud je tam zástupný text, formulář místo odeslání otevře
+e-mail s předvyplněnou zprávou. Po úspěšném odeslání přejde na `/dekuji`.
+
+## Jazyky
+
+11 jazyků (CZ, SK, EN, DE, FR, IT, ES, PL, RU, JA, ZH) se přepíná v prohlížeči
+a každá stránka má jednu adresu. Vyhledávače proto vidí jen češtinu —
+samostatné jazykové adresy (hreflang) web zatím nemá.
 
 ---
 

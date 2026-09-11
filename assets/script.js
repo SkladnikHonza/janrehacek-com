@@ -7,7 +7,7 @@ window.translations.cs = {
     /* --- pro makléře (partnerský program) --- */
     "nav.partners": "Pro makléře",
     "partner.eyebrow": "Partnerský program pro realitní makléře",
-    "partner.title": "Doporučujte Housio.<br><em>Vydělávejte</em> každý měsíc.",
+    "partner.title": "Doporučujte Housio. <br><em>Vydělávejte</em> každý měsíc.",
     "partner.sub": "Máte síť pronajímatelů a investorů? Doporučte jim Housio pro správu nemovitostí a získejte provizi z každé platby — znovu a znovu, dokud klient platí.",
     "partner.cta.apply": "Chci se stát partnerem",
     "partner.cta.calc": "Spočítat výdělek",
@@ -70,9 +70,9 @@ window.translations.cs = {
     "partner.faq3.a": "Za platby klientů, kteří přišli přes váš odkaz nebo slevový kód a platí Housio na webu. 20 % z první platby, 10 % z každé další.",
     "partner.faq4.q": "Jak dlouho mi provize chodí?",
     "partner.faq4.a": "Opakovaná provize 10 % vám chodí každý měsíc tak dlouho, dokud váš klient Housio platí.",
-    "housio.founder.eyebrow": "Proč vzniklo Housio", "housio.founder.title": "Nástroj, který jsem sám potřeboval.", "housio.founder.text": "Když moje portfolio narostlo, přestaly mi stačit tabulky. Chtěl jsem jedno místo, kde vidím cash flow, smlouvy i výnosy — a žádné se mi nelíbilo. Tak jsem si ho postavil. Dnes Housio používám každý den a se mnou stovky majitelů napříč Evropou.", "housio.more": "Více o Housio →", "housio.f5": "<strong>Evidence nájemníků a jednotek</strong> — vše přehledně na jednom místě", "housio.f6": "<strong>Přílohy a dokumenty</strong> — smlouvy, faktury i protokoly u každé nemovitosti", "housio.page.features_title": "Vše pro správu vašeho portfolia.", "housio.page.cta.title": "Vyzkoušejte Housio zdarma.", "housio.page.cta.text": "Založení účtu je zdarma a zabere dvě minuty. Spravujte své nemovitosti chytře — jako já.",
-    "nav.about": "O mně", "nav.services": "Služby", "nav.investors": "Pro investory", "nav.housio": "Housio.App", "nav.academy": "Akademie", "nav.testimonials": "Reference", "nav.listings": "Nabídka", "nav.contact": "Kontakt",
-    // New page-header keys (CZ only; other languages translate later)
+    "housio.founder.eyebrow": "Proč vzniklo Housio", "housio.founder.title": "Nástroj, který jsem sám potřeboval.", "housio.founder.text": "Když moje portfolio narostlo, přestaly mi stačit tabulky. Chtěl jsem jedno místo, kde vidím cash flow, smlouvy i výnosy — a žádné se mi nelíbilo. Tak jsem si ho postavil. Dnes Housio používám každý den a je připravené pro pronajímatele v celé Evropě.", "housio.more": "Více o Housio →", "housio.f5": "<strong>Evidence nájemníků a jednotek</strong> — vše přehledně na jednom místě", "housio.f6": "<strong>Přílohy a dokumenty</strong> — smlouvy, faktury i protokoly u každé nemovitosti", "housio.page.features_title": "Vše pro správu vašeho portfolia.", "housio.page.cta.title": "Vyzkoušejte Housio zdarma.", "housio.page.cta.text": "Založení účtu je zdarma a zabere dvě minuty. Spravujte své nemovitosti chytře — jako já.",
+    "nav.about": "O mně", "nav.services": "Služby", "nav.investors": "Pro investory", "nav.housio": "Housio", "nav.academy": "Akademie", "nav.testimonials": "Reference", "nav.listings": "Nabídka", "nav.contact": "Kontakt",
+    // Klíče nadpisů podstránek (page.*, landing.*)
     "page.about.title": "Příběh za jedním <em>jménem.</em>", "page.about.sub": "5+ let v realitních investicích, portfolio přes 100 milionů Kč a vlastní platforma Housio. Tady je celý příběh.",
     "page.services.title": "Dvě oblasti. Jeden cíl – <em>vyšší hodnota.</em>", "page.services.sub": "Pomáhám Vám investovat chytřeji a s jistotou růst. Od prvního nákupu až po dlouhodobé výsledky.",
     "page.investors.title": "Investiční příležitosti pro vážné <em>investory.</em>",
@@ -80,7 +80,7 @@ window.translations.cs = {
     "page.contact.title": "Pojďme si <em>promluvit.</em>", "page.contact.sub": "První konzultace je vždy zdarma a nezávazná. Stačí mi krátce popsat, co řešíte.",
     "landing.about.cta": "Celý příběh", "landing.services.cta": "Všechny služby", "landing.contact.eyebrow": "Spojme se", "landing.contact.title": "Rád si poslechnu, co řešíte.", "landing.contact.text": "První konzultace zdarma, do 24 hodin se Vám ozvu.", "landing.contact.cta": "Napsat zprávu",
     "hero.badge": "Investor & realitní expert",
-    "hero.title": "Investice,<br>které mají <em>smysl.</em>",
+    "hero.title": "Investice, <br>které mají <em>smysl.</em>",
     "hero.subtitle": "Jsem Jan Řeháček — investor, realitní expert a zakladatel platformy Housio. Pomáhám klientům i nové generaci investorů budovat dlouhodobý majetek skrze nemovitosti a chytré investice.",
     "hero.cta1": "Domluvit schůzku", "hero.cta2": "Přehrát video",
     "hero.meta1": "5+ let praxe", "hero.meta2": "Bez závazků", "hero.meta3": "První konzultace zdarma",
@@ -112,12 +112,12 @@ window.translations.cs = {
     "services.s3_l1": "1:1 konzultace", "services.s3_l2": "Roční mentorské programy", "services.s3_l3": "Vzdělávací programy", "services.s3_l4": "Komunita & networking",
     "housio.eyebrow": "Můj produkt",
     "housio.title": "Housio — <em style=\"color:var(--accent)\">správa nemovitostí.<br>Jednoduše.</em>",
-    "housio.subtitle": "SaaS platforma, kterou používám sám pro správu svého portfolia. Dnes na ní pracují stovky majitelů napříč Evropou.",
+    "housio.subtitle": "SaaS platforma, kterou používám sám pro správu svého portfolia. Postavená pro pronajímatele v celé Evropě.",
     "housio.f1": "<strong>Přehledný cash flow</strong> — příjmy, výdaje a zisk v reálném čase",
     "housio.f2": "<strong>Notifikace končících smluv</strong> — 30, 14 a 7 dní předem",
     "housio.f3": "<strong>Profesionální PDF reporty</strong> — pro účetní, banku či daňového poradce",
-    "housio.f4": "<strong>Multi-jazyk & multi-měna</strong> — pro celou EU, 8 jazyků, 4+ měny",
-    "housio.cta1": "Otevřít Housio →", "housio.cta2": "Vyzkoušet zdarma",
+    "housio.f4": "<strong>Multi-jazyk & multi-měna</strong> — pro celou EU, 10 jazyků, 8 měn",
+    "housio.cta1": "Prohlédnout Housio →", "housio.cta2": "Vyzkoušet zdarma",
     "housio.m1": "Příjem tento měsíc", "housio.m2": "Smlouva končí za", "housio.m2_v": "23 dní", "housio.m3": "Spravované nemovitosti", "housio.m4": "Aktivní nájemníci", "housio.m5": "Obsazenost portfolia",
     "academy.eyebrow": "Investiční příležitosti",
     "academy.title": "Vzdělání, které jsem si <em style=\"color:var(--accent-dark)\">přál mít ve 20.</em>",
@@ -142,7 +142,7 @@ window.translations.cs = {
     "contact.eyebrow": "Kontakt",
     "contact.title": "Pojďme si <em style=\"color:var(--accent)\">promluvit.</em>",
     "contact.text": "První konzultace je vždy zdarma a nezávazná. Stačí mi krátce popsat, co řešíte, a já se Vám ozvu obvykle do 24 hodin.",
-    "contact.email": "E-mail", "contact.phone": "Telefon", "contact.office": "Sídlo", "contact.office_value": "Praha, Česká republika", "contact.response": "Reakce", "contact.response_value": "Do 24 hodin",
+    "contact.email": "E-mail", "contact.phone": "Telefon", "contact.office": "Sídlo", "contact.office_value": "Ostrava, Česká republika", "contact.response": "Reakce", "contact.response_value": "Do 24 hodin",
     "contact.success": "Děkuji za zprávu! Brzy se Vám ozvu.",
     "form.name": "Jméno *", "form.name_ph": "Vaše jméno", "form.email": "E-mail *", "form.email_ph": "vase@email.cz",
     "form.phone": "Telefon", "form.interest": "O co máte zájem?",
@@ -211,7 +211,7 @@ window.translations.cs = {
     "listings.info.deposit":        "Kauce",
     "listings.info.commission":     "Provize",
     "listings.info.availableFrom":  "Dostupnost",
-    "listings.empty.text": "Aktuálně zde nemáme žádnou nabídku. Mrkněte na další kategorie nebo nás <a href=\"contact.html\" style=\"color:var(--accent-dark);font-weight:600;\">kontaktujte</a>.",
+    "listings.empty.text": "Aktuálně zde nemáme žádnou nabídku. Mrkněte na další kategorie nebo nás kontaktujte.",
     "investors.placeholder.title": "Brzy zde najdete aktuální nabídky",
     "investors.placeholder.text": "Pracuji na první sérii investičních příležitostí. Pokud máte zájem o spolupráci nebo chcete být první, kdo se dozví o nových projektech, ozvěte se.",
     "investors.placeholder.cta": "Domluvit schůzku",
@@ -245,7 +245,7 @@ window.translations.sk = {
     /* --- pro makléře (partnerský program) --- */
     "nav.partners": "Pre maklérov",
     "partner.eyebrow": "Partnerský program pre realitných maklérov",
-    "partner.title": "Odporúčajte Housio.<br><em>Zarábajte</em> každý mesiac.",
+    "partner.title": "Odporúčajte Housio. <br><em>Zarábajte</em> každý mesiac.",
     "partner.sub": "Máte sieť prenajímateľov a investorov? Odporučte im Housio na správu nehnuteľností a získajte províziu z každej platby — znova a znova, kým klient platí.",
     "partner.cta.apply": "Chcem sa stať partnerom",
     "partner.cta.calc": "Vypočítať zárobok",
@@ -308,12 +308,12 @@ window.translations.sk = {
     "partner.faq3.a": "Za platby klientov, ktorí prišli cez váš odkaz alebo zľavový kód a platia Housio na webe. 20 % z prvej platby, 10 % z každej ďalšej.",
     "partner.faq4.q": "Ako dlho mi provízie chodia?",
     "partner.faq4.a": "Opakovaná provízia 10 % vám chodí každý mesiac tak dlho, kým váš klient Housio platí.",
-    "housio.founder.eyebrow": "Prečo vzniklo Housio", "housio.founder.title": "Nástroj, ktorý som sám potreboval.", "housio.founder.text": "Keď moje portfólio narástlo, tabuľky prestali stačiť. Chcel som jedno miesto, kde vidím cash flow, zmluvy aj výnosy — a žiadne sa mi nepáčilo. Tak som si ho postavil. Dnes Housio používam každý deň a so mnou stovky majiteľov naprieč Európou.", "housio.more": "Viac o Housio →", "housio.f5": "<strong>Evidencia nájomníkov a jednotiek</strong> — všetko prehľadne na jednom mieste", "housio.f6": "<strong>Prílohy a dokumenty</strong> — zmluvy, faktúry aj protokoly pri každej nehnuteľnosti", "housio.page.features_title": "Všetko pre správu vášho portfólia.", "housio.page.cta.title": "Vyskúšajte Housio zadarmo.", "housio.page.cta.text": "Založenie účtu je zadarmo a zaberie dve minúty. Spravujte svoje nehnuteľnosti chytro — ako ja.",
+    "housio.founder.eyebrow": "Prečo vzniklo Housio", "housio.founder.title": "Nástroj, ktorý som sám potreboval.", "housio.founder.text": "Keď moje portfólio narástlo, tabuľky prestali stačiť. Chcel som jedno miesto, kde vidím cash flow, zmluvy aj výnosy — a žiadne sa mi nepáčilo. Tak som si ho postavil. Dnes Housio používam každý deň a je pripravené pre prenajímateľov v celej Európe.", "housio.more": "Viac o Housio →", "housio.f5": "<strong>Evidencia nájomníkov a jednotiek</strong> — všetko prehľadne na jednom mieste", "housio.f6": "<strong>Prílohy a dokumenty</strong> — zmluvy, faktúry aj protokoly pri každej nehnuteľnosti", "housio.page.features_title": "Všetko pre správu vášho portfólia.", "housio.page.cta.title": "Vyskúšajte Housio zadarmo.", "housio.page.cta.text": "Založenie účtu je zadarmo a zaberie dve minúty. Spravujte svoje nehnuteľnosti chytro — ako ja.",
     "page.contact.title": "Poďme sa <em>porozprávať.</em>", "page.contact.sub": "Prvá konzultácia je vždy zdarma a nezáväzná. Stačí mi krátko opísať, čo riešite.", "landing.about.cta": "Celý príbeh", "landing.services.cta": "Všetky služby",
     "nav.about": "O mne", "nav.services": "Služby", "nav.investors": "Pre investorov", "nav.housio": "Housio", "nav.academy": "Akadémia", "nav.testimonials": "Referencie", "nav.listings": "Ponuka", "nav.contact": "Spojme sa",
     "landing.contact.eyebrow": "SPOJME SA", "landing.contact.title": "Rád si vypočujem, čo riešite.", "landing.contact.text": "Prvá konzultácia zdarma, do 24 hodín sa Vám ozvem.", "landing.contact.cta": "Napísať správu",
     "hero.badge": "Investor & realitný expert",
-    "hero.title": "Investície,<br>ktoré dávajú <em>zmysel.</em>",
+    "hero.title": "Investície, <br>ktoré dávajú <em>zmysel.</em>",
     "hero.subtitle": "Som Jan Řeháček — investor, realitný expert a zakladateľ platformy Housio. Pomáham klientom i novej generácii investorov budovať dlhodobý majetok cez nehnuteľnosti a chytré investície.",
     "hero.cta1": "Dohodnúť stretnutie", "hero.cta2": "Prehrať video",
     "hero.meta1": "5+ rokov praxe", "hero.meta2": "Bez záväzkov", "hero.meta3": "Prvá konzultácia zdarma",
@@ -345,12 +345,12 @@ window.translations.sk = {
     "services.s3_l1": "1:1 konzultácie", "services.s3_l2": "Ročné mentorské programy", "services.s3_l3": "Vzdelávacie programy", "services.s3_l4": "Komunita & networking",
     "housio.eyebrow": "Môj produkt",
     "housio.title": "Housio — <em style=\"color:var(--accent)\">správa nehnuteľností.<br>Jednoducho.</em>",
-    "housio.subtitle": "SaaS platforma, ktorú používam sám pre správu svojho portfólia. Dnes na nej pracujú stovky majiteľov naprieč Európou.",
+    "housio.subtitle": "SaaS platforma, ktorú používam sám pre správu svojho portfólia. Postavená pre prenajímateľov v celej Európe.",
     "housio.f1": "<strong>Prehľadný cash flow</strong> — príjmy, výdavky a zisk v reálnom čase",
     "housio.f2": "<strong>Notifikácie končiacich zmlúv</strong> — 30, 14 a 7 dní vopred",
     "housio.f3": "<strong>Profesionálne PDF reporty</strong> — pre účtovníčku, banku či daňového poradcu",
-    "housio.f4": "<strong>Multi-jazyk & multi-mena</strong> — pre celú EÚ, 8 jazykov, 4+ meny",
-    "housio.cta1": "Otvoriť Housio →", "housio.cta2": "Vyskúšať zdarma",
+    "housio.f4": "<strong>Multi-jazyk & multi-mena</strong> — pre celú EÚ, 10 jazykov, 8 mien",
+    "housio.cta1": "Prezrieť Housio →", "housio.cta2": "Vyskúšať zdarma",
     "housio.m1": "Príjem tento mesiac", "housio.m2": "Zmluva končí za", "housio.m2_v": "23 dní", "housio.m3": "Spravované nehnuteľnosti", "housio.m4": "Aktívni nájomníci", "housio.m5": "Obsadenosť portfólia",
     "academy.eyebrow": "Investičné príležitosti",
     "academy.title": "Vzdelanie, ktoré som si <em style=\"color:var(--accent-dark)\">prial mať vo 20.</em>",
@@ -375,7 +375,7 @@ window.translations.sk = {
     "contact.eyebrow": "Kontakt",
     "contact.title": "Poďme sa <em style=\"color:var(--accent)\">porozprávať.</em>",
     "contact.text": "Prvá konzultácia je vždy zdarma a nezáväzná. Stačí mi krátko opísať, čo riešite.",
-    "contact.email": "E-mail", "contact.phone": "Telefón", "contact.office": "Sídlo", "contact.office_value": "Praha, Česká republika", "contact.response": "Reakcia", "contact.response_value": "Do 24 hodín",
+    "contact.email": "E-mail", "contact.phone": "Telefón", "contact.office": "Sídlo", "contact.office_value": "Ostrava, Česká republika", "contact.response": "Reakcia", "contact.response_value": "Do 24 hodín",
     "contact.success": "Ďakujem za správu! Čoskoro sa Vám ozvem.",
     "form.name": "Meno *", "form.name_ph": "Vaše meno", "form.email": "E-mail *", "form.email_ph": "vas@email.sk",
     "form.phone": "Telefón", "form.interest": "O čo máte záujem?",
@@ -451,7 +451,7 @@ window.translations.sk = {
     "listings.info.deposit":        "Kaucia",
     "listings.info.commission":     "Provízia",
     "listings.info.availableFrom":  "Dostupnosť",
-    "listings.empty.text": "Aktuálne tu nemáme žiadnu ponuku. Pozrite si ďalšie kategórie alebo nás <a href=\"contact.html\" style=\"color:var(--accent-dark);font-weight:600;\">kontaktujte</a>.",
+    "listings.empty.text": "Aktuálne tu nemáme žiadnu ponuku. Pozrite si ďalšie kategórie alebo nás kontaktujte.",
     "investors.placeholder.title": "Čoskoro tu nájdete aktuálne ponuky",
     "investors.placeholder.text": "Pracujem na prvej sérii investičných príležitostí. Ak máte záujem o spoluprácu alebo chcete byť prví, kto sa dozvie o nových projektoch, ozvite sa.",
     "investors.placeholder.cta": "Dohodnúť stretnutie",
@@ -478,14 +478,79 @@ window.translations.sk = {
     "listings.info.priceLabel.invest": "Cena",
     "listing.detail.highlights.title": "Hlavné výhody projektu",
     "listing.detail.intent.title": "Investičný zámer",
-    "listing.detail.state.title": "Stav nehnuteľnosti"
+    "listing.detail.state.title": "Stav nehnuteľnosti",
+    // Audit 09/2026
+    "footer.operator": "Prevádzkovateľ webu: US Europe Group s.r.o., IČO 06779808, Třebovická 5050/78, 722 00 Ostrava · <a href=\"/ochrana-osobnich-udaju\">Ochrana osobných údajov</a>",
+    "form.privacy": "Údaje z formulára použijeme len na odpoveď na Vašu správu. <a href=\"/ochrana-osobnich-udaju\">Ochrana osobných údajov</a>",
+    "meta.privacy.title": "Ochrana osobných údajov | Jan Řeháček",
+    "privacy.eyebrow": "Právne informácie",
+    "privacy.title": "Ochrana osobných <em>údajov.</em>",
+    "privacy.sub": "Ako zaobchádzame s údajmi, ktoré nám pošlete cez web janrehacek.com. Celé znenie nižšie je v češtine.",
+    "meta.home.title": "Jan Řeháček — Investor & realitný expert",
+    "meta.about.title": "O mne — investor a realitný expert Jan Řeháček",
+    "meta.services.title": "Nákup a správa investičných nehnuteľností | Jan Řeháček",
+    "meta.references.title": "Referencie klientov — realitné investície | Jan Řeháček",
+    "meta.contact.title": "Kontakt a konzultácia zdarma | Jan Řeháček",
+    "meta.housio.title": "Housio — správa nehnuteľností | Jan Řeháček",
+    "meta.partners.title": "Pre maklérov — partnerský program Housio | Jan Řeháček",
+    "meta.error.title": "Stránka sa nenašla | Jan Řeháček",
+    "meta.thanks.title": "Správa odoslaná | Jan Řeháček",
+    "a11y.skip": "Preskočiť na obsah",
+    "home.listings.eyebrow": "Aktuálna ponuka",
+    "home.listings.title": "Investičné príležitosti <em style=\"color:var(--accent-dark)\">z Moravskosliezskeho kraja.</em>",
+    "home.listings.subtitle": "Vybrané byty a domy s cenou, lokalitou a investičnými číslami na jednom mieste.",
+    "home.listings.all": "Všetky investičné príležitosti",
+    "home.listings.sale": "Ponuka na predaj a prenájom",
+    "about.founder.kicker": "Zakladateľ Housio",
+    "about.founder.title": "Produkt vznikol z osobnej skúsenosti so <span>správou portfólia.</span>",
+    "about.founder.text": "Housio nie je samostatná reklama na stránke. Je to prirodzený míľnik v príbehu človeka, ktorý spravuje nehnuteľnosti, rieši nájomníkov, zmluvy a platby v reálnej prevádzke.",
+    "about.founder.small": "Vlastná platforma",
+    "contact.about_listing": "Píšete k ponuke:",
+    "contact.mailto": "Otvoril sa Vám e-mail s predvyplnenou správou — stačí ho odoslať. Ak sa neotvoril, napíšte prosím priamo na invest@janrehacek.com.",
+    "error.eyebrow": "Chyba 404",
+    "error.title": "Túto stránku <em>som nenašiel.</em>",
+    "error.text": "Možno už bola ponuka predaná alebo sa zmenila adresa. Pokračujte niektorým z odkazov nižšie.",
+    "error.home": "Na hlavnú stránku",
+    "thanks.eyebrow": "Správa odoslaná",
+    "thanks.title": "Ďakujem, správa <em>dorazila.</em>",
+    "thanks.text": "Ozvem sa Vám zvyčajne do 24 hodín. Medzitým si môžete prezrieť aktuálnu ponuku.",
+    "gallery.dialog": "Galéria fotiek nehnuteľnosti",
+    "gallery.close": "Zavrieť galériu (Esc)",
+    "gallery.prev": "Predchádzajúca fotka (šípka vľavo)",
+    "gallery.next": "Nasledujúca fotka (šípka vpravo)",
+    "housio.pricing.eyebrow": "Cenník",
+    "housio.pricing.title": "Začnite zadarmo. Plaťte, až keď portfólio porastie.",
+    "housio.pricing.per": "mesačne",
+    "housio.pricing.free": "Natrvalo zadarmo, nie skúšobná verzia. Pre 1 nehnuteľnosť a 1 nájomníka.",
+    "housio.pricing.basic": "Až 15 nehnuteľností.",
+    "housio.pricing.pro": "16 až 25 nehnuteľností.",
+    "housio.pricing.business": "Pre väčšie portfóliá nad 25 nehnuteľností a tímy až 3 ľudí.",
+    "housio.pricing.note": "Ceny za mesiac pri platbe na webe. Pri ročnej platbe máte dva mesiace zadarmo.",
+    "housio.pricing.price.free": "0 €",
+    "housio.pricing.price.basic": "12 €",
+    "housio.pricing.price.pro": "24 €",
+    "housio.pricing.price.business": "40 €",
+    "nav.home": "Domov",
+    "investors.detail.eyebrow": "INVESTIČNÁ PRÍLEŽITOSŤ",
+    "investors.detail.cta_eyebrow": "Zaujala Vás táto príležitosť?",
+    "investors.detail.cta_text": "Stačí mi krátka správa a ja sa Vám ozvem zvyčajne do 24 hodín.",
+    "investors.detail.cta_more": "Mám záujem o túto príležitosť →",
+    "listings.crosslink.toInvest": "Túto nehnuteľnosť nájdete aj medzi investičnými príležitosťami — s výnosom a investičnými číslami →",
+    "listings.crosslink.toSale": "Táto nehnuteľnosť je aj v bežnej ponuke na predaj →",
+    "listing.detail.ic.buy": "Cena za m² (kúpa)",
+    "listing.detail.ic.market": "Trhová cena za m² po rekonštrukcii",
+    "listing.detail.ic.resale": "Predpokladaná predajná cena",
+    "listing.detail.ic.diff": "Rozdiel oproti odhadovanej predajnej cene",
+    "listing.detail.meta.disposition": "dispozícia",
+    "listing.detail.meta.area": "úžitkovej plochy",
+    "listings.grid.heading": "Aktuálne ponuky"
 };
 
 window.translations.en = {
     /* --- pro makléře (partnerský program) --- */
     "nav.partners": "For agents",
     "partner.eyebrow": "Partner program for real-estate agents",
-    "partner.title": "Recommend Housio.<br><em>Earn</em> every single month.",
+    "partner.title": "Recommend Housio. <br><em>Earn</em> every single month.",
     "partner.sub": "Got a network of landlords and investors? Point them to Housio for property management and earn a commission on every payment they make — again and again, for as long as they stay.",
     "partner.cta.apply": "Become a partner",
     "partner.cta.calc": "Calculate your earnings",
@@ -548,12 +613,12 @@ window.translations.en = {
     "partner.faq3.a": "On payments from clients who came through your link or discount code and pay for Housio on the web. 20% on the first payment, 10% on every one after.",
     "partner.faq4.q": "How long do the commissions keep coming?",
     "partner.faq4.a": "Your recurring 10% commission lands every month for as long as your client keeps paying for Housio.",
-    "housio.founder.eyebrow": "Why Housio was born", "housio.founder.title": "The tool I needed myself.", "housio.founder.text": "As my portfolio grew, spreadsheets stopped being enough. I wanted one place to see cash flow, contracts and returns — and I didn't like any of the options out there. So I built my own. Today I use Housio every day, along with hundreds of owners across Europe.", "housio.more": "More about Housio →", "housio.f5": "<strong>Tenant & unit records</strong> — everything clearly in one place", "housio.f6": "<strong>Attachments & documents</strong> — contracts, invoices and handover reports for every property", "housio.page.features_title": "Everything to manage your portfolio.", "housio.page.cta.title": "Try Housio for free.", "housio.page.cta.text": "Creating an account is free and takes two minutes. Manage your properties smartly — just like I do.",
+    "housio.founder.eyebrow": "Why Housio was born", "housio.founder.title": "The tool I needed myself.", "housio.founder.text": "As my portfolio grew, spreadsheets stopped being enough. I wanted one place to see cash flow, contracts and returns — and I didn't like any of the options out there. So I built my own. Today I use Housio every day, and it's built for landlords across Europe.", "housio.more": "More about Housio →", "housio.f5": "<strong>Tenant & unit records</strong> — everything clearly in one place", "housio.f6": "<strong>Attachments & documents</strong> — contracts, invoices and handover reports for every property", "housio.page.features_title": "Everything to manage your portfolio.", "housio.page.cta.title": "Try Housio for free.", "housio.page.cta.text": "Creating an account is free and takes two minutes. Manage your properties smartly — just like I do.",
     "page.contact.title": "Let's <em>talk.</em>", "page.contact.sub": "The first consultation is always free and without obligation. Just briefly describe what you're dealing with.", "landing.about.cta": "Full story", "landing.services.cta": "All services",
     "nav.about": "About", "nav.services": "Services", "nav.investors": "For investors", "nav.housio": "Housio", "nav.academy": "Academy", "nav.testimonials": "References", "nav.listings": "Listings", "nav.contact": "Get in touch",
     "landing.contact.eyebrow": "LET'S CONNECT", "landing.contact.title": "I'd love to hear what you're working on.", "landing.contact.text": "First consultation free, I'll reply within 24 hours.", "landing.contact.cta": "Send a message",
     "hero.badge": "Investor & Real Estate Expert",
-    "hero.title": "Investments<br>that make <em>sense.</em>",
+    "hero.title": "Investments <br>that make <em>sense.</em>",
     "hero.subtitle": "I'm Jan Řeháček — investor, real estate expert and founder of the Housio platform. I help clients and a new generation of investors build long-term wealth through real estate and smart investments.",
     "hero.cta1": "Book a meeting", "hero.cta2": "Play video",
     "hero.meta1": "5+ years experience", "hero.meta2": "No commitments", "hero.meta3": "First consultation free",
@@ -585,12 +650,12 @@ window.translations.en = {
     "services.s3_l1": "1:1 consultations", "services.s3_l2": "Annual mentoring programs", "services.s3_l3": "Educational programs", "services.s3_l4": "Community & networking",
     "housio.eyebrow": "My product",
     "housio.title": "Housio — <em style=\"color:var(--accent)\">property management.<br>Simple.</em>",
-    "housio.subtitle": "SaaS platform I use myself to manage my portfolio. Today hundreds of landlords across Europe rely on it.",
+    "housio.subtitle": "SaaS platform I use myself to manage my portfolio. Built for landlords across Europe.",
     "housio.f1": "<strong>Clear cash flow</strong> — income, expenses and profit in real time",
     "housio.f2": "<strong>Contract expiration alerts</strong> — 30, 14 and 7 days in advance",
     "housio.f3": "<strong>Professional PDF reports</strong> — for your accountant, bank or tax advisor",
-    "housio.f4": "<strong>Multi-language & multi-currency</strong> — for entire EU, 8 languages, 4+ currencies",
-    "housio.cta1": "Open Housio →", "housio.cta2": "Try for free",
+    "housio.f4": "<strong>Multi-language & multi-currency</strong> — for the entire EU, 10 languages, 8 currencies",
+    "housio.cta1": "Explore Housio →", "housio.cta2": "Try for free",
     "housio.m1": "Income this month", "housio.m2": "Contract ends in", "housio.m2_v": "23 days", "housio.m3": "Properties managed", "housio.m4": "Active tenants", "housio.m5": "Portfolio occupancy",
     "academy.eyebrow": "Investment opportunities",
     "academy.title": "The education I wish <em style=\"color:var(--accent-dark)\">I had at 20.</em>",
@@ -615,7 +680,7 @@ window.translations.en = {
     "contact.eyebrow": "Contact",
     "contact.title": "Let's <em style=\"color:var(--accent)\">talk.</em>",
     "contact.text": "The first consultation is always free and non-binding. Just briefly describe what you're working on and I'll usually get back to you within 24 hours.",
-    "contact.email": "Email", "contact.phone": "Phone", "contact.office": "Office", "contact.office_value": "Prague, Czech Republic", "contact.response": "Response", "contact.response_value": "Within 24 hours",
+    "contact.email": "Email", "contact.phone": "Phone", "contact.office": "Office", "contact.office_value": "Ostrava, Czech Republic", "contact.response": "Response", "contact.response_value": "Within 24 hours",
     "contact.success": "Thank you for your message! I'll get back to you soon.",
     "form.name": "Name *", "form.name_ph": "Your name", "form.email": "Email *", "form.email_ph": "your@email.com",
     "form.phone": "Phone", "form.interest": "What are you interested in?",
@@ -688,7 +753,7 @@ window.translations.en = {
     "listings.info.deposit":        "Deposit",
     "listings.info.commission":     "Commission",
     "listings.info.availableFrom":  "Available from",
-    "listings.empty.text": "There are no listings in this category right now. Take a look at the other categories or <a href=\"contact.html\" style=\"color:var(--accent-dark);font-weight:600;\">get in touch</a>.",
+    "listings.empty.text": "There are no listings in this category right now. Take a look at the other categories or get in touch.",
     "investors.placeholder.title": "Live opportunities coming soon",
     "investors.placeholder.text": "I'm putting together the first round of investment opportunities. If you'd like to collaborate or be the first to hear about new projects, get in touch.",
     "investors.placeholder.cta": "Book a meeting",
@@ -714,14 +779,79 @@ window.translations.en = {
     "listings.info.priceLabel.invest": "Price",
     "listing.detail.highlights.title": "Project highlights",
     "listing.detail.intent.title": "Investment thesis",
-    "listing.detail.state.title": "Property condition"
+    "listing.detail.state.title": "Property condition",
+    // Audit 09/2026
+    "footer.operator": "Website operator: US Europe Group s.r.o., Company ID 06779808, Třebovická 5050/78, 722 00 Ostrava, Czech Republic · <a href=\"/ochrana-osobnich-udaju\">Privacy policy</a>",
+    "form.privacy": "We will only use the details from this form to reply to your message. <a href=\"/ochrana-osobnich-udaju\">Privacy policy</a>",
+    "meta.privacy.title": "Privacy policy | Jan Řeháček",
+    "privacy.eyebrow": "Legal information",
+    "privacy.title": "Privacy <em>policy.</em>",
+    "privacy.sub": "How we handle the details you send us through janrehacek.com. The full text below is in Czech.",
+    "meta.home.title": "Jan Řeháček — Investor & Real Estate Expert",
+    "meta.about.title": "About me — investor and real estate expert Jan Řeháček",
+    "meta.services.title": "Buying and managing investment property | Jan Řeháček",
+    "meta.references.title": "Client testimonials — property investment | Jan Řeháček",
+    "meta.contact.title": "Contact and free consultation | Jan Řeháček",
+    "meta.housio.title": "Housio — property management | Jan Řeháček",
+    "meta.partners.title": "For agents — Housio partner program | Jan Řeháček",
+    "meta.error.title": "Page not found | Jan Řeháček",
+    "meta.thanks.title": "Message sent | Jan Řeháček",
+    "a11y.skip": "Skip to content",
+    "home.listings.eyebrow": "Current listings",
+    "home.listings.title": "Investment opportunities <em style=\"color:var(--accent-dark)\">in the Moravian-Silesian Region.</em>",
+    "home.listings.subtitle": "Selected apartments and houses with price, location and investment figures in one place.",
+    "home.listings.all": "All investment opportunities",
+    "home.listings.sale": "Properties for sale and rent",
+    "about.founder.kicker": "Founder of Housio",
+    "about.founder.title": "The product grew out of personal experience <span>managing a portfolio.</span>",
+    "about.founder.text": "Housio isn't just an ad on this page. It's a natural milestone in the story of someone who manages properties and deals with tenants, contracts and payments day to day.",
+    "about.founder.small": "My own platform",
+    "contact.about_listing": "Regarding the listing:",
+    "contact.mailto": "Your email app has opened with a pre-filled message — just send it. If it didn't open, please write directly to invest@janrehacek.com.",
+    "error.eyebrow": "Error 404",
+    "error.title": "I couldn't find <em>this page.</em>",
+    "error.text": "The listing may already have been sold, or the address has changed. Please continue with one of the links below.",
+    "error.home": "Back to homepage",
+    "thanks.eyebrow": "Message sent",
+    "thanks.title": "Thank you, your message <em>has arrived.</em>",
+    "thanks.text": "I usually get back to you within 24 hours. In the meantime, feel free to browse the current listings.",
+    "gallery.dialog": "Property photo gallery",
+    "gallery.close": "Close gallery (Esc)",
+    "gallery.prev": "Previous photo (left arrow)",
+    "gallery.next": "Next photo (right arrow)",
+    "housio.pricing.eyebrow": "Pricing",
+    "housio.pricing.title": "Start for free. Pay as your portfolio grows.",
+    "housio.pricing.per": "per month",
+    "housio.pricing.free": "Free forever, not a trial. For 1 property and 1 tenant.",
+    "housio.pricing.basic": "Up to 15 properties.",
+    "housio.pricing.pro": "16 to 25 properties.",
+    "housio.pricing.business": "For larger portfolios of more than 25 properties and teams of up to 3 people.",
+    "housio.pricing.note": "Monthly prices when paying on the web. Pay annually and get two months free.",
+    "housio.pricing.price.free": "€0",
+    "housio.pricing.price.basic": "€12",
+    "housio.pricing.price.pro": "€24",
+    "housio.pricing.price.business": "€40",
+    "nav.home": "Home",
+    "investors.detail.eyebrow": "INVESTMENT OPPORTUNITY",
+    "investors.detail.cta_eyebrow": "Interested in this opportunity?",
+    "investors.detail.cta_text": "Just send me a short message and I'll usually get back to you within 24 hours.",
+    "investors.detail.cta_more": "I'm interested in this opportunity →",
+    "listings.crosslink.toInvest": "You'll also find this property among the investment opportunities — with yield and investment figures →",
+    "listings.crosslink.toSale": "This property is also listed in the regular sale listings →",
+    "listing.detail.ic.buy": "Price per m² (purchase)",
+    "listing.detail.ic.market": "Market price per m² after renovation",
+    "listing.detail.ic.resale": "Estimated sale price",
+    "listing.detail.ic.diff": "Difference from the estimated sale price",
+    "listing.detail.meta.disposition": "layout",
+    "listing.detail.meta.area": "of floor space",
+    "listings.grid.heading": "Current listings"
 };
 
 window.translations.de = {
     /* --- pro makléře (partnerský program) --- */
     "nav.partners": "Für Makler",
     "partner.eyebrow": "Partnerprogramm für Immobilienmakler",
-    "partner.title": "Empfehlen Sie Housio.<br><em>Verdienen Sie</em> Monat für Monat.",
+    "partner.title": "Empfehlen Sie Housio. <br><em>Verdienen Sie</em> Monat für Monat.",
     "partner.sub": "Sie haben ein Netzwerk aus Vermietern und Investoren? Empfehlen Sie ihnen Housio für die Immobilienverwaltung und sichern Sie sich eine Provision aus jeder Zahlung — immer wieder, solange Ihr Kunde zahlt.",
     "partner.cta.apply": "Partner werden",
     "partner.cta.calc": "Verdienst berechnen",
@@ -784,12 +914,12 @@ window.translations.de = {
     "partner.faq3.a": "Für Zahlungen von Kunden, die über Ihren Link oder Rabattcode gekommen sind und Housio im Web bezahlen. 20 % aus der ersten Zahlung, 10 % aus jeder weiteren.",
     "partner.faq4.q": "Wie lange bekomme ich meine Provision?",
     "partner.faq4.a": "Die wiederkehrende Provision von 10 % erhalten Sie jeden Monat, solange Ihr Kunde Housio bezahlt.",
-    "housio.founder.eyebrow": "Warum Housio entstand", "housio.founder.title": "Das Werkzeug, das ich selbst brauchte.", "housio.founder.text": "Als mein Portfolio wuchs, reichten Tabellen nicht mehr aus. Ich wollte einen Ort für Cashflow, Verträge und Renditen — und keine Lösung gefiel mir. Also baute ich meine eigene. Heute nutze ich Housio täglich, zusammen mit Hunderten von Eigentümern in ganz Europa.", "housio.more": "Mehr über Housio →", "housio.f5": "<strong>Mieter- und Einheitenverwaltung</strong> — alles übersichtlich an einem Ort", "housio.f6": "<strong>Anhänge und Dokumente</strong> — Verträge, Rechnungen und Übergabeprotokolle für jede Immobilie", "housio.page.features_title": "Alles für die Verwaltung Ihres Portfolios.", "housio.page.cta.title": "Testen Sie Housio kostenlos.", "housio.page.cta.text": "Ein Konto zu erstellen ist kostenlos und dauert zwei Minuten. Verwalten Sie Ihre Immobilien clever — so wie ich.",
+    "housio.founder.eyebrow": "Warum Housio entstand", "housio.founder.title": "Das Werkzeug, das ich selbst brauchte.", "housio.founder.text": "Als mein Portfolio wuchs, reichten Tabellen nicht mehr aus. Ich wollte einen Ort für Cashflow, Verträge und Renditen — und keine Lösung gefiel mir. Also baute ich meine eigene. Heute nutze ich Housio täglich — entwickelt für Vermieter in ganz Europa.", "housio.more": "Mehr über Housio →", "housio.f5": "<strong>Mieter- und Einheitenverwaltung</strong> — alles übersichtlich an einem Ort", "housio.f6": "<strong>Anhänge und Dokumente</strong> — Verträge, Rechnungen und Übergabeprotokolle für jede Immobilie", "housio.page.features_title": "Alles für die Verwaltung Ihres Portfolios.", "housio.page.cta.title": "Testen Sie Housio kostenlos.", "housio.page.cta.text": "Ein Konto zu erstellen ist kostenlos und dauert zwei Minuten. Verwalten Sie Ihre Immobilien clever — so wie ich.",
     "page.contact.title": "Lassen Sie uns <em>sprechen.</em>", "page.contact.sub": "Die Erstberatung ist immer kostenlos und unverbindlich. Beschreiben Sie kurz, worum es geht.", "landing.about.cta": "Ganze Geschichte", "landing.services.cta": "Alle Leistungen",
     "nav.about": "Über mich", "nav.services": "Leistungen", "nav.investors": "Für Investoren", "nav.housio": "Housio", "nav.academy": "Akademie", "nav.testimonials": "Referenzen", "nav.listings": "Angebote", "nav.contact": "Kontakt",
     "landing.contact.eyebrow": "KONTAKT AUFNEHMEN", "landing.contact.title": "Ich höre Ihnen gerne zu.", "landing.contact.text": "Erstberatung kostenlos, Antwort innerhalb von 24 Stunden.", "landing.contact.cta": "Nachricht senden",
     "hero.badge": "Investor & Immobilienexperte",
-    "hero.title": "Investitionen<br>mit <em>Sinn.</em>",
+    "hero.title": "Investitionen <br>mit <em>Sinn.</em>",
     "hero.subtitle": "Ich bin Jan Řeháček — Investor, Immobilienexperte und Gründer der Plattform Housio. Ich helfe Kunden und einer neuen Generation von Investoren, langfristiges Vermögen durch Immobilien und kluge Investitionen aufzubauen.",
     "hero.cta1": "Termin vereinbaren", "hero.cta2": "Video abspielen",
     "hero.meta1": "5+ Jahre Erfahrung", "hero.meta2": "Unverbindlich", "hero.meta3": "Erstberatung kostenlos",
@@ -821,12 +951,12 @@ window.translations.de = {
     "services.s3_l1": "1:1 Beratung", "services.s3_l2": "Jahres-Mentoring-Programme", "services.s3_l3": "Bildungsprogramme", "services.s3_l4": "Community & Networking",
     "housio.eyebrow": "Mein Produkt",
     "housio.title": "Housio — <em style=\"color:var(--accent)\">Immobilienverwaltung.<br>Einfach.</em>",
-    "housio.subtitle": "SaaS-Plattform, die ich selbst zur Verwaltung meines Portfolios nutze. Heute arbeiten Hunderte Vermieter in ganz Europa damit.",
+    "housio.subtitle": "SaaS-Plattform, die ich selbst zur Verwaltung meines Portfolios nutze. Entwickelt für Vermieter in ganz Europa.",
     "housio.f1": "<strong>Übersichtlicher Cashflow</strong> — Einnahmen, Ausgaben und Gewinn in Echtzeit",
     "housio.f2": "<strong>Vertragsablauf-Benachrichtigungen</strong> — 30, 14 und 7 Tage vorher",
     "housio.f3": "<strong>Professionelle PDF-Berichte</strong> — für Steuerberater, Bank oder Buchhalter",
-    "housio.f4": "<strong>Mehrsprachig & Multi-Währung</strong> — für ganz EU, 8 Sprachen, 4+ Währungen",
-    "housio.cta1": "Housio öffnen →", "housio.cta2": "Kostenlos testen",
+    "housio.f4": "<strong>Mehrsprachig & Multi-Währung</strong> — für die ganze EU, 10 Sprachen, 8 Währungen",
+    "housio.cta1": "Housio entdecken →", "housio.cta2": "Kostenlos testen",
     "housio.m1": "Einnahmen diesen Monat", "housio.m2": "Vertrag endet in", "housio.m2_v": "23 Tagen", "housio.m3": "Verwaltete Immobilien", "housio.m4": "Aktive Mieter", "housio.m5": "Portfolio-Auslastung",
     "academy.eyebrow": "Investmentchancen",
     "academy.title": "Die Ausbildung, die ich <em style=\"color:var(--accent-dark)\">mit 20 haben wollte.</em>",
@@ -851,7 +981,7 @@ window.translations.de = {
     "contact.eyebrow": "Kontakt",
     "contact.title": "Lassen Sie uns <em style=\"color:var(--accent)\">sprechen.</em>",
     "contact.text": "Die Erstberatung ist immer kostenlos und unverbindlich. Beschreiben Sie mir kurz, was Sie planen.",
-    "contact.email": "E-Mail", "contact.phone": "Telefon", "contact.office": "Sitz", "contact.office_value": "Prag, Tschechische Republik", "contact.response": "Antwortzeit", "contact.response_value": "Innerhalb von 24 Std.",
+    "contact.email": "E-Mail", "contact.phone": "Telefon", "contact.office": "Sitz", "contact.office_value": "Ostrava, Tschechische Republik", "contact.response": "Antwortzeit", "contact.response_value": "Innerhalb von 24 Std.",
     "contact.success": "Danke für Ihre Nachricht! Ich melde mich bald.",
     "form.name": "Name *", "form.name_ph": "Ihr Name", "form.email": "E-Mail *", "form.email_ph": "ihre@email.de",
     "form.phone": "Telefon", "form.interest": "Wofür interessieren Sie sich?",
@@ -924,7 +1054,7 @@ window.translations.de = {
     "listings.info.deposit":        "Kaution",
     "listings.info.commission":     "Provision",
     "listings.info.availableFrom":  "Verfügbar ab",
-    "listings.empty.text": "In dieser Kategorie gibt es derzeit keine Angebote. Schauen Sie in andere Kategorien oder <a href=\"contact.html\" style=\"color:var(--accent-dark);font-weight:600;\">kontaktieren Sie uns</a>.",
+    "listings.empty.text": "In dieser Kategorie gibt es derzeit keine Angebote. Schauen Sie in andere Kategorien oder kontaktieren Sie uns.",
     "investors.placeholder.title": "Aktuelle Angebote folgen in Kürze",
     "investors.placeholder.text": "Ich stelle gerade die erste Serie von Investmentchancen zusammen. Wenn Sie zusammenarbeiten oder als Erste über neue Projekte informiert werden möchten, melden Sie sich.",
     "investors.placeholder.cta": "Termin vereinbaren",
@@ -950,7 +1080,72 @@ window.translations.de = {
     "listings.info.priceLabel.invest": "Preis",
     "listing.detail.highlights.title": "Projektvorteile",
     "listing.detail.intent.title": "Investmentstrategie",
-    "listing.detail.state.title": "Zustand der Immobilie"
+    "listing.detail.state.title": "Zustand der Immobilie",
+    // Audit 09/2026
+    "footer.operator": "Betreiber der Website: US Europe Group s.r.o., Ident.-Nr. 06779808, Třebovická 5050/78, 722 00 Ostrava, Tschechien · <a href=\"/ochrana-osobnich-udaju\">Datenschutz</a>",
+    "form.privacy": "Wir verwenden Ihre Angaben nur, um auf Ihre Nachricht zu antworten. <a href=\"/ochrana-osobnich-udaju\">Datenschutz</a>",
+    "meta.privacy.title": "Datenschutz | Jan Řeháček",
+    "privacy.eyebrow": "Rechtliche Hinweise",
+    "privacy.title": "<em>Datenschutz.</em>",
+    "privacy.sub": "Wie wir mit den Daten umgehen, die Sie uns über janrehacek.com senden. Der folgende Text ist auf Tschechisch.",
+    "meta.home.title": "Jan Řeháček — Investor & Immobilienexperte",
+    "meta.about.title": "Über mich — Investor und Immobilienexperte Jan Řeháček",
+    "meta.services.title": "Kauf und Verwaltung von Anlageimmobilien | Jan Řeháček",
+    "meta.references.title": "Kundenreferenzen — Immobilieninvestments | Jan Řeháček",
+    "meta.contact.title": "Kontakt und kostenlose Erstberatung | Jan Řeháček",
+    "meta.housio.title": "Housio — Immobilienverwaltung | Jan Řeháček",
+    "meta.partners.title": "Für Makler — Housio-Partnerprogramm | Jan Řeháček",
+    "meta.error.title": "Seite nicht gefunden | Jan Řeháček",
+    "meta.thanks.title": "Nachricht gesendet | Jan Řeháček",
+    "a11y.skip": "Zum Inhalt springen",
+    "home.listings.eyebrow": "Aktuelle Angebote",
+    "home.listings.title": "Investmentchancen <em style=\"color:var(--accent-dark)\">in der Mährisch-Schlesischen Region.</em>",
+    "home.listings.subtitle": "Ausgewählte Wohnungen und Häuser mit Preis, Lage und Investmentkennzahlen an einem Ort.",
+    "home.listings.all": "Alle Investmentchancen",
+    "home.listings.sale": "Angebote zum Kauf und zur Miete",
+    "about.founder.kicker": "Gründer von Housio",
+    "about.founder.title": "Das Produkt entstand aus eigener Erfahrung <span>mit der Verwaltung eines Portfolios.</span>",
+    "about.founder.text": "Housio ist keine bloße Werbung auf dieser Seite. Es ist ein natürlicher Meilenstein in der Geschichte eines Menschen, der Immobilien verwaltet und sich im Alltag um Mieter, Verträge und Zahlungen kümmert.",
+    "about.founder.small": "Eigene Plattform",
+    "contact.about_listing": "Ihre Nachricht betrifft das Angebot:",
+    "contact.mailto": "Ihr E-Mail-Programm hat sich mit einer vorausgefüllten Nachricht geöffnet — Sie müssen sie nur noch absenden. Falls es sich nicht geöffnet hat, schreiben Sie bitte direkt an invest@janrehacek.com.",
+    "error.eyebrow": "Fehler 404",
+    "error.title": "Diese Seite <em>konnte ich nicht finden.</em>",
+    "error.text": "Vielleicht wurde das Angebot bereits verkauft oder die Adresse hat sich geändert. Nutzen Sie einen der Links unten.",
+    "error.home": "Zur Startseite",
+    "thanks.eyebrow": "Nachricht gesendet",
+    "thanks.title": "Danke, Ihre Nachricht <em>ist angekommen.</em>",
+    "thanks.text": "Ich melde mich in der Regel innerhalb von 24 Stunden. In der Zwischenzeit können Sie sich die aktuellen Angebote ansehen.",
+    "gallery.dialog": "Fotogalerie der Immobilie",
+    "gallery.close": "Galerie schließen (Esc)",
+    "gallery.prev": "Vorheriges Foto (Pfeil links)",
+    "gallery.next": "Nächstes Foto (Pfeil rechts)",
+    "housio.pricing.eyebrow": "Preise",
+    "housio.pricing.title": "Starten Sie kostenlos. Zahlen Sie erst, wenn Ihr Portfolio wächst.",
+    "housio.pricing.per": "pro Monat",
+    "housio.pricing.free": "Dauerhaft kostenlos, keine Testversion. Für 1 Immobilie und 1 Mieter.",
+    "housio.pricing.basic": "Bis zu 15 Immobilien.",
+    "housio.pricing.pro": "16 bis 25 Immobilien.",
+    "housio.pricing.business": "Für größere Portfolios mit mehr als 25 Immobilien und Teams mit bis zu 3 Personen.",
+    "housio.pricing.note": "Monatspreise bei Zahlung über das Web. Bei jährlicher Zahlung erhalten Sie zwei Monate gratis.",
+    "housio.pricing.price.free": "0 €",
+    "housio.pricing.price.basic": "12 €",
+    "housio.pricing.price.pro": "24 €",
+    "housio.pricing.price.business": "40 €",
+    "nav.home": "Startseite",
+    "investors.detail.eyebrow": "INVESTMENTCHANCE",
+    "investors.detail.cta_eyebrow": "Hat diese Investmentchance Ihr Interesse geweckt?",
+    "investors.detail.cta_text": "Eine kurze Nachricht genügt — ich melde mich in der Regel innerhalb von 24 Stunden bei Ihnen.",
+    "investors.detail.cta_more": "Ich interessiere mich für diese Investmentchance →",
+    "listings.crosslink.toInvest": "Diese Immobilie finden Sie auch unter den Investmentchancen — mit Rendite und Investmentkennzahlen →",
+    "listings.crosslink.toSale": "Diese Immobilie finden Sie auch im regulären Verkaufsangebot →",
+    "listing.detail.ic.buy": "Preis pro m² (Kauf)",
+    "listing.detail.ic.market": "Marktpreis pro m² nach Sanierung",
+    "listing.detail.ic.resale": "Voraussichtlicher Verkaufspreis",
+    "listing.detail.ic.diff": "Differenz zum geschätzten Verkaufspreis",
+    "listing.detail.meta.disposition": "Grundriss",
+    "listing.detail.meta.area": "Wohnfläche",
+    "listings.grid.heading": "Aktuelle Angebote"
 };
 
 // PART 2: FR, IT, ES, PL
@@ -960,7 +1155,7 @@ window.translations.fr = {
     /* --- pro makléře (partnerský program) --- */
     "nav.partners": "Pour les agents",
     "partner.eyebrow": "Programme partenaire pour les agents immobiliers",
-    "partner.title": "Recommandez Housio.<br><em>Gagnez</em> chaque mois.",
+    "partner.title": "Recommandez Housio. <br><em>Gagnez</em> chaque mois.",
     "partner.sub": "Vous avez un réseau de bailleurs et d'investisseurs ? Recommandez-leur Housio pour la gestion de leurs biens et touchez une commission sur chaque paiement — encore et encore, aussi longtemps que le client reste abonné.",
     "partner.cta.apply": "Devenir partenaire",
     "partner.cta.calc": "Estimer mes gains",
@@ -1023,12 +1218,12 @@ window.translations.fr = {
     "partner.faq3.a": "Sur les paiements des clients venus via votre lien ou votre code de réduction et qui règlent Housio sur le web. 20 % sur le premier paiement, 10 % sur chaque paiement suivant.",
     "partner.faq4.q": "Pendant combien de temps vais-je toucher des commissions ?",
     "partner.faq4.a": "La commission récurrente de 10 % vous est versée chaque mois, aussi longtemps que votre client reste abonné à Housio.",
-    "housio.founder.eyebrow": "Pourquoi Housio est né", "housio.founder.title": "L'outil dont j'avais moi-même besoin.", "housio.founder.text": "À mesure que mon portefeuille grandissait, les tableurs ne suffisaient plus. Je voulais un seul endroit pour voir les flux, les contrats et les rendements — et aucune solution ne me convenait. Alors je l'ai créé. Aujourd'hui j'utilise Housio chaque jour, avec des centaines de propriétaires partout en Europe.", "housio.more": "En savoir plus sur Housio →", "housio.f5": "<strong>Suivi des locataires et des lots</strong> — tout au clair au même endroit", "housio.f6": "<strong>Pièces jointes et documents</strong> — contrats, factures et états des lieux pour chaque bien", "housio.page.features_title": "Tout pour gérer votre portefeuille.", "housio.page.cta.title": "Essayez Housio gratuitement.", "housio.page.cta.text": "Créer un compte est gratuit et prend deux minutes. Gérez vos biens intelligemment — comme moi.",
+    "housio.founder.eyebrow": "Pourquoi Housio est né", "housio.founder.title": "L'outil dont j'avais moi-même besoin.", "housio.founder.text": "À mesure que mon portefeuille grandissait, les tableurs ne suffisaient plus. Je voulais un seul endroit pour voir les flux, les contrats et les rendements — et aucune solution ne me convenait. Alors je l'ai créé. Aujourd'hui j'utilise Housio chaque jour, et il est conçu pour les propriétaires bailleurs de toute l'Europe.", "housio.more": "En savoir plus sur Housio →", "housio.f5": "<strong>Suivi des locataires et des lots</strong> — tout au clair au même endroit", "housio.f6": "<strong>Pièces jointes et documents</strong> — contrats, factures et états des lieux pour chaque bien", "housio.page.features_title": "Tout pour gérer votre portefeuille.", "housio.page.cta.title": "Essayez Housio gratuitement.", "housio.page.cta.text": "Créer un compte est gratuit et prend deux minutes. Gérez vos biens intelligemment — comme moi.",
     "page.contact.title": "<em>Discutons.</em>", "page.contact.sub": "La première consultation est toujours gratuite et sans engagement. Décrivez brièvement votre projet.", "landing.about.cta": "Toute l'histoire", "landing.services.cta": "Tous les services",
     "nav.about": "À propos", "nav.services": "Services", "nav.investors": "Pour investisseurs", "nav.housio": "Housio", "nav.academy": "Académie", "nav.testimonials": "Références", "nav.listings": "Annonces", "nav.contact": "Contact",
     "landing.contact.eyebrow": "CONTACTONS-NOUS", "landing.contact.title": "J'aimerais entendre votre projet.", "landing.contact.text": "Première consultation gratuite, réponse sous 24 heures.", "landing.contact.cta": "Envoyer un message",
     "hero.badge": "Investisseur & expert immobilier",
-    "hero.title": "Des investissements<br>qui ont du <em>sens.</em>",
+    "hero.title": "Des investissements <br>qui ont du <em>sens.</em>",
     "hero.subtitle": "Je suis Jan Řeháček — investisseur, expert immobilier et fondateur de la plateforme Housio. J'aide mes clients et une nouvelle génération d'investisseurs à bâtir un patrimoine durable grâce à l'immobilier et aux investissements intelligents.",
     "hero.cta1": "Prendre rendez-vous", "hero.cta2": "Lire la vidéo",
     "hero.meta1": "5+ ans d'expérience", "hero.meta2": "Sans engagement", "hero.meta3": "Première consultation gratuite",
@@ -1060,12 +1255,12 @@ window.translations.fr = {
     "services.s3_l1": "Consultations 1:1", "services.s3_l2": "Programmes annuels", "services.s3_l3": "Programmes de formation", "services.s3_l4": "Communauté & réseau",
     "housio.eyebrow": "Mon produit",
     "housio.title": "Housio — <em style=\"color:var(--accent)\">gestion immobilière.<br>Simple.</em>",
-    "housio.subtitle": "Plateforme SaaS que j'utilise moi-même. Aujourd'hui, des centaines de propriétaires à travers l'Europe en dépendent.",
+    "housio.subtitle": "Plateforme SaaS que j'utilise moi-même. Conçue pour les propriétaires bailleurs de toute l'Europe.",
     "housio.f1": "<strong>Cash flow clair</strong> — revenus, dépenses et profits en temps réel",
     "housio.f2": "<strong>Alertes d'expiration de contrat</strong> — 30, 14 et 7 jours à l'avance",
     "housio.f3": "<strong>Rapports PDF professionnels</strong> — pour comptable, banque ou fiscaliste",
-    "housio.f4": "<strong>Multi-langue & multi-devise</strong> — toute l'UE, 8 langues, 4+ devises",
-    "housio.cta1": "Ouvrir Housio →", "housio.cta2": "Essayer gratuitement",
+    "housio.f4": "<strong>Multi-langue & multi-devise</strong> — toute l'UE, 10 langues, 8 devises",
+    "housio.cta1": "Découvrir Housio →", "housio.cta2": "Essayer gratuitement",
     "housio.m1": "Revenus ce mois", "housio.m2": "Contrat expire dans", "housio.m2_v": "23 jours", "housio.m3": "Biens gérés", "housio.m4": "Locataires actifs", "housio.m5": "Taux d'occupation",
     "academy.eyebrow": "Opportunités d'investissement",
     "academy.title": "L'éducation que j'aurais aimé <em style=\"color:var(--accent-dark)\">avoir à 20 ans.</em>",
@@ -1090,7 +1285,7 @@ window.translations.fr = {
     "contact.eyebrow": "Contact",
     "contact.title": "Discutons <em style=\"color:var(--accent)\">ensemble.</em>",
     "contact.text": "La première consultation est gratuite et sans engagement. Décrivez-moi brièvement votre projet.",
-    "contact.email": "E-mail", "contact.phone": "Téléphone", "contact.office": "Bureau", "contact.office_value": "Prague, République tchèque", "contact.response": "Réponse", "contact.response_value": "Sous 24 heures",
+    "contact.email": "E-mail", "contact.phone": "Téléphone", "contact.office": "Bureau", "contact.office_value": "Ostrava, République tchèque", "contact.response": "Réponse", "contact.response_value": "Sous 24 heures",
     "contact.success": "Merci pour votre message ! Je vous recontacte bientôt.",
     "form.name": "Nom *", "form.name_ph": "Votre nom", "form.email": "E-mail *", "form.email_ph": "votre@email.fr",
     "form.phone": "Téléphone", "form.interest": "Qu'est-ce qui vous intéresse ?",
@@ -1163,7 +1358,7 @@ window.translations.fr = {
     "listings.info.deposit":        "Dépôt de garantie",
     "listings.info.commission":     "Commission",
     "listings.info.availableFrom":  "Disponibilité",
-    "listings.empty.text": "Aucune annonce dans cette catégorie pour le moment. Découvrez les autres catégories ou <a href=\"contact.html\" style=\"color:var(--accent-dark);font-weight:600;\">contactez-nous</a>.",
+    "listings.empty.text": "Aucune annonce dans cette catégorie pour le moment. Découvrez les autres catégories ou contactez-nous.",
     "investors.placeholder.title": "Les opportunités en direct arrivent bientôt",
     "investors.placeholder.text": "Je prépare la première série d'opportunités d'investissement. Si vous souhaitez collaborer ou être parmi les premiers informés des nouveaux projets, contactez-moi.",
     "investors.placeholder.cta": "Prendre rendez-vous",
@@ -1189,14 +1384,79 @@ window.translations.fr = {
     "listings.info.priceLabel.invest": "Prix",
     "listing.detail.highlights.title": "Atouts du projet",
     "listing.detail.intent.title": "Stratégie d'investissement",
-    "listing.detail.state.title": "État du bien"
+    "listing.detail.state.title": "État du bien",
+    // Audit 09/2026
+    "footer.operator": "Éditeur du site : US Europe Group s.r.o., n° d'identification 06779808, Třebovická 5050/78, 722 00 Ostrava, République tchèque · <a href=\"/ochrana-osobnich-udaju\">Politique de confidentialité</a>",
+    "form.privacy": "Nous utiliserons ces informations uniquement pour répondre à votre message. <a href=\"/ochrana-osobnich-udaju\">Politique de confidentialité</a>",
+    "meta.privacy.title": "Politique de confidentialité | Jan Řeháček",
+    "privacy.eyebrow": "Informations légales",
+    "privacy.title": "Politique de <em>confidentialité.</em>",
+    "privacy.sub": "Comment nous traitons les données que vous nous envoyez via janrehacek.com. Le texte ci-dessous est en tchèque.",
+    "meta.home.title": "Jan Řeháček — Investisseur & expert immobilier",
+    "meta.about.title": "À propos — Jan Řeháček, investisseur et expert immobilier",
+    "meta.services.title": "Achat et gestion de biens locatifs | Jan Řeháček",
+    "meta.references.title": "Avis clients — investissement immobilier | Jan Řeháček",
+    "meta.contact.title": "Contact et consultation gratuite | Jan Řeháček",
+    "meta.housio.title": "Housio — gestion immobilière | Jan Řeháček",
+    "meta.partners.title": "Pour les agents — programme partenaire Housio | Jan Řeháček",
+    "meta.error.title": "Page introuvable | Jan Řeháček",
+    "meta.thanks.title": "Message envoyé | Jan Řeháček",
+    "a11y.skip": "Aller au contenu",
+    "home.listings.eyebrow": "Offres actuelles",
+    "home.listings.title": "Opportunités d'investissement <em style=\"color:var(--accent-dark)\">dans la région de Moravie-Silésie.</em>",
+    "home.listings.subtitle": "Une sélection d'appartements et de maisons, avec prix, emplacement et chiffres d'investissement réunis au même endroit.",
+    "home.listings.all": "Toutes les opportunités d'investissement",
+    "home.listings.sale": "Biens à vendre et à louer",
+    "about.founder.kicker": "Fondateur de Housio",
+    "about.founder.title": "Le produit est né d'une expérience personnelle <span>de gestion de portefeuille.</span>",
+    "about.founder.text": "Housio n'est pas une simple publicité sur cette page. C'est une étape naturelle dans le parcours de quelqu'un qui gère des biens et s'occupe au quotidien de locataires, de contrats et de paiements.",
+    "about.founder.small": "Ma propre plateforme",
+    "contact.about_listing": "Votre message concerne l'annonce :",
+    "contact.mailto": "Votre messagerie s'est ouverte avec un message prérempli — il ne vous reste qu'à l'envoyer. Si elle ne s'est pas ouverte, écrivez-moi directement à invest@janrehacek.com.",
+    "error.eyebrow": "Erreur 404",
+    "error.title": "Je n'ai pas trouvé <em>cette page.</em>",
+    "error.text": "L'offre a peut-être déjà été vendue, ou l'adresse a changé. Poursuivez avec l'un des liens ci-dessous.",
+    "error.home": "Retour à l'accueil",
+    "thanks.eyebrow": "Message envoyé",
+    "thanks.title": "Merci, votre message <em>est bien arrivé.</em>",
+    "thanks.text": "Je vous réponds en général sous 24 heures. En attendant, vous pouvez parcourir les offres actuelles.",
+    "gallery.dialog": "Galerie photos du bien",
+    "gallery.close": "Fermer la galerie (Échap)",
+    "gallery.prev": "Photo précédente (flèche gauche)",
+    "gallery.next": "Photo suivante (flèche droite)",
+    "housio.pricing.eyebrow": "Tarifs",
+    "housio.pricing.title": "Commencez gratuitement. Payez quand votre portefeuille grandit.",
+    "housio.pricing.per": "par mois",
+    "housio.pricing.free": "Gratuit pour toujours, pas une version d'essai. Pour 1 bien et 1 locataire.",
+    "housio.pricing.basic": "Jusqu'à 15 biens.",
+    "housio.pricing.pro": "De 16 à 25 biens.",
+    "housio.pricing.business": "Pour les portefeuilles de plus de 25 biens et les équipes jusqu'à 3 personnes.",
+    "housio.pricing.note": "Prix mensuels pour un paiement sur le web. En paiement annuel, deux mois sont offerts.",
+    "housio.pricing.price.free": "0 €",
+    "housio.pricing.price.basic": "12 €",
+    "housio.pricing.price.pro": "24 €",
+    "housio.pricing.price.business": "40 €",
+    "nav.home": "Accueil",
+    "investors.detail.eyebrow": "OPPORTUNITÉ D'INVESTISSEMENT",
+    "investors.detail.cta_eyebrow": "Cette opportunité vous intéresse ?",
+    "investors.detail.cta_text": "Un court message me suffit — je vous réponds en général sous 24 heures.",
+    "investors.detail.cta_more": "Cette opportunité m'intéresse →",
+    "listings.crosslink.toInvest": "Vous trouverez aussi ce bien parmi les opportunités d'investissement — avec rendement et chiffres d'investissement →",
+    "listings.crosslink.toSale": "Ce bien figure aussi dans nos annonces de vente classiques →",
+    "listing.detail.ic.buy": "Prix au m² (achat)",
+    "listing.detail.ic.market": "Prix du marché au m² après rénovation",
+    "listing.detail.ic.resale": "Prix de vente estimé",
+    "listing.detail.ic.diff": "Écart par rapport au prix de vente estimé",
+    "listing.detail.meta.disposition": "disposition",
+    "listing.detail.meta.area": "de surface habitable",
+    "listings.grid.heading": "Offres actuelles"
 };
 
 window.translations.it = {
     /* --- pro makléře (partnerský program) --- */
     "nav.partners": "Per gli agenti",
     "partner.eyebrow": "Programma partner per agenti immobiliari",
-    "partner.title": "Consigli Housio.<br><em>Guadagni</em> ogni mese.",
+    "partner.title": "Consigli Housio. <br><em>Guadagni</em> ogni mese.",
     "partner.sub": "Ha una rete di proprietari e investitori? Consigli loro Housio per la gestione degli immobili e guadagni una commissione su ogni pagamento — di nuovo e di nuovo, finché il cliente paga.",
     "partner.cta.apply": "Voglio diventare partner",
     "partner.cta.calc": "Calcola il guadagno",
@@ -1259,12 +1519,12 @@ window.translations.it = {
     "partner.faq3.a": "Per i pagamenti dei clienti arrivati tramite il Suo link o codice sconto e che pagano Housio sul web. 20% sul primo pagamento, 10% su ogni successivo.",
     "partner.faq4.q": "Per quanto tempo ricevo le commissioni?",
     "partner.faq4.a": "La commissione ricorrente del 10% Le arriva ogni mese finché il Suo cliente paga Housio.",
-    "housio.founder.eyebrow": "Perché è nato Housio", "housio.founder.title": "Lo strumento di cui avevo bisogno io stesso.", "housio.founder.text": "Con la crescita del mio portafoglio, i fogli di calcolo non bastavano più. Volevo un unico posto per vedere flussi di cassa, contratti e rendimenti — e nessuna soluzione mi convinceva. Così l'ho creato. Oggi uso Housio ogni giorno, insieme a centinaia di proprietari in tutta Europa.", "housio.more": "Scopri di più su Housio →", "housio.f5": "<strong>Anagrafica di inquilini e unità</strong> — tutto chiaro in un unico posto", "housio.f6": "<strong>Allegati e documenti</strong> — contratti, fatture e verbali di consegna per ogni immobile", "housio.page.features_title": "Tutto per gestire il tuo portafoglio.", "housio.page.cta.title": "Prova Housio gratis.", "housio.page.cta.text": "Creare un account è gratuito e richiede due minuti. Gestisci i tuoi immobili in modo intelligente — come faccio io.",
+    "housio.founder.eyebrow": "Perché è nato Housio", "housio.founder.title": "Lo strumento di cui avevo bisogno io stesso.", "housio.founder.text": "Con la crescita del mio portafoglio, i fogli di calcolo non bastavano più. Volevo un unico posto per vedere flussi di cassa, contratti e rendimenti — e nessuna soluzione mi convinceva. Così l'ho creato. Oggi uso Housio ogni giorno, ed è pensato per chi affitta immobili in tutta Europa.", "housio.more": "Scopri di più su Housio →", "housio.f5": "<strong>Anagrafica di inquilini e unità</strong> — tutto chiaro in un unico posto", "housio.f6": "<strong>Allegati e documenti</strong> — contratti, fatture e verbali di consegna per ogni immobile", "housio.page.features_title": "Tutto per gestire il tuo portafoglio.", "housio.page.cta.title": "Prova Housio gratis.", "housio.page.cta.text": "Creare un account è gratuito e richiede due minuti. Gestisci i tuoi immobili in modo intelligente — come faccio io.",
     "page.contact.title": "<em>Parliamone.</em>", "page.contact.sub": "La prima consulenza è sempre gratuita e senza impegno. Descrivi brevemente di cosa hai bisogno.", "landing.about.cta": "Tutta la storia", "landing.services.cta": "Tutti i servizi",
     "nav.about": "Chi sono", "nav.services": "Servizi", "nav.investors": "Per investitori", "nav.housio": "Housio", "nav.academy": "Accademia", "nav.testimonials": "Referenze", "nav.listings": "Annunci", "nav.contact": "Contattami",
     "landing.contact.eyebrow": "METTIAMOCI IN CONTATTO", "landing.contact.title": "Mi piacerebbe sentire il tuo progetto.", "landing.contact.text": "Prima consulenza gratuita, risposta entro 24 ore.", "landing.contact.cta": "Invia un messaggio",
     "hero.badge": "Investitore & esperto immobiliare",
-    "hero.title": "Investimenti<br>che hanno <em>senso.</em>",
+    "hero.title": "Investimenti <br>che hanno <em>senso.</em>",
     "hero.subtitle": "Sono Jan Řeháček — investitore, esperto immobiliare e fondatore della piattaforma Housio. Aiuto i clienti e una nuova generazione di investitori a costruire un patrimonio duraturo attraverso immobili e investimenti intelligenti.",
     "hero.cta1": "Fissa un incontro", "hero.cta2": "Riproduci video",
     "hero.meta1": "5+ anni di esperienza", "hero.meta2": "Senza impegno", "hero.meta3": "Prima consulenza gratis",
@@ -1296,12 +1556,12 @@ window.translations.it = {
     "services.s3_l1": "Consulenze 1:1", "services.s3_l2": "Programmi annuali", "services.s3_l3": "Programmi formativi", "services.s3_l4": "Community & networking",
     "housio.eyebrow": "Il mio prodotto",
     "housio.title": "Housio — <em style=\"color:var(--accent)\">gestione immobiliare.<br>Semplice.</em>",
-    "housio.subtitle": "Piattaforma SaaS che uso io stesso. Oggi centinaia di proprietari in Europa si affidano ad essa.",
+    "housio.subtitle": "Piattaforma SaaS che uso io stesso. Pensata per chi affitta immobili in tutta Europa.",
     "housio.f1": "<strong>Cash flow chiaro</strong> — entrate, uscite e profitti in tempo reale",
     "housio.f2": "<strong>Avvisi di scadenza contratto</strong> — 30, 14 e 7 giorni prima",
     "housio.f3": "<strong>Report PDF professionali</strong> — per commercialista, banca o fiscalista",
-    "housio.f4": "<strong>Multi-lingua & multi-valuta</strong> — tutta l'UE, 8 lingue, 4+ valute",
-    "housio.cta1": "Apri Housio →", "housio.cta2": "Prova gratis",
+    "housio.f4": "<strong>Multi-lingua & multi-valuta</strong> — tutta l'UE, 10 lingue, 8 valute",
+    "housio.cta1": "Scopri Housio →", "housio.cta2": "Prova gratis",
     "housio.m1": "Entrate questo mese", "housio.m2": "Contratto scade tra", "housio.m2_v": "23 giorni", "housio.m3": "Immobili gestiti", "housio.m4": "Inquilini attivi", "housio.m5": "Occupazione",
     "academy.eyebrow": "Opportunità di investimento",
     "academy.title": "L'educazione che avrei voluto <em style=\"color:var(--accent-dark)\">avere a 20 anni.</em>",
@@ -1326,7 +1586,7 @@ window.translations.it = {
     "contact.eyebrow": "Contatto",
     "contact.title": "<em style=\"color:var(--accent)\">Parliamo.</em>",
     "contact.text": "La prima consulenza è sempre gratuita e senza impegno. Descrivetemi brevemente il vostro progetto.",
-    "contact.email": "E-mail", "contact.phone": "Telefono", "contact.office": "Sede", "contact.office_value": "Praga, Repubblica Ceca", "contact.response": "Risposta", "contact.response_value": "Entro 24 ore",
+    "contact.email": "E-mail", "contact.phone": "Telefono", "contact.office": "Sede", "contact.office_value": "Ostrava, Repubblica Ceca", "contact.response": "Risposta", "contact.response_value": "Entro 24 ore",
     "contact.success": "Grazie per il messaggio! Vi ricontatterò presto.",
     "form.name": "Nome *", "form.name_ph": "Il vostro nome", "form.email": "E-mail *", "form.email_ph": "vostra@email.it",
     "form.phone": "Telefono", "form.interest": "Cosa vi interessa?",
@@ -1399,7 +1659,7 @@ window.translations.it = {
     "listings.info.deposit":        "Cauzione",
     "listings.info.commission":     "Provvigione",
     "listings.info.availableFrom":  "Disponibile da",
-    "listings.empty.text": "Al momento non ci sono annunci in questa categoria. Date un'occhiata alle altre categorie o <a href=\"contact.html\" style=\"color:var(--accent-dark);font-weight:600;\">contattateci</a>.",
+    "listings.empty.text": "Al momento non ci sono annunci in questa categoria. Date un'occhiata alle altre categorie o contattateci.",
     "investors.placeholder.title": "A breve troverà qui le opportunità attive",
     "investors.placeholder.text": "Sto preparando la prima serie di opportunità di investimento. Se desidera collaborare o essere tra i primi a conoscere i nuovi progetti, mi contatti.",
     "investors.placeholder.cta": "Prenotare un incontro",
@@ -1425,14 +1685,79 @@ window.translations.it = {
     "listings.info.priceLabel.invest": "Prezzo",
     "listing.detail.highlights.title": "Punti di forza del progetto",
     "listing.detail.intent.title": "Strategia di investimento",
-    "listing.detail.state.title": "Stato dell'immobile"
+    "listing.detail.state.title": "Stato dell'immobile",
+    // Audit 09/2026
+    "footer.operator": "Gestore del sito: US Europe Group s.r.o., codice identificativo 06779808, Třebovická 5050/78, 722 00 Ostrava, Repubblica Ceca · <a href=\"/ochrana-osobnich-udaju\">Informativa sulla privacy</a>",
+    "form.privacy": "Useremo i dati del modulo solo per rispondere al Suo messaggio. <a href=\"/ochrana-osobnich-udaju\">Informativa sulla privacy</a>",
+    "meta.privacy.title": "Informativa sulla privacy | Jan Řeháček",
+    "privacy.eyebrow": "Note legali",
+    "privacy.title": "Informativa sulla <em>privacy.</em>",
+    "privacy.sub": "Come trattiamo i dati che ci invia tramite janrehacek.com. Il testo seguente è in ceco.",
+    "meta.home.title": "Jan Řeháček — Investitore & esperto immobiliare",
+    "meta.about.title": "Chi sono — Jan Řeháček, investitore ed esperto immobiliare",
+    "meta.services.title": "Acquisto e gestione di immobili a reddito | Jan Řeháček",
+    "meta.references.title": "Referenze clienti — investimenti immobiliari | Jan Řeháček",
+    "meta.contact.title": "Contatti e consulenza gratuita | Jan Řeháček",
+    "meta.housio.title": "Housio — gestione immobiliare | Jan Řeháček",
+    "meta.partners.title": "Per gli agenti — programma partner Housio | Jan Řeháček",
+    "meta.error.title": "Pagina non trovata | Jan Řeháček",
+    "meta.thanks.title": "Messaggio inviato | Jan Řeháček",
+    "a11y.skip": "Vai al contenuto",
+    "home.listings.eyebrow": "Offerte attuali",
+    "home.listings.title": "Opportunità di investimento <em style=\"color:var(--accent-dark)\">nella regione di Moravia-Slesia.</em>",
+    "home.listings.subtitle": "Appartamenti e case selezionati, con prezzo, posizione e dati d'investimento in un unico posto.",
+    "home.listings.all": "Tutte le opportunità di investimento",
+    "home.listings.sale": "Immobili in vendita e in affitto",
+    "about.founder.kicker": "Fondatore di Housio",
+    "about.founder.title": "Il prodotto è nato dall'esperienza personale <span>nella gestione di un portafoglio.</span>",
+    "about.founder.text": "Housio non è una semplice pubblicità su questa pagina. È una tappa naturale nella storia di chi gestisce immobili e si occupa ogni giorno di inquilini, contratti e pagamenti.",
+    "about.founder.small": "La mia piattaforma",
+    "contact.about_listing": "Scrive in merito all'annuncio:",
+    "contact.mailto": "Si è aperto il Suo programma di posta con un messaggio già compilato — basta inviarlo. Se non si è aperto, scriva direttamente a invest@janrehacek.com.",
+    "error.eyebrow": "Errore 404",
+    "error.title": "Non ho trovato <em>questa pagina.</em>",
+    "error.text": "Forse l'immobile è già stato venduto o l'indirizzo è cambiato. Prosegua con uno dei link qui sotto.",
+    "error.home": "Torna alla home",
+    "thanks.eyebrow": "Messaggio inviato",
+    "thanks.title": "Grazie, il messaggio <em>è arrivato.</em>",
+    "thanks.text": "Di solito rispondo entro 24 ore. Nel frattempo può consultare le offerte attuali.",
+    "gallery.dialog": "Galleria fotografica dell'immobile",
+    "gallery.close": "Chiudi galleria (Esc)",
+    "gallery.prev": "Foto precedente (freccia sinistra)",
+    "gallery.next": "Foto successiva (freccia destra)",
+    "housio.pricing.eyebrow": "Prezzi",
+    "housio.pricing.title": "Inizi gratis. Paghi quando il portafoglio cresce.",
+    "housio.pricing.per": "al mese",
+    "housio.pricing.free": "Gratis per sempre, non una prova. Per 1 immobile e 1 inquilino.",
+    "housio.pricing.basic": "Fino a 15 immobili.",
+    "housio.pricing.pro": "Da 16 a 25 immobili.",
+    "housio.pricing.business": "Per portafogli più grandi, oltre 25 immobili, e team fino a 3 persone.",
+    "housio.pricing.note": "Prezzi mensili con pagamento sul web. Con il pagamento annuale, due mesi sono gratis.",
+    "housio.pricing.price.free": "0 €",
+    "housio.pricing.price.basic": "12 €",
+    "housio.pricing.price.pro": "24 €",
+    "housio.pricing.price.business": "40 €",
+    "nav.home": "Home",
+    "investors.detail.eyebrow": "OPPORTUNITÀ DI INVESTIMENTO",
+    "investors.detail.cta_eyebrow": "Le interessa questa opportunità?",
+    "investors.detail.cta_text": "Mi basta un breve messaggio e di solito La ricontatto entro 24 ore.",
+    "investors.detail.cta_more": "Sono interessato a questa opportunità →",
+    "listings.crosslink.toInvest": "Trova questo immobile anche tra le opportunità di investimento — con rendimento e dati d'investimento →",
+    "listings.crosslink.toSale": "Questo immobile è presente anche tra gli annunci di vendita →",
+    "listing.detail.ic.buy": "Prezzo al m² (acquisto)",
+    "listing.detail.ic.market": "Prezzo di mercato al m² dopo la ristrutturazione",
+    "listing.detail.ic.resale": "Prezzo di vendita stimato",
+    "listing.detail.ic.diff": "Differenza rispetto al prezzo di vendita stimato",
+    "listing.detail.meta.disposition": "disposizione",
+    "listing.detail.meta.area": "di superficie utile",
+    "listings.grid.heading": "Offerte attuali"
 };
 
 window.translations.es = {
     /* --- pro makléře (partnerský program) --- */
     "nav.partners": "Para agentes",
     "partner.eyebrow": "Programa de partners para agentes inmobiliarios",
-    "partner.title": "Recomienda Housio.<br><em>Gana dinero</em> cada mes.",
+    "partner.title": "Recomienda Housio. <br><em>Gana dinero</em> cada mes.",
     "partner.sub": "¿Tienes una red de propietarios e inversores? Recomiéndales Housio para gestionar sus inmuebles y llévate una comisión de cada pago, una y otra vez, mientras el cliente siga pagando.",
     "partner.cta.apply": "Quiero ser partner",
     "partner.cta.calc": "Calcular mis ingresos",
@@ -1495,12 +1820,12 @@ window.translations.es = {
     "partner.faq3.a": "Por los pagos de clientes que han llegado a través de tu enlace o código de descuento y pagan Housio en la web. 20 % del primer pago y 10 % de cada pago siguiente.",
     "partner.faq4.q": "¿Durante cuánto tiempo recibo la comisión?",
     "partner.faq4.a": "La comisión recurrente del 10 % te llega cada mes mientras tu cliente siga pagando Housio.",
-    "housio.founder.eyebrow": "Por qué nació Housio", "housio.founder.title": "La herramienta que yo mismo necesitaba.", "housio.founder.text": "A medida que crecía mi cartera, las hojas de cálculo dejaron de bastar. Quería un único lugar para ver el flujo de caja, los contratos y la rentabilidad — y ninguna solución me convencía. Así que la construí. Hoy uso Housio cada día, junto a cientos de propietarios por toda Europa.", "housio.more": "Más sobre Housio →", "housio.f5": "<strong>Registro de inquilinos y unidades</strong> — todo claro en un solo lugar", "housio.f6": "<strong>Adjuntos y documentos</strong> — contratos, facturas y actas de entrega de cada inmueble", "housio.page.features_title": "Todo para gestionar tu cartera.", "housio.page.cta.title": "Prueba Housio gratis.", "housio.page.cta.text": "Crear una cuenta es gratis y lleva dos minutos. Gestiona tus inmuebles de forma inteligente — como yo.",
+    "housio.founder.eyebrow": "Por qué nació Housio", "housio.founder.title": "La herramienta que yo mismo necesitaba.", "housio.founder.text": "A medida que crecía mi cartera, las hojas de cálculo dejaron de bastar. Quería un único lugar para ver el flujo de caja, los contratos y la rentabilidad — y ninguna solución me convencía. Así que la construí. Hoy uso Housio cada día, y está pensado para arrendadores de toda Europa.", "housio.more": "Más sobre Housio →", "housio.f5": "<strong>Registro de inquilinos y unidades</strong> — todo claro en un solo lugar", "housio.f6": "<strong>Adjuntos y documentos</strong> — contratos, facturas y actas de entrega de cada inmueble", "housio.page.features_title": "Todo para gestionar tu cartera.", "housio.page.cta.title": "Prueba Housio gratis.", "housio.page.cta.text": "Crear una cuenta es gratis y lleva dos minutos. Gestiona tus inmuebles de forma inteligente — como yo.",
     "page.contact.title": "<em>Hablemos.</em>", "page.contact.sub": "La primera consulta es siempre gratuita y sin compromiso. Solo describe brevemente lo que necesitas.", "landing.about.cta": "Toda la historia", "landing.services.cta": "Todos los servicios",
     "nav.about": "Sobre mí", "nav.services": "Servicios", "nav.investors": "Para inversores", "nav.housio": "Housio", "nav.academy": "Academia", "nav.testimonials": "Referencias", "nav.listings": "Inmuebles", "nav.contact": "Contacto",
     "landing.contact.eyebrow": "CONECTEMOS", "landing.contact.title": "Me encantaría escuchar tu proyecto.", "landing.contact.text": "Primera consulta gratuita, respuesta en 24 horas.", "landing.contact.cta": "Enviar mensaje",
     "hero.badge": "Inversor & experto inmobiliario",
-    "hero.title": "Inversiones<br>que tienen <em>sentido.</em>",
+    "hero.title": "Inversiones <br>que tienen <em>sentido.</em>",
     "hero.subtitle": "Soy Jan Řeháček — inversor, experto inmobiliario y fundador de la plataforma Housio. Ayudo a clientes y a una nueva generación de inversores a construir un patrimonio duradero a través de inmuebles e inversiones inteligentes.",
     "hero.cta1": "Concertar reunión", "hero.cta2": "Reproducir vídeo",
     "hero.meta1": "5+ años de experiencia", "hero.meta2": "Sin compromiso", "hero.meta3": "Primera consulta gratis",
@@ -1532,12 +1857,12 @@ window.translations.es = {
     "services.s3_l1": "Consultas 1:1", "services.s3_l2": "Programas anuales", "services.s3_l3": "Programas formativos", "services.s3_l4": "Comunidad & networking",
     "housio.eyebrow": "Mi producto",
     "housio.title": "Housio — <em style=\"color:var(--accent)\">gestión inmobiliaria.<br>Simple.</em>",
-    "housio.subtitle": "Plataforma SaaS que uso yo mismo. Hoy cientos de propietarios en toda Europa confían en ella.",
+    "housio.subtitle": "Plataforma SaaS que uso yo mismo. Pensada para arrendadores de toda Europa.",
     "housio.f1": "<strong>Cash flow claro</strong> — ingresos, gastos y beneficios en tiempo real",
     "housio.f2": "<strong>Alertas de vencimiento de contrato</strong> — 30, 14 y 7 días antes",
     "housio.f3": "<strong>Informes PDF profesionales</strong> — para asesor, banco o fiscalista",
-    "housio.f4": "<strong>Multi-idioma & multi-moneda</strong> — toda UE, 8 idiomas, 4+ monedas",
-    "housio.cta1": "Abrir Housio →", "housio.cta2": "Probar gratis",
+    "housio.f4": "<strong>Multi-idioma & multi-moneda</strong> — toda la UE, 10 idiomas, 8 monedas",
+    "housio.cta1": "Descubrir Housio →", "housio.cta2": "Probar gratis",
     "housio.m1": "Ingresos este mes", "housio.m2": "Contrato vence en", "housio.m2_v": "23 días", "housio.m3": "Propiedades gestionadas", "housio.m4": "Inquilinos activos", "housio.m5": "Ocupación",
     "academy.eyebrow": "Oportunidades de inversión",
     "academy.title": "La educación que <em style=\"color:var(--accent-dark)\">querría haber tenido a los 20.</em>",
@@ -1562,7 +1887,7 @@ window.translations.es = {
     "contact.eyebrow": "Contacto",
     "contact.title": "<em style=\"color:var(--accent)\">Hablemos.</em>",
     "contact.text": "La primera consulta es siempre gratis y sin compromiso. Describidme brevemente vuestro proyecto.",
-    "contact.email": "E-mail", "contact.phone": "Teléfono", "contact.office": "Sede", "contact.office_value": "Praga, República Checa", "contact.response": "Respuesta", "contact.response_value": "En 24 horas",
+    "contact.email": "E-mail", "contact.phone": "Teléfono", "contact.office": "Sede", "contact.office_value": "Ostrava, República Checa", "contact.response": "Respuesta", "contact.response_value": "En 24 horas",
     "contact.success": "¡Gracias por el mensaje! Os contactaré pronto.",
     "form.name": "Nombre *", "form.name_ph": "Vuestro nombre", "form.email": "E-mail *", "form.email_ph": "vuestro@email.es",
     "form.phone": "Teléfono", "form.interest": "¿Qué os interesa?",
@@ -1635,7 +1960,7 @@ window.translations.es = {
     "listings.info.deposit":        "Fianza",
     "listings.info.commission":     "Comisión",
     "listings.info.availableFrom":  "Disponible desde",
-    "listings.empty.text": "Ahora mismo no hay inmuebles en esta categoría. Eche un vistazo a otras categorías o <a href=\"contact.html\" style=\"color:var(--accent-dark);font-weight:600;\">contáctenos</a>.",
+    "listings.empty.text": "Ahora mismo no hay inmuebles en esta categoría. Eche un vistazo a otras categorías o contáctenos.",
     "investors.placeholder.title": "Próximamente: oportunidades activas",
     "investors.placeholder.text": "Estoy preparando la primera serie de oportunidades de inversión. Si desea colaborar o ser de los primeros en conocer los nuevos proyectos, póngase en contacto.",
     "investors.placeholder.cta": "Concertar una reunión",
@@ -1661,14 +1986,79 @@ window.translations.es = {
     "listings.info.priceLabel.invest": "Precio",
     "listing.detail.highlights.title": "Aspectos clave del proyecto",
     "listing.detail.intent.title": "Estrategia de inversión",
-    "listing.detail.state.title": "Estado del inmueble"
+    "listing.detail.state.title": "Estado del inmueble",
+    // Audit 09/2026
+    "footer.operator": "Titular del sitio: US Europe Group s.r.o., n.º de identificación 06779808, Třebovická 5050/78, 722 00 Ostrava, República Checa · <a href=\"/ochrana-osobnich-udaju\">Política de privacidad</a>",
+    "form.privacy": "Usaremos los datos del formulario solo para responder a su mensaje. <a href=\"/ochrana-osobnich-udaju\">Política de privacidad</a>",
+    "meta.privacy.title": "Política de privacidad | Jan Řeháček",
+    "privacy.eyebrow": "Información legal",
+    "privacy.title": "Política de <em>privacidad.</em>",
+    "privacy.sub": "Cómo tratamos los datos que nos envía a través de janrehacek.com. El texto a continuación está en checo.",
+    "meta.home.title": "Jan Řeháček — Inversor & experto inmobiliario",
+    "meta.about.title": "Sobre mí — Jan Řeháček, inversor y experto inmobiliario",
+    "meta.services.title": "Compra y gestión de inmuebles de inversión | Jan Řeháček",
+    "meta.references.title": "Referencias — inversión inmobiliaria | Jan Řeháček",
+    "meta.contact.title": "Contacto y consulta gratuita | Jan Řeháček",
+    "meta.housio.title": "Housio — gestión inmobiliaria | Jan Řeháček",
+    "meta.partners.title": "Para agentes — programa de partners Housio | Jan Řeháček",
+    "meta.error.title": "Página no encontrada | Jan Řeháček",
+    "meta.thanks.title": "Mensaje enviado | Jan Řeháček",
+    "a11y.skip": "Saltar al contenido",
+    "home.listings.eyebrow": "Oferta actual",
+    "home.listings.title": "Oportunidades de inversión <em style=\"color:var(--accent-dark)\">en la región de Moravia-Silesia.</em>",
+    "home.listings.subtitle": "Pisos y casas seleccionados, con precio, ubicación y cifras de inversión en un solo lugar.",
+    "home.listings.all": "Todas las oportunidades de inversión",
+    "home.listings.sale": "Inmuebles en venta y alquiler",
+    "about.founder.kicker": "Fundador de Housio",
+    "about.founder.title": "El producto nació de la experiencia personal <span>gestionando una cartera.</span>",
+    "about.founder.text": "Housio no es un simple anuncio en esta página. Es un hito natural en la historia de alguien que gestiona inmuebles y se ocupa a diario de inquilinos, contratos y pagos.",
+    "about.founder.small": "Plataforma propia",
+    "contact.about_listing": "Consulta sobre el inmueble:",
+    "contact.mailto": "Se ha abierto su correo con un mensaje ya redactado — solo tiene que enviarlo. Si no se ha abierto, escriba directamente a invest@janrehacek.com.",
+    "error.eyebrow": "Error 404",
+    "error.title": "No he encontrado <em>esta página.</em>",
+    "error.text": "Puede que el inmueble ya se haya vendido o que la dirección haya cambiado. Continúe con uno de los enlaces de abajo.",
+    "error.home": "Ir a la página principal",
+    "thanks.eyebrow": "Mensaje enviado",
+    "thanks.title": "Gracias, su mensaje <em>ha llegado.</em>",
+    "thanks.text": "Suelo responder en menos de 24 horas. Mientras tanto, puede consultar la oferta actual.",
+    "gallery.dialog": "Galería de fotos del inmueble",
+    "gallery.close": "Cerrar galería (Esc)",
+    "gallery.prev": "Foto anterior (flecha izquierda)",
+    "gallery.next": "Foto siguiente (flecha derecha)",
+    "housio.pricing.eyebrow": "Precios",
+    "housio.pricing.title": "Empiece gratis. Pague cuando su cartera crezca.",
+    "housio.pricing.per": "al mes",
+    "housio.pricing.free": "Gratis para siempre, no es una prueba. Para 1 inmueble y 1 inquilino.",
+    "housio.pricing.basic": "Hasta 15 inmuebles.",
+    "housio.pricing.pro": "De 16 a 25 inmuebles.",
+    "housio.pricing.business": "Para carteras de más de 25 inmuebles y equipos de hasta 3 personas.",
+    "housio.pricing.note": "Precios mensuales con pago en la web. Con el pago anual, tiene dos meses gratis.",
+    "housio.pricing.price.free": "0 €",
+    "housio.pricing.price.basic": "12 €",
+    "housio.pricing.price.pro": "24 €",
+    "housio.pricing.price.business": "40 €",
+    "nav.home": "Inicio",
+    "investors.detail.eyebrow": "OPORTUNIDAD DE INVERSIÓN",
+    "investors.detail.cta_eyebrow": "¿Le interesa esta oportunidad?",
+    "investors.detail.cta_text": "Con un mensaje breve me basta y suelo responderle en menos de 24 horas.",
+    "investors.detail.cta_more": "Me interesa esta oportunidad →",
+    "listings.crosslink.toInvest": "También encontrará este inmueble entre las oportunidades de inversión — con rentabilidad y cifras de inversión →",
+    "listings.crosslink.toSale": "Este inmueble también figura en la oferta de venta habitual →",
+    "listing.detail.ic.buy": "Precio por m² (compra)",
+    "listing.detail.ic.market": "Precio de mercado por m² tras la reforma",
+    "listing.detail.ic.resale": "Precio de venta estimado",
+    "listing.detail.ic.diff": "Diferencia respecto al precio de venta estimado",
+    "listing.detail.meta.disposition": "distribución",
+    "listing.detail.meta.area": "útiles",
+    "listings.grid.heading": "Ofertas actuales"
 };
 
 window.translations.pl = {
     /* --- pro makléře (partnerský program) --- */
     "nav.partners": "Dla pośredników",
     "partner.eyebrow": "Program partnerski dla pośredników nieruchomości",
-    "partner.title": "Polecaj Housio.<br><em>Zarabiaj</em> co miesiąc.",
+    "partner.title": "Polecaj Housio. <br><em>Zarabiaj</em> co miesiąc.",
     "partner.sub": "Masz sieć wynajmujących i inwestorów? Poleć im Housio do zarządzania nieruchomościami i otrzymuj prowizję z każdej płatności — raz za razem, dopóki klient płaci.",
     "partner.cta.apply": "Chcę zostać partnerem",
     "partner.cta.calc": "Oblicz zarobek",
@@ -1731,12 +2121,12 @@ window.translations.pl = {
     "partner.faq3.a": "Za płatności klientów, którzy przyszli przez Twój link lub kod rabatowy i płacą za Housio na stronie. 20 % z pierwszej płatności, 10 % z każdej kolejnej.",
     "partner.faq4.q": "Jak długo przychodzi mi prowizja?",
     "partner.faq4.a": "Powtarzalna prowizja 10 % przychodzi co miesiąc tak długo, jak długo klient płaci za Housio.",
-    "housio.founder.eyebrow": "Dlaczego powstało Housio", "housio.founder.title": "Narzędzie, którego sam potrzebowałem.", "housio.founder.text": "Gdy moje portfolio rosło, arkusze przestały wystarczać. Chciałem jedno miejsce, w którym widzę cash flow, umowy i zyski — i żadne rozwiązanie mi nie odpowiadało. Więc je zbudowałem. Dziś używam Housio codziennie, razem z setkami właścicieli w całej Europie.", "housio.more": "Więcej o Housio →", "housio.f5": "<strong>Ewidencja najemców i lokali</strong> — wszystko przejrzyście w jednym miejscu", "housio.f6": "<strong>Załączniki i dokumenty</strong> — umowy, faktury i protokoły dla każdej nieruchomości", "housio.page.features_title": "Wszystko do zarządzania Twoim portfolio.", "housio.page.cta.title": "Wypróbuj Housio za darmo.", "housio.page.cta.text": "Założenie konta jest darmowe i zajmuje dwie minuty. Zarządzaj nieruchomościami mądrze — tak jak ja.",
+    "housio.founder.eyebrow": "Dlaczego powstało Housio", "housio.founder.title": "Narzędzie, którego sam potrzebowałem.", "housio.founder.text": "Gdy moje portfolio rosło, arkusze przestały wystarczać. Chciałem jedno miejsce, w którym widzę cash flow, umowy i zyski — i żadne rozwiązanie mi nie odpowiadało. Więc je zbudowałem. Dziś używam Housio codziennie — stworzyłem je dla wynajmujących w całej Europie.", "housio.more": "Więcej o Housio →", "housio.f5": "<strong>Ewidencja najemców i lokali</strong> — wszystko przejrzyście w jednym miejscu", "housio.f6": "<strong>Załączniki i dokumenty</strong> — umowy, faktury i protokoły dla każdej nieruchomości", "housio.page.features_title": "Wszystko do zarządzania Twoim portfolio.", "housio.page.cta.title": "Wypróbuj Housio za darmo.", "housio.page.cta.text": "Założenie konta jest darmowe i zajmuje dwie minuty. Zarządzaj nieruchomościami mądrze — tak jak ja.",
     "page.contact.title": "<em>Porozmawiajmy.</em>", "page.contact.sub": "Pierwsza konsultacja jest zawsze bezpłatna i niezobowiązująca. Wystarczy krótko opisać, czym się zajmujesz.", "landing.about.cta": "Cała historia", "landing.services.cta": "Wszystkie usługi",
     "nav.about": "O mnie", "nav.services": "Usługi", "nav.investors": "Dla inwestorów", "nav.housio": "Housio", "nav.academy": "Akademia", "nav.testimonials": "Referencje", "nav.listings": "Oferty", "nav.contact": "Kontakt",
     "landing.contact.eyebrow": "SKONTAKTUJMY SIĘ", "landing.contact.title": "Chętnie wysłucham, nad czym pracujesz.", "landing.contact.text": "Pierwsza konsultacja gratis, odpowiem w ciągu 24 godzin.", "landing.contact.cta": "Wyślij wiadomość",
     "hero.badge": "Inwestor & ekspert ds. nieruchomości",
-    "hero.title": "Inwestycje,<br>które mają <em>sens.</em>",
+    "hero.title": "Inwestycje, <br>które mają <em>sens.</em>",
     "hero.subtitle": "Jestem Jan Řeháček — inwestor, ekspert ds. nieruchomości i założyciel platformy Housio. Pomagam klientom i nowemu pokoleniu inwestorów budować długoterminowy majątek poprzez nieruchomości i mądre inwestycje.",
     "hero.cta1": "Umów spotkanie", "hero.cta2": "Odtwórz wideo",
     "hero.meta1": "5+ lat doświadczenia", "hero.meta2": "Bez zobowiązań", "hero.meta3": "Pierwsza konsultacja gratis",
@@ -1768,12 +2158,12 @@ window.translations.pl = {
     "services.s3_l1": "Konsultacje 1:1", "services.s3_l2": "Roczne programy mentorskie", "services.s3_l3": "Programy edukacyjne", "services.s3_l4": "Społeczność & networking",
     "housio.eyebrow": "Mój produkt",
     "housio.title": "Housio — <em style=\"color:var(--accent)\">zarządzanie nieruchomościami.<br>Proste.</em>",
-    "housio.subtitle": "Platforma SaaS, której sam używam. Dziś korzystają z niej setki właścicieli w całej Europie.",
+    "housio.subtitle": "Platforma SaaS, której sam używam. Stworzona dla wynajmujących w całej Europie.",
     "housio.f1": "<strong>Przejrzysty cash flow</strong> — przychody, wydatki i zysk w czasie rzeczywistym",
     "housio.f2": "<strong>Alerty wygasających umów</strong> — 30, 14 i 7 dni wcześniej",
     "housio.f3": "<strong>Profesjonalne raporty PDF</strong> — dla księgowej, banku lub doradcy podatkowego",
-    "housio.f4": "<strong>Wielojęzyczność & wielowalutowość</strong> — cała UE, 8 języków, 4+ waluty",
-    "housio.cta1": "Otwórz Housio →", "housio.cta2": "Wypróbuj za darmo",
+    "housio.f4": "<strong>Wielojęzyczność & wielowalutowość</strong> — cała UE, 10 języków, 8 walut",
+    "housio.cta1": "Poznaj Housio →", "housio.cta2": "Wypróbuj za darmo",
     "housio.m1": "Przychód w tym miesiącu", "housio.m2": "Umowa kończy się za", "housio.m2_v": "23 dni", "housio.m3": "Zarządzane nieruchomości", "housio.m4": "Aktywni najemcy", "housio.m5": "Obłożenie portfela",
     "academy.eyebrow": "Okazje inwestycyjne",
     "academy.title": "Edukacja, którą chciałbym <em style=\"color:var(--accent-dark)\">mieć w wieku 20 lat.</em>",
@@ -1798,7 +2188,7 @@ window.translations.pl = {
     "contact.eyebrow": "Kontakt",
     "contact.title": "<em style=\"color:var(--accent)\">Porozmawiajmy.</em>",
     "contact.text": "Pierwsza konsultacja jest zawsze bezpłatna i niezobowiązująca. Wystarczy krótko opisać projekt.",
-    "contact.email": "E-mail", "contact.phone": "Telefon", "contact.office": "Siedziba", "contact.office_value": "Praga, Czechy", "contact.response": "Odpowiedź", "contact.response_value": "W ciągu 24 godzin",
+    "contact.email": "E-mail", "contact.phone": "Telefon", "contact.office": "Siedziba", "contact.office_value": "Ostrawa, Czechy", "contact.response": "Odpowiedź", "contact.response_value": "W ciągu 24 godzin",
     "contact.success": "Dziękuję za wiadomość! Wkrótce się odezwę.",
     "form.name": "Imię *", "form.name_ph": "Wasze imię", "form.email": "E-mail *", "form.email_ph": "wasz@email.pl",
     "form.phone": "Telefon", "form.interest": "Co Was interesuje?",
@@ -1877,7 +2267,7 @@ window.translations.pl = {
     "listings.info.deposit":        "Kaucja",
     "listings.info.commission":     "Prowizja",
     "listings.info.availableFrom":  "Dostępność",
-    "listings.empty.text": "Obecnie nie mamy ofert w tej kategorii. Zajrzyjcie do innych kategorii lub <a href=\"contact.html\" style=\"color:var(--accent-dark);font-weight:600;\">skontaktujcie się z nami</a>.",
+    "listings.empty.text": "Obecnie nie mamy ofert w tej kategorii. Zajrzyjcie do innych kategorii lub skontaktujcie się z nami.",
     "investors.placeholder.title": "Wkrótce znajdą tu Państwo aktualne oferty",
     "investors.placeholder.text": "Przygotowuję pierwszą serię okazji inwestycyjnych. Jeśli są Państwo zainteresowani współpracą lub chcą jako pierwsi dowiedzieć się o nowych projektach, proszę o kontakt.",
     "investors.placeholder.cta": "Umów spotkanie",
@@ -1905,7 +2295,72 @@ window.translations.pl = {
     "listings.info.priceLabel.invest": "Cena",
     "listing.detail.highlights.title": "Najważniejsze atuty projektu",
     "listing.detail.intent.title": "Strategia inwestycyjna",
-    "listing.detail.state.title": "Stan nieruchomości"
+    "listing.detail.state.title": "Stan nieruchomości",
+    // Audit 09/2026
+    "footer.operator": "Operator strony: US Europe Group s.r.o., IČO 06779808, Třebovická 5050/78, 722 00 Ostrawa, Czechy · <a href=\"/ochrana-osobnich-udaju\">Polityka prywatności</a>",
+    "form.privacy": "Dane z formularza wykorzystamy wyłącznie do odpowiedzi na Państwa wiadomość. <a href=\"/ochrana-osobnich-udaju\">Polityka prywatności</a>",
+    "meta.privacy.title": "Polityka prywatności | Jan Řeháček",
+    "privacy.eyebrow": "Informacje prawne",
+    "privacy.title": "Polityka <em>prywatności.</em>",
+    "privacy.sub": "Jak postępujemy z danymi przesłanymi przez janrehacek.com. Poniższy tekst jest w języku czeskim.",
+    "meta.home.title": "Jan Řeháček — Inwestor & ekspert ds. nieruchomości",
+    "meta.about.title": "O mnie — Jan Řeháček, inwestor i ekspert ds. nieruchomości",
+    "meta.services.title": "Zakup i zarząd nieruchomości inwestycyjnych | Jan Řeháček",
+    "meta.references.title": "Opinie klientów — inwestycje w nieruchomości | Jan Řeháček",
+    "meta.contact.title": "Kontakt i bezpłatna konsultacja | Jan Řeháček",
+    "meta.housio.title": "Housio — zarządzanie nieruchomościami | Jan Řeháček",
+    "meta.partners.title": "Dla pośredników — program partnerski Housio | Jan Řeháček",
+    "meta.error.title": "Nie znaleziono strony | Jan Řeháček",
+    "meta.thanks.title": "Wiadomość wysłana | Jan Řeháček",
+    "a11y.skip": "Przejdź do treści",
+    "home.listings.eyebrow": "Aktualna oferta",
+    "home.listings.title": "Okazje inwestycyjne <em style=\"color:var(--accent-dark)\">z kraju morawsko-śląskiego.</em>",
+    "home.listings.subtitle": "Wybrane mieszkania i domy z ceną, lokalizacją i wskaźnikami inwestycyjnymi w jednym miejscu.",
+    "home.listings.all": "Wszystkie okazje inwestycyjne",
+    "home.listings.sale": "Oferta sprzedaży i wynajmu",
+    "about.founder.kicker": "Założyciel Housio",
+    "about.founder.title": "Produkt powstał z własnego doświadczenia <span>w zarządzaniu portfelem.</span>",
+    "about.founder.text": "Housio to nie osobna reklama na tej stronie. To naturalny kamień milowy w historii człowieka, który zarządza nieruchomościami i na co dzień zajmuje się najemcami, umowami i płatnościami.",
+    "about.founder.small": "Własna platforma",
+    "contact.about_listing": "Piszą Państwo w sprawie oferty:",
+    "contact.mailto": "Otworzył się program pocztowy z gotową wiadomością — wystarczy ją wysłać. Jeśli się nie otworzył, proszę napisać bezpośrednio na invest@janrehacek.com.",
+    "error.eyebrow": "Błąd 404",
+    "error.title": "Nie znalazłem <em>tej strony.</em>",
+    "error.text": "Być może oferta została już sprzedana albo zmienił się adres. Proszę skorzystać z jednego z linków poniżej.",
+    "error.home": "Na stronę główną",
+    "thanks.eyebrow": "Wiadomość wysłana",
+    "thanks.title": "Dziękuję, wiadomość <em>dotarła.</em>",
+    "thanks.text": "Zwykle odpowiadam w ciągu 24 godzin. W międzyczasie mogą Państwo przejrzeć aktualną ofertę.",
+    "gallery.dialog": "Galeria zdjęć nieruchomości",
+    "gallery.close": "Zamknij galerię (Esc)",
+    "gallery.prev": "Poprzednie zdjęcie (strzałka w lewo)",
+    "gallery.next": "Następne zdjęcie (strzałka w prawo)",
+    "housio.pricing.eyebrow": "Cennik",
+    "housio.pricing.title": "Start za darmo. Płatność dopiero, gdy portfel urośnie.",
+    "housio.pricing.per": "miesięcznie",
+    "housio.pricing.free": "Bezpłatnie na stałe, nie wersja próbna. Dla 1 nieruchomości i 1 najemcy.",
+    "housio.pricing.basic": "Do 15 nieruchomości.",
+    "housio.pricing.pro": "Od 16 do 25 nieruchomości.",
+    "housio.pricing.business": "Dla większych portfeli powyżej 25 nieruchomości i zespołów do 3 osób.",
+    "housio.pricing.note": "Ceny miesięczne przy płatności przez stronę internetową. Przy płatności rocznej dwa miesiące gratis.",
+    "housio.pricing.price.free": "0 €",
+    "housio.pricing.price.basic": "12 €",
+    "housio.pricing.price.pro": "24 €",
+    "housio.pricing.price.business": "40 €",
+    "nav.home": "Strona główna",
+    "investors.detail.eyebrow": "OKAZJA INWESTYCYJNA",
+    "investors.detail.cta_eyebrow": "Zainteresowała Państwa ta okazja?",
+    "investors.detail.cta_text": "Wystarczy krótka wiadomość — zwykle odpowiadam w ciągu 24 godzin.",
+    "investors.detail.cta_more": "Interesuje mnie ta okazja →",
+    "listings.crosslink.toInvest": "Tę nieruchomość znajdą Państwo również wśród okazji inwestycyjnych — ze stopą zwrotu i wskaźnikami inwestycyjnymi →",
+    "listings.crosslink.toSale": "Ta nieruchomość jest również w standardowej ofercie sprzedaży →",
+    "listing.detail.ic.buy": "Cena za m² (zakup)",
+    "listing.detail.ic.market": "Cena rynkowa za m² po remoncie",
+    "listing.detail.ic.resale": "Przewidywana cena sprzedaży",
+    "listing.detail.ic.diff": "Różnica względem szacowanej ceny sprzedaży",
+    "listing.detail.meta.disposition": "układ",
+    "listing.detail.meta.area": "powierzchni użytkowej",
+    "listings.grid.heading": "Aktualne oferty"
 };
 
 // PART 3: RU, JA, ZH
@@ -1915,7 +2370,7 @@ window.translations.ru = {
     /* --- pro makléře (partnerský program) --- */
     "nav.partners": "Для риелторов",
     "partner.eyebrow": "Партнёрская программа для агентов по недвижимости",
-    "partner.title": "Рекомендуйте Housio.<br><em>Зарабатывайте</em> каждый месяц.",
+    "partner.title": "Рекомендуйте Housio. <br><em>Зарабатывайте</em> каждый месяц.",
     "partner.sub": "У вас есть база арендодателей и инвесторов? Порекомендуйте им Housio для управления недвижимостью и получайте комиссию с каждого платежа — снова и снова, пока клиент платит.",
     "partner.cta.apply": "Хочу стать партнёром",
     "partner.cta.calc": "Рассчитать доход",
@@ -1978,12 +2433,12 @@ window.translations.ru = {
     "partner.faq3.a": "За платежи клиентов, которые пришли по вашей ссылке или промокоду и оплачивают Housio на сайте. 20 % с первого платежа, 10 % с каждого следующего.",
     "partner.faq4.q": "Как долго мне приходит комиссия?",
     "partner.faq4.a": "Регулярная комиссия 10 % приходит вам каждый месяц столько, сколько ваш клиент оплачивает Housio.",
-    "housio.founder.eyebrow": "Почему появился Housio", "housio.founder.title": "Инструмент, который был нужен мне самому.", "housio.founder.text": "Когда мой портфель вырос, таблиц стало не хватать. Я хотел одно место, где видны денежный поток, договоры и доходность — и ни одно решение мне не подходило. Поэтому я создал своё. Сегодня я использую Housio каждый день, вместе с сотнями владельцев по всей Европе.", "housio.more": "Подробнее о Housio →", "housio.f5": "<strong>Учёт арендаторов и объектов</strong> — всё наглядно в одном месте", "housio.f6": "<strong>Вложения и документы</strong> — договоры, счета и акты по каждой недвижимости", "housio.page.features_title": "Всё для управления вашим портфелем.", "housio.page.cta.title": "Попробуйте Housio бесплатно.", "housio.page.cta.text": "Создание аккаунта бесплатно и занимает две минуты. Управляйте недвижимостью умно — как я.",
+    "housio.founder.eyebrow": "Почему появился Housio", "housio.founder.title": "Инструмент, который был нужен мне самому.", "housio.founder.text": "Когда мой портфель вырос, таблиц стало не хватать. Я хотел одно место, где видны денежный поток, договоры и доходность — и ни одно решение мне не подходило. Поэтому я создал своё. Сегодня я использую Housio каждый день, и он создан для арендодателей по всей Европе.", "housio.more": "Подробнее о Housio →", "housio.f5": "<strong>Учёт арендаторов и объектов</strong> — всё наглядно в одном месте", "housio.f6": "<strong>Вложения и документы</strong> — договоры, счета и акты по каждой недвижимости", "housio.page.features_title": "Всё для управления вашим портфелем.", "housio.page.cta.title": "Попробуйте Housio бесплатно.", "housio.page.cta.text": "Создание аккаунта бесплатно и занимает две минуты. Управляйте недвижимостью умно — как я.",
     "page.contact.title": "<em>Давайте поговорим.</em>", "page.contact.sub": "Первая консультация всегда бесплатна и ни к чему не обязывает. Просто кратко опишите, что вас интересует.", "landing.about.cta": "Вся история", "landing.services.cta": "Все услуги",
     "nav.about": "Обо мне", "nav.services": "Услуги", "nav.investors": "Для инвесторов", "nav.housio": "Housio", "nav.academy": "Академия", "nav.testimonials": "Отзывы", "nav.listings": "Объекты", "nav.contact": "Связаться",
     "landing.contact.eyebrow": "СВЯЖЕМСЯ", "landing.contact.title": "Буду рад услышать о вашем проекте.", "landing.contact.text": "Первая консультация бесплатно, отвечу в течение 24 часов.", "landing.contact.cta": "Написать сообщение",
     "hero.badge": "Инвестор и эксперт по недвижимости",
-    "hero.title": "Инвестиции,<br>которые имеют <em>смысл.</em>",
+    "hero.title": "Инвестиции, <br>которые имеют <em>смысл.</em>",
     "hero.subtitle": "Я Jan Řeháček — инвестор, эксперт по недвижимости и основатель платформы Housio. Помогаю клиентам и новому поколению инвесторов создавать долгосрочный капитал через недвижимость и умные инвестиции.",
     "hero.cta1": "Назначить встречу", "hero.cta2": "Смотреть видео",
     "hero.meta1": "5+ лет опыта", "hero.meta2": "Без обязательств", "hero.meta3": "Первая консультация бесплатно",
@@ -2015,12 +2470,12 @@ window.translations.ru = {
     "services.s3_l1": "Консультации 1:1", "services.s3_l2": "Годовые менторские программы", "services.s3_l3": "Образовательные программы", "services.s3_l4": "Сообщество и нетворкинг",
     "housio.eyebrow": "Мой продукт",
     "housio.title": "Housio — <em style=\"color:var(--accent)\">управление недвижимостью.<br>Просто.</em>",
-    "housio.subtitle": "SaaS-платформа, которую я использую сам. Сегодня на ней работают сотни владельцев по всей Европе.",
+    "housio.subtitle": "SaaS-платформа, которую я использую сам. Создана для арендодателей по всей Европе.",
     "housio.f1": "<strong>Прозрачный денежный поток</strong> — доходы, расходы и прибыль в реальном времени",
     "housio.f2": "<strong>Уведомления об окончании договоров</strong> — за 30, 14 и 7 дней",
     "housio.f3": "<strong>Профессиональные PDF-отчёты</strong> — для бухгалтера, банка или налогового консультанта",
-    "housio.f4": "<strong>Мультиязычность и мультивалютность</strong> — для всего ЕС, 8 языков, 4+ валюты",
-    "housio.cta1": "Открыть Housio →", "housio.cta2": "Попробовать бесплатно",
+    "housio.f4": "<strong>Мультиязычность и мультивалютность</strong> — для всего ЕС, 10 языков, 8 валют",
+    "housio.cta1": "Познакомиться с Housio →", "housio.cta2": "Попробовать бесплатно",
     "housio.m1": "Доход за этот месяц", "housio.m2": "Договор истекает через", "housio.m2_v": "23 дня", "housio.m3": "Управляемые объекты", "housio.m4": "Активные арендаторы", "housio.m5": "Заполненность портфеля",
     "academy.eyebrow": "Инвестиционные возможности",
     "academy.title": "Образование, которое <em style=\"color:var(--accent-dark)\">я хотел бы иметь в 20.</em>",
@@ -2045,7 +2500,7 @@ window.translations.ru = {
     "contact.eyebrow": "Контакт",
     "contact.title": "<em style=\"color:var(--accent)\">Давайте поговорим.</em>",
     "contact.text": "Первая консультация всегда бесплатная и без обязательств. Просто кратко опишите, чем занимаетесь.",
-    "contact.email": "Эл. почта", "contact.phone": "Телефон", "contact.office": "Офис", "contact.office_value": "Прага, Чехия", "contact.response": "Ответ", "contact.response_value": "В течение 24 часов",
+    "contact.email": "Эл. почта", "contact.phone": "Телефон", "contact.office": "Офис", "contact.office_value": "Острава, Чехия", "contact.response": "Ответ", "contact.response_value": "В течение 24 часов",
     "contact.success": "Спасибо за сообщение! Скоро свяжусь с Вами.",
     "form.name": "Имя *", "form.name_ph": "Ваше имя", "form.email": "Эл. почта *", "form.email_ph": "ваш@email.ru",
     "form.phone": "Телефон", "form.interest": "Что Вас интересует?",
@@ -2124,7 +2579,7 @@ window.translations.ru = {
     "listings.info.deposit":        "Депозит",
     "listings.info.commission":     "Комиссия",
     "listings.info.availableFrom":  "Доступность",
-    "listings.empty.text": "В этой категории сейчас нет предложений. Посмотрите другие категории или <a href=\"contact.html\" style=\"color:var(--accent-dark);font-weight:600;\">свяжитесь с нами</a>.",
+    "listings.empty.text": "В этой категории сейчас нет предложений. Посмотрите другие категории или свяжитесь с нами.",
     "investors.placeholder.title": "Актуальные предложения появятся скоро",
     "investors.placeholder.text": "Готовлю первую серию инвестиционных возможностей. Если хотите сотрудничать или первыми узнать о новых проектах, напишите мне.",
     "investors.placeholder.cta": "Назначить встречу",
@@ -2152,14 +2607,79 @@ window.translations.ru = {
     "listings.info.priceLabel.invest": "Цена",
     "listing.detail.highlights.title": "Преимущества проекта",
     "listing.detail.intent.title": "Инвестиционная стратегия",
-    "listing.detail.state.title": "Состояние недвижимости"
+    "listing.detail.state.title": "Состояние недвижимости",
+    // Audit 09/2026
+    "footer.operator": "Оператор сайта: US Europe Group s.r.o., рег. № 06779808, Třebovická 5050/78, 722 00 Острава, Чехия · <a href=\"/ochrana-osobnich-udaju\">Политика конфиденциальности</a>",
+    "form.privacy": "Мы используем данные из формы только для ответа на ваше сообщение. <a href=\"/ochrana-osobnich-udaju\">Политика конфиденциальности</a>",
+    "meta.privacy.title": "Политика конфиденциальности | Jan Řeháček",
+    "privacy.eyebrow": "Правовая информация",
+    "privacy.title": "Политика <em>конфиденциальности.</em>",
+    "privacy.sub": "Как мы обращаемся с данными, которые вы отправляете через janrehacek.com. Текст ниже — на чешском языке.",
+    "meta.home.title": "Jan Řeháček — инвестор и эксперт по недвижимости",
+    "meta.about.title": "Обо мне — Jan Řeháček, инвестор и эксперт по недвижимости",
+    "meta.services.title": "Покупка и управление доходной недвижимостью | Jan Řeháček",
+    "meta.references.title": "Отзывы клиентов — инвестиции в недвижимость | Jan Řeháček",
+    "meta.contact.title": "Контакты и бесплатная консультация | Jan Řeháček",
+    "meta.housio.title": "Housio — управление недвижимостью | Jan Řeháček",
+    "meta.partners.title": "Для риелторов — партнёрская программа Housio | Jan Řeháček",
+    "meta.error.title": "Страница не найдена | Jan Řeháček",
+    "meta.thanks.title": "Сообщение отправлено | Jan Řeháček",
+    "a11y.skip": "Перейти к содержимому",
+    "home.listings.eyebrow": "Актуальные предложения",
+    "home.listings.title": "Инвестиционные возможности <em style=\"color:var(--accent-dark)\">в Моравскосилезском крае.</em>",
+    "home.listings.subtitle": "Отобранные квартиры и дома с ценой, расположением и инвестиционными показателями в одном месте.",
+    "home.listings.all": "Все инвестиционные возможности",
+    "home.listings.sale": "Предложения по продаже и аренде",
+    "about.founder.kicker": "Основатель Housio",
+    "about.founder.title": "Продукт вырос из личного опыта <span>управления портфелем.</span>",
+    "about.founder.text": "Housio — не отдельная реклама на странице. Это естественный этап в истории человека, который управляет недвижимостью и каждый день имеет дело с арендаторами, договорами и платежами.",
+    "about.founder.small": "Собственная платформа",
+    "contact.about_listing": "Ваше сообщение касается объекта:",
+    "contact.mailto": "Открылось Ваше почтовое приложение с готовым сообщением — осталось только отправить его. Если оно не открылось, напишите, пожалуйста, напрямую на invest@janrehacek.com.",
+    "error.eyebrow": "Ошибка 404",
+    "error.title": "Эту страницу <em>я не нашёл.</em>",
+    "error.text": "Возможно, объект уже продан или адрес страницы изменился. Воспользуйтесь одной из ссылок ниже.",
+    "error.home": "На главную",
+    "thanks.eyebrow": "Сообщение отправлено",
+    "thanks.title": "Спасибо, сообщение <em>получено.</em>",
+    "thanks.text": "Обычно я отвечаю в течение 24 часов. А пока Вы можете посмотреть актуальные предложения.",
+    "gallery.dialog": "Фотогалерея объекта",
+    "gallery.close": "Закрыть галерею (Esc)",
+    "gallery.prev": "Предыдущее фото (стрелка влево)",
+    "gallery.next": "Следующее фото (стрелка вправо)",
+    "housio.pricing.eyebrow": "Цены",
+    "housio.pricing.title": "Начните бесплатно. Платите, когда портфель вырастет.",
+    "housio.pricing.per": "в месяц",
+    "housio.pricing.free": "Бесплатно навсегда, а не пробная версия. Для 1 объекта и 1 арендатора.",
+    "housio.pricing.basic": "До 15 объектов.",
+    "housio.pricing.pro": "От 16 до 25 объектов.",
+    "housio.pricing.business": "Для крупных портфелей свыше 25 объектов и команд до 3 человек.",
+    "housio.pricing.note": "Цены указаны за месяц при оплате на сайте. При оплате за год два месяца бесплатно.",
+    "housio.pricing.price.free": "0 €",
+    "housio.pricing.price.basic": "12 €",
+    "housio.pricing.price.pro": "24 €",
+    "housio.pricing.price.business": "40 €",
+    "nav.home": "Главная",
+    "investors.detail.eyebrow": "ИНВЕСТИЦИОННАЯ ВОЗМОЖНОСТЬ",
+    "investors.detail.cta_eyebrow": "Вас заинтересовала эта возможность?",
+    "investors.detail.cta_text": "Достаточно короткого сообщения — обычно я отвечаю в течение 24 часов.",
+    "investors.detail.cta_more": "Мне интересна эта возможность →",
+    "listings.crosslink.toInvest": "Этот объект также представлен среди инвестиционных возможностей — с доходностью и инвестиционными показателями →",
+    "listings.crosslink.toSale": "Этот объект также есть в обычном каталоге на продажу →",
+    "listing.detail.ic.buy": "Цена за м² (покупка)",
+    "listing.detail.ic.market": "Рыночная цена за м² после реконструкции",
+    "listing.detail.ic.resale": "Предполагаемая цена продажи",
+    "listing.detail.ic.diff": "Разница с оценочной ценой продажи",
+    "listing.detail.meta.disposition": "планировка",
+    "listing.detail.meta.area": "полезной площади",
+    "listings.grid.heading": "Актуальные предложения"
 };
 
 window.translations.ja = {
     /* --- pro makléře (partnerský program) --- */
     "nav.partners": "不動産仲介の方へ",
     "partner.eyebrow": "不動産仲介業者向けパートナープログラム",
-    "partner.title": "Housio をご紹介ください。<br><em>毎月の報酬</em> を受け取りましょう。",
+    "partner.title": "Housio をご紹介ください。 <br><em>毎月の報酬</em> を受け取りましょう。",
     "partner.sub": "オーナーや投資家のネットワークをお持ちですか？不動産管理には Housio をご紹介ください。お客様が支払い続ける限り、毎回の支払いから報酬をお受け取りいただけます。",
     "partner.cta.apply": "パートナーに応募する",
     "partner.cta.calc": "収益を計算する",
@@ -2222,12 +2742,12 @@ window.translations.ja = {
     "partner.faq3.a": "あなたのリンクまたは割引コード経由で登録し、ウェブ上で Housio に支払っているお客様の支払いが対象です。初回20％、以降は毎回10％です。",
     "partner.faq4.q": "報酬はいつまで続きますか？",
     "partner.faq4.a": "お客様が Housio に支払い続ける限り、毎月10％の継続報酬をお受け取りいただけます。",
-    "housio.founder.eyebrow": "Housio が生まれた理由", "housio.founder.title": "自分自身が必要としたツール。", "housio.founder.text": "ポートフォリオが大きくなると、表計算では足りなくなりました。キャッシュフロー、契約、利回りを一箇所で見たかったのですが、しっくりくるものがありませんでした。そこで自分で作りました。今では毎日 Housio を使い、ヨーロッパ中の数百人のオーナーも一緒に使っています。", "housio.more": "Housio について詳しく →", "housio.f5": "<strong>入居者・住戸の管理</strong> — すべてを一箇所でわかりやすく", "housio.f6": "<strong>添付ファイルと書類</strong> — 物件ごとに契約書・請求書・引渡書を保管", "housio.page.features_title": "ポートフォリオ管理に必要なすべて。", "housio.page.cta.title": "Housio を無料でお試しください。", "housio.page.cta.text": "アカウント作成は無料で、2分で完了します。私と同じように、賢く不動産を管理しましょう。",
+    "housio.founder.eyebrow": "Housio が生まれた理由", "housio.founder.title": "自分自身が必要としたツール。", "housio.founder.text": "ポートフォリオが大きくなると、表計算では足りなくなりました。キャッシュフロー、契約、利回りを一箇所で見たかったのですが、しっくりくるものがありませんでした。そこで自分で作りました。今では毎日 Housio を使っています。ヨーロッパ中の賃貸オーナーのために作りました。", "housio.more": "Housio について詳しく →", "housio.f5": "<strong>入居者・住戸の管理</strong> — すべてを一箇所でわかりやすく", "housio.f6": "<strong>添付ファイルと書類</strong> — 物件ごとに契約書・請求書・引渡書を保管", "housio.page.features_title": "ポートフォリオ管理に必要なすべて。", "housio.page.cta.title": "Housio を無料でお試しください。", "housio.page.cta.text": "アカウント作成は無料で、2分で完了します。私と同じように、賢く不動産を管理しましょう。",
     "page.contact.title": "<em>お話ししましょう。</em>", "page.contact.sub": "初回のご相談は常に無料で、義務は一切ありません。ご状況を簡単にお聞かせください。", "landing.about.cta": "詳しく読む", "landing.services.cta": "すべてのサービス",
     "nav.about": "私について", "nav.services": "サービス", "nav.investors": "投資家の方へ", "nav.housio": "Housio", "nav.academy": "アカデミー", "nav.testimonials": "推薦の声", "nav.listings": "物件一覧", "nav.contact": "お問い合わせ",
     "landing.contact.eyebrow": "ご相談はこちら", "landing.contact.title": "お話をお聞かせください。", "landing.contact.text": "初回相談無料、24時間以内にご返信いたします。", "landing.contact.cta": "メッセージを送る",
     "hero.badge": "投資家・不動産専門家",
-    "hero.title": "意味のある<br><em>投資。</em>",
+    "hero.title": "意味のある <br><em>投資。</em>",
     "hero.subtitle": "投資家、不動産の専門家、そしてプラットフォーム「Housio」の創設者、Jan Řeháček です。クライアントと新しい世代の投資家が、不動産とスマートな投資を通じて長期的な資産を築くお手伝いをします。",
     "hero.cta1": "ミーティング予約", "hero.cta2": "動画を再生",
     "hero.meta1": "5年以上の経験", "hero.meta2": "契約なし", "hero.meta3": "初回コンサル無料",
@@ -2259,12 +2779,12 @@ window.translations.ja = {
     "services.s3_l1": "1:1コンサルティング", "services.s3_l2": "年間メンタリング", "services.s3_l3": "教育プログラム", "services.s3_l4": "コミュニティ＆ネットワーキング",
     "housio.eyebrow": "私のプロダクト",
     "housio.title": "Housio — <em style=\"color:var(--accent)\">不動産管理を、<br>シンプルに。</em>",
-    "housio.subtitle": "私自身がポートフォリオ管理に使っているSaaSプラットフォーム。今では欧州中の何百人ものオーナーが利用しています。",
+    "housio.subtitle": "私自身がポートフォリオ管理に使っているSaaSプラットフォーム。ヨーロッパ中の賃貸オーナーのために作られています。",
     "housio.f1": "<strong>明確なキャッシュフロー</strong> — 収入、支出、利益をリアルタイムで",
     "housio.f2": "<strong>契約満了通知</strong> — 30、14、7日前に",
     "housio.f3": "<strong>プロフェッショナルPDFレポート</strong> — 会計士、銀行、税理士向け",
-    "housio.f4": "<strong>多言語・多通貨</strong> — EU全域、8言語、4以上の通貨",
-    "housio.cta1": "Housioを開く →", "housio.cta2": "無料で試す",
+    "housio.f4": "<strong>多言語・多通貨</strong> — EU全域、10言語、8通貨",
+    "housio.cta1": "Housioを詳しく見る →", "housio.cta2": "無料で試す",
     "housio.m1": "今月の収入", "housio.m2": "契約満了まで", "housio.m2_v": "23日", "housio.m3": "管理物件数", "housio.m4": "アクティブな入居者", "housio.m5": "稼働率",
     "academy.eyebrow": "投資機会",
     "academy.title": "20歳の時に<em style=\"color:var(--accent-dark)\">受けたかった教育。</em>",
@@ -2289,7 +2809,7 @@ window.translations.ja = {
     "contact.eyebrow": "お問い合わせ",
     "contact.title": "<em style=\"color:var(--accent)\">お話しましょう。</em>",
     "contact.text": "初回コンサルは無料で契約義務もありません。何に取り組んでいるか簡単に教えてください。",
-    "contact.email": "メール", "contact.phone": "電話", "contact.office": "オフィス", "contact.office_value": "プラハ、チェコ共和国", "contact.response": "返信", "contact.response_value": "24時間以内",
+    "contact.email": "メール", "contact.phone": "電話", "contact.office": "オフィス", "contact.office_value": "オストラヴァ、チェコ共和国", "contact.response": "返信", "contact.response_value": "24時間以内",
     "contact.success": "メッセージありがとうございます！すぐにご連絡します。",
     "form.name": "お名前 *", "form.name_ph": "お名前", "form.email": "メール *", "form.email_ph": "your@email.com",
     "form.phone": "電話", "form.interest": "興味のある分野は？",
@@ -2359,7 +2879,7 @@ window.translations.ja = {
     "listings.info.deposit":        "敷金",
     "listings.info.commission":     "仲介手数料",
     "listings.info.availableFrom":  "入居可能日",
-    "listings.empty.text": "このカテゴリーには現在物件がありません。他のカテゴリーをご覧いただくか、<a href=\"contact.html\" style=\"color:var(--accent-dark);font-weight:600;\">お問い合わせ</a>ください。",
+    "listings.empty.text": "このカテゴリーには現在物件がありません。他のカテゴリーをご覧いただくか、お問い合わせください。",
     "investors.placeholder.title": "現在募集中の案件は近日公開",
     "investors.placeholder.text": "現在、最初の投資案件シリーズを準備中です。協業をご希望の方、または新規プロジェクトをいち早く知りたい方は、お気軽にお問い合わせください。",
     "investors.placeholder.cta": "面談を予約する",
@@ -2384,14 +2904,79 @@ window.translations.ja = {
     "listings.info.priceLabel.invest": "価格",
     "listing.detail.highlights.title": "プロジェクトの主な利点",
     "listing.detail.intent.title": "投資戦略",
-    "listing.detail.state.title": "物件の状態"
+    "listing.detail.state.title": "物件の状態",
+    // Audit 09/2026
+    "footer.operator": "サイト運営者：US Europe Group s.r.o.（登録番号 06779808）、Třebovická 5050/78, 722 00 Ostrava、チェコ · <a href=\"/ochrana-osobnich-udaju\">プライバシーポリシー</a>",
+    "form.privacy": "フォームの情報は、ご連絡への返信にのみ使用します。<a href=\"/ochrana-osobnich-udaju\">プライバシーポリシー</a>",
+    "meta.privacy.title": "プライバシーポリシー | Jan Řeháček",
+    "privacy.eyebrow": "法的情報",
+    "privacy.title": "<em>プライバシーポリシー</em>",
+    "privacy.sub": "janrehacek.com を通じてお送りいただいた情報の取り扱いについて。以下の本文はチェコ語です。",
+    "meta.home.title": "Jan Řeháček — 投資家・不動産専門家",
+    "meta.about.title": "私について — 投資家・不動産専門家 Jan Řeháček",
+    "meta.services.title": "投資用不動産の購入と管理 | Jan Řeháček",
+    "meta.references.title": "お客様の声 — 不動産投資 | Jan Řeháček",
+    "meta.contact.title": "お問い合わせ・無料相談 | Jan Řeháček",
+    "meta.housio.title": "Housio — 不動産管理 | Jan Řeháček",
+    "meta.partners.title": "不動産仲介の方へ — Housio パートナープログラム | Jan Řeháček",
+    "meta.error.title": "ページが見つかりません | Jan Řeháček",
+    "meta.thanks.title": "メッセージを送信しました | Jan Řeháček",
+    "a11y.skip": "本文へスキップ",
+    "home.listings.eyebrow": "最新の物件",
+    "home.listings.title": "モラヴィア・シレジア州の<em style=\"color:var(--accent-dark)\">投資機会。</em>",
+    "home.listings.subtitle": "厳選したアパートメントと一戸建てを、価格・所在地・投資指標とあわせて一か所でご覧いただけます。",
+    "home.listings.all": "すべての投資機会",
+    "home.listings.sale": "売却・賃貸物件",
+    "about.founder.kicker": "Housio 創業者",
+    "about.founder.title": "この製品は、自身の<span>ポートフォリオ管理の経験から生まれました。</span>",
+    "about.founder.text": "Housio は単なる広告ではありません。物件を管理し、入居者・契約・支払いに日々向き合ってきた人間の歩みにおける、自然な節目です。",
+    "about.founder.small": "自社プラットフォーム",
+    "contact.about_listing": "お問い合わせ物件：",
+    "contact.mailto": "入力済みのメールが開きました。そのまま送信してください。開かない場合は、invest@janrehacek.com まで直接ご連絡ください。",
+    "error.eyebrow": "エラー 404",
+    "error.title": "このページは<em>見つかりませんでした。</em>",
+    "error.text": "物件がすでに売却されたか、アドレスが変更された可能性があります。下記のリンクからお進みください。",
+    "error.home": "トップページへ",
+    "thanks.eyebrow": "メッセージを送信しました",
+    "thanks.title": "ありがとうございます。メッセージを<em>受け取りました。</em>",
+    "thanks.text": "通常24時間以内にご連絡いたします。その間に、最新の物件をご覧ください。",
+    "gallery.dialog": "物件の写真ギャラリー",
+    "gallery.close": "ギャラリーを閉じる (Esc)",
+    "gallery.prev": "前の写真 (左矢印キー)",
+    "gallery.next": "次の写真 (右矢印キー)",
+    "housio.pricing.eyebrow": "料金プラン",
+    "housio.pricing.title": "無料で始められます。ポートフォリオの成長に合わせてお支払いください。",
+    "housio.pricing.per": "/月",
+    "housio.pricing.free": "お試し版ではなく、ずっと無料。物件1件・入居者1名まで。",
+    "housio.pricing.basic": "物件15件まで。",
+    "housio.pricing.pro": "物件16〜25件。",
+    "housio.pricing.business": "物件25件超の大規模ポートフォリオと、最大3名のチーム向け。",
+    "housio.pricing.note": "料金はWebでお支払いの場合の月額です。年払いなら2か月分が無料になります。",
+    "housio.pricing.price.free": "€0",
+    "housio.pricing.price.basic": "€12",
+    "housio.pricing.price.pro": "€24",
+    "housio.pricing.price.business": "€40",
+    "nav.home": "ホーム",
+    "investors.detail.eyebrow": "投資機会",
+    "investors.detail.cta_eyebrow": "この投資機会に興味をお持ちですか？",
+    "investors.detail.cta_text": "短いメッセージで結構です。通常24時間以内にご返信いたします。",
+    "investors.detail.cta_more": "この投資機会に興味があります →",
+    "listings.crosslink.toInvest": "この物件は投資機会にも掲載しています — 利回りと投資指標付き →",
+    "listings.crosslink.toSale": "この物件は通常の売却物件一覧にも掲載しています →",
+    "listing.detail.ic.buy": "1m²あたりの価格（購入）",
+    "listing.detail.ic.market": "改修後の1m²あたりの市場価格",
+    "listing.detail.ic.resale": "想定売却価格",
+    "listing.detail.ic.diff": "想定売却価格との差額",
+    "listing.detail.meta.disposition": "の間取り",
+    "listing.detail.meta.area": "の専有面積",
+    "listings.grid.heading": "最新の物件"
 };
 
 window.translations.zh = {
     /* --- pro makléře (partnerský program) --- */
     "nav.partners": "房产经纪人",
     "partner.eyebrow": "面向房产经纪人的合作伙伴计划",
-    "partner.title": "推荐 Housio，<br><em>每月</em> 都有收入。",
+    "partner.title": "推荐 Housio， <br><em>每月</em> 都有收入。",
     "partner.sub": "您手上有房东和投资者资源吗？把 Housio 推荐给他们用于物业管理，客户每次付款您都能获得佣金——只要客户继续付费，佣金就一直到账。",
     "partner.cta.apply": "我要成为合作伙伴",
     "partner.cta.calc": "计算收益",
@@ -2454,12 +3039,12 @@ window.translations.zh = {
     "partner.faq3.a": "按通过您的链接或折扣码注册、并在网站上付费使用 Housio 的客户付款计算：首次付款 20%，之后每次 10%。",
     "partner.faq4.q": "佣金能拿多久？",
     "partner.faq4.a": "只要客户继续为 Housio 付费，10% 的持续佣金每月都会到账。",
-    "housio.founder.eyebrow": "Housio 的由来", "housio.founder.title": "我自己需要的工具。", "housio.founder.text": "随着我的资产组合增长，表格已经不够用了。我想要一个能同时查看现金流、合同和收益的地方——但没有一款让我满意。于是我自己动手做了一个。如今我每天都在用 Housio，还有全欧洲数百位业主与我一同使用。", "housio.more": "了解更多 Housio →", "housio.f5": "<strong>租户与房源管理</strong> — 一目了然，集中管理", "housio.f6": "<strong>附件与文档</strong> — 每套房产的合同、发票和交接单", "housio.page.features_title": "管理资产组合所需的一切。", "housio.page.cta.title": "免费试用 Housio。", "housio.page.cta.text": "注册免费，只需两分钟。像我一样，聪明地管理你的房产。",
+    "housio.founder.eyebrow": "Housio 的由来", "housio.founder.title": "我自己需要的工具。", "housio.founder.text": "随着我的资产组合增长，表格已经不够用了。我想要一个能同时查看现金流、合同和收益的地方——但没有一款让我满意。于是我自己动手做了一个。如今我每天都在用 Housio，它专为全欧洲的房东打造。", "housio.more": "了解更多 Housio →", "housio.f5": "<strong>租户与房源管理</strong> — 一目了然，集中管理", "housio.f6": "<strong>附件与文档</strong> — 每套房产的合同、发票和交接单", "housio.page.features_title": "管理资产组合所需的一切。", "housio.page.cta.title": "免费试用 Housio。", "housio.page.cta.text": "注册免费，只需两分钟。像我一样，聪明地管理你的房产。",
     "page.contact.title": "<em>聊一聊吧。</em>", "page.contact.sub": "首次咨询始终免费且无任何义务。只需简单描述您的需求即可。", "landing.about.cta": "完整故事", "landing.services.cta": "全部服务",
     "nav.about": "关于我", "nav.services": "服务", "nav.investors": "投资人专区", "nav.housio": "Housio", "nav.academy": "学院", "nav.testimonials": "推荐", "nav.listings": "房源", "nav.contact": "联系",
     "landing.contact.eyebrow": "联系我们", "landing.contact.title": "期待听到您的项目。", "landing.contact.text": "首次咨询免费，24小时内回复。", "landing.contact.cta": "发送消息",
     "hero.badge": "投资人 & 房地产专家",
-    "hero.title": "有意义的<br><em>投资。</em>",
+    "hero.title": "有意义的 <br><em>投资。</em>",
     "hero.subtitle": "我是 Jan Řeháček — 投资人、房地产专家以及 Housio 平台的创始人。我帮助客户和新一代投资人通过房地产和明智的投资构建长期财富。",
     "hero.cta1": "预约会面", "hero.cta2": "播放视频",
     "hero.meta1": "5年以上经验", "hero.meta2": "无承诺", "hero.meta3": "首次咨询免费",
@@ -2491,12 +3076,12 @@ window.translations.zh = {
     "services.s3_l1": "一对一咨询", "services.s3_l2": "年度导师计划", "services.s3_l3": "教育项目", "services.s3_l4": "社区与人脉",
     "housio.eyebrow": "我的产品",
     "housio.title": "Housio —— <em style=\"color:var(--accent)\">简单的<br>房产管理。</em>",
-    "housio.subtitle": "我自己用于管理投资组合的SaaS平台。如今欧洲数百位房产所有者都在使用。",
+    "housio.subtitle": "我自己用于管理投资组合的SaaS平台。专为全欧洲的房东打造。",
     "housio.f1": "<strong>清晰的现金流</strong> —— 实时查看收入、支出和利润",
     "housio.f2": "<strong>合同到期通知</strong> —— 提前30、14、7天提醒",
     "housio.f3": "<strong>专业PDF报表</strong> —— 适用于会计、银行或税务顾问",
-    "housio.f4": "<strong>多语言、多货币</strong> —— 覆盖整个欧盟,8种语言,4种以上货币",
-    "housio.cta1": "打开 Housio →", "housio.cta2": "免费试用",
+    "housio.f4": "<strong>多语言、多货币</strong> —— 覆盖整个欧盟,10种语言,8种货币",
+    "housio.cta1": "了解 Housio →", "housio.cta2": "免费试用",
     "housio.m1": "本月收入", "housio.m2": "合同到期还有", "housio.m2_v": "23天", "housio.m3": "管理房产", "housio.m4": "活跃租户", "housio.m5": "投资组合入住率",
     "academy.eyebrow": "投资机会",
     "academy.title": "我希望<em style=\"color:var(--accent-dark)\">20岁时就有</em>的教育。",
@@ -2521,7 +3106,7 @@ window.translations.zh = {
     "contact.eyebrow": "联系",
     "contact.title": "让我们<em style=\"color:var(--accent)\">谈谈。</em>",
     "contact.text": "首次咨询始终免费且无义务。只需简要描述您的项目,我通常会在24小时内回复。",
-    "contact.email": "电子邮件", "contact.phone": "电话", "contact.office": "办公地点", "contact.office_value": "布拉格,捷克共和国", "contact.response": "回复时间", "contact.response_value": "24小时内",
+    "contact.email": "电子邮件", "contact.phone": "电话", "contact.office": "办公地点", "contact.office_value": "俄斯特拉发,捷克共和国", "contact.response": "回复时间", "contact.response_value": "24小时内",
     "contact.success": "感谢您的留言!我会尽快回复。",
     "form.name": "姓名 *", "form.name_ph": "您的姓名", "form.email": "电子邮件 *", "form.email_ph": "your@email.com",
     "form.phone": "电话", "form.interest": "您对什么感兴趣?",
@@ -2591,7 +3176,7 @@ window.translations.zh = {
     "listings.info.deposit":        "押金",
     "listings.info.commission":     "佣金",
     "listings.info.availableFrom":  "可入住时间",
-    "listings.empty.text": "此类别目前暂无房源。请查看其他类别或<a href=\"contact.html\" style=\"color:var(--accent-dark);font-weight:600;\">联系我们</a>。",
+    "listings.empty.text": "此类别目前暂无房源。请查看其他类别或联系我们。",
     "investors.placeholder.title": "在售机会即将上线",
     "investors.placeholder.text": "我正在筹备首批投资机会。若有意合作或希望第一时间获知新项目，请与我联系。",
     "investors.placeholder.cta": "预约会面",
@@ -2616,7 +3201,72 @@ window.translations.zh = {
     "listings.info.priceLabel.invest": "价格",
     "listing.detail.highlights.title": "项目亮点",
     "listing.detail.intent.title": "投资策略",
-    "listing.detail.state.title": "物业状态"
+    "listing.detail.state.title": "物业状态",
+    // Audit 09/2026
+    "footer.operator": "网站运营方：US Europe Group s.r.o.（注册号 06779808），Třebovická 5050/78, 722 00 Ostrava，捷克 · <a href=\"/ochrana-osobnich-udaju\">隐私政策</a>",
+    "form.privacy": "表单信息仅用于回复您的留言。<a href=\"/ochrana-osobnich-udaju\">隐私政策</a>",
+    "meta.privacy.title": "隐私政策 | Jan Řeháček",
+    "privacy.eyebrow": "法律信息",
+    "privacy.title": "<em>隐私政策</em>",
+    "privacy.sub": "我们如何处理您通过 janrehacek.com 发送的信息。以下正文为捷克语。",
+    "meta.home.title": "Jan Řeháček — 投资人 & 房地产专家",
+    "meta.about.title": "关于我 — 投资人与房地产专家 Jan Řeháček",
+    "meta.services.title": "投资性房产的购买与管理 | Jan Řeháček",
+    "meta.references.title": "客户评价 — 房产投资 | Jan Řeháček",
+    "meta.contact.title": "联系方式与免费咨询 | Jan Řeháček",
+    "meta.housio.title": "Housio — 房产管理 | Jan Řeháček",
+    "meta.partners.title": "房产经纪人 — Housio 合作伙伴计划 | Jan Řeháček",
+    "meta.error.title": "页面未找到 | Jan Řeháček",
+    "meta.thanks.title": "消息已发送 | Jan Řeháček",
+    "a11y.skip": "跳到主要内容",
+    "home.listings.eyebrow": "最新房源",
+    "home.listings.title": "来自摩拉维亚-西里西亚州的<em style=\"color:var(--accent-dark)\">投资机会。</em>",
+    "home.listings.subtitle": "精选公寓与住宅，价格、位置和投资数据一目了然。",
+    "home.listings.all": "全部投资机会",
+    "home.listings.sale": "出售与出租房源",
+    "about.founder.kicker": "Housio 创始人",
+    "about.founder.title": "这款产品源自我亲身的<span>资产组合管理经验。</span>",
+    "about.founder.text": "Housio 并不是页面上的一则广告。它是一位真正管理房产、每天与租户、合同和付款打交道的人，在自己的经历中自然走到的一个里程碑。",
+    "about.founder.small": "自有平台",
+    "contact.about_listing": "您咨询的房源：",
+    "contact.mailto": "已为您打开预填好内容的邮件，直接发送即可。如果没有打开，请直接发送邮件至 invest@janrehacek.com。",
+    "error.eyebrow": "错误 404",
+    "error.title": "抱歉，<em>没有找到这个页面。</em>",
+    "error.text": "该房源可能已售出，或页面地址已更改。请通过下方链接继续浏览。",
+    "error.home": "返回首页",
+    "thanks.eyebrow": "消息已发送",
+    "thanks.title": "谢谢，您的消息<em>已收到。</em>",
+    "thanks.text": "我通常会在24小时内回复您。在此期间，您可以浏览当前房源。",
+    "gallery.dialog": "房产照片图库",
+    "gallery.close": "关闭图库 (Esc)",
+    "gallery.prev": "上一张 (左方向键)",
+    "gallery.next": "下一张 (右方向键)",
+    "housio.pricing.eyebrow": "价格方案",
+    "housio.pricing.title": "免费开始，资产组合扩大后再付费。",
+    "housio.pricing.per": "/月",
+    "housio.pricing.free": "永久免费，而非试用版。适用于 1 套房产和 1 位租户。",
+    "housio.pricing.basic": "最多 15 套房产。",
+    "housio.pricing.pro": "16 至 25 套房产。",
+    "housio.pricing.business": "适合超过 25 套房产的大型资产组合及最多 3 人的团队。",
+    "housio.pricing.note": "以上为网页端付款的月费。按年付款可免费获得两个月。",
+    "housio.pricing.price.free": "€0",
+    "housio.pricing.price.basic": "€12",
+    "housio.pricing.price.pro": "€24",
+    "housio.pricing.price.business": "€40",
+    "nav.home": "首页",
+    "investors.detail.eyebrow": "投资机会",
+    "investors.detail.cta_eyebrow": "对这个投资机会感兴趣吗？",
+    "investors.detail.cta_text": "只需给我发一条简短的信息，我通常会在24小时内回复您。",
+    "investors.detail.cta_more": "我对此投资机会感兴趣 →",
+    "listings.crosslink.toInvest": "该房产也列于投资机会中——附收益率及投资数据 →",
+    "listings.crosslink.toSale": "该房产也列于常规出售房源中 →",
+    "listing.detail.ic.buy": "每平方米价格（购入）",
+    "listing.detail.ic.market": "翻新后每平方米市场价格",
+    "listing.detail.ic.resale": "预计售价",
+    "listing.detail.ic.diff": "与预估售价的差额",
+    "listing.detail.meta.disposition": "户型",
+    "listing.detail.meta.area": "使用面积",
+    "listings.grid.heading": "最新房源"
 };
 
 
@@ -2653,25 +3303,50 @@ function pluralCategory(lang, n) {
     return _pluralRules[lang].select(n);
 }
 
+// Popisky pro čtečky obrazovky: data-i18n-aria="klíč" přeloží aria-label
+function applyAriaLabels(t) {
+    document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+        const key = el.getAttribute('data-i18n-aria');
+        if (el._csAria === undefined) el._csAria = el.getAttribute('aria-label') || '';
+        el.setAttribute('aria-label', (t && t[key]) || el._csAria);
+    });
+}
+
+const REDUCED_MOTION = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
 function setLanguage(lang) {
     if (!translations[lang]) return;
     currentLang = lang;
     const t = translations[lang];
 
+    // Chybí-li překlad, vrátí se původní český text z HTML. Dřív zůstal text
+    // předchozího jazyka, takže po návratu na češtinu byl popis nabídky dál anglicky.
     document.querySelectorAll('[data-i18n]').forEach(el => {
         const key = el.getAttribute('data-i18n');
-        if (t[key]) el.textContent = t[key];
+        if (el._cs === undefined) el._cs = el.textContent;
+        el.textContent = t[key] || el._cs;
     });
 
     document.querySelectorAll('[data-i18n-html]').forEach(el => {
         const key = el.getAttribute('data-i18n-html');
-        if (t[key]) el.innerHTML = t[key];
+        if (el._cs === undefined) el._cs = el.innerHTML;
+        el.innerHTML = t[key] || el._cs;
     });
 
     document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
         const key = el.getAttribute('data-i18n-placeholder');
-        if (t[key]) el.setAttribute('placeholder', t[key]);
+        if (el._csPh === undefined) el._csPh = el.getAttribute('placeholder') || '';
+        el.setAttribute('placeholder', t[key] || el._csPh);
     });
+
+    applyAriaLabels(t);
+
+    // Titulek v záložce: klíč z <html data-title-key>, u detailu nabídky přeložený nadpis
+    if (window._csTitle === undefined) window._csTitle = document.title;
+    const titleKey = document.documentElement.getAttribute('data-title-key');
+    const listingH1 = document.querySelector('h1[data-i18n^="L."]');
+    if (titleKey) document.title = t[titleKey] || window._csTitle;
+    else if (listingH1) document.title = listingH1.textContent + ' | Jan Řeháček';
 
     // Plural-aware nodes: data-i18n-key="listings.count" + data-i18n-count="3"
     // → look up listings.count.{one|few|many|other}, interpolate {n}.
@@ -2694,7 +3369,7 @@ function setLanguage(lang) {
         opt.classList.toggle('active', opt.getAttribute('data-lang') === lang);
     });
 
-    document.documentElement.setAttribute('lang', lang);
+    document.documentElement.setAttribute('lang', lang === 'zh' ? 'zh-Hans' : lang);
 
     try { localStorage.setItem('preferredLang', lang); } catch(e) {}
 
@@ -2704,21 +3379,44 @@ function setLanguage(lang) {
     const HOUSIO_LANG = { cs:'', sk:'', en:'en', de:'de', fr:'fr', it:'it', es:'es', ru:'ru', pl:'pl', ja:'en', zh:'en' };
     document.querySelectorAll('[data-housio-partner]').forEach(el => {
         const seg = HOUSIO_LANG[lang] === undefined ? 'en' : HOUSIO_LANG[lang];
-        el.setAttribute('href', 'https://www.housio.app' + (seg ? '/' + seg : '') + '/partneri');
+        el.setAttribute('href', 'https://www.housio.app' + (seg ? '/' + seg : '') + '/partneri?utm_source=janrehacek.com&utm_medium=referral');
     });
 
+    closeLangMenu();
+}
+
+function closeLangMenu() {
     const sw = document.getElementById('langSwitcher');
-    if (sw) sw.classList.remove('open');
+    if (!sw) return;
+    sw.classList.remove('open');
+    const btn = sw.querySelector('.lang-current');
+    if (btn) btn.setAttribute('aria-expanded', 'false');
 }
 
 function toggleLangMenu() {
-    document.getElementById('langSwitcher').classList.toggle('open');
+    const sw = document.getElementById('langSwitcher');
+    if (!sw) return;
+    const open = sw.classList.toggle('open');
+    const btn = sw.querySelector('.lang-current');
+    if (btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if (open) {
+        const active = sw.querySelector('.lang-option.active') || sw.querySelector('.lang-option');
+        if (active) active.focus();
+    }
 }
 
 document.addEventListener('click', function(e) {
     const switcher = document.getElementById('langSwitcher');
-    if (switcher && !switcher.contains(e.target)) {
-        switcher.classList.remove('open');
+    if (switcher && !switcher.contains(e.target)) closeLangMenu();
+});
+
+document.addEventListener('keydown', function(e) {
+    if (e.key !== 'Escape') return;
+    const switcher = document.getElementById('langSwitcher');
+    if (switcher && switcher.classList.contains('open')) {
+        closeLangMenu();
+        const btn = switcher.querySelector('.lang-current');
+        if (btn) btn.focus();
     }
 });
 
@@ -2731,11 +3429,25 @@ document.addEventListener('click', function(e) {
         } else {
             const browserLang = (navigator.language || 'cs').toLowerCase().split('-')[0];
             if (translations[browserLang]) lang = browserLang;
+            else if (browserLang !== 'cs') lang = 'en';
         }
     } catch(e) {}
     setLanguage(lang);
 })();
 
+
+// Poslední prohlížená nabídka (název v češtině) pro kontaktní formulář
+(function rememberListing() {
+    const cesta = location.pathname.replace(/\/$/, '');
+    const h1 = document.querySelector('h1');
+    if (!h1 || !/^\/(nabidka\/(prodej|pronajem)|investors)\/[^/]+$/.test(cesta)) return;
+    try {
+        sessionStorage.setItem('posledniNabidka', JSON.stringify({
+            url: cesta,
+            title: String(h1._cs !== undefined ? h1._cs : h1.textContent).trim(),
+        }));
+    } catch (e) {}
+})();
 
 // Smooth scroll for nav links
 document.querySelectorAll('a[href^="#"]').forEach(a => {
@@ -2745,7 +3457,7 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
             const target = document.querySelector(id);
             if (target) {
                 e.preventDefault();
-                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                target.scrollIntoView({ behavior: REDUCED_MOTION ? 'auto' : 'smooth', block: 'start' });
             }
         }
     });
@@ -2754,11 +3466,21 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 // Mobile menu toggle
 const toggle = document.querySelector('.menu-toggle');
 const links = document.querySelector('.nav-links');
-if (toggle) {
+if (toggle && links) {
+    const closeMenu = () => {
+        // removeAttribute místo display:none — jinak by po zavření na mobilu
+        // a roztažení okna zůstalo menu skryté i na desktopu
+        links.removeAttribute('style');
+        toggle.setAttribute('aria-expanded', 'false');
+    };
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && links.style.display === 'flex') { closeMenu(); toggle.focus(); }
+    });
     toggle.addEventListener('click', () => {
         if (links.style.display === 'flex') {
-            links.style.display = 'none';
+            closeMenu();
         } else {
+            toggle.setAttribute('aria-expanded', 'true');
             links.style.display = 'flex';
             links.style.flexDirection = 'column';
             links.style.position = 'absolute';
@@ -2803,12 +3525,13 @@ if (toggle) {
     lb.setAttribute('role', 'dialog');
     lb.setAttribute('aria-modal', 'true');
     lb.setAttribute('aria-label', 'Galerie fotek nemovitosti');
+    lb.setAttribute('data-i18n-aria', 'gallery.dialog');
     lb.setAttribute('aria-hidden', 'true');
     lb.innerHTML = `
         <div class="lightbox-counter" aria-live="polite"></div>
-        <button type="button" class="lightbox-btn lightbox-close" aria-label="Zavřít galerii (Esc)">✕</button>
-        <button type="button" class="lightbox-btn lightbox-prev" aria-label="Předchozí fotka (šipka vlevo)">‹</button>
-        <button type="button" class="lightbox-btn lightbox-next" aria-label="Další fotka (šipka vpravo)">›</button>
+        <button type="button" class="lightbox-btn lightbox-close" aria-label="Zavřít galerii (Esc)" data-i18n-aria="gallery.close">✕</button>
+        <button type="button" class="lightbox-btn lightbox-prev" aria-label="Předchozí fotka (šipka vlevo)" data-i18n-aria="gallery.prev">‹</button>
+        <button type="button" class="lightbox-btn lightbox-next" aria-label="Další fotka (šipka vpravo)" data-i18n-aria="gallery.next">›</button>
         <div class="lightbox-stage">
             <img class="lightbox-img" alt="">
             <span class="listing-watermark lightbox-watermark" data-i18n="listing.detail.visualization_badge" hidden>Vizualizace po rekonstrukci</span>
@@ -2816,6 +3539,7 @@ if (toggle) {
         <div class="lightbox-thumbs" role="tablist" aria-label="Náhledy fotek"></div>
     `;
     document.body.appendChild(lb);
+    applyAriaLabels(translations[currentLang]);
 
     const imgEl     = lb.querySelector('.lightbox-img');
     const counterEl = lb.querySelector('.lightbox-counter');
@@ -2833,7 +3557,7 @@ if (toggle) {
         t.setAttribute('role', 'tab');
         t.setAttribute('data-index', String(i));
         t.setAttribute('aria-label', `Přejít na fotku ${i + 1}`);
-        t.innerHTML = `<img src="${it.src}" alt="" loading="lazy">`;
+        t.innerHTML = `<img src="${it.thumb || it.src}" alt="" loading="lazy">`;
         stripEl.appendChild(t);
     });
     const thumbEls = Array.from(stripEl.children);
@@ -2877,7 +3601,7 @@ if (toggle) {
         // Auto-scroll active thumbnail into view
         const active = thumbEls[currentIndex];
         if (active && active.scrollIntoView) {
-            active.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+            active.scrollIntoView({ behavior: REDUCED_MOTION ? 'auto' : 'smooth', block: 'nearest', inline: 'center' });
         }
 
         preload(currentIndex + 1);

@@ -1,6 +1,6 @@
 ---
 type: "pronajem"
-title: "Moderní byt 2+1 po kompletní rekonstrukci"
+title: "Moderní byt 2+1 po kompletní rekonstrukci — Havířov"
 status: "aktivni"
 price: "13 900 Kč / měsíc"
 deposit: "27 800 Kč"
@@ -14,7 +14,7 @@ floor: ""
 building_type: "Panel"
 ownership: "Osobní"
 condition: "Po kompletní rekonstrukci"
-short_description: "Moderní byt po kompletní rekonstrukci, ihned k nastěhování. Pronájem přímo od majitele bez provize."
+short_description: "Moderní byt 2+1 v Havířově po kompletní rekonstrukci, ihned k nastěhování. Pronájem přímo od majitele bez provize."
 ---
 
 ## O této nemovitosti

@@ -8,14 +8,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Nabídka nemovitostí | Jan Řeháček</title>
-<meta name="description" content="Pečlivě vybrané prémiové nemovitosti k investici i bydlení. Aktuální nabídka od Jana Řeháčka — investora a realitního experta.">
+<title>Nabídka nemovitostí v Moravskoslezském kraji | Jan Řeháček</title>
+<meta name="description" content="Byty a domy k prodeji i pronájmu — Ostrava, Karviná, Horní Suchá a Havířov. 6 aktuálních nabídek: prodej od 2,29 mil. Kč, pronájem od 13 900 Kč měsíčně.">
 <link rel="canonical" href="https://www.janrehacek.com/nabidka">
 
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Jan Řeháček">
 <meta property="og:url" content="https://www.janrehacek.com/nabidka">
-<meta property="og:title" content="Nabídka nemovitostí | Jan Řeháček">
-<meta property="og:description" content="Pečlivě vybrané prémiové nemovitosti k investici i bydlení.">
+<meta property="og:title" content="Nabídka nemovitostí v Moravskoslezském kraji | Jan Řeháček">
+<meta property="og:description" content="Byty a domy k prodeji i pronájmu — Ostrava, Karviná, Horní Suchá a Havířov. 6 aktuálních nabídek: prodej od 2,29 mil. Kč, pronájem od 13 900 Kč měsíčně.">
 <meta property="og:image" content="https://www.janrehacek.com/images/og-default.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="800">
@@ -26,49 +27,53 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../assets/styles.css">
+<link rel="stylesheet" href="/assets/styles.css">
+<noscript><style>@media (max-width:900px){.nav-links{display:flex!important;flex-wrap:wrap;gap:12px 18px;padding:12px 0 0}.nav-inner{flex-wrap:wrap}.menu-toggle{display:none!important}}</style></noscript>
 </head>
 <body>
+<a href="#obsah" class="skip-link" data-i18n="a11y.skip">Přeskočit na obsah</a>
 
 <nav>
     <div class="nav-inner">
-        <a href="../index.html" class="logo">Jan Řeháček<span>.</span></a>
-        <ul class="nav-links">
-            <li><a href="../about.html" data-i18n="nav.about">O mně</a></li>
-            <li><a href="../services.html" data-i18n="nav.services">Služby</a></li>
-            <li><a href="../investors/" data-i18n="nav.investors">Pro investory</a></li>
-            <li><a href="../pro-maklere.html" data-i18n="nav.partners">Pro makléře</a></li>
-            <li><a href="../nabidka/" class="active" data-i18n="nav.listings">Nabídka</a></li>
-            <li><a href="../references.html" data-i18n="nav.testimonials">Reference</a></li>
-            <li><a href="https://www.housio.app" target="_blank" rel="noopener noreferrer" class="external" data-i18n="nav.housio">Housio.App</a></li>
+        <a href="/" class="logo">Jan Řeháček<span>.</span></a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/about" data-i18n="nav.about">O mně</a></li>
+            <li><a href="/services" data-i18n="nav.services">Služby</a></li>
+            <li><a href="/investors" data-i18n="nav.investors">Pro investory</a></li>
+            <li><a href="/pro-maklere" data-i18n="nav.partners">Pro makléře</a></li>
+            <li><a href="/nabidka" class="active" data-i18n="nav.listings">Nabídka</a></li>
+            <li><a href="/references" data-i18n="nav.testimonials">Reference</a></li>
+            <li><a href="/housio" data-i18n="nav.housio">Housio</a></li>
             <li><a href="https://www.ahana.cz" target="_blank" rel="noopener noreferrer" class="external">Ahana</a></li>
-            <li><a href="../contact.html" class="btn btn-primary" data-i18n="nav.contact">Kontakt</a></li>
+            <li><a href="/contact" class="btn btn-primary" data-i18n="nav.contact">Kontakt</a></li>
             <li>
                 <div class="lang-switcher" id="langSwitcher">
-                    <div class="lang-current" onclick="toggleLangMenu()">
+                    <button type="button" class="lang-current" onclick="toggleLangMenu()" aria-haspopup="true" aria-expanded="false" aria-label="Jazyk / Language">
                         <span class="lang-flag" id="langCurrentFlag">🇨🇿</span>
                         <span id="langCurrentCode">CZ</span>
-                        <span class="lang-arrow">▼</span>
-                    </div>
+                        <span class="lang-arrow" aria-hidden="true">▼</span>
+                    </button>
                     <div class="lang-dropdown">
-                        <div class="lang-option" data-lang="cs" onclick="setLanguage('cs')"><span class="lang-option-flag">🇨🇿</span><span class="lang-option-name">Čeština</span><span class="lang-option-check">✓</span></div>
-                        <div class="lang-option" data-lang="sk" onclick="setLanguage('sk')"><span class="lang-option-flag">🇸🇰</span><span class="lang-option-name">Slovenčina</span><span class="lang-option-check">✓</span></div>
-                        <div class="lang-option" data-lang="en" onclick="setLanguage('en')"><span class="lang-option-flag">🇬🇧</span><span class="lang-option-name">English</span><span class="lang-option-check">✓</span></div>
-                        <div class="lang-option" data-lang="de" onclick="setLanguage('de')"><span class="lang-option-flag">🇩🇪</span><span class="lang-option-name">Deutsch</span><span class="lang-option-check">✓</span></div>
-                        <div class="lang-option" data-lang="fr" onclick="setLanguage('fr')"><span class="lang-option-flag">🇫🇷</span><span class="lang-option-name">Français</span><span class="lang-option-check">✓</span></div>
-                        <div class="lang-option" data-lang="it" onclick="setLanguage('it')"><span class="lang-option-flag">🇮🇹</span><span class="lang-option-name">Italiano</span><span class="lang-option-check">✓</span></div>
-                        <div class="lang-option" data-lang="es" onclick="setLanguage('es')"><span class="lang-option-flag">🇪🇸</span><span class="lang-option-name">Español</span><span class="lang-option-check">✓</span></div>
-                        <div class="lang-option" data-lang="pl" onclick="setLanguage('pl')"><span class="lang-option-flag">🇵🇱</span><span class="lang-option-name">Polski</span><span class="lang-option-check">✓</span></div>
-                        <div class="lang-option" data-lang="ru" onclick="setLanguage('ru')"><span class="lang-option-flag">🇷🇺</span><span class="lang-option-name">Русский</span><span class="lang-option-check">✓</span></div>
-                        <div class="lang-option" data-lang="ja" onclick="setLanguage('ja')"><span class="lang-option-flag">🇯🇵</span><span class="lang-option-name">日本語</span><span class="lang-option-check">✓</span></div>
-                        <div class="lang-option" data-lang="zh" onclick="setLanguage('zh')"><span class="lang-option-flag">🇨🇳</span><span class="lang-option-name">中文</span><span class="lang-option-check">✓</span></div>
+                        <button type="button" class="lang-option" data-lang="cs" lang="cs" onclick="setLanguage('cs')"><span class="lang-option-flag">🇨🇿</span><span class="lang-option-name">Čeština</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="sk" lang="sk" onclick="setLanguage('sk')"><span class="lang-option-flag">🇸🇰</span><span class="lang-option-name">Slovenčina</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="en" lang="en" onclick="setLanguage('en')"><span class="lang-option-flag">🇬🇧</span><span class="lang-option-name">English</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="de" lang="de" onclick="setLanguage('de')"><span class="lang-option-flag">🇩🇪</span><span class="lang-option-name">Deutsch</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="fr" lang="fr" onclick="setLanguage('fr')"><span class="lang-option-flag">🇫🇷</span><span class="lang-option-name">Français</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="it" lang="it" onclick="setLanguage('it')"><span class="lang-option-flag">🇮🇹</span><span class="lang-option-name">Italiano</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="es" lang="es" onclick="setLanguage('es')"><span class="lang-option-flag">🇪🇸</span><span class="lang-option-name">Español</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="pl" lang="pl" onclick="setLanguage('pl')"><span class="lang-option-flag">🇵🇱</span><span class="lang-option-name">Polski</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="ru" lang="ru" onclick="setLanguage('ru')"><span class="lang-option-flag">🇷🇺</span><span class="lang-option-name">Русский</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="ja" lang="ja" onclick="setLanguage('ja')"><span class="lang-option-flag">🇯🇵</span><span class="lang-option-name">日本語</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="zh" lang="zh" onclick="setLanguage('zh')"><span class="lang-option-flag">🇨🇳</span><span class="lang-option-name">中文</span><span class="lang-option-check">✓</span></button>
                     </div>
                 </div>
             </li>
         </ul>
-        <button class="menu-toggle">☰</button>
+        <button type="button" class="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">☰</button>
     </div>
 </nav>
+
+<main id="obsah">
 
 <header class="page-header">
     <div class="container">
@@ -76,7 +81,7 @@
         <h1 data-i18n-html="listings.h1.all">Aktuální nabídka <em>nemovitostí.</em></h1>
         <p class="page-header-text" data-i18n="listings.header.description">Pečlivě vybrané byty a domy z portfolia, které prošly důkladnou due diligence. Každá nabídka je doprovázena kompletním servisem od první prohlídky až po předání klíčů.</p>
         <div class="category-choice">
-            <a href="/nabidka/pronajem/" class="category-card">
+            <a href="/nabidka/pronajem" class="category-card">
                 <div class="category-card-icon" aria-hidden="true">
                     <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                         <circle cx="17" cy="24" r="8"/>
@@ -93,7 +98,7 @@
                     <span class="category-card-arrow">→</span>
                 </div>
             </a>
-            <a href="/nabidka/prodej/" class="category-card">
+            <a href="/nabidka/prodej" class="category-card">
                 <div class="category-card-icon" aria-hidden="true">
                     <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
                         <path d="M8 23L24 9l16 14"/>
@@ -107,26 +112,27 @@
                     <p class="category-card-subtitle" data-i18n="listings.cat.sale.desc">Pečlivě vybrané byty a domy k investici i k bydlení po důkladné due diligence.</p>
                 </div>
                 <div class="category-card-meta">
-                    <span data-i18n-key="listings.count" data-i18n-count="6">6 aktivních nabídek</span>
+                    <span data-i18n-key="listings.count" data-i18n-count="5">5 aktivních nabídek</span>
                     <span class="category-card-arrow">→</span>
                 </div>
             </a>
         </div>
         <div class="listings-tabs-label" data-i18n="listings.tabs.label">Nebo si projděte všechny nabídky</div>
         <nav class="listings-tabs" aria-label="Filtr nabídek">
-            <a href="/nabidka/" class="active" aria-current="page" data-i18n="listings.tabs.all">Vše</a>
-            <a href="/nabidka/pronajem/" data-i18n="listings.tabs.rent">Pronájem</a>
-            <a href="/nabidka/prodej/" data-i18n="listings.tabs.sale">Prodej</a>
+            <a href="/nabidka" class="active" aria-current="page" data-i18n="listings.tabs.all">Vše</a>
+            <a href="/nabidka/pronajem" data-i18n="listings.tabs.rent">Pronájem</a>
+            <a href="/nabidka/prodej" data-i18n="listings.tabs.sale">Prodej</a>
         </nav>
     </div>
 </header>
 
 <section class="listings-section">
     <div class="container">
+        <h2 class="sr-only" data-i18n="listings.grid.heading">Aktuální nabídky</h2>
         <div class="listing-grid">
-            <a href="/nabidka/prodej/ostrava-poruba-oty-synka/" class="listing-card">
+            <a href="/nabidka/prodej/ostrava-poruba-oty-synka" class="listing-card">
                 <div class="listing-card-cover">
-                    <img src="../images/listings/prodej/ostrava-poruba-oty-synka/01-uvodni.jpeg" alt="Prostorný byt 4+1 po rekonstrukci, 80 m² — Ostrava-Poruba">
+                    <img src="/images/listings/prodej/ostrava-poruba-oty-synka/_nahled/01-uvodni-800.jpg" srcset="/images/listings/prodej/ostrava-poruba-oty-synka/_nahled/01-uvodni-800.jpg 800w, /images/listings/prodej/ostrava-poruba-oty-synka/01-uvodni.jpeg 1448w" sizes="(max-width: 700px) 92vw, 400px" alt="Prostorný byt 4+1 po rekonstrukci, 80 m² — Ostrava-Poruba" loading="lazy" decoding="async" width="800" height="600">
                     <div class="listing-card-badge status-active"><span data-i18n="listings.type.sale">PRODEJ</span><span class="badge-sep"> · </span><span data-i18n="listings.status.new">NOVÁ NABÍDKA</span></div>
 
                 </div>
@@ -146,9 +152,9 @@
                 </div>
             </a>
 
-            <a href="/nabidka/prodej/horni-sucha-kasarenska/" class="listing-card">
+            <a href="/nabidka/prodej/horni-sucha-kasarenska" class="listing-card">
                 <div class="listing-card-cover">
-                    <img src="../images/listings/prodej/horni-sucha-kasarenska/01-uvodni.jpeg" alt="Prodej činžovního domu — Horní Suchá, ul. Kasárenská">
+                    <img src="/images/listings/prodej/horni-sucha-kasarenska/_nahled/01-uvodni-800.jpg" srcset="/images/listings/prodej/horni-sucha-kasarenska/_nahled/01-uvodni-800.jpg 800w, /images/listings/prodej/horni-sucha-kasarenska/01-uvodni.jpeg 1600w" sizes="(max-width: 700px) 92vw, 400px" alt="Prodej činžovního domu — Horní Suchá, ul. Kasárenská" loading="lazy" decoding="async" width="800" height="600">
                     <div class="listing-card-badge status-active"><span data-i18n="listings.type.sale">PRODEJ</span><span class="badge-sep"> · </span><span data-i18n="listings.status.new">NOVÁ NABÍDKA</span></div>
 
                 </div>
@@ -164,9 +170,9 @@
                 </div>
             </a>
 
-            <a href="/nabidka/prodej/karvina-csl-armady/" class="listing-card">
+            <a href="/nabidka/prodej/karvina-csl-armady" class="listing-card">
                 <div class="listing-card-cover">
-                    <img src="../images/listings/prodej/karvina-csl-armady/01-uvodni.jpeg" alt="Investiční byt 2+1, 56 m² v osobním vlastnictví — Karviná">
+                    <img src="/images/listings/prodej/karvina-csl-armady/_nahled/01-uvodni-800.jpg" srcset="/images/listings/prodej/karvina-csl-armady/_nahled/01-uvodni-800.jpg 800w, /images/listings/prodej/karvina-csl-armady/01-uvodni.jpeg 1230w" sizes="(max-width: 700px) 92vw, 400px" alt="Investiční byt 2+1, 56 m² v osobním vlastnictví — Karviná" loading="lazy" decoding="async" width="800" height="532">
                     <div class="listing-card-badge status-active"><span data-i18n="listings.type.sale">PRODEJ</span><span class="badge-sep"> · </span><span data-i18n="listings.status.new">NOVÁ NABÍDKA</span></div>
 
                 </div>
@@ -179,14 +185,14 @@
                         <span class="sep">·</span>
                         <span>56 m²</span>
                     </div>
-                    <p class="listing-card-desc" data-i18n="L.prodej.karvina-csl-armady.short">Investiční byt 2+1 (56 m²) v osobním vlastnictví v Karviné se stabilním nájemníkem — okamžitý výnos 7,28 % p.a. bez starostí.</p>
+                    <p class="listing-card-desc" data-i18n="L.prodej.karvina-csl-armady.short">Investiční byt 2+1 (56 m²) v osobním vlastnictví v Karviné, dlouhodobě pronajatý — okamžitý výnos 7,28 % p.a. bez starostí.</p>
                     <span class="listing-card-link" data-i18n="listings.card.link">Detail nabídky →</span>
                 </div>
             </a>
 
-            <a href="/nabidka/prodej/karvina-trida-osvobozeni/" class="listing-card">
+            <a href="/nabidka/prodej/karvina-trida-osvobozeni" class="listing-card">
                 <div class="listing-card-cover">
-                    <img src="../images/listings/prodej/karvina-trida-osvobozeni/01-uvodni.jpeg" alt="Investiční byt 2+1, 59 m² v osobním vlastnictví — Karviná">
+                    <img src="/images/listings/prodej/karvina-trida-osvobozeni/_nahled/01-uvodni-800.jpg" srcset="/images/listings/prodej/karvina-trida-osvobozeni/_nahled/01-uvodni-800.jpg 800w, /images/listings/prodej/karvina-trida-osvobozeni/01-uvodni.jpeg 1600w" sizes="(max-width: 700px) 92vw, 400px" alt="Investiční byt 2+1, 59 m² v osobním vlastnictví — Karviná" loading="lazy" decoding="async" width="800" height="600">
                     <div class="listing-card-badge status-active"><span data-i18n="listings.type.sale">PRODEJ</span><span class="badge-sep"> · </span><span data-i18n="listings.status.new">NOVÁ NABÍDKA</span></div>
 
                 </div>
@@ -199,41 +205,41 @@
                         <span class="sep">·</span>
                         <span>59 m²</span>
                     </div>
-                    <p class="listing-card-desc" data-i18n="L.prodej.karvina-trida-osvobozeni.short">Byt 2+1 (59 m²) v osobním vlastnictví v Karviné s ročním výnosem 7,28 %, měsíčními dividendami a kompletní správou — pasivní příjem bez starostí.</p>
+                    <p class="listing-card-desc" data-i18n="L.prodej.karvina-trida-osvobozeni.short">Byt 2+1 (59 m²) v osobním vlastnictví v Karviné s ročním výnosem 7,28 %, měsíčním nájmem a kompletní správou — pasivní příjem bez starostí.</p>
                     <span class="listing-card-link" data-i18n="listings.card.link">Detail nabídky →</span>
                 </div>
             </a>
 
-            <a href="/nabidka/prodej/ostrava-michalkovice-vojtesska/" class="listing-card">
+            <a href="/nabidka/prodej/ostrava-michalkovice-vojtesska" class="listing-card">
                 <div class="listing-card-cover">
-                    <img src="../images/listings/prodej/ostrava-michalkovice-vojtesska/01-uvodni.jpg" alt="Investiční byt 3+kk se zahradou 308 m² a stabilním nájemním výnosem">
+                    <img src="/images/listings/prodej/ostrava-michalkovice-vojtesska/_nahled/01-uvodni-800.jpg" srcset="/images/listings/prodej/ostrava-michalkovice-vojtesska/_nahled/01-uvodni-800.jpg 800w, /images/listings/prodej/ostrava-michalkovice-vojtesska/01-uvodni.jpg 1280w" sizes="(max-width: 700px) 92vw, 400px" alt="Investiční byt 3+kk se zahradou 308 m² a nájemním výnosem — Ostrava" loading="lazy" decoding="async" width="800" height="1000">
                     <div class="listing-card-badge status-active"><span data-i18n="listings.type.sale">PRODEJ</span><span class="badge-sep"> · </span><span data-i18n="listings.status.new">NOVÁ NABÍDKA</span></div>
 
                 </div>
                 <div class="listing-card-body">
                     <div class="listing-card-price">3 490 000 Kč</div>
                     <div class="listing-card-location">Ostrava — Michalkovice</div>
-                    <h3 class="listing-card-title" data-i18n="L.prodej.ostrava-michalkovice-vojtesska.title">Investiční byt 3+kk se zahradou 308 m² a stabilním nájemním výnosem</h3>
+                    <h3 class="listing-card-title" data-i18n="L.prodej.ostrava-michalkovice-vojtesska.title">Investiční byt 3+kk se zahradou 308 m² a nájemním výnosem — Ostrava</h3>
                     <div class="listing-card-meta">
                         <span>3+kk</span>
                         <span class="sep">·</span>
                         <span>69 m²</span>
                     </div>
-                    <p class="listing-card-desc" data-i18n="L.prodej.ostrava-michalkovice-vojtesska.short">Družstevní byt 3+kk se zahradou a spolehlivým nájemníkem — vydělává od prvního dne. Čistý nájem 10 900 Kč měsíčně a potenciál růstu hodnoty.</p>
+                    <p class="listing-card-desc" data-i18n="L.prodej.ostrava-michalkovice-vojtesska.short">Družstevní byt 3+kk se zahradou v Ostravě-Michalkovicích, dlouhodobě pronajatý — vydělává od prvního dne. Čistý nájem 10 900 Kč měsíčně a potenciál růstu hodnoty.</p>
                     <span class="listing-card-link" data-i18n="listings.card.link">Detail nabídky →</span>
                 </div>
             </a>
 
-            <a href="/nabidka/pronajem/havirov-jarosova/" class="listing-card">
+            <a href="/nabidka/pronajem/havirov-jarosova" class="listing-card">
                 <div class="listing-card-cover">
-                    <img src="../images/listings/pronajem/havirov-jarosova/01-uvodni.jpg" alt="Moderní byt 2+1 po kompletní rekonstrukci">
+                    <img src="/images/listings/pronajem/havirov-jarosova/_nahled/01-uvodni-800.jpg" srcset="/images/listings/pronajem/havirov-jarosova/_nahled/01-uvodni-800.jpg 800w, /images/listings/pronajem/havirov-jarosova/01-uvodni.jpg 1350w" sizes="(max-width: 700px) 92vw, 400px" alt="Moderní byt 2+1 po kompletní rekonstrukci — Havířov" loading="lazy" decoding="async" width="800" height="1066">
                     <div class="listing-card-badge status-active"><span data-i18n="listings.type.rent">PRONÁJEM</span><span class="badge-sep"> · </span><span>IHNED</span></div>
 
                 </div>
                 <div class="listing-card-body">
                     <div class="listing-card-price">13 900 Kč / měsíc</div>
                     <div class="listing-card-location">Havířov — Šumbark</div>
-                    <h3 class="listing-card-title" data-i18n="L.pronajem.havirov-jarosova.title">Moderní byt 2+1 po kompletní rekonstrukci</h3>
+                    <h3 class="listing-card-title" data-i18n="L.pronajem.havirov-jarosova.title">Moderní byt 2+1 po kompletní rekonstrukci — Havířov</h3>
                     <div class="listing-card-meta">
                         <span>2+1</span>
                         <span class="sep">·</span>
@@ -241,14 +247,14 @@
                         <span class="sep">·</span>
                         <span>Panel</span>
                     </div>
-                    <p class="listing-card-desc" data-i18n="L.pronajem.havirov-jarosova.short">Moderní byt po kompletní rekonstrukci, ihned k nastěhování. Pronájem přímo od majitele bez provize.</p>
+                    <p class="listing-card-desc" data-i18n="L.pronajem.havirov-jarosova.short">Moderní byt 2+1 v Havířově po kompletní rekonstrukci, ihned k nastěhování. Pronájem přímo od majitele bez provize.</p>
                     <span class="listing-card-link" data-i18n="listings.card.link">Detail nabídky →</span>
                 </div>
             </a>
 
-            <a href="/nabidka/prodej/karvina-bozkova/" class="listing-card">
+            <a href="/nabidka/prodej/karvina-bozkova" class="listing-card">
                 <div class="listing-card-cover">
-                    <img src="../images/listings/prodej/karvina-bozkova/01-uvodni.jpeg" alt="Prodej bytu 3+1, 56 m² — Karviná – Ráj">
+                    <img src="/images/listings/prodej/karvina-bozkova/_nahled/01-uvodni-800.jpg" srcset="/images/listings/prodej/karvina-bozkova/_nahled/01-uvodni-800.jpg 800w, /images/listings/prodej/karvina-bozkova/01-uvodni.jpeg 1200w" sizes="(max-width: 700px) 92vw, 400px" alt="Prodej bytu 3+1, 56 m² — Karviná – Ráj" loading="lazy" decoding="async" width="800" height="1066">
                     <div class="listing-card-badge status-reserved"><span data-i18n="listings.type.sale">PRODEJ</span><span class="badge-sep"> · </span><span data-i18n="listings.status.reserved">REZERVOVÁNO</span></div>
 
                 </div>
@@ -273,6 +279,8 @@
     </div>
 </section>
 
+</main>
+
 <footer>
     <div class="container">
         <div class="footer-grid">
@@ -281,24 +289,24 @@
                 <p data-i18n="footer.brand">Investor, realitní expert a zakladatel platformy Housio. Buduji majetek a vzdělávám novou generaci investorů.</p>
             </div>
             <div class="footer-col">
-                <h5 data-i18n="footer.nav">Navigace</h5>
-                <a href="../about.html" data-i18n="nav.about">O mně</a>
-                <a href="../services.html" data-i18n="nav.services">Služby</a>
-                <a href="../investors/" data-i18n="nav.investors">Pro investory</a>
-                <a href="../pro-maklere.html" data-i18n="nav.partners">Pro makléře</a>
-                <a href="../nabidka/" data-i18n="nav.listings">Nabídka</a>
-                <a href="../references.html" data-i18n="nav.testimonials">Reference</a>
+                <h2 class="footer-title" data-i18n="footer.nav">Navigace</h2>
+                <a href="/about" data-i18n="nav.about">O mně</a>
+                <a href="/services" data-i18n="nav.services">Služby</a>
+                <a href="/investors" data-i18n="nav.investors">Pro investory</a>
+                <a href="/pro-maklere" data-i18n="nav.partners">Pro makléře</a>
+                <a href="/nabidka" data-i18n="nav.listings">Nabídka</a>
+                <a href="/references" data-i18n="nav.testimonials">Reference</a>
                 <a href="https://www.ahana.cz" target="_blank" rel="noopener noreferrer">Ahana</a>
             </div>
             <div class="footer-col">
-                <h5 data-i18n="footer.products">Produkty</h5>
-                <a href="https://www.housio.app" target="_blank" rel="noopener noreferrer">Housio.App</a>
-                <a href="../investors/" data-i18n="academy.eyebrow">Investiční příležitosti</a>
-                <a href="../services.html" data-i18n="nav.services">Služby</a>
-                <a href="../contact.html" data-i18n="footer.consultation">Konzultace</a>
+                <h2 class="footer-title" data-i18n="footer.products">Produkty</h2>
+                <a href="https://www.housio.app?utm_source=janrehacek.com&utm_medium=referral" target="_blank" rel="noopener">Housio.App</a>
+                <a href="/investors" data-i18n="academy.eyebrow">Investiční příležitosti</a>
+                <a href="/services" data-i18n="nav.services">Služby</a>
+                <a href="/contact" data-i18n="footer.consultation">Konzultace</a>
             </div>
             <div class="footer-col">
-                <h5 data-i18n="footer.contact">Kontakt</h5>
+                <h2 class="footer-title" data-i18n="footer.contact">Kontakt</h2>
                 <a href="mailto:invest@janrehacek.com">invest@janrehacek.com</a>
                 <a href="tel:+420608177099">+420 608 177 099</a>
                 <a href="https://www.instagram.com/skladnikhonza" target="_blank" rel="noopener noreferrer">Instagram</a>
@@ -308,11 +316,12 @@
             <span data-i18n="footer.rights">© 2026 Jan Řeháček. Všechna práva vyhrazena.</span>
             <span data-i18n="footer.tagline">Vytvořeno s vizí pro novou generaci investorů.</span>
         </div>
+        <p class="footer-legal" data-i18n-html="footer.operator">Provozovatel webu: US Europe Group s.r.o., IČO 06779808, Třebovická 5050/78, 722 00 Ostrava · <a href="/ochrana-osobnich-udaju">Ochrana osobních údajů</a></p>
     </div>
 </footer>
 
-<script src="../assets/script.js" defer></script>
-<script src="../assets/listings-i18n.js" defer></script>
+<script src="/assets/script.js" defer></script>
+<script src="/assets/listings-i18n.js" defer></script>
     <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

@@ -1,15 +1,15 @@
 ---
 type: investicni
-title: Investiční byt 3+kk se zahradou 308 m² a stabilním nájemním výnosem
+title: Investiční byt 3+kk se zahradou 308 m² a nájemním výnosem — Ostrava
 status: nova
 price: 3 490 000 Kč
 price_per_sqm: 50 000 Kč/m²
 size_total: 69 m²
 state: Po rekonstrukci
-occupancy: Pronajato (nájemník >10 let)
+occupancy: Dlouhodobě pronajato
 location_short: Ostrava — Michalkovice
-location_long: Ostrava — Michalkovice, Vojtěšská 153a
-short_description: Družstevní byt 3+kk se zahradou a spolehlivým nájemníkem — vydělává od prvního dne. Čistý nájem 10 900 Kč měsíčně a potenciál růstu hodnoty.
+location_long: Ostrava — Michalkovice, Vojtěšská
+short_description: Družstevní byt 3+kk se zahradou v Ostravě-Michalkovicích, dlouhodobě pronajatý — vydělává od prvního dne. Čistý nájem 10 900 Kč měsíčně a potenciál růstu hodnoty.
 cover_is_visualization: false
 cta: Domluvit prohlídku
 investment_case:
@@ -23,7 +23,7 @@ investment_case:
 
 Nabízím k prodeji investiční družstevní byt o dispozici **3+kk a podlahové ploše 69 m²**, který představuje zajímavou kombinaci pravidelného výnosu, dlouhodobé stability a budoucího růstového potenciálu.
 
-Součástí prodeje je **spolehlivý nájemník, který v bytě bydlí již více než 10 let** a řádně hradí nájemné. Aktuální čistý příjem z nájmu činí **10 900 Kč měsíčně**, díky čemuž nový majitel získává okamžité cashflow bez nutnosti hledání nájemce.
+**Byt je dlouhodobě pronajatý.** Aktuální čistý příjem z nájmu činí **10 900 Kč měsíčně**, díky čemuž nový majitel získává okamžité cashflow bez nutnosti hledání nájemce.
 
 Další významnou výhodou je možnost **budoucího převodu do osobního vlastnictví**, což může v budoucnu pozitivně ovlivnit tržní hodnotu nemovitosti.
 
@@ -34,7 +34,7 @@ Byt nabízí velmi praktické dispoziční řešení vhodné jak pro rodinné by
 - Dispozice 3+kk
 - Podlahová plocha 69 m²
 - Zahrada o výměře 308 m²
-- Dlouhodobý nájemník (10 let)
+- Byt je dlouhodobě pronajatý
 - Čistý nájemní výnos 10 900 Kč měsíčně
 - Možnost převodu do osobního vlastnictví
 - Investice s okamžitým příjmem
