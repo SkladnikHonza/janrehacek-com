@@ -44,7 +44,7 @@ module.exports = async (req, res) => {
     // `verze` slouží ke kontrole, že je nasazená očekávaná podoba funkce.
     if (req.method !== 'POST') {
         res.setHeader('Allow', 'POST');
-        return res.status(405).json({ chyba: 'Použijte POST.', verze: 2 });
+        return res.status(405).json({ chyba: 'Použijte POST.', verze: 3 });
     }
     // S hlavičkou x-diagnostika vrátí odpověď i důvod, proč Resend zprávu odmítl.
     const diagnostika = Boolean(req.headers['x-diagnostika']);
