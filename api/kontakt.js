@@ -41,10 +41,13 @@ async function nactiTelo(req) {
 }
 
 module.exports = async (req, res) => {
+    // `verze` slouží ke kontrole, že je nasazená očekávaná podoba funkce.
     if (req.method !== 'POST') {
         res.setHeader('Allow', 'POST');
-        return res.status(405).json({ chyba: 'Použijte POST.' });
+        return res.status(405).json({ chyba: 'Použijte POST.', verze: 2 });
     }
+    // S hlavičkou x-diagnostika vrátí odpověď i důvod, proč Resend zprávu odmítl.
+    const diagnostika = Boolean(req.headers['x-diagnostika']);
 
     const data = await nactiTelo(req);
     const pole = {};
@@ -95,11 +98,17 @@ module.exports = async (req, res) => {
         if (!odpoved.ok) {
             const chyba = await odpoved.text();
             console.error('Resend odmítl zprávu:', odpoved.status, chyba.slice(0, 300));
-            return res.status(502).json({ chyba: 'Zprávu se nepodařilo odeslat.' });
+            return res.status(502).json({
+                chyba: 'Zprávu se nepodařilo odeslat.',
+                ...(diagnostika ? { stav: odpoved.status, detail: chyba.slice(0, 300) } : {}),
+            });
         }
     } catch (e) {
         console.error('Resend nedostupný:', e);
-        return res.status(502).json({ chyba: 'Zprávu se nepodařilo odeslat.' });
+        return res.status(502).json({
+            chyba: 'Zprávu se nepodařilo odeslat.',
+            ...(diagnostika ? { detail: String(e).slice(0, 300) } : {}),
+        });
     }
 
     // Bez JavaScriptu skončí odeslání přechodem na stránku s poděkováním.
