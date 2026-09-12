@@ -63,9 +63,19 @@ Domains, neopisuj je odsud — Vercel je občas mění.
 
 ## Kontaktní formulář
 
-Odesílá se přes Web3Forms na invest@janrehacek.com. Klíč patří do `contact.html`
-(pole `access_key`). Dokud je tam zástupný text, formulář místo odeslání otevře
-e-mail s předvyplněnou zprávou. Po úspěšném odeslání přejde na `/dekuji`.
+Formulář posílá zprávu na `/api/kontakt` (soubor `api/kontakt.js`), který ji přes
+Resend odešle na invest@janrehacek.com a jako adresu pro odpověď nastaví zájemce.
+Po úspěšném odeslání web přejde na `/dekuji`.
+
+Klíč **nikdy nepatří do repozitáře** — je veřejný. Nastavuje se ve Vercelu
+(projekt → Settings → Environment Variables):
+
+- `RESEND_API_KEY` — povinné, klíč z resend.com
+- `KONTAKT_PRIJEMCE` — nepovinné, kam poptávky chodí
+- `KONTAKT_ODESILATEL` — nepovinné, „Jméno <adresa>“; doména musí být v Resendu ověřená
+
+Dokud klíč chybí, vrátí `/api/kontakt` stav 503 a formulář otevře e-mail
+s předvyplněnou zprávou, takže se poptávka neztratí.
 
 ## Jazyky
 

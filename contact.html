@@ -112,13 +112,11 @@
                     </div>
                 </div>
             </div>
-            <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
-                <!-- Web3Forms: nahraď hodnotu access_key svým klíčem z https://web3forms.com (zdarma, přijde e-mailem). Poptávky pak chodí na invest@janrehacek.com. -->
-                <input type="hidden" name="access_key" value="REPLACE_WITH_WEB3FORMS_ACCESS_KEY">
+            <form class="contact-form" id="contactForm" action="/api/kontakt" method="POST">
+                <!-- Zprávu odesílá api/kontakt.js přes Resend. Klíč je jen v nastavení projektu
+                     na Vercelu (RESEND_API_KEY), v repozitáři být nesmí — je veřejný. -->
                 <input type="hidden" name="subject" id="f-subject" value="Nová poptávka z janrehacek.com">
-                <input type="hidden" name="from_name" value="Web janrehacek.com">
-                <!-- bez JavaScriptu se po odeslání vrátí na web, ne na technickou odpověď Web3Forms -->
-                <input type="hidden" name="redirect" value="https://www.janrehacek.com/dekuji">
+                <!-- bez JavaScriptu skončí odeslání na /dekuji, o to se stará api/kontakt.js -->
                 <!-- odkud poptávka přišla: konkrétní nabídka a předchozí stránka (doplní skript níže) -->
                 <input type="hidden" name="nabidka" id="f-nabidka" value="">
                 <input type="hidden" name="odkud" id="f-odkud" value="">
@@ -203,7 +201,7 @@
 
 <script src="/assets/script.js" defer></script>
 <script>
-// Odeslání kontaktního formuláře přes Web3Forms (AJAX – stránka se nereloadne)
+// Odeslání kontaktního formuláře na /api/kontakt (Resend) — stránka se nereloadne.
 (function () {
   var form = document.getElementById('contactForm');
   if (!form) return;
@@ -234,40 +232,44 @@
     }
   } catch (e) {}
 
+  // Záchrana, když odesílání nefunguje: otevře e-mail s předvyplněnou zprávou,
+  // aby se poptávka neztratila.
+  function pres_email(data) {
+    var radky = [
+      'Jméno: ' + (data.get('name') || ''),
+      'E-mail: ' + (data.get('email') || ''),
+      'Telefon: ' + (data.get('phone') || ''),
+      'Zájem: ' + (data.get('interest') || '')
+    ];
+    if (data.get('nabidka')) radky.push('Nabídka: ' + data.get('nabidka'));
+    radky.push('', data.get('message') || '');
+    location.href = 'mailto:invest@janrehacek.com?subject=' + encodeURIComponent(data.get('subject') || 'Poptávka z janrehacek.com') +
+      '&body=' + encodeURIComponent(radky.join('\n'));
+    alert(tr('contact.mailto', 'Otevřel se Vám e-mail s předvyplněnou zprávou — stačí ho odeslat. Pokud se neotevřel, napište prosím přímo na invest@janrehacek.com.'));
+  }
+
   form.addEventListener('submit', function (e) {
     e.preventDefault();
     var data = new FormData(form);
-    var errMsg = tr('contact.error', 'Zprávu se nepodařilo odeslat. Zkuste to prosím znovu nebo napište přímo na invest@janrehacek.com.');
-
-    // Dokud formulář nemá klíč Web3Forms, otevře se e-mail s předvyplněnou zprávou.
-    // Dřív se ukázala chyba a poptávka se ztratila.
-    if (/^REPLACE_/.test(data.get('access_key') || '')) {
-      var radky = [
-        'Jméno: ' + (data.get('name') || ''),
-        'E-mail: ' + (data.get('email') || ''),
-        'Telefon: ' + (data.get('phone') || ''),
-        'Zájem: ' + (data.get('interest') || '')
-      ];
-      if (data.get('nabidka')) radky.push('Nabídka: ' + data.get('nabidka'));
-      radky.push('', data.get('message') || '');
-      location.href = 'mailto:invest@janrehacek.com?subject=' + encodeURIComponent(data.get('subject') || 'Poptávka z janrehacek.com') +
-        '&body=' + encodeURIComponent(radky.join('\n'));
-      alert(tr('contact.mailto', 'Otevřel se Vám e-mail s předvyplněnou zprávou — stačí ho odeslat. Pokud se neotevřel, napište prosím přímo na invest@janrehacek.com.'));
-      return;
-    }
-
     var btn = form.querySelector('button[type="submit"]');
     var original = btn ? btn.textContent : '';
     if (btn) { btn.disabled = true; btn.textContent = '…'; }
     var hotovo = function () { if (btn) { btn.disabled = false; btn.textContent = original; } };
-    fetch('https://api.web3forms.com/submit', { method: 'POST', body: data })
-      .then(function (r) { return r.json(); })
-      .then(function (json) {
+
+    fetch('/api/kontakt', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(Object.fromEntries(data)),
+    }).then(function (r) {
+      // 503 = na serveru zatím není klíč k Resendu; 404 = adresa ještě neexistuje
+      if (r.status === 503 || r.status === 404) { hotovo(); pres_email(data); return; }
+      return r.json().then(function (json) {
         // Vlastní stránka s poděkováním → odeslané poptávky jdou spočítat v analytice
-        if (json && json.success) { location.href = '/dekuji'; }
-        else { alert(errMsg); hotovo(); }
-      })
-      .catch(function () { alert(errMsg); hotovo(); });
+        if (r.ok && json && json.ok) { location.href = '/dekuji'; return; }
+        hotovo();
+        alert(json && json.chyba ? json.chyba : tr('contact.error', 'Zprávu se nepodařilo odeslat. Zkuste to prosím znovu nebo napište přímo na invest@janrehacek.com.'));
+      });
+    }).catch(function () { hotovo(); pres_email(data); });
   });
 })();
 </script>
