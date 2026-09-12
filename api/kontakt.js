@@ -10,7 +10,10 @@
 // Odpovědi: 200 {ok:true} · 303 na /dekuji (bez JS) · 400 chybný vstup ·
 //           429 příliš mnoho zpráv · 503 {kod:'bez-klice'} → web nabídne e-mail.
 
-const PRIJEMCE = process.env.KONTAKT_PRIJEMCE || 'invest@janrehacek.com';
+// Příjemců může být víc, oddělují se čárkou. Přeposílaná adresa (invest@janrehacek.com
+// je u Webglobe jen přeposílání) se cestou může ztratit, proto se hodí i cíl napřímo.
+const PRIJEMCI = (process.env.KONTAKT_PRIJEMCE || 'invest@janrehacek.com')
+    .split(',').map((a) => a.trim()).filter(Boolean);
 const ODESILATEL = process.env.KONTAKT_ODESILATEL || 'Formulář janrehacek.com <formular@housio.app>';
 
 const DELKY = { name: 120, email: 160, phone: 60, interest: 80, message: 5000, nabidka: 300, odkud: 300, subject: 200 };
@@ -44,7 +47,7 @@ module.exports = async (req, res) => {
     // `verze` slouží ke kontrole, že je nasazená očekávaná podoba funkce.
     if (req.method !== 'POST') {
         res.setHeader('Allow', 'POST');
-        return res.status(405).json({ chyba: 'Použijte POST.', verze: 3 });
+        return res.status(405).json({ chyba: 'Použijte POST.', verze: 4 });
     }
     // S hlavičkou x-diagnostika vrátí odpověď i důvod, proč Resend zprávu odmítl.
     const diagnostika = Boolean(req.headers['x-diagnostika']);
@@ -88,7 +91,7 @@ module.exports = async (req, res) => {
             headers: { Authorization: `Bearer ${klic}`, 'Content-Type': 'application/json' },
             body: JSON.stringify({
                 from: ODESILATEL,
-                to: [PRIJEMCE],
+                to: PRIJEMCI,
                 reply_to: pole.email,          // odpovídá se rovnou zájemci
                 subject: pole.subject || `Nová poptávka z janrehacek.com — ${pole.name}`,
                 html,
