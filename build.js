@@ -66,7 +66,7 @@ const I18N_LANGS = ['sk', 'en', 'de', 'fr', 'it', 'es', 'pl', 'ru', 'ja', 'zh'];
 const HOMEPAGE_FEATURED_MAX = 3;
 const DEFAULT_CTA = 'Domluvit prohlídku';
 
-const STATIC_ROUTES = ['/', '/about', '/services', '/housio', '/pro-maklere', '/investors', '/references', '/nabidka', '/contact', '/ochrana-osobnich-udaju'];
+const STATIC_ROUTES = ['/', '/about', '/services', '/housio', '/pro-maklere', '/rekonstrukce', '/investors', '/references', '/nabidka', '/contact', '/ochrana-osobnich-udaju'];
 
 // Per-type output configuration for DETAIL pages.
 //   outputBase — path under ROOT (and URL path) where `{slug}/index.html` lives

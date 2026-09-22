@@ -37,7 +37,13 @@
         <a href="/" class="logo">Jan Řeháček<span>.</span></a>
         <ul class="nav-links" id="navLinks">
             <li><a href="/about" data-i18n="nav.about">O mně</a></li>
-            <li><a href="/services" data-i18n="nav.services">Služby</a></li>
+            <li class="nav-has-sub">
+                <a href="/services" data-i18n="nav.services">Služby</a><span class="nav-caret" aria-hidden="true">▼</span>
+                <ul class="nav-sub">
+                    <li><a href="/services" data-i18n="nav.services_invest">Investiční služby</a></li>
+                    <li><a href="/rekonstrukce" data-i18n="nav.reconstruction">Rekonstrukce</a></li>
+                </ul>
+            </li>
             <li><a href="/investors" class="active" data-i18n="nav.investors">Pro investory</a></li>
             <li><a href="/pro-maklere" data-i18n="nav.partners">Pro makléře</a></li>
             <li><a href="/nabidka" data-i18n="nav.listings">Nabídka</a></li>
@@ -106,6 +112,7 @@
                 <h2 class="footer-title" data-i18n="footer.nav">Navigace</h2>
                 <a href="/about" data-i18n="nav.about">O mně</a>
                 <a href="/services" data-i18n="nav.services">Služby</a>
+                <a href="/rekonstrukce" data-i18n="nav.reconstruction">Rekonstrukce</a>
                 <a href="/investors" data-i18n="nav.investors">Pro investory</a>
                 <a href="/pro-maklere" data-i18n="nav.partners">Pro makléře</a>
                 <a href="/nabidka" data-i18n="nav.listings">Nabídka</a>

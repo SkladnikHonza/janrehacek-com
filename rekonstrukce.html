@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="cs" data-title-key="meta.rekonstrukce.title">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rekonstrukce bytů — Ostrava a Karviná | Jan Řeháček</title>
+<meta name="description" content="Zednické práce, elektroinstalace, koupelny na klíč, podlahy i čištění fasád. Prověření živnostníci, se kterými Jan Řeháček roky rekonstruuje byty na Ostravsku a Karvinsku.">
+<link rel="canonical" href="https://www.janrehacek.com/rekonstrukce">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Jan Řeháček">
+<meta property="og:url" content="https://www.janrehacek.com/rekonstrukce">
+<meta property="og:title" content="Rekonstrukce bytů — Ostrava a Karviná | Jan Řeháček">
+<meta property="og:description" content="Zednické práce, elektroinstalace, koupelny na klíč, podlahy i čištění fasád. Prověření živnostníci, se kterými Jan Řeháček roky rekonstruuje byty na Ostravsku a Karvinsku.">
+<meta property="og:image" content="https://www.janrehacek.com/images/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="800">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:locale" content="cs_CZ">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles.css">
+<noscript><style>@media (max-width:900px){.nav-links{display:flex!important;flex-wrap:wrap;gap:12px 18px;padding:12px 0 0}.nav-inner{flex-wrap:wrap}.menu-toggle{display:none!important}}</style></noscript>
+</head>
+<body>
+<a href="#obsah" class="skip-link" data-i18n="a11y.skip">Přeskočit na obsah</a>
+
+<nav>
+    <div class="nav-inner">
+        <a href="/" class="logo">Jan Řeháček<span>.</span></a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="/about" data-i18n="nav.about">O mně</a></li>
+            <li class="nav-has-sub">
+                <a href="/services" class="active" data-i18n="nav.services">Služby</a><span class="nav-caret" aria-hidden="true">▼</span>
+                <ul class="nav-sub">
+                    <li><a href="/services" data-i18n="nav.services_invest">Investiční služby</a></li>
+                    <li><a href="/rekonstrukce" class="active" data-i18n="nav.reconstruction">Rekonstrukce</a></li>
+                </ul>
+            </li>
+            <li><a href="/investors" data-i18n="nav.investors">Pro investory</a></li>
+            <li><a href="/pro-maklere" data-i18n="nav.partners">Pro makléře</a></li>
+            <li><a href="/nabidka" data-i18n="nav.listings">Nabídka</a></li>
+            <li><a href="/references" data-i18n="nav.testimonials">Reference</a></li>
+            <li><a href="/housio" data-i18n="nav.housio">Housio</a></li>
+            <li><a href="https://www.ahana.cz" target="_blank" rel="noopener noreferrer" class="external">Ahana</a></li>
+            <li><a href="/contact" class="btn btn-primary" data-i18n="nav.contact">Kontakt</a></li>
+            <li>
+                <div class="lang-switcher" id="langSwitcher">
+                    <button type="button" class="lang-current" onclick="toggleLangMenu()" aria-haspopup="true" aria-expanded="false" aria-label="Jazyk / Language">
+                        <span class="lang-flag" id="langCurrentFlag">🇨🇿</span>
+                        <span id="langCurrentCode">CZ</span>
+                        <span class="lang-arrow" aria-hidden="true">▼</span>
+                    </button>
+                    <div class="lang-dropdown">
+                        <button type="button" class="lang-option" data-lang="cs" lang="cs" onclick="setLanguage('cs')"><span class="lang-option-flag">🇨🇿</span><span class="lang-option-name">Čeština</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="sk" lang="sk" onclick="setLanguage('sk')"><span class="lang-option-flag">🇸🇰</span><span class="lang-option-name">Slovenčina</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="en" lang="en" onclick="setLanguage('en')"><span class="lang-option-flag">🇬🇧</span><span class="lang-option-name">English</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="de" lang="de" onclick="setLanguage('de')"><span class="lang-option-flag">🇩🇪</span><span class="lang-option-name">Deutsch</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="fr" lang="fr" onclick="setLanguage('fr')"><span class="lang-option-flag">🇫🇷</span><span class="lang-option-name">Français</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="it" lang="it" onclick="setLanguage('it')"><span class="lang-option-flag">🇮🇹</span><span class="lang-option-name">Italiano</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="es" lang="es" onclick="setLanguage('es')"><span class="lang-option-flag">🇪🇸</span><span class="lang-option-name">Español</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="pl" lang="pl" onclick="setLanguage('pl')"><span class="lang-option-flag">🇵🇱</span><span class="lang-option-name">Polski</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="ru" lang="ru" onclick="setLanguage('ru')"><span class="lang-option-flag">🇷🇺</span><span class="lang-option-name">Русский</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="ja" lang="ja" onclick="setLanguage('ja')"><span class="lang-option-flag">🇯🇵</span><span class="lang-option-name">日本語</span><span class="lang-option-check">✓</span></button>
+                        <button type="button" class="lang-option" data-lang="zh" lang="zh" onclick="setLanguage('zh')"><span class="lang-option-flag">🇨🇳</span><span class="lang-option-name">中文</span><span class="lang-option-check">✓</span></button>
+                    </div>
+                </div>
+            </li>
+        </ul>
+        <button type="button" class="menu-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+    </div>
+</nav>
+
+<main id="obsah">
+
+<header class="page-header">
+    <div class="container">
+        <div class="page-header-eyebrow" data-i18n="rekon.eyebrow">Stavební práce a rekonstrukce</div>
+        <h1 data-i18n-html="rekon.title">Řemeslníci, které <em>si najímám sám.</em></h1>
+        <p class="page-header-text" data-i18n="rekon.subtitle">Byty pro klienty i pro sebe dávám do pořádku s partou živnostníků, se kterými spolupracuji roky. Stejné lidi Vám rád domluvím i na Vaši rekonstrukci — od jedné místnosti po celý byt.</p>
+    </div>
+</header>
+
+<!-- PROFESE -->
+<section id="profese" style="background: var(--bg-card);">
+    <div class="container">
+        <div class="section-eyebrow" data-i18n="rekon.trades.eyebrow">Co zajistíme</div>
+        <h2 class="section-title" data-i18n="rekon.trades.title">Profese, které máme po ruce</h2>
+        <p class="section-subtitle" data-i18n="rekon.trades.text">Každou práci dělá člověk, který ji dělá celý život. Vy řešíte jen jedno zadání, zbytek si předáme mezi sebou.</p>
+        <div class="trades-grid">
+            <article class="trade-card">
+                <div class="trade-photo">
+                    <img src="/images/listings/prodej/horni-sucha-kasarenska/_nahled/06-800.jpg" alt="Vybouraný průchod mezi kuchyní a pokojem v bytě před rekonstrukcí" data-i18n-alt="rekon.t1.alt" width="800" height="1066" loading="lazy" decoding="async">
+                </div>
+                <div class="trade-body">
+                    <h2 class="trade-title" data-i18n="rekon.t1.title">Zednické práce a bourání</h2>
+                    <p data-i18n="rekon.t1.desc">Příčky, průrazy, omítky — všechno, co je potřeba udělat dřív, než se začne stavět nové.</p>
+                    <ul class="trade-list">
+                        <li data-i18n="rekon.t1.l1">Bourání příček a bytových jader</li>
+                        <li data-i18n="rekon.t1.l2">Nové příčky, překlady a průrazy</li>
+                        <li data-i18n="rekon.t1.l3">Omítky, štuky a vyrovnání stěn</li>
+                    </ul>
+                </div>
+            </article>
+            <article class="trade-card">
+                <div class="trade-photo">
+                    <img src="/images/listings/pronajem/havirov-jarosova/_nahled/01-uvodni-800.jpg" alt="Zrekonstruovaná kuchyň s novým lištovým osvětlením" data-i18n-alt="rekon.t2.alt" width="800" height="1066" loading="lazy" decoding="async">
+                </div>
+                <div class="trade-body">
+                    <h2 class="trade-title" data-i18n="rekon.t2.title">Elektroinstalace</h2>
+                    <p data-i18n="rekon.t2.desc">Nové rozvody, rozvaděč i světla. Vše od člověka s příslušným oprávněním a s revizní zprávou.</p>
+                    <ul class="trade-list">
+                        <li data-i18n="rekon.t2.l1">Kompletní nové rozvody</li>
+                        <li data-i18n="rekon.t2.l2">Rozvaděč, jističe a chrániče</li>
+                        <li data-i18n="rekon.t2.l3">Světla, zásuvky a revize</li>
+                    </ul>
+                </div>
+            </article>
+            <article class="trade-card">
+                <div class="trade-photo">
+                    <img src="/images/listings/pronajem/havirov-jarosova/_nahled/09-800.jpg" alt="Nová koupelna s umyvadlem, WC a ohřívačem vody" data-i18n-alt="rekon.t3.alt" width="800" height="1066" loading="lazy" decoding="async">
+                </div>
+                <div class="trade-body">
+                    <h2 class="trade-title" data-i18n="rekon.t3.title">Voda, odpady a topení</h2>
+                    <p data-i18n="rekon.t3.desc">Od výměny baterie po kompletní rozvody v celém bytě.</p>
+                    <ul class="trade-list">
+                        <li data-i18n="rekon.t3.l1">Rozvody vody a odpadů</li>
+                        <li data-i18n="rekon.t3.l2">Radiátory, bojlery a ohřev vody</li>
+                        <li data-i18n="rekon.t3.l3">Montáž zařizovacích předmětů</li>
+                    </ul>
+                </div>
+            </article>
+            <article class="trade-card">
+                <div class="trade-photo">
+                    <img src="/images/listings/prodej/ostrava-poruba-oty-synka/_nahled/14-800.jpg" alt="Koupelna s rohovou vanou a velkoformátovým obkladem" data-i18n-alt="rekon.t4.alt" width="800" height="1066" loading="lazy" decoding="async">
+                </div>
+                <div class="trade-body">
+                    <h2 class="trade-title" data-i18n="rekon.t4.title">Koupelny a WC na klíč</h2>
+                    <p data-i18n="rekon.t4.desc">Od vybourání starého jádra až po hotovou koupelnu, kterou stačí začít používat.</p>
+                    <ul class="trade-list">
+                        <li data-i18n="rekon.t4.l1">Bourání a odvoz starého jádra</li>
+                        <li data-i18n="rekon.t4.l2">Vana nebo sprchový kout</li>
+                        <li data-i18n="rekon.t4.l3">Kompletace včetně nábytku</li>
+                    </ul>
+                </div>
+            </article>
+            <article class="trade-card">
+                <div class="trade-photo">
+                    <img src="/images/listings/prodej/ostrava-poruba-oty-synka/_nahled/05-800.jpg" alt="Sprchový kout s velkoformátovým obkladem s kresbou kamene" data-i18n-alt="rekon.t5.alt" width="800" height="602" loading="lazy" decoding="async">
+                </div>
+                <div class="trade-body">
+                    <h2 class="trade-title" data-i18n="rekon.t5.title">Obklady a dlažby</h2>
+                    <p data-i18n="rekon.t5.desc">Velkoformátové desky i klasické formáty. Práce, na které je rovná spára vidět na první pohled.</p>
+                    <ul class="trade-list">
+                        <li data-i18n="rekon.t5.l1">Koupelny, WC a kuchyně</li>
+                        <li data-i18n="rekon.t5.l2">Velkoformátové obklady</li>
+                        <li data-i18n="rekon.t5.l3">Spárování a silikonování</li>
+                    </ul>
+                </div>
+            </article>
+            <article class="trade-card">
+                <div class="trade-photo">
+                    <img src="/images/listings/prodej/ostrava-poruba-oty-synka/_nahled/11-800.jpg" alt="Sádrokartonový podhled s bodovým osvětlením v obývacím pokoji" data-i18n-alt="rekon.t6.alt" width="800" height="600" loading="lazy" decoding="async">
+                </div>
+                <div class="trade-body">
+                    <h2 class="trade-title" data-i18n="rekon.t6.title">Sádrokartony a podhledy</h2>
+                    <p data-i18n="rekon.t6.desc">Podhledy s bodovým osvětlením, předstěny i půdní vestavby.</p>
+                    <ul class="trade-list">
+                        <li data-i18n="rekon.t6.l1">Stropní podhledy a světelné linie</li>
+                        <li data-i18n="rekon.t6.l2">Předstěny, niky a police</li>
+                        <li data-i18n="rekon.t6.l3">Zvukové a tepelné izolace</li>
+                    </ul>
+                </div>
+            </article>
+            <article class="trade-card">
+                <div class="trade-photo">
+                    <img src="/images/listings/prodej/karvina-trida-osvobozeni/_nahled/07-800.jpg" alt="Pokoj s novou plovoucí podlahou po rekonstrukci" data-i18n-alt="rekon.t7.alt" width="800" height="1066" loading="lazy" decoding="async">
+                </div>
+                <div class="trade-body">
+                    <h2 class="trade-title" data-i18n="rekon.t7.title">Podlahy</h2>
+                    <p data-i18n="rekon.t7.desc">Vinyl, laminát i dlažba — vždy včetně vyrovnání podkladu, bez kterého nic dlouho nevydrží.</p>
+                    <ul class="trade-list">
+                        <li data-i18n="rekon.t7.l1">Samonivelační stěrky a podklady</li>
+                        <li data-i18n="rekon.t7.l2">Vinylové a laminátové podlahy</li>
+                        <li data-i18n="rekon.t7.l3">Lišty, přechody a prahy</li>
+                    </ul>
+                </div>
+            </article>
+            <article class="trade-card">
+                <div class="trade-photo">
+                    <img src="/images/listings/prodej/karvina-trida-osvobozeni/_nahled/09-800.jpg" alt="Čerstvě vymalovaný pokoj připravený k nastěhování" data-i18n-alt="rekon.t8.alt" width="800" height="1066" loading="lazy" decoding="async">
+                </div>
+                <div class="trade-body">
+                    <h2 class="trade-title" data-i18n="rekon.t8.title">Malby a nátěry</h2>
+                    <p data-i18n="rekon.t8.desc">Výmalba po rekonstrukci i jen osvěžení bytu mezi dvěma nájemníky.</p>
+                    <ul class="trade-list">
+                        <li data-i18n="rekon.t8.l1">Výmalba bytů a společných prostor</li>
+                        <li data-i18n="rekon.t8.l2">Nátěry zárubní, dveří a topení</li>
+                        <li data-i18n="rekon.t8.l3">Opravy stěn před malbou</li>
+                    </ul>
+                </div>
+            </article>
+            <article class="trade-card">
+                <div class="trade-photo">
+                    <img src="/images/listings/prodej/ostrava-poruba-oty-synka/_nahled/01-uvodni-800.jpg" alt="Kuchyňská linka na míru s vestavěnými spotřebiči" data-i18n-alt="rekon.t9.alt" width="800" height="600" loading="lazy" decoding="async">
+                </div>
+                <div class="trade-body">
+                    <h2 class="trade-title" data-i18n="rekon.t9.title">Kuchyně a truhlářské práce</h2>
+                    <p data-i18n="rekon.t9.desc">Kuchyňské linky, vestavěné skříně a nábytek na míru — včetně zaměření a montáže.</p>
+                    <ul class="trade-list">
+                        <li data-i18n="rekon.t9.l1">Kuchyňské linky na míru</li>
+                        <li data-i18n="rekon.t9.l2">Vestavěné skříně a šatny</li>
+                        <li data-i18n="rekon.t9.l3">Zaměření, montáž a kotvení</li>
+                    </ul>
+                </div>
+            </article>
+            <article class="trade-card">
+                <div class="trade-photo">
+                    <img src="/images/listings/prodej/ostrava-poruba-oty-synka/_nahled/16-800.jpg" alt="Nové vchodové dveře do bytu se zárubní" data-i18n-alt="rekon.t10.alt" width="800" height="1066" loading="lazy" decoding="async">
+                </div>
+                <div class="trade-body">
+                    <h2 class="trade-title" data-i18n="rekon.t10.title">Okna a dveře</h2>
+                    <p data-i18n="rekon.t10.desc">Výměna oken, interiérové i vchodové dveře včetně zárubní a zednického zapravení.</p>
+                    <ul class="trade-list">
+                        <li data-i18n="rekon.t10.l1">Plastová a hliníková okna</li>
+                        <li data-i18n="rekon.t10.l2">Interiérové dveře a zárubně</li>
+                        <li data-i18n="rekon.t10.l3">Vchodové a bezpečnostní dveře</li>
+                    </ul>
+                </div>
+            </article>
+            <article class="trade-card">
+                <div class="trade-photo">
+                    <img src="/images/listings/prodej/karvina-trida-osvobozeni/_nahled/10-800.jpg" alt="Bytový dům s obnovenou barevnou fasádou" data-i18n-alt="rekon.t11.alt" width="800" height="1066" loading="lazy" decoding="async">
+                </div>
+                <div class="trade-body">
+                    <h2 class="trade-title" data-i18n="rekon.t11.title">Čištění a obnova fasád</h2>
+                    <p data-i18n="rekon.t11.desc">Omytí, odstranění řas a plísní a nový nátěr. Dům vypadá jako po zateplení, za zlomek nákladů.</p>
+                    <ul class="trade-list">
+                        <li data-i18n="rekon.t11.l1">Tlakové čištění fasád</li>
+                        <li data-i18n="rekon.t11.l2">Odstranění řas, plísní a mechů</li>
+                        <li data-i18n="rekon.t11.l3">Nátěry a lokální opravy omítek</li>
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </div>
+</section>
+
+<!-- JAK TO PROBÍHÁ -->
+<section id="postup">
+    <div class="container">
+        <div class="section-eyebrow" data-i18n="rekon.steps.eyebrow">Jak to probíhá</div>
+        <h2 class="section-title" data-i18n="rekon.steps.title">Čtyři kroky od zprávy k hotovu</h2>
+        <div class="steps-grid">
+            <div class="step-box">
+                <div class="step-num" data-i18n="rekon.k1.num">Krok 01</div>
+                <h3 data-i18n="rekon.k1.title">Ozvete se</h3>
+                <p data-i18n="rekon.k1.desc">Napíšete, co potřebujete. Stačí pár vět, a když máte fotky, přiložte je.</p>
+            </div>
+            <div class="step-box">
+                <div class="step-num" data-i18n="rekon.k2.num">Krok 02</div>
+                <h3 data-i18n="rekon.k2.title">Prohlídka a nabídka</h3>
+                <p data-i18n="rekon.k2.desc">Přijedeme se podívat na místo a dostanete rozepsanou cenovou nabídku.</p>
+            </div>
+            <div class="step-box">
+                <div class="step-num" data-i18n="rekon.k3.num">Krok 03</div>
+                <h3 data-i18n="rekon.k3.title">Realizace</h3>
+                <p data-i18n="rekon.k3.desc">Domluvíme termín a pustíme se do práce. Průběžně víte, v jaké je fázi.</p>
+            </div>
+            <div class="step-box">
+                <div class="step-num" data-i18n="rekon.k4.num">Krok 04</div>
+                <h3 data-i18n="rekon.k4.title">Předání</h3>
+                <p data-i18n="rekon.k4.desc">Práci projdeme společně. Co nesedí, doladíme, než si ji převezmete.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- GALERIE -->
+<section id="realizace" style="background: var(--bg-card);">
+    <div class="container">
+        <div class="section-eyebrow" data-i18n="rekon.gallery.eyebrow">Ukázky</div>
+        <h2 class="section-title" data-i18n="rekon.gallery.title">Byty, které prošly rekonstrukcí</h2>
+        <p class="section-subtitle" data-i18n="rekon.gallery.text">Fotky z nemovitostí, které mám v nabídce nebo je spravuji. Kompletní galerie jsou u jednotlivých nabídek.</p>
+        <div class="rekon-gallery">
+            <figure>
+                <img src="/images/listings/prodej/karvina-bozkova/_nahled/05-800.jpg" alt="Kuchyň s červenou linkou a mozaikovým obkladem" data-i18n-alt="rekon.g1.alt" width="800" height="1066" loading="lazy" decoding="async">
+                <figcaption data-i18n="rekon.g1.cap">Karviná, Božkova</figcaption>
+            </figure>
+            <figure>
+                <img src="/images/listings/prodej/ostrava-poruba-oty-synka/_nahled/13-800.jpg" alt="Sprchový kout s velkoformátovým obkladem" data-i18n-alt="rekon.g2.alt" width="800" height="1066" loading="lazy" decoding="async">
+                <figcaption data-i18n="rekon.g2.cap">Ostrava-Poruba, Oty Synka</figcaption>
+            </figure>
+            <figure>
+                <img src="/images/listings/pronajem/havirov-jarosova/_nahled/07-800.jpg" alt="Koupelna s vanou a závěsným WC" data-i18n-alt="rekon.g3.alt" width="800" height="1066" loading="lazy" decoding="async">
+                <figcaption data-i18n="rekon.g3.cap">Havířov, Jarošova</figcaption>
+            </figure>
+            <figure>
+                <img src="/images/listings/prodej/karvina-csl-armady/_nahled/12-800.jpg" alt="Bytový dům po obnově fasády" data-i18n-alt="rekon.g4.alt" width="800" height="1066" loading="lazy" decoding="async">
+                <figcaption data-i18n="rekon.g4.cap">Karviná, Čs. armády</figcaption>
+            </figure>
+            <figure>
+                <img src="/images/listings/prodej/horni-sucha-kasarenska/_nahled/05-800.jpg" alt="Schodiště domu před rekonstrukcí" data-i18n-alt="rekon.g5.alt" width="800" height="1066" loading="lazy" decoding="async">
+                <figcaption data-i18n="rekon.g5.cap">Horní Suchá, Kasárenská</figcaption>
+            </figure>
+            <figure>
+                <img src="/images/listings/prodej/karvina-bozkova/_nahled/07-800.jpg" alt="Koupelna se sprchovým koutem po rekonstrukci" data-i18n-alt="rekon.g6.alt" width="800" height="1066" loading="lazy" decoding="async">
+                <figcaption data-i18n="rekon.g6.cap">Karviná, Božkova</figcaption>
+            </figure>
+        </div>
+    </div>
+</section>
+
+<!-- PROČ PŘES NÁS -->
+<section id="proc">
+    <div class="container">
+        <div class="section-eyebrow" data-i18n="rekon.why.eyebrow">Proč přes mě</div>
+        <h2 class="section-title" data-i18n="rekon.why.title">Nejsou to lidé z inzerátu</h2>
+        <div class="rekon-why">
+            <div>
+                <h3 data-i18n="rekon.p1.title">Znám je z vlastních staveb</h3>
+                <p data-i18n="rekon.p1.desc">Nejsou to lidé z inzerátu. Dělali mi byty, které pak sám prodávám nebo pronajímám, takže vím, jak odvádějí práci.</p>
+            </div>
+            <div>
+                <h3 data-i18n="rekon.p2.title">Jeden kontakt místo deseti</h3>
+                <p data-i18n="rekon.p2.desc">Nemusíte shánět zvlášť elektrikáře, zedníka a obkladače a hlídat, kdo přijde kdy. Domluvíte se se mnou a profese si předáme mezi sebou.</p>
+            </div>
+            <div>
+                <h3 data-i18n="rekon.p3.title">Vím, co rekonstrukce udělá s cenou</h3>
+                <p data-i18n="rekon.p3.desc">U investičních bytů poradím, co se vyplatí udělat a co je zbytečné, protože se to na prodejní ceně ani na nájmu neprojeví.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- VÝZVA K AKCI -->
+<section class="page-cta">
+    <div class="container">
+        <div class="section-eyebrow" data-i18n="rekon.cta.eyebrow">Máte rozdělanou rekonstrukci?</div>
+        <h2 class="section-title" data-i18n="rekon.cta.title">Napište, co potřebujete.</h2>
+        <p data-i18n="rekon.cta.text">Ozvu se do 24 hodin a domluvíme prohlídku. Prohlídka i cenová nabídka jsou zdarma.</p>
+        <div class="page-cta-actions">
+            <a href="/contact?zajem=rekonstrukce" class="btn btn-primary" data-i18n="rekon.cta.button">Poptat rekonstrukci</a>
+            <a href="/nabidka" class="btn btn-outline" data-i18n="nav.listings">Nabídka</a>
+        </div>
+    </div>
+</section>
+
+</main>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="logo" style="color:white;">Jan Řeháček<span>.</span></div>
+                <p data-i18n="footer.brand">Investor, realitní expert a zakladatel platformy Housio. Buduji majetek a vzdělávám novou generaci investorů.</p>
+            </div>
+            <div class="footer-col">
+                <h2 class="footer-title" data-i18n="footer.nav">Navigace</h2>
+                <a href="/about" data-i18n="nav.about">O mně</a>
+                <a href="/services" data-i18n="nav.services">Služby</a>
+                <a href="/rekonstrukce" data-i18n="nav.reconstruction">Rekonstrukce</a>
+                <a href="/investors" data-i18n="nav.investors">Pro investory</a>
+                <a href="/pro-maklere" data-i18n="nav.partners">Pro makléře</a>
+                <a href="/nabidka" data-i18n="nav.listings">Nabídka</a>
+                <a href="/references" data-i18n="nav.testimonials">Reference</a>
+                <a href="https://www.ahana.cz" target="_blank" rel="noopener noreferrer">Ahana</a>
+            </div>
+            <div class="footer-col">
+                <h2 class="footer-title" data-i18n="footer.products">Produkty</h2>
+                <a href="https://www.housio.app?utm_source=janrehacek.com&utm_medium=referral" target="_blank" rel="noopener">Housio.App</a>
+                <a href="/investors" data-i18n="academy.eyebrow">Investiční příležitosti</a>
+                <a href="/services" data-i18n="nav.services">Služby</a>
+                <a href="/contact" data-i18n="footer.consultation">Konzultace</a>
+            </div>
+            <div class="footer-col">
+                <h2 class="footer-title" data-i18n="footer.contact">Kontakt</h2>
+                <a href="mailto:invest@janrehacek.com">invest@janrehacek.com</a>
+                <a href="tel:+420608177099">+420 608 177 099</a>
+                <a href="https://www.instagram.com/skladnikhonza" target="_blank" rel="noopener noreferrer">Instagram</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span data-i18n="footer.rights">© 2026 Jan Řeháček. Všechna práva vyhrazena.</span>
+            <span data-i18n="footer.tagline">Vytvořeno s vizí pro novou generaci investorů.</span>
+        </div>
+        <p class="footer-legal" data-i18n-html="footer.operator">Provozovatel webu: US Europe Group s.r.o., IČO 06779808, Třebovická 5050/78, 722 00 Ostrava · <a href="/ochrana-osobnich-udaju">Ochrana osobních údajů</a></p>
+    </div>
+</footer>
+
+<script src="/assets/script.js" defer></script>
+    <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
