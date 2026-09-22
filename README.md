@@ -73,9 +73,25 @@ Klíč **nikdy nepatří do repozitáře** — je veřejný. Nastavuje se ve Ver
 - `RESEND_API_KEY` — povinné, klíč z resend.com
 - `KONTAKT_PRIJEMCE` — nepovinné, kam poptávky chodí
 - `KONTAKT_ODESILATEL` — nepovinné, „Jméno <adresa>“; doména musí být v Resendu ověřená
+- `KONTAKT_ORIGINY` — nepovinné, další povolené adresy webu oddělené čárkou
 
 Dokud klíč chybí, vrátí `/api/kontakt` stav 503 a formulář otevře e-mail
 s předvyplněnou zprávou, takže se poptávka neztratí.
+
+### Ochrana proti spamu
+
+Poptávku musí pustit tři síta, jinak se e-mail vůbec neodešle:
+
+1. **Odkud přišla.** Hlavička `Origin` (nebo `Referer`) musí patřit
+   janrehacek.com. Roboti posílají POST rovnou na `/api/kontakt` a žádnou
+   nemají → 403. Náhledová nasazení `*.vercel.app` projdou jen mimo ostrý provoz.
+2. **Skryté pole `botcheck`.** Člověk ho nevidí, automat ho vyplní.
+3. **Doba vyplňování.** Stránka posílá v poli `trvani`, jak dlouho byl formulář
+   otevřený. Pod 3 sekundy = automat. Prázdná hodnota (stránka bez JavaScriptu)
+   projde, tam stačí síto č. 1.
+
+Odmítnutí ze sít 2 a 3 vypadá navenek jako úspěch (`200 {ok:true}`), aby se
+robot nedozvěděl, na čem ztroskotal. Důvod se zapíše do logu funkce na Vercelu.
 
 ## Jazyky
 

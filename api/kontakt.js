@@ -5,16 +5,42 @@
 //   RESEND_API_KEY       povinné, klíč z resend.com (Sending access)
 //   KONTAKT_PRIJEMCE     nepovinné, kam poptávky chodí (výchozí invest@janrehacek.com)
 //   KONTAKT_ODESILATEL   nepovinné, „Jméno <adresa>“; doména MUSÍ být v Resendu ověřená
+//   KONTAKT_ORIGINY      nepovinné, další povolené adresy webu oddělené čárkou
 //
 // POST /api/kontakt — přijme JSON i klasické odeslání formuláře (bez JavaScriptu).
 // Odpovědi: 200 {ok:true} · 303 na /dekuji (bez JS) · 400 chybný vstup ·
-//           429 příliš mnoho zpráv · 503 {kod:'bez-klice'} → web nabídne e-mail.
+//           403 poptávka nepřišla z webu · 429 příliš mnoho zpráv ·
+//           503 {kod:'bez-klice'} → web nabídne e-mail.
+//
+// Proti spamu stojí tři síta: povolený Origin (roboti posílají POST rovnou sem,
+// hlavičku nemají), skryté pole botcheck a doba vyplňování formuláře.
 
 // Příjemců může být víc, oddělují se čárkou. Přeposílaná adresa (invest@janrehacek.com
 // je u Webglobe jen přeposílání) se cestou může ztratit, proto se hodí i cíl napřímo.
 const PRIJEMCI = (process.env.KONTAKT_PRIJEMCE || 'invest@janrehacek.com')
     .split(',').map((a) => a.trim()).filter(Boolean);
 const ODESILATEL = process.env.KONTAKT_ODESILATEL || 'Formulář janrehacek.com <formular@housio.app>';
+
+// Odkud smí poptávka přijít. Automat obvykle pošle POST přímo na /api/kontakt
+// a žádnou hlavičku Origin ani Referer nemá — tím se odfiltruje.
+const DOMENY = new Set([
+    'janrehacek.com', 'www.janrehacek.com', 'localhost', '127.0.0.1',
+    ...(process.env.KONTAKT_ORIGINY || '').split(',').map((a) => a.trim().toLowerCase()).filter(Boolean),
+]);
+
+function zNasehoWebu(req) {
+    const zdroj = req.headers.origin || req.headers.referer || '';
+    if (!zdroj) return false;
+    let host;
+    try { host = new URL(zdroj).hostname.toLowerCase(); } catch { return false; }
+    if (DOMENY.has(host)) return true;
+    // Náhledová nasazení na Vercelu; v ostrém provozu se nepouštějí.
+    return process.env.VERCEL_ENV !== 'production' && host.endsWith('.vercel.app');
+}
+
+// Člověk formulář nevyplní za tři sekundy. Stránka posílá v poli `trvani`,
+// jak dlouho byl formulář otevřený (v ms).
+const NEJKRATSI_VYPLNENI = 3000;
 
 const DELKY = { name: 120, email: 160, phone: 60, interest: 80, message: 5000, nabidka: 300, odkud: 300, subject: 200 };
 
@@ -47,10 +73,15 @@ module.exports = async (req, res) => {
     // `verze` slouží ke kontrole, že je nasazená očekávaná podoba funkce.
     if (req.method !== 'POST') {
         res.setHeader('Allow', 'POST');
-        return res.status(405).json({ chyba: 'Použijte POST.', verze: 4 });
+        return res.status(405).json({ chyba: 'Použijte POST.', verze: 5 });
     }
     // S hlavičkou x-diagnostika vrátí odpověď i důvod, proč Resend zprávu odmítl.
     const diagnostika = Boolean(req.headers['x-diagnostika']);
+
+    if (!zNasehoWebu(req)) {
+        console.warn('Odmítnuto — mimo web:', req.headers.origin || req.headers.referer || 'bez hlavičky');
+        return res.status(403).json({ chyba: 'Formulář odešlete prosím ze stránek janrehacek.com.' });
+    }
 
     const data = await nactiTelo(req);
     const pole = {};
@@ -58,6 +89,15 @@ module.exports = async (req, res) => {
 
     // Past na roboty: pole je v HTML skryté, člověk ho nevyplní.
     if (String(data.botcheck || '').trim()) return res.status(200).json({ ok: true });
+
+    // Druhá past: formulář odeslaný skoro okamžitě po načtení vyplnil automat.
+    // Prázdné pole znamená stránku bez JavaScriptu — tu jistí hlídka Originu výše.
+    const zmereno = String(data.trvani || '').trim();
+    const trvani = zmereno ? Number(zmereno) : null;
+    if (trvani !== null && Number.isFinite(trvani) && trvani < NEJKRATSI_VYPLNENI) {
+        console.warn('Odmítnuto — formulář vyplněn za', trvani, 'ms');
+        return res.status(200).json({ ok: true });
+    }
 
     if (!pole.name || !pole.message || !/^[^@\s]+@[^@\s.]+\.[^@\s]+$/.test(pole.email)) {
         return res.status(400).json({ chyba: 'Vyplňte prosím jméno, platný e-mail a zprávu.' });

@@ -122,6 +122,8 @@
                 <input type="hidden" name="odkud" id="f-odkud" value="">
                 <!-- honeypot proti spamu -->
                 <input type="checkbox" name="botcheck" style="display:none !important;" tabindex="-1" autocomplete="off">
+                <!-- jak dlouho byl formulář otevřený (ms) — automat odesílá skoro okamžitě -->
+                <input type="hidden" name="trvani" id="f-trvani" value="">
                 <p class="form-context" id="formContext" hidden></p>
                 <div class="form-row">
                     <div class="form-group">
@@ -205,6 +207,7 @@
 (function () {
   var form = document.getElementById('contactForm');
   if (!form) return;
+  var nacteno = Date.now();
   var tr = function (k, d) {
     var slovnik = window.translations && window.translations[(document.documentElement.lang || 'cs').split('-')[0]];
     return (slovnik && slovnik[k]) || d;
@@ -250,6 +253,8 @@
 
   form.addEventListener('submit', function (e) {
     e.preventDefault();
+    var mereni = document.getElementById('f-trvani');
+    if (mereni) mereni.value = String(Date.now() - nacteno);
     var data = new FormData(form);
     var btn = form.querySelector('button[type="submit"]');
     var original = btn ? btn.textContent : '';
