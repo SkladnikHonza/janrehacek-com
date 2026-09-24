@@ -2967,6 +2967,23 @@ nav.breadcrumbs span { color: var(--text-light); }
     gap: 28px;
     counter-reset: krok;
 }
+/* Tři kroky (Služby) — mřížka ze stránky Rekonstrukce, jen o sloupec méně. */
+.steps-grid-3 { grid-template-columns: repeat(3, 1fr); }
+
+/* Odkaz na konci karty služby — drží se dole, ať jsou karty zarovnané. */
+.service-card { display: flex; flex-direction: column; }
+.service-card ul { margin-bottom: 20px; }
+.service-more {
+    margin-top: auto;
+    align-self: flex-start;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--accent-text);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+.service-more:hover { color: var(--text); }
+
 .step-box {
     background: var(--bg-card);
     border: 1px solid var(--border);
