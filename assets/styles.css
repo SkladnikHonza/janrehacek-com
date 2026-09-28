@@ -58,7 +58,10 @@ nav {
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 32px;
+    /* Obsah je omezený na 1200 px, takže na širokém monitoru už menu víc místa
+       nedostane. Při mezeře 32 px se francouzské a německé popisky dotýkaly
+       loga i na velkých obrazovkách. */
+    gap: 26px;
     list-style: none;
 }
 .nav-links a {
@@ -852,9 +855,16 @@ footer {
 }
 
 /* ===== RESPONSIVE ===== */
-@media (max-width: 900px) {
+/* Na 980 px se přepíná na tlačítko menu. Dřív to bylo na 900 px, jenže
+   v němčině a francouzštině se delší popisky do řádku nevešly a menu se
+   dotýkalo loga (na 901 px dokonce přetékalo z okna). Zbytek rozvržení
+   se láme dál na 900 px, tohle je jen navigace. */
+@media (max-width: 980px) {
     .nav-links { display: none; }
     .menu-toggle { display: flex; }
+}
+
+@media (max-width: 900px) {
 
     .hero {
         min-height: auto;
@@ -1107,6 +1117,8 @@ footer {
 /* Subpage responsive */
 @media (max-width: 900px) {
     .page-header { padding: 64px 0 48px; }
+}
+@media (max-width: 980px) {
     .nav-links a.active::after { display: none; }
     .nav-links a.active { border-left: 3px solid var(--accent-dark); padding-left: 10px; }
 }
@@ -2693,6 +2705,17 @@ a.logo:hover { opacity: 0.7; }
     .nav-links { gap: 20px; }
     .nav-links a { font-size: 13.5px; }
 }
+/* Delší popisky v němčině a francouzštině se do řádku nevejdou dřív než
+   v češtině. Tenhle těsnější krok drží mezeru mezi logem a menu až dolů
+   k 981 px, kde se přepíná na tlačítko menu. */
+@media (max-width: 1160px) and (min-width: 981px) {
+    .nav-inner { padding-left: 16px; padding-right: 16px; }
+    .logo { font-size: 17px; }
+    .nav-links { gap: 12px; }
+    .nav-links a { font-size: 12.5px; }
+    .nav-links a.btn-primary { padding: 9px 15px; }
+    .nav-caret { margin-left: 3px; }
+}
 @media (max-width: 900px) {
     .partner-calc-grid,
     .partner-apply-grid,
@@ -2874,8 +2897,9 @@ nav.breadcrumbs span { color: var(--text-light); }
     vertical-align: middle;
     color: var(--text-muted);
 }
-/* Na mobilu je menu už tak sloupec — podmenu se jen odsadí a je pořád vidět. */
-@media (max-width: 900px) {
+/* Na mobilu je menu už tak sloupec — podmenu se jen odsadí a je pořád vidět.
+   Hranice je stejná jako u přepnutí na tlačítko menu (980 px). */
+@media (max-width: 980px) {
     .nav-has-sub::after { display: none; }
     .nav-caret { display: none; }
     .nav-sub {
