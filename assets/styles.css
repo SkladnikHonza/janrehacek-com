@@ -3055,3 +3055,8 @@ nav.breadcrumbs span { color: var(--text-light); }
     .trades-grid { grid-template-columns: 1fr; gap: 22px; }
     .steps-grid { grid-template-columns: 1fr; gap: 16px; }
 }
+
+/* Ověření, že návštěvník není robot. Widget se zobrazí, jen když je nastavený
+   klíč; jinak zůstane místo prázdné a formulář vypadá jako dřív. */
+.overeni { margin: 4px 0 18px; }
+.overeni[hidden] { display: none; }

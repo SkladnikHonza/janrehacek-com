@@ -160,6 +160,11 @@
                     <label for="f-message" data-i18n="form.message">Vaše zpráva *</label>
                     <textarea id="f-message" name="message" required data-i18n-placeholder="form.message_ph" placeholder="Krátce mi popište, co řešíte..."></textarea>
                 </div>
+                <div id="overeni" class="overeni" hidden></div>
+                <noscript>
+                    <p class="form-note">Formulář potřebuje zapnutý JavaScript. Bez něj mi prosím napište
+                        přímo na <a href="mailto:invest@janrehacek.com">invest@janrehacek.com</a>.</p>
+                </noscript>
                 <button type="submit" class="btn-submit" data-i18n="form.submit">Odeslat zprávu →</button>
                 <p class="form-note" data-i18n-html="form.privacy">Údaje z formuláře použijeme jen k odpovědi na Vaši zprávu. <a href="/ochrana-osobnich-udaju">Ochrana osobních údajů</a></p>
             </form>
@@ -216,6 +221,22 @@
   var form = document.getElementById('contactForm');
   if (!form) return;
   var nacteno = Date.now();
+
+  // Ochrana proti robotům od Cloudflare. Klíč doplňuje build.js z proměnné
+  // prostředí TURNSTILE_SITEKEY — dokud není nastavená, zůstane tu zástupný
+  // text a widget se vůbec nenačte, aby se formulář nerozbil.
+  var TURNSTILE_KLIC = '__TURNSTILE_SITEKEY__';
+  if (/^0x[0-9A-Za-z]+$/.test(TURNSTILE_KLIC)) {
+    var misto = document.getElementById('overeni');
+    misto.hidden = false;
+    misto.className = 'overeni cf-turnstile';
+    misto.setAttribute('data-sitekey', TURNSTILE_KLIC);
+    misto.setAttribute('data-language', (document.documentElement.lang || 'cs').split('-')[0]);
+    var sk = document.createElement('script');
+    sk.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+    sk.async = true; sk.defer = true;
+    document.head.appendChild(sk);
+  }
   var tr = function (k, d) {
     var slovnik = window.translations && window.translations[(document.documentElement.lang || 'cs').split('-')[0]];
     return (slovnik && slovnik[k]) || d;
@@ -293,6 +314,9 @@
         // Vlastní stránka s poděkováním → odeslané poptávky jdou spočítat v analytice
         if (r.ok && json && json.ok) { location.href = '/dekuji'; return; }
         hotovo();
+        // Token Turnstile je jednorázový — po neúspěchu se musí vyrobit nový,
+        // jinak by druhý pokus skončil stejně.
+        if (window.turnstile) { try { window.turnstile.reset(); } catch (e) {} }
         alert(json && json.chyba ? json.chyba : tr('contact.error', 'Zprávu se nepodařilo odeslat. Zkuste to prosím znovu nebo napište přímo na invest@janrehacek.com.'));
       });
     }).catch(function () { hotovo(); pres_email(data); });

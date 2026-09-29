@@ -1328,6 +1328,11 @@ function buildDist() {
     fs.rmSync(DIST_DIR, { recursive: true, force: true });
     fs.mkdirSync(DIST_DIR, { recursive: true });
 
+    // Veřejný klíč Turnstile se doplňuje sem z proměnné prostředí, aby nebyl
+    // natvrdo v repozitáři a šel měnit bez zásahu do kódu. Když není nastavená,
+    // zástupný text zůstane a stránka widget vůbec nenačte.
+    const TURNSTILE = process.env.TURNSTILE_SITEKEY || '';
+
     const SKIP_ROOT = new Set(['README.md', 'AGENTS.md', 'build.js', 'nahled.js', 'vercel.json',
         'package.json', 'package-lock.json', 'Spustit-nahled.command']);
     const PUBLIC_IMG = /\.(jpe?g|png|webp|gif|svg|ico)$/i;
@@ -1359,7 +1364,8 @@ function buildDist() {
         const dest = path.join(DIST_DIR, rel);
         fs.mkdirSync(path.dirname(dest), { recursive: true });
         if (/\.html$/i.test(rel)) {
-            const out = versionUrls(fs.readFileSync(src, 'utf8'));
+            const out = versionUrls(fs.readFileSync(src, 'utf8'))
+                .replaceAll('__TURNSTILE_SITEKEY__', TURNSTILE);
             fs.writeFileSync(dest, out);
             stats.bytes += Buffer.byteLength(out);
         } else {

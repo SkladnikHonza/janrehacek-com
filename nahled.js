@@ -82,6 +82,18 @@ const server = http.createServer(async (req, res) => {
     try { cesta = decodeURIComponent(new URL(req.url, 'http://localhost').pathname); }
     catch { res.writeHead(400).end('Špatná adresa'); return; }
 
+    // odhlášení z rozesílky — /odhlasit je na Vercelu přesměrované sem
+    if (cesta === '/api/odhlaseni' || cesta === '/odhlasit') {
+        try {
+            delete require.cache[require.resolve('./api/odhlaseni.js')];
+            await require('./api/odhlaseni.js')(req, dopln(res));
+        } catch (e) {
+            console.error('api/odhlaseni spadlo:', e);
+            if (!res.headersSent) res.writeHead(500).end('Chyba funkce');
+        }
+        return;
+    }
+
     // kontaktní formulář — pouští se skutečná funkce, včetně hlídky Originu
     if (cesta === '/api/kontakt') {
         try {
