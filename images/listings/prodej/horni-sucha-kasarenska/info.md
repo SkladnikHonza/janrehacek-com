@@ -2,7 +2,7 @@
 type: prodej
 title: Prodej činžovního domu — Horní Suchá, ul. Kasárenská
 status: nova
-price: 13 900 000 Kč
+price: 11 990 000 Kč
 location_short: Horní Suchá — Kasárenská
 location_long: Horní Suchá, ul. Kasárenská
 area: 368
@@ -13,7 +13,7 @@ info_extra:
   Bytových jednotek: 6
   Pozemek: 1 500 m²
   Garáže: 3
-  Cena za m²: 37 000 Kč
+  Cena za m²: 32 000 Kč
   Prohlášení vlastníka: Připraveno
 ---
 

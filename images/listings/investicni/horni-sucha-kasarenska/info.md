@@ -2,8 +2,8 @@
 type: investicni
 title: Investiční činžovní dům — 6 jednotek, Horní Suchá
 status: nova
-price: 13 900 000 Kč
-price_per_sqm: 37 000 Kč/m²
+price: 11 990 000 Kč
+price_per_sqm: 32 000 Kč/m²
 size_total: cca 368 m²
 units: 6
 state: K rekonstrukci
