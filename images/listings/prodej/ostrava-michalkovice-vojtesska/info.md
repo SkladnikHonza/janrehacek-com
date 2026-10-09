@@ -1,7 +1,7 @@
 ---
 type: prodej
 title: Investiční byt 3+kk se zahradou 308 m² a nájemním výnosem — Ostrava
-status: nova
+status: prodano
 price: 3 490 000 Kč
 location_short: Ostrava — Michalkovice
 location_long: Ostrava — Michalkovice, Vojtěšská

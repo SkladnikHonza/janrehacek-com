@@ -1,7 +1,7 @@
 ---
 type: investicni
 title: Investiční byt 3+kk se zahradou 308 m² a nájemním výnosem — Ostrava
-status: nova
+status: prodano
 price: 3 490 000 Kč
 price_per_sqm: 50 000 Kč/m²
 size_total: 69 m²
