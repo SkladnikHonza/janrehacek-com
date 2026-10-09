@@ -1,8 +1,7 @@
 ---
 type: prodej
 title: Prostorný byt 4+1 po rekonstrukci, 80 m² — Ostrava-Poruba
-status: nova
-order: 1
+status: prodano
 price: 7 490 000 Kč
 location_short: Ostrava-Poruba — Oty Synka
 location_long: Ostrava-Poruba, Oty Synka

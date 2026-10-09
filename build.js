@@ -739,10 +739,9 @@ function renderCardBadge(l) {
             extraSpan = `<span>${escapeHtml(String(l.available_from).toUpperCase())}</span>`;
         }
     } else if (status === 'pronajato' || status === 'prodano') {
-        // Closed states: status word replaces the type word
-        const statusLbl = STATUS_CARD_LABEL[status];
-        const statusKey = STATUS_I18N[status];
-        return `                    <div class="listing-card-badge ${klass}"><span data-i18n="${statusKey}">${escapeHtml(statusLbl)}</span></div>`;
+        // Closed states: the word is carried by the stamp across the cover
+        // (renderCoverStamp), so the corner badge would only repeat it.
+        return '';
     } else if (status === 'rezervovano' || status === 'nova') {
         const statusLbl = STATUS_CARD_LABEL[status];
         const statusKey = STATUS_I18N[status];
@@ -783,6 +782,17 @@ function listingUrl(l) {
     return `/${DETAIL_OUTPUT[l.type].outputBase}/${l.slug}`;
 }
 
+/** Red "PRODÁNO" / "PRONAJATO" stamp across the cover of a closed listing.
+ *  Spolu s nim jde na kartu trida is-closed, ktera fotku odbarvi do seda —
+ *  prodana nemovitost se pak v mrizce pozna jeste driv, nez si clovek
+ *  precte jediné slovo. */
+function renderCoverStamp(l) {
+    if (!CLOSED.has(l.status)) return '';
+    const lbl = STATUS_CARD_LABEL[l.status];
+    const key = STATUS_I18N[l.status];
+    return `                    <span class="listing-stamp" data-i18n="${key}">${escapeHtml(lbl)}</span>`;
+}
+
 function renderCard(l, cardTpl) {
     const img = cardImage(l);
     return renderTemplate(cardTpl, {
@@ -797,6 +807,8 @@ function renderCard(l, cardTpl) {
         cover_srcset: img.srcset,
         cover_dims: img.dims,
         cover_alt: escapeHtml(l.title),
+        card_class: CLOSED.has(l.status) ? ' is-closed' : '',
+        cover_stamp: renderCoverStamp(l),
         cover_watermark: l.cover_is_visualization
             ? '                    <span class="listing-watermark listing-watermark-card" aria-hidden="true" data-i18n="listing.detail.visualization_badge">Vizualizace po rekonstrukci</span>'
             : '',
@@ -1429,8 +1441,11 @@ function build() {
         const canonical = SITE_URL + listingUrl(l);
         const og = ogImage(l);
         const isInvest = l.type === 'investicni';
-        const reservedRibbon = l.status === 'rezervovano'
-            ? '<span class="listing-ribbon" data-i18n="listings.status.reserved">REZERVOVÁNO</span>'
+        // Stuha pres uvodni fotku detailu. Krome rezervace i prodano/pronajato —
+        // kdo prijde na stranku z Googlu nebo ze sdileneho odkazu, musi hned
+        // videt, ze uz je po vsem.
+        const statusRibbon = STATUS_CARD_LABEL[l.status] && l.status !== 'nova'
+            ? `<span class="listing-ribbon" data-i18n="${STATUS_I18N[l.status]}">${escapeHtml(STATUS_CARD_LABEL[l.status])}</span>`
             : '';
         const kp = `L.${l.type}.${l.slug}`;   // i18n key prefix for this listing's translatable content
 
@@ -1457,7 +1472,7 @@ function build() {
             og_image_type: og.type,
             cover_src: l.cover ? imgUrl(l, l.cover) : '/images/og-default.jpg',
             cover_filename: l.cover || '',
-            status_ribbon: isInvest ? '' : reservedRibbon,
+            status_ribbon: isInvest ? '' : statusRibbon,
             cover_watermark_class: l.cover_is_visualization ? ' has-watermark' : '',
             cover_watermark_overlay: l.cover_is_visualization
                 ? '    <span class="listing-watermark listing-watermark-hero" aria-hidden="true" data-i18n="listing.detail.visualization_badge">Vizualizace po rekonstrukci</span>'
@@ -1468,7 +1483,7 @@ function build() {
             description_html: renderDescription(l.description, `${kp}.desc`),
             info_panel: isInvest ? renderInvestorInfoPanel(l) : renderInfoPanel(l),
             spec_cards: renderSpecCards(l.specs),
-            gallery_items: renderGallery(l, isInvest ? reservedRibbon : ''),
+            gallery_items: renderGallery(l, isInvest ? statusRibbon : ''),
             // Investicni-only sections
             highlights_section:        isInvest ? renderHighlights(l.highlights, `${kp}.hl`) : '',
             investment_case_section:   isInvest ? renderInvestmentCase(l.investment_case) : '',
@@ -1512,7 +1527,20 @@ function build() {
         const isNabidkaRoot = page.outputBase === 'nabidka' && page.filter === null;
         const isInvestorLanding = page.template === 'investors-landing.html';
 
-        const cardsHtml = filtered.map(l => renderCard(l, cardTpl)).join('\n');
+        // Prodane a pronajate uz jsou diky STATUS_ORDER na konci mrizky.
+        // Pred prvni z nich vlozime delici caru s popiskem, aby bylo videt,
+        // kde aktualni nabidka konci a kde zacina archiv.
+        const kusy = [];
+        let caraVlozena = false;
+        for (const l of filtered) {
+            if (!caraVlozena && CLOSED.has(l.status) && kusy.length) {
+                kusy.push('            <div class="listing-divider" role="separator">'
+                    + '<span data-i18n="listings.divider.closed">Již není v nabídce</span></div>');
+                caraVlozena = true;
+            }
+            kusy.push(renderCard(l, cardTpl));
+        }
+        const cardsHtml = kusy.join('\n');
 
         const outDir = path.join(ROOT, page.outputBase);
         fs.mkdirSync(outDir, { recursive: true });
