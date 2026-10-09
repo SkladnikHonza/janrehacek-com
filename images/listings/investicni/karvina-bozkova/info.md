@@ -1,7 +1,7 @@
 ---
 type: investicni
 title: Investiční byt 3+1, 56 m² — Karviná – Ráj
-status: rezervovano
+status: prodano
 price: 2 420 000 Kč
 size_total: 56 m²
 location_short: Karviná – Ráj
