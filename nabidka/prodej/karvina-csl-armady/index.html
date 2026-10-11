@@ -135,6 +135,10 @@
                         <span class="listing-info-value" data-i18n="T.Po rekonstrukci">Po rekonstrukci</span>
                     </div>
                     <div class="listing-info-row">
+                        <span class="listing-info-label" data-i18n="listings.info.energyClass">Energetická třída</span>
+                        <span class="listing-info-value">G</span>
+                    </div>
+                    <div class="listing-info-row">
                         <span class="listing-info-label" data-i18n="listings.info.location">Lokalita</span>
                         <span class="listing-info-value" data-i18n="T.Karviná, ČSL. armády">Karviná, ČSL. armády</span>
                     </div>
@@ -231,14 +235,65 @@
     </div>
 </section>
 
-<section class="listing-cta-block">
+<section class="listing-cta-block" id="mam-zajem">
     <div class="container">
         <div class="section-eyebrow" data-i18n="listings.detail.cta_eyebrow">Zaujala Vás tato nabídka?</div>
         <h2 data-i18n-html="listings.detail.cta_title">Připravím prohlídku i&nbsp;detailní podklady.</h2>
         <p data-i18n="listings.detail.cta_text">Stačí mi krátká zpráva a já se Vám ozvu obvykle do 24 hodin. Domluvíme termín prohlídky, který Vám sedne.</p>
-        <a href="/contact" class="btn btn-accent" data-i18n="listings.detail.cta_more">Mám zájem o tuto nabídku →</a>
+
+        <!-- Formulář je schválně TADY, ne na /contact. Každý proklik navíc ubere
+             část zájemců, a tohle je nejdražší místo na webu. Nabídku nese
+             formulář vyplněnou rovnou z buildu, takže poptávka vždycky ví,
+             které nemovitosti se týká — i když člověk přišel přímo z Googlu. -->
+        <form class="listing-form" action="/api/kontakt" method="POST">
+            <input type="hidden" name="subject" value="Poptávka: Investiční byt 2+1, 56 m² v osobním vlastnictví — Karviná">
+            <input type="hidden" name="nabidka" value="Investiční byt 2+1, 56 m² v osobním vlastnictví — Karviná — https://www.janrehacek.com/nabidka/prodej/karvina-csl-armady">
+            <input type="hidden" name="interest" value="Prodej nemovitosti">
+            <input type="hidden" name="odkud" value="">
+            <input type="checkbox" name="botcheck" style="display:none !important;" tabindex="-1" autocomplete="off">
+            <input type="hidden" name="trvani" value="">
+
+            <div class="listing-form-row">
+                <div class="form-group">
+                    <label for="lf-name" data-i18n="form.name">Jméno *</label>
+                    <input id="lf-name" type="text" name="name" required autocomplete="name" data-i18n-placeholder="form.name_ph" placeholder="Vaše jméno">
+                </div>
+                <div class="form-group">
+                    <label for="lf-email" data-i18n="form.email">E-mail *</label>
+                    <input id="lf-email" type="email" name="email" required autocomplete="email" data-i18n-placeholder="form.email_ph" placeholder="vase@email.cz">
+                </div>
+                <div class="form-group">
+                    <label for="lf-phone" data-i18n="form.phone">Telefon</label>
+                    <input id="lf-phone" type="tel" name="phone" autocomplete="tel" placeholder="+420 ...">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="lf-message" data-i18n="form.message">Vaše zpráva *</label>
+                <textarea id="lf-message" name="message" required
+                        data-i18n-prefill="listings.detail.form_prefill"
+                        data-nazev="Investiční byt 2+1, 56 m² v osobním vlastnictví — Karviná">Mám zájem o prohlídku: Investiční byt 2+1, 56 m² v osobním vlastnictví — Karviná</textarea>
+            </div>
+            <div class="overeni" hidden></div>
+            <noscript>
+                <p class="form-note">Formulář potřebuje zapnutý JavaScript. Bez něj mi prosím zavolejte
+                    na <a href="tel:+420608177099">+420 608 177 099</a> nebo napište na
+                    <a href="mailto:invest@janrehacek.com">invest@janrehacek.com</a>.</p>
+            </noscript>
+            <div class="listing-form-actions">
+                <button type="submit" class="btn-submit" data-i18n="listings.detail.form_submit">Odeslat poptávku →</button>
+                <a href="tel:+420608177099" class="listing-form-call" data-i18n="listings.detail.call">Nebo zavolejte: +420 608 177 099</a>
+            </div>
+            <p class="form-note" data-i18n-html="form.privacy">Údaje z formuláře použijeme jen k odpovědi na Vaši zprávu. <a href="/ochrana-osobnich-udaju">Ochrana osobních údajů</a></p>
+        </form>
     </div>
 </section>
+
+<!-- Přilepený pruh na mobilu. Kdo se rozhoduje o bytě za miliony, často chce
+     zavolat, ne psát — a telefon byl do teď jen v patičce. -->
+<div class="listing-sticky" aria-hidden="false">
+    <a href="tel:+420608177099" class="listing-sticky-call" data-i18n="listings.detail.sticky_call">Zavolat</a>
+    <a href="#mam-zajem" class="listing-sticky-form" data-i18n="listings.detail.sticky_form">Mám zájem</a>
+</div>
 
 </main>
 
@@ -284,6 +339,7 @@
 
 <script src="/assets/script.js" defer></script>
 <script src="/assets/listings-i18n.js" defer></script>
+<script src="/assets/poptavka.js" defer></script>
     <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>

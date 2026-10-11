@@ -102,6 +102,9 @@ const TYPE_LABEL = { pronajem: 'PRONÁJEM', prodej: 'PRODEJ',     investicni: 'I
 const TYPE_I18N  = { pronajem: 'listings.type.rent', prodej: 'listings.type.sale', investicni: 'listings.type.invest' };
 
 // Status sorting + presentation
+// Nabidky, kterym chybi skutecna trida z PENB a jedou na zakonne nahradni G.
+const chybiPENB = [];
+
 const STATUS_ORDER = ['nova', 'aktivni', 'rezervovano', 'prodano', 'pronajato'];
 const STATUS_CARD_LABEL = {
     nova:         'NOVÁ NABÍDKA',
@@ -290,6 +293,7 @@ const INFO_LABEL_I18N = {
     'Typ stavby':  'listings.info.buildingType',
     'Vlastnictví': 'listings.info.ownership',
     'Stav':        'listings.info.condition',
+    'Energetická třída': 'listings.info.energyClass',
     'Lokalita':    'listings.info.location',
 };
 
@@ -303,6 +307,7 @@ function renderInvestorInfoPanel(l) {
     if (l.size_total)           rows.push(['Celková plocha',       l.size_total,    'listings.info.areaTotal']);
     if (l.units != null && l.units !== '') rows.push(['Bytové jednotky', String(l.units), 'listing.detail.units']);
     if (l.occupancy)            rows.push(['Obsazenost',            l.occupancy,     'listings.info.occupancy']);
+    if (l.energy_class)         rows.push(['Energetická třída',    l.energy_class,  'listings.info.energyClass']);
     if (l.info_extra && typeof l.info_extra === 'object') {
         for (const k of Object.keys(l.info_extra)) rows.push([k, l.info_extra[k]]);
     }
@@ -438,6 +443,7 @@ function renderInfoPanel(l) {
     if (l.building_type)  rows.push(['Typ stavby', l.building_type]);
     if (l.ownership)      rows.push(['Vlastnictví', l.ownership]);
     if (l.condition)      rows.push(['Stav',       l.condition]);
+    if (l.energy_class)   rows.push(['Energetická třída', l.energy_class]);
     if (l.location_long || l.location_short)
         rows.push(['Lokalita', l.location_long || l.location_short]);
     if (l.info_extra && typeof l.info_extra === 'object') {
@@ -1164,6 +1170,17 @@ function readListing(type, slug, errors) {
     }
 
     const str = (v) => (typeof v === 'string' ? v : '');
+
+    // Energeticka trida. Zakon c. 406/2000 Sb., § 7a: pri prodeji i pronajmu
+    // se ukazatele z PENB uvadeji v inzerci. Kdyz vlastnik prukaz nepredlozi,
+    // smi se uvest nejhorsi trida G — tu tedy dosadime, ale nahlas, protoze
+    // na zrekonstruovanem byte zbytecne sraz dojem.
+    let energyClass = str(data.energy_class).trim();
+    if (!energyClass) {
+        energyClass = 'G';
+        chybiPENB.push(`${type}/${slug}`);
+    }
+
     return {
         slug,
         type,
@@ -1183,6 +1200,11 @@ function readListing(type, slug, errors) {
         building_type: str(data.building_type),
         ownership: str(data.ownership),
         condition: str(data.condition),
+        // Trida energeticke narocnosti z PENB. § 7a zakona c. 406/2000 Sb. ukladá
+        // uvest ji v inzerci pri prodeji i pronajmu; kdyz vlastnik prukaz nepredlozi,
+        // uvadi se nejhorsi trida G. Proto se tu nic nedomysli — kdyz pole chybi,
+        // build na to nahlas upozorni a dosadi G.
+        energy_class: energyClass,
         short_description: str(data.short_description),
         info_extra: data.info_extra || null,
         // Investicni-specific frontmatter fields
@@ -1375,8 +1397,13 @@ function buildDist() {
         const src = path.join(ROOT, rel);
         const dest = path.join(DIST_DIR, rel);
         fs.mkdirSync(path.dirname(dest), { recursive: true });
-        if (/\.html$/i.test(rel)) {
-            const out = versionUrls(fs.readFileSync(src, 'utf8'))
+        // Klíč Turnstile se doplňuje do HTML i do assets/poptavka.js — odesílání
+        // formuláře se z contact.html přestěhovalo do toho skriptu, takže
+        // zástupný text je dnes i tam.
+        const jeSkriptPoptavky = rel.replace(/\\/g, '/') === 'assets/poptavka.js';
+        if (/\.html$/i.test(rel) || jeSkriptPoptavky) {
+            const zdroj = fs.readFileSync(src, 'utf8');
+            const out = (jeSkriptPoptavky ? zdroj : versionUrls(zdroj))
                 .replaceAll('__TURNSTILE_SITEKEY__', TURNSTILE);
             fs.writeFileSync(dest, out);
             stats.bytes += Buffer.byteLength(out);
@@ -1472,6 +1499,15 @@ function build() {
             og_image_type: og.type,
             cover_src: l.cover ? imgUrl(l, l.cover) : '/images/og-default.jpg',
             cover_filename: l.cover || '',
+            // Formulář pod nabídkou zná svou nemovitost rovnou z buildu —
+            // nespoléhá na sessionStorage jako ten na /contact, takže poptávka
+            // nese správný byt i u člověka, který přišel přímo z vyhledávače.
+            form_subject: escapeHtml('Poptávka: ' + l.title),
+            form_nabidka: escapeHtml(l.title + ' — ' + canonical),
+            // Do e-mailu s poptávkou, ať se pozná bez otevírání odkazu, o co jde.
+            form_interest: escapeHtml({ investicni: 'Realitní investice', prodej: 'Prodej nemovitosti', pronajem: 'Pronájem' }[l.type] || 'Nemovitost'),
+            form_title: escapeHtml(l.title),
+            form_message: escapeHtml('Mám zájem o prohlídku: ' + l.title),
             status_ribbon: isInvest ? '' : statusRibbon,
             cover_watermark_class: l.cover_is_visualization ? ' has-watermark' : '',
             cover_watermark_overlay: l.cover_is_visualization
@@ -1608,6 +1644,11 @@ function build() {
     checkTranslations(written);
     buildDist();
 
+    if (chybiPENB.length) {
+        console.log(`  ⚠ energetická třída: ${chybiPENB.length} nabídek jede na zákonné náhradní "G"`);
+        for (const x of chybiPENB) console.log(`      ${x}`);
+        console.log('      doplň do info.md "energy_class:" skutečnou třídu z průkazu');
+    }
     console.log('✓ Build complete');
 }
 

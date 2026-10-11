@@ -3131,3 +3131,124 @@ nav.breadcrumbs span { color: var(--text-light); }
 @media (prefers-reduced-motion: reduce) {
     .listing-stamp { transform: translateY(-50%); }
 }
+
+/* ===== FORMULÁŘ PŘÍMO POD NABÍDKOU ===== */
+
+/* Dřív tu bylo jen tlačítko na /contact. Proklik navíc na nejdražším místě
+   webu stál poptávky, takže formulář je teď rovnou tady. */
+.listing-form {
+    max-width: 760px;
+    margin: 32px auto 0;
+    text-align: left;
+}
+.listing-form-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+.listing-form .form-group { margin-bottom: 16px; }
+.listing-form label {
+    display: block;
+    margin-bottom: 6px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    color: var(--text-light);
+}
+.listing-form input,
+.listing-form textarea {
+    width: 100%;
+    padding: 13px 15px;
+    font-family: inherit;
+    font-size: 15px;
+    color: var(--text);
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    transition: border-color 0.15s;
+}
+.listing-form textarea { min-height: 110px; resize: vertical; }
+.listing-form input:focus,
+.listing-form textarea:focus {
+    outline: none;
+    border-color: var(--accent-dark);
+}
+.listing-form-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px 22px;
+    margin-top: 6px;
+}
+.listing-form-call {
+    font-family: 'Manrope', sans-serif;
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--accent-dark);
+    text-decoration: none;
+}
+.listing-form-call:hover { text-decoration: underline; }
+.listing-form .overeni:not([hidden]) { margin: 4px 0 16px; }
+.listing-form .form-note { margin-top: 14px; }
+
+/* Sekce pod nabídkou má tmavé pozadí, takže výchozí šedé popisky by na něm
+   nebyly vidět. Pole samotná zůstávají světlá — tmavý formulář působí jako
+   nepřístupný a lidi do něj píšou hůř. */
+.listing-cta-block .listing-form label { color: #cfcfc6; }
+.listing-cta-block .listing-form .form-note { color: #9c9c94; font-size: 13px; }
+.listing-cta-block .listing-form .form-note a { color: #cfcfc6; }
+.listing-cta-block .listing-form-call { color: var(--accent); }
+
+@media (max-width: 700px) {
+    .listing-form-row { grid-template-columns: 1fr; gap: 0; }
+    .listing-form-actions { flex-direction: column; align-items: stretch; }
+    .listing-form .btn-submit { width: 100%; }
+    .listing-form-call { text-align: center; }
+}
+
+/* ===== PŘILEPENÝ PRUH NA MOBILU ===== */
+
+/* Telefon byl do teď jen v patičce. Kdo se rozhoduje o bytě za miliony,
+   často radši zavolá — tohle mu to dá na dosah palce kdykoli. */
+.listing-sticky { display: none; }
+
+@media (max-width: 860px) {
+    .listing-sticky {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 50;
+        display: flex;
+        gap: 10px;
+        padding: 10px 14px calc(10px + env(safe-area-inset-bottom, 0px));
+        background: rgba(255, 255, 255, 0.94);
+        -webkit-backdrop-filter: saturate(180%) blur(14px);
+        backdrop-filter: saturate(180%) blur(14px);
+        border-top: 1px solid var(--border);
+    }
+    .listing-sticky a {
+        flex: 1;
+        padding: 13px 10px;
+        border-radius: 12px;
+        font-family: 'Manrope', sans-serif;
+        font-size: 15px;
+        font-weight: 600;
+        text-align: center;
+        text-decoration: none;
+    }
+    .listing-sticky-call {
+        background: var(--bg-card);
+        color: var(--text);
+        border: 1px solid var(--border);
+    }
+    .listing-sticky-form {
+        background: var(--accent-dark);
+        color: #fff;
+    }
+    /* Ať pruh nepřekrývá konec patičky — ale jen na stránkách, kde pruh
+       opravdu je. Holé `body` by nechalo mrtvé místo i na výpisu a kontaktu. */
+    body:has(.listing-sticky) { padding-bottom: 72px; }
+}

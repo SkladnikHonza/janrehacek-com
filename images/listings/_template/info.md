@@ -9,6 +9,10 @@ location_long: "Praha 1, Staré Město" # do detail hero + info panelu
 disposition: "3+kk"
 area: 84                              # m² (jen číslo, jednotka se přidá automaticky)
 floor: "4. patro z 6"
+energy_class: "C"                     # třída z PENB — POVINNÉ v inzerci podle § 7a
+                                      # zákona č. 406/2000 Sb. Když průkaz není,
+                                      # nech prázdné: build dosadí zákonné „G“
+                                      # a při každém sestavení na to upozorní.
 short_description: "1-2 věty pro kartu na /nabidka/ — co je hlavní benefit nabídky."
 
 # ===== ROZŠIŘUJÍCÍ ŘÁDKY V INFO PANELU (volitelné) =====
