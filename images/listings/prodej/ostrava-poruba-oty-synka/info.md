@@ -11,6 +11,10 @@ floor: Přízemí
 building_type: Panel
 ownership: Osobní
 condition: Po rekonstrukci
+# Třída z PENB — povinný údaj v inzerci podle § 7a zákona č. 406/2000 Sb.
+# "G" je zákonná náhrada, když vlastník průkaz nepředložil. Až průkaz
+# přijde, přepsat skutečnou třídou.
+energy_class: "G"
 short_description: Světlý byt 4+1 (80 m²) po rekonstrukci v žádané Ostravě-Porubě — ideální rodinné bydlení připravené k nastěhování. Jako bonus úložná mandlovna 11 m² navíc.
 cover_is_visualization: false
 info_extra:

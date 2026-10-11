@@ -1,6 +1,10 @@
 ---
 type: investicni
 title: Bytový dům se 4 jednotkami, zahradou a parkováním — Petřvald
+# Třída z PENB — povinný údaj v inzerci podle § 7a zákona č. 406/2000 Sb.
+# "G" je zákonná náhrada, když vlastník průkaz nepředložil. Až průkaz
+# přijde, přepsat skutečnou třídou.
+energy_class: "G"
 short_description: Bytový dům se 4 bytovými jednotkami, vlastní zahradou a parkovacím stáním v klidné části Petřvaldu. Připravené prohlášení vlastníka, potenciál rozprodeje po jednotkách a hrubá marže až 14,1 mil. Kč.
 status: aktivni
 location_short: Petřvald — Josefa Rohla

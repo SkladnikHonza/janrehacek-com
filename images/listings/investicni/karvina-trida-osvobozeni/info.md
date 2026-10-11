@@ -6,6 +6,10 @@ price: 2 290 000 Kč
 size_total: 59 m² (vč. sklepa)
 location_short: Karviná — Třída Osvobození
 location_long: Karviná, Třída Osvobození
+# Třída z PENB — povinný údaj v inzerci podle § 7a zákona č. 406/2000 Sb.
+# "G" je zákonná náhrada, když vlastník průkaz nepředložil. Až průkaz
+# přijde, přepsat skutečnou třídou.
+energy_class: "G"
 short_description: Byt 2+1 (59 m²) v osobním vlastnictví v Karviné s ročním výnosem 7,28 %, měsíčním nájmem a kompletní správou — pasivní příjem bez starostí.
 cover_is_visualization: false
 cta: Mám zájem o tuto příležitost

@@ -14,6 +14,10 @@ floor: ""
 building_type: "Panel"
 ownership: "Osobní"
 condition: "Po kompletní rekonstrukci"
+# Třída z PENB — povinný údaj v inzerci podle § 7a zákona č. 406/2000 Sb.
+# "G" je zákonná náhrada, když vlastník průkaz nepředložil. Až průkaz
+# přijde, přepsat skutečnou třídou.
+energy_class: "G"
 short_description: "Moderní byt 2+1 v Havířově po kompletní rekonstrukci, ihned k nastěhování. Pronájem přímo od majitele bez provize."
 ---
 

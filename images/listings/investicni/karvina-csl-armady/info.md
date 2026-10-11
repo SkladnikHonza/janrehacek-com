@@ -1,13 +1,17 @@
 ---
 type: investicni
 title: Investiční byt 2+1, 56 m² v osobním vlastnictví — Karviná
-status: nova
+status: prodano
 price: 2 390 000 Kč
 size_total: 56 m²
 state: Po rekonstrukci
 occupancy: Dlouhodobě pronajato
 location_short: Karviná — ČSL. armády
 location_long: Karviná, ČSL. armády
+# Třída z PENB — povinný údaj v inzerci podle § 7a zákona č. 406/2000 Sb.
+# "G" je zákonná náhrada, když vlastník průkaz nepředložil. Až průkaz
+# přijde, přepsat skutečnou třídou.
+energy_class: "D"
 short_description: Investiční byt 2+1 (56 m²) v osobním vlastnictví v Karviné, dlouhodobě pronajatý — okamžitý výnos 7,28 % p.a. bez starostí.
 cover_is_visualization: false
 cta: Mám zájem o tuto příležitost

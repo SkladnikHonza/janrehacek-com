@@ -11,6 +11,10 @@ floor: 5. NP
 building_type: Panel
 ownership: Osobní
 condition: Velmi dobrý stav
+# Třída z PENB — povinný údaj v inzerci podle § 7a zákona č. 406/2000 Sb.
+# "G" je zákonná náhrada, když vlastník průkaz nepředložil. Až průkaz
+# přijde, přepsat skutečnou třídou.
+energy_class: "G"
 short_description: Byt 3+1 (56 m²) v Karviné – Ráji, panelový dům, velmi dobrý stav. Roční výnos až 7,28 % a možnost kompletní správy — pasivní příjem bez starostí.
 cover_is_visualization: false
 info_extra:

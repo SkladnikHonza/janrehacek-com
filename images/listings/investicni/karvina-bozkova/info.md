@@ -6,6 +6,10 @@ price: 2 420 000 Kč
 size_total: 56 m²
 location_short: Karviná – Ráj
 location_long: Karviná – Ráj
+# Třída z PENB — povinný údaj v inzerci podle § 7a zákona č. 406/2000 Sb.
+# "G" je zákonná náhrada, když vlastník průkaz nepředložil. Až průkaz
+# přijde, přepsat skutečnou třídou.
+energy_class: "G"
 short_description: Byt 3+1 (56 m²) v Karviné – Ráji, panelový dům, velmi dobrý stav. Roční výnos až 7,28 % a možnost kompletní správy — pasivní příjem bez starostí.
 cover_is_visualization: false
 cta: Mám zájem o tuto příležitost

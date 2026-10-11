@@ -9,6 +9,10 @@ state: Po rekonstrukci
 occupancy: Dlouhodobě pronajato
 location_short: Ostrava — Michalkovice
 location_long: Ostrava — Michalkovice, Vojtěšská
+# Třída z PENB — povinný údaj v inzerci podle § 7a zákona č. 406/2000 Sb.
+# "G" je zákonná náhrada, když vlastník průkaz nepředložil. Až průkaz
+# přijde, přepsat skutečnou třídou.
+energy_class: "G"
 short_description: Družstevní byt 3+kk se zahradou v Ostravě-Michalkovicích, dlouhodobě pronajatý — vydělává od prvního dne. Čistý nájem 10 900 Kč měsíčně a potenciál růstu hodnoty.
 cover_is_visualization: false
 cta: Domluvit prohlídku

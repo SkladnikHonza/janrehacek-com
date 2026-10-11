@@ -1175,11 +1175,8 @@ function readListing(type, slug, errors) {
     // se ukazatele z PENB uvadeji v inzerci. Kdyz vlastnik prukaz nepredlozi,
     // smi se uvest nejhorsi trida G — tu tedy dosadime, ale nahlas, protoze
     // na zrekonstruovanem byte zbytecne sraz dojem.
-    let energyClass = str(data.energy_class).trim();
-    if (!energyClass) {
-        energyClass = 'G';
-        chybiPENB.push(`${type}/${slug}`);
-    }
+    let energyClass = str(data.energy_class).trim() || 'G';
+    if (energyClass.toUpperCase() === 'G') chybiPENB.push(`${type}/${slug}`);
 
     return {
         slug,
@@ -1645,9 +1642,9 @@ function build() {
     buildDist();
 
     if (chybiPENB.length) {
-        console.log(`  ⚠ energetická třída: ${chybiPENB.length} nabídek jede na zákonné náhradní "G"`);
+        console.log(`  ⚠ energetická třída "G" u ${chybiPENB.length} nabídek — tedy „průkaz nedoložen"`);
         for (const x of chybiPENB) console.log(`      ${x}`);
-        console.log('      doplň do info.md "energy_class:" skutečnou třídu z průkazu');
+        console.log('      až průkaz přijde, přepiš "energy_class:" v info.md skutečnou třídou');
     }
     console.log('✓ Build complete');
 }

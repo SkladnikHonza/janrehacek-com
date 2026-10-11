@@ -7,6 +7,10 @@ location_short: Horní Suchá — Kasárenská
 location_long: Horní Suchá, ul. Kasárenská
 area: 368
 condition: K rekonstrukci
+# Třída z PENB — povinný údaj v inzerci podle § 7a zákona č. 406/2000 Sb.
+# "G" je zákonná náhrada, když vlastník průkaz nepředložil. Až průkaz
+# přijde, přepsat skutečnou třídou.
+energy_class: "G"
 short_description: Činžovní dům se 6 bytovými jednotkami v Horní Suché. Zpracované Prohlášení vlastníka, potenciál rozprodeje po jednotkách i stabilní nájemní výnos.
 cover_is_visualization: false
 info_extra:
