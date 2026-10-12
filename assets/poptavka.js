@@ -91,6 +91,45 @@
     } catch (e) {}
   }
 
+  // Formulare, ktere sbiraji vic nez jmeno a zpravu (treba odhad ceny), maji
+  // svoje pole oznacena data-souhrn="Popisek". API bere jen pevnou sadu poli,
+  // takze se tohle pred odeslanim slozi do zpravy — jinak by se to na server
+  // vubec nedostalo a kvuli kazdemu novemu formulari by se musela menit
+  // kontaktni funkce.
+  function slozSouhrn(form) {
+    var cil = form.querySelector('[data-souhrn-cil]');
+    if (!cil) return;
+    var pole = form.querySelectorAll('[data-souhrn]');
+    if (!pole.length) return;
+    var radky = [];
+    for (var i = 0; i < pole.length; i++) {
+      var hodnota = String(pole[i].value || '').trim();
+      if (!hodnota) continue;
+      radky.push(pole[i].getAttribute('data-souhrn') + ': ' + hodnota);
+    }
+    if (!radky.length) return;
+    // Poznamka uzivatele zustava pod souhrnem. Pri opakovanem odeslani
+    // (treba po chybe) se souhrn nesmi nalepit dvakrat.
+    var poznamka = String(cil.value || '').trim();
+    var deli = '\n\n— — —\n';
+    var kus = poznamka.indexOf(deli);
+    if (kus !== -1) poznamka = poznamka.slice(kus + deli.length).trim();
+    cil.value = radky.join('\n') + (poznamka ? deli + poznamka : '');
+
+    // Do predmetu e-mailu jeste strucne, o co jde — v doruc. poste je pak
+    // poznat „Odhad ceny: Byt 3+1, 75 m², Ostrava" od desitky stejnych radku.
+    var predmet = form.querySelector('[name="subject"][data-predmet-zaklad]');
+    if (!predmet) return;
+    var kusy = [];
+    var vybrane = form.querySelectorAll('[data-predmet]');
+    for (var j = 0; j < vybrane.length; j++) {
+      var h = String(vybrane[j].value || '').trim();
+      if (h) kusy.push(vybrane[j].getAttribute('data-predmet').replace('{}', h));
+    }
+    predmet.value = predmet.getAttribute('data-predmet-zaklad')
+      + (kusy.length ? ': ' + kusy.join(', ') : '');
+  }
+
   function obsluz(form) {
     var nacteno = Date.now();
     zapniTurnstile(form.querySelector('.overeni'));
@@ -103,6 +142,7 @@
 
     form.addEventListener('submit', function (e) {
       e.preventDefault();
+      slozSouhrn(form);
       var mereni = form.querySelector('[name="trvani"]');
       if (mereni) mereni.value = String(Date.now() - nacteno);
       var data = new FormData(form);
