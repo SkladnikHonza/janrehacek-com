@@ -2,3 +2,8 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.janrehacek.com/sitemap.xml
+
+# Krátké shrnutí webu pro jazykové modely (llmstxt.org).
+# Není to standard, který by někdo vynucoval — je to jen ukazatel pro ty,
+# kdo ho hledají, a stojí jeden řádek.
+# llms: https://www.janrehacek.com/llms.txt

@@ -1265,6 +1265,246 @@ function loadListings() {
     return listings;
 }
 
+// ===== llms.txt =====
+//
+// PROČ: jazykové modely dnes odpovídají na dotazy typu „kdo je dobrý makléř
+// v Ostravě". Když na webu není krátké, strojově čitelné shrnutí, musí si ho
+// model poskládat z marketingových nadpisů — nebo si tě nevybere vůbec.
+// Soubor se skládá z toho, co na webu už je, ne z druhého popisu, co zastará.
+
+function llmsTxt(listings) {
+    const aktivni = listings.filter((l) => AVAILABLE.has(l.status) || l.status === 'rezervovano');
+    const prodane = listings.filter((l) => CLOSED.has(l.status));
+    const unikatni = (ls) => [...new Map(ls.map((l) => [l.slug, l])).values()];
+
+    const radek = (l) => {
+        const kde = l.location_long || l.location_short;
+        const stav = l.status === 'rezervovano' ? ' (rezervováno)' : '';
+        return `- [${l.title}](${SITE_URL}${listingUrl(l)})${stav}: ${l.price}, ${kde}. ${l.short_description}`;
+    };
+
+    const nabidka = unikatni(aktivni).length
+        ? unikatni(aktivni).map(radek).join('\n')
+        : '(momentálně žádná aktivní nabídka)';
+
+    return `# Jan Řeháček
+
+> Realitní makléř a investor z Ostravy. Prodej a pronájem bytů, domů a činžovních
+> domů na Ostravsku a Karvinsku, investiční příležitosti pro klienty, rekonstrukce
+> přes vlastní prověřené řemeslníky a platforma Housio na správu pronájmu.
+
+Provozovatel: US Europe Group s.r.o., IČO 06779808, DIČ CZ06779808, Třebovická 5050/78, 722 00 Ostrava, Česko.
+Kontakt: invest@janrehacek.com · +420 608 177 099
+Web: ${SITE_URL}
+Působnost: Ostrava, Karviná, Havířov, Horní Suchá, Petřvald a okolí (Moravskoslezský kraj).
+Jazyky webu: čeština, slovenština, angličtina, němčina, francouzština, italština, španělština, polština, ruština, japonština, čínština.
+
+## Co dělám
+
+- **Prodej a pronájem nemovitostí** na Ostravsku a Karvinsku — byty, rodinné a činžovní domy, pozemky.
+- **Odhad ceny nemovitosti zdarma** (${SITE_URL}/odhad-ceny): tržní odhad z realizovaných prodejů v okolí, ručně, do dvou pracovních dnů. Není to znalecký posudek — ten pro banku, dědictví nebo rozvod smí vystavit jen soudní znalec.
+- **Investiční příležitosti** (${SITE_URL}/investors): nemovitosti vybrané pro výnos, s čísly a investičním záměrem.
+- **Rekonstrukce** (${SITE_URL}/rekonstrukce): zednické práce, elektroinstalace, koupelny na klíč, podlahy, čištění fasád — přes prověřené živnostníky, se kterými dlouhodobě spolupracuju.
+- **Housio** (https://www.housio.app): vlastní aplikace na správu pronájmu — nemovitosti, nájemníci, smlouvy, platby, revize.
+
+## Aktuální nabídka
+
+${nabidka}
+
+## Hlídací pes
+
+Kdo mezi aktuálními nabídkami nenajde to svoje, může si na ${SITE_URL}/nabidka nechat
+poslat upozornění, jakmile přijde něco, co odpovídá jeho zadání.
+
+## Prodané a pronajaté
+
+Dřívější obchody zůstávají na webu pod čarou „Již není v nabídce“: ${prodane.length ? unikatni(prodane).length : 0} nemovitostí.
+
+## Stránky
+
+- [Úvod](${SITE_URL}/)
+- [O mně](${SITE_URL}/about)
+- [Služby](${SITE_URL}/services)
+- [Odhad ceny zdarma](${SITE_URL}/odhad-ceny)
+- [Rekonstrukce](${SITE_URL}/rekonstrukce)
+- [Nabídka nemovitostí](${SITE_URL}/nabidka)
+- [Pro investory](${SITE_URL}/investors)
+- [Pro makléře](${SITE_URL}/pro-maklere)
+- [Reference](${SITE_URL}/references)
+- [Housio](${SITE_URL}/housio)
+- [Kontakt](${SITE_URL}/contact)
+- [Ochrana osobních údajů](${SITE_URL}/ochrana-osobnich-udaju)
+`;
+}
+
+// ===== STRUKTUROVANÁ DATA RUČNĚ PSANÝCH STRÁNEK =====
+//
+// PROČ TO SKLÁDÁ BUILD: adresa, telefon a oblast působení se dřív neopakovaly
+// nikde, protože JSON-LD byl jen na dvou stránkách z devíti. Opisovat je do
+// sedmi dalších ručně znamená, že se po první změně telefonu rozejdou.
+// Tady je jeden zdroj a build je rozsype do značek JSONLD:START/END.
+//
+// Makléř je `RealEstateAgent` (podtyp LocalBusiness) — právě podle něj skládá
+// Google místní výsledky. Osoba zůstává zvlášť a je na firmu navázaná.
+
+const OSOBA = `${SITE_URL}/#jan`;
+const MAKLER = `${SITE_URL}/#makler`;
+const WEB = `${SITE_URL}/#web`;
+
+// Odkazy na profily jinde. Google je používá k propojení téže entity —
+// čím víc ověřitelných míst, tím jistější si je, že jde pořád o jednoho člověka.
+// Jen profily TÉHOŽ člověka. facebook.com/housioapp je stránka Housia,
+// ne Janův profil — do sameAs nepatří, Google by tím dvě různé entity slepil
+// v jednu. Až přibude LinkedIn nebo vlastní FB stránka, patří sem.
+const PROFILY = [
+    'https://www.instagram.com/skladnikhonza',
+];
+
+// Kraj není město — jako City by to byl nesmysl, který si Google přebere po svém.
+const PUSOBNOST = [
+    ...['Ostrava', 'Karviná', 'Havířov', 'Horní Suchá', 'Petřvald'].map((n) => ({ '@type': 'City', name: n })),
+    { '@type': 'AdministrativeArea', name: 'Moravskoslezský kraj' },
+];
+
+function zakladniUzly() {
+    return [
+        {
+            '@type': 'RealEstateAgent',
+            '@id': MAKLER,
+            name: 'Jan Řeháček — reality a investice',
+            legalName: 'US Europe Group s.r.o.',
+            identifier: '06779808',
+            vatID: 'CZ06779808',
+            url: `${SITE_URL}/`,
+            image: `${SITE_URL}/images/jan-rehacek.jpg`,
+            telephone: '+420608177099',
+            email: 'invest@janrehacek.com',
+            address: {
+                '@type': 'PostalAddress',
+                streetAddress: 'Třebovická 5050/78',
+                postalCode: '722 00',
+                addressLocality: 'Ostrava',
+                addressCountry: 'CZ',
+            },
+            areaServed: PUSOBNOST,
+            founder: { '@id': OSOBA },
+            sameAs: PROFILY,
+        },
+        {
+            '@type': 'Person',
+            '@id': OSOBA,
+            name: 'Jan Řeháček',
+            url: `${SITE_URL}/`,
+            image: `${SITE_URL}/images/jan-rehacek.jpg`,
+            jobTitle: 'Investor a realitní expert',
+            description: 'Investor, realitní expert a zakladatel platformy pro správu nemovitostí Housio.',
+            email: 'invest@janrehacek.com',
+            telephone: '+420608177099',
+            knowsAbout: ['Investiční nemovitosti', 'Správa nemovitostí', 'Nájemní bydlení', 'Rekonstrukce bytů'],
+            worksFor: { '@id': MAKLER },
+            sameAs: PROFILY,
+        },
+        {
+            '@type': 'WebSite',
+            '@id': WEB,
+            url: `${SITE_URL}/`,
+            name: 'Jan Řeháček',
+            inLanguage: 'cs',
+            publisher: { '@id': OSOBA },
+        },
+    ];
+}
+
+function sluzba(nazev, popis, zdarma = false) {
+    return {
+        '@type': 'Service',
+        name: nazev,
+        description: popis,
+        provider: { '@id': MAKLER },
+        areaServed: PUSOBNOST,
+        ...(zdarma ? { offers: { '@type': 'Offer', price: 0, priceCurrency: 'CZK' } } : {}),
+    };
+}
+
+// Co se vysype na kterou stránku. Typ WebPage dostane každá — drobečky
+// a provázání na firmu dávají vyhledávači kontext i tam, kde nic dalšího není.
+const STRANKY_JSONLD = {
+    'index.html': { cesta: '/', nazev: 'Jan Řeháček — investor a realitní expert',
+        popis: 'Investiční nemovitosti, správa portfolia a rekonstrukce na Ostravsku a Karvinsku.' },
+    'about.html': { cesta: '/about', nazev: 'O mně', typ: 'AboutPage',
+        popis: 'Příběh, čísla a vize za jedním jménem.' },
+    'services.html': { cesta: '/services', nazev: 'Služby',
+        popis: 'Chytrý nákup, růst hodnoty portfolia, mentoring, stavební práce a investiční poradenství.',
+        navic: () => [
+            sluzba('Investiční poradenství', 'Výběr, posouzení a nákup investiční nemovitosti.'),
+            sluzba('Správa nemovitostí', 'Vedení portfolia, nájemníci, smlouvy a výnosnost.'),
+            sluzba('Mentoring pro investory', 'Jak vyhodnotit příležitost a spočítat riziko.'),
+        ] },
+    'references.html': { cesta: '/references', nazev: 'Reference',
+        popis: 'Co o spolupráci říkají klienti.' },
+    'rekonstrukce.html': { cesta: '/rekonstrukce', nazev: 'Rekonstrukce bytů',
+        popis: 'Zednické práce, elektroinstalace, koupelny na klíč, podlahy i čištění fasád.',
+        navic: () => [sluzba('Rekonstrukce bytů a domů',
+            'Zednické práce, elektroinstalace, koupelny na klíč, podlahy a čištění fasád na Ostravsku a Karvinsku.')] },
+    'odhad-ceny.html': { cesta: '/odhad-ceny', nazev: 'Odhad ceny nemovitosti zdarma',
+        popis: 'Kolik je vaše nemovitost doopravdy. Odhad zdarma a nezávazně do dvou pracovních dnů.',
+        navic: () => [sluzba('Odhad ceny nemovitosti',
+            'Odhad tržní ceny bytu, domu nebo pozemku z realizovaných prodejů v okolí. Zdarma a nezávazně.', true)] },
+    'contact.html': { cesta: '/contact', nazev: 'Kontakt', typ: 'ContactPage',
+        popis: 'E-mail, telefon a formulář.' },
+    'pro-maklere.html': { cesta: '/pro-maklere', nazev: 'Pro makléře',
+        popis: 'Partnerský program pro realitní makléře.' },
+    'housio.html': { cesta: '/housio', nazev: 'Housio',
+        popis: 'Platforma pro správu pronájmu nemovitostí.',
+        navic: () => [{
+            '@type': 'SoftwareApplication',
+            name: 'Housio',
+            applicationCategory: 'BusinessApplication',
+            operatingSystem: 'Web, iOS, Android',
+            url: 'https://www.housio.app',
+            author: { '@id': OSOBA },
+            offers: { '@type': 'Offer', price: 0, priceCurrency: 'CZK' },
+        }] },
+};
+
+function drobecky(cesta, nazev) {
+    const polozky = [{ '@type': 'ListItem', position: 1, name: 'Domů', item: `${SITE_URL}/` }];
+    if (cesta !== '/') polozky.push({ '@type': 'ListItem', position: 2, name: nazev, item: `${SITE_URL}${cesta}` });
+    return { '@type': 'BreadcrumbList', itemListElement: polozky };
+}
+
+function updateJsonLd() {
+    const re = /(<!-- JSONLD:START -->)[\s\S]*?([ \t]*)(<!-- JSONLD:END -->)/;
+    let zmeneno = 0, celkem = 0;
+    for (const [soubor, cfg] of Object.entries(STRANKY_JSONLD)) {
+        const cesta = path.join(ROOT, soubor);
+        if (!fs.existsSync(cesta)) { console.warn(`  ⚠ ${soubor}: stránka neexistuje`); continue; }
+        const src = fs.readFileSync(cesta, 'utf8');
+        if (!re.test(src)) { console.warn(`  ⚠ ${soubor}: značky JSONLD:START/END nenalezeny`); continue; }
+
+        const graf = [
+            ...zakladniUzly(),
+            {
+                '@type': cfg.typ || 'WebPage',
+                '@id': `${SITE_URL}${cfg.cesta}#stranka`,
+                url: `${SITE_URL}${cfg.cesta === '/' ? '/' : cfg.cesta}`,
+                name: cfg.nazev,
+                description: cfg.popis,
+                inLanguage: 'cs',
+                isPartOf: { '@id': WEB },
+                about: { '@id': MAKLER },
+            },
+            drobecky(cfg.cesta, cfg.nazev),
+            ...(cfg.navic ? cfg.navic() : []),
+        ];
+        const blok = `<script type="application/ld+json">\n${JSON.stringify({ '@context': 'https://schema.org', '@graph': graf }, null, 1)}\n</script>`;
+        const out = src.replace(re, (m, start, indent, end) => `${start}\n${blok}\n${indent}${end}`);
+        celkem++;
+        if (out !== src) { fs.writeFileSync(cesta, out); zmeneno++; }
+    }
+    console.log(`  → strukturovaná data: ${celkem} stránek${zmeneno ? ` (${zmeneno} změněno)` : ' beze změny'}`);
+}
+
 /**
  * Homepage: replace everything between <!-- NABIDKY:START --> and <!-- NABIDKY:END -->
  * with cards of up to 3 available investment listings. Writes only when something changed.
@@ -1621,6 +1861,13 @@ function build() {
 
     // Homepage featured investment cards
     if (updateHomepage(listings, cardTpl)) written.push(HOMEPAGE_PATH);
+
+    // Strukturovaná data ručně psaných stránek
+    updateJsonLd();
+
+    // llms.txt — krátké shrnutí pro jazykové modely
+    fs.writeFileSync(path.join(ROOT, 'llms.txt'), llmsTxt(listings));
+    console.log(`  → llms.txt (${(llmsTxt(listings).length / 1024).toFixed(1)} kB)`);
 
     // Sitemap — no lastmod/changefreq/priority (Google ignores the latter two;
     // a build date on every URL would be a false "changed" signal).
