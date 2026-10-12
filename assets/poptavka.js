@@ -151,16 +151,39 @@
       if (btn) { btn.disabled = true; btn.textContent = '…'; }
       var hotovo = function () { if (btn) { btn.disabled = false; btn.textContent = original; } };
 
-      fetch('/api/kontakt', {
+      fetch(form.getAttribute('action'), {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(Object.fromEntries(data)),
       }).then(function (r) {
-        // 503 = na serveru zatím není klíč k Resendu; 404 = adresa ještě neexistuje
-        if (r.status === 503 || r.status === 404) { hotovo(); presEmail(data); return; }
+        // 503 = na serveru zatím chybí klíč nebo databáze; 404 = adresa neexistuje.
+        // U kontaktních formulářů se poptávka zachrání otevřením e-mailu —
+        // u přihlášky k hlídacímu psovi by z toho byla zmatená prázdná zpráva,
+        // takže ta si řekne data-bez-zalohy a dostane obyčejnou hlášku.
+        if (r.status === 503 || r.status === 404) {
+          hotovo();
+          if (form.hasAttribute('data-bez-zalohy')) {
+            return r.json().catch(function () { return null; }).then(function (json) {
+              alert(json && json.chyba ? json.chyba
+                : tr('contact.error', 'Zprávu se nepodařilo odeslat. Zkuste to prosím znovu nebo napište přímo na invest@janrehacek.com.'));
+            });
+          }
+          presEmail(data);
+          return;
+        }
         return r.json().then(function (json) {
-          // Vlastní stránka s poděkováním → odeslané poptávky jdou spočítat v analytice
-          if (r.ok && json && json.ok) { location.href = '/dekuji'; return; }
+          // Vlastní stránka s poděkováním → odeslané poptávky jdou spočítat
+          // v analytice. Formulář s data-uspech místo toho poděkuje na místě.
+          if (r.ok && json && json.ok) {
+            var text = form.getAttribute('data-uspech');
+            if (!text) { location.href = '/dekuji'; return; }
+            var hotovoBox = document.createElement('p');
+            hotovoBox.className = 'form-hotovo';
+            hotovoBox.setAttribute('role', 'status');
+            hotovoBox.textContent = tr(form.getAttribute('data-uspech-klic') || '', text);
+            form.parentNode.replaceChild(hotovoBox, form);
+            return;
+          }
           hotovo();
           // Token Turnstile je jednorázový — po neúspěchu se musí vyrobit nový,
           // jinak by druhý pokus skončil stejně.
@@ -171,6 +194,6 @@
     });
   }
 
-  var formulare = document.querySelectorAll('form[action="/api/kontakt"]');
+  var formulare = document.querySelectorAll('form[action^="/api/"]');
   for (var i = 0; i < formulare.length; i++) obsluz(formulare[i]);
 })();

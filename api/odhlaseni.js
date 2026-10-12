@@ -15,39 +15,35 @@
 // GET   — člověk klikl na odkaz, ukáže se potvrzovací stránka
 // POST  — odhlášení na jedno kliknutí přímo z Gmailu (List-Unsubscribe-Post)
 
-const { createHmac, timingSafeEqual } = require('node:crypto');
+const { adresaZOdkazu, platnySeznam } = require('../lib/odhlaseni');
 
-const TAJEMSTVI = process.env.ODHLASENI_TAJEMSTVI;
-
-function adresaZOdkazu(e, p) {
-    if (!e || !p || !TAJEMSTVI) return null;
-    let email;
-    try { email = Buffer.from(String(e), 'base64url').toString('utf8').trim().toLowerCase(); }
-    catch { return null; }
-    if (!/^[^@\s]+@[^@\s.]+\.[^@\s]+$/.test(email)) return null;
-    const ocekavany = createHmac('sha256', TAJEMSTVI).update(email).digest('base64url').slice(0, 16);
-    const a = Buffer.from(String(p));
-    const b = Buffer.from(ocekavany);
-    // Porovnání konstantní dobou — ať z délky odpovědi nejde podpis uhádnout.
-    if (a.length !== b.length || !timingSafeEqual(a, b)) return null;
-    return email;
-}
-
-async function zapis(email) {
+async function supabase(cesta, telo, metoda = 'POST') {
     const url = process.env.SUPABASE_URL?.replace(/\/+$/, '');
     const klic = process.env.SUPABASE_SERVICE_KEY;
     if (!url || !klic) throw new Error('Chybí SUPABASE_URL nebo SUPABASE_SERVICE_KEY.');
-    const odpoved = await fetch(`${url}/rest/v1/zakazane?on_conflict=email`, {
-        method: 'POST',
+    const odpoved = await fetch(`${url}/rest/v1/${cesta}`, {
+        method: metoda,
         headers: {
             apikey: klic,
             Authorization: `Bearer ${klic}`,
             'Content-Type': 'application/json',
             Prefer: 'resolution=merge-duplicates,return=minimal',
         },
-        body: JSON.stringify([{ email, duvod: 'odhlášení z e-mailu', kdy: new Date().toISOString() }]),
+        body: JSON.stringify(telo),
     });
     if (!odpoved.ok) throw new Error(`Supabase ${odpoved.status}: ${(await odpoved.text()).slice(0, 200)}`);
+}
+
+// Rozesílka z CRM a hlídací pes jsou dva různé seznamy. Odhlášení z jednoho
+// nesmí tiše vypnout druhý — kdo si nechá hlídat nabídky, nechce tím říct,
+// že už nikdy nechce slyšet o ničem jiném, a naopak.
+async function zapis(email, seznam) {
+    if (seznam === 'pes') {
+        return supabase(`hlidaci_pes?email=eq.${encodeURIComponent(email)}`,
+            { aktivni: false, odhlaseno_kdy: new Date().toISOString() }, 'PATCH');
+    }
+    return supabase('zakazane?on_conflict=email',
+        [{ email, duvod: 'odhlášení z e-mailu', kdy: new Date().toISOString() }]);
 }
 
 const STRANKA = (nadpis, text) => `<!DOCTYPE html>
@@ -80,6 +76,7 @@ module.exports = async (req, res) => {
     }
     const dotaz = new URL(req.url, 'http://localhost').searchParams;
     const email = adresaZOdkazu(dotaz.get('e'), dotaz.get('p'));
+    const seznam = platnySeznam(dotaz.get('s'));
 
     // Jednokliknutí z Gmailu — odpověď nikdo nečte, stačí stavový kód.
     const jenStav = req.method === 'POST';
@@ -92,7 +89,7 @@ module.exports = async (req, res) => {
     }
 
     try {
-        await zapis(email);
+        await zapis(email, seznam);
     } catch (e) {
         console.error('Odhlášení se nepodařilo zapsat:', e.message);
         if (jenStav) return res.status(500).end('Nepodařilo se uložit.');
@@ -103,6 +100,10 @@ module.exports = async (req, res) => {
 
     if (jenStav) return res.status(200).end('OK');
     res.setHeader('Content-Type', 'text/html; charset=utf-8');
-    return res.status(200).end(STRANKA('Hotovo, už se neozvu',
-        `Adresu <strong>${email.replace(/&/g, '&amp;').replace(/</g, '&lt;')}</strong> jsem vyřadil ze seznamu. Žádnou další zprávu Vám neposílám.`));
+    const bezpecny = email.replace(/&/g, '&amp;').replace(/</g, '&lt;');
+    return res.status(200).end(seznam === 'pes'
+        ? STRANKA('Hotovo, nabídky už hlídat nebudu',
+            `Adresu <strong>${bezpecny}</strong> jsem z hlídacího psa vyřadil. O nových nabídkách Vám psát nebudu.`)
+        : STRANKA('Hotovo, už se neozvu',
+            `Adresu <strong>${bezpecny}</strong> jsem vyřadil ze seznamu. Žádnou další zprávu Vám neposílám.`));
 };

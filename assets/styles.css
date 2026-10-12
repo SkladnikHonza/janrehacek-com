@@ -3374,3 +3374,104 @@ nav.breadcrumbs span { color: var(--text-light); }
     .odhad-grid { grid-template-columns: 1fr; }
     .odhad-form .btn-submit { width: 100%; }
 }
+
+/* ===== HLÍDACÍ PES ===== */
+
+/* Záchranná síť pod výpisem nabídek. Aktivních nabídek je pár, takže většina
+   návštěvníků odejde s prázdnou — tohle z nich udělá kontakt. */
+.pes-sekce {
+    padding: 8px 0 72px;
+}
+.pes-box {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 44px;
+    align-items: start;
+    padding: 40px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--bg-card);
+}
+.pes-title {
+    font-family: 'Geist', sans-serif;
+    font-size: clamp(24px, 2.6vw, 32px);
+    font-weight: 600;
+    letter-spacing: -1px;
+    line-height: 1.15;
+    margin-bottom: 12px;
+}
+.pes-text p { color: var(--text-muted); line-height: 1.7; }
+
+.pes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+.pes-email { grid-column: 1 / -1; }
+.pes-form label {
+    display: block;
+    margin-bottom: 6px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+    color: var(--text-light);
+}
+.pes-form input,
+.pes-form select {
+    width: 100%;
+    padding: 12px 14px;
+    font-family: inherit;
+    font-size: 15px;
+    color: var(--text);
+    background: var(--bg);
+    border: 1px solid var(--border-strong);
+    border-radius: 12px;
+    transition: border-color 0.15s;
+}
+.pes-form input:focus,
+.pes-form select:focus { outline: none; border-color: var(--accent-dark); }
+
+/* Souhlas musí být vidět a musí se zaškrtávat vědomě — předzaškrtnuté
+   políčko by nebyl souhlas. */
+.pes-form .pes-souhlas {
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin: 18px 0 20px;
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-muted);
+    line-height: 1.6;
+    cursor: pointer;
+}
+.pes-form .pes-souhlas input {
+    width: auto;
+    flex: 0 0 auto;
+    margin-top: 2px;
+    accent-color: var(--accent-dark);
+}
+.pes-form .pes-souhlas a { color: var(--accent-text); }
+.pes-form .btn-submit { width: auto; padding: 13px 28px; }
+
+/* Poděkování nahradí formulář rovnou na místě — odskok na jinou stránku
+   by člověka vytrhl z výpisu nabídek, který si zrovna prohlíží. */
+.form-hotovo {
+    padding: 18px 22px;
+    border-left: 3px solid var(--green);
+    background: var(--bg);
+    border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    color: var(--text);
+    line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+    .pes-box { grid-template-columns: 1fr; gap: 26px; padding: 30px 24px; }
+}
+@media (max-width: 560px) {
+    .pes-grid { grid-template-columns: 1fr; }
+    .pes-form .btn-submit { width: 100%; }
+}

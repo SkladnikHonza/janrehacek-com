@@ -94,13 +94,22 @@ const server = http.createServer(async (req, res) => {
         return;
     }
 
-    // kontaktní formulář — pouští se skutečná funkce, včetně hlídky Originu
-    if (cesta === '/api/kontakt') {
+    // Funkce z api/ — pouští se ty skutečné, včetně hlídky Originu.
+    // Dřív tu byl natvrdo jen /api/kontakt a každá další funkce musela
+    // počkat na nasazení, aby se dala vyzkoušet. Teď se hledá podle názvu.
+    if (cesta.startsWith('/api/')) {
+        const jmeno = cesta.slice('/api/'.length);
+        const soubor = path.join(__dirname, 'api', `${jmeno}.js`);
+        if (!/^[a-z0-9-]+$/i.test(jmeno) || !fs.existsSync(soubor)) {
+            res.writeHead(404, { 'Content-Type': 'application/json; charset=utf-8' })
+               .end(JSON.stringify({ chyba: `Funkce api/${jmeno}.js neexistuje.` }));
+            return;
+        }
         try {
-            delete require.cache[require.resolve('./api/kontakt.js')];  // ať se načte i po úpravě
-            await require('./api/kontakt.js')(req, dopln(res));
+            delete require.cache[require.resolve(soubor)];  // ať se načte i po úpravě
+            await require(soubor)(req, dopln(res));
         } catch (e) {
-            console.error('api/kontakt spadlo:', e);
+            console.error(`api/${jmeno} spadlo:`, e);
             if (!res.headersSent) res.writeHead(500).end('Chyba funkce');
         }
         return;

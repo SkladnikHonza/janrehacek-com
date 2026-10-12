@@ -100,6 +100,79 @@
     </div>
 </section>
 
+
+<!-- Hlídací pes. Aktivních nabídek je pár, takže většina lidí tady nenajde
+     to svoje a odejde navždy. Tohle z prohrané návštěvy udělá kontakt —
+     a navíc kontakt, který sám řekl, co kupuje a za kolik. -->
+<section class="pes-sekce">
+    <div class="container">
+        <div class="pes-box">
+            <div class="pes-text">
+                <div class="section-eyebrow" data-i18n="pes.eyebrow">Hlídací pes</div>
+                <h2 class="pes-title" data-i18n="pes.title">Nenašli jste to svoje?</h2>
+                <p data-i18n="pes.lead">Napište mi, co hledáte. Ozvu se, jakmile něco takového vezmu do nabídky — často dřív, než se to objeví na realitních serverech.</p>
+            </div>
+            <form class="pes-form" action="/api/hlidaci-pes" method="POST" data-bez-zalohy
+                  data-uspech="Hotovo — hlídám. Jakmile se objeví něco, co tomu odpovídá, ozvu se vám e-mailem."
+                  data-uspech-klic="pes.hotovo">
+                <input type="hidden" name="odkud" value="">
+                <input type="checkbox" name="botcheck" style="display:none !important;" tabindex="-1" autocomplete="off">
+                <input type="hidden" name="trvani" value="">
+
+                <div class="pes-grid">
+                    <div class="form-group">
+                        <label for="p-typ" data-i18n="pes.f.typ">Co hledáte *</label>
+                        <select id="p-typ" name="typ" required>
+                            <option value="byt" data-i18n="odhad.f.typ.byt">Byt</option>
+                            <option value="dum" data-i18n="odhad.f.typ.dum">Rodinný dům</option>
+                            <option value="pozemek" data-i18n="odhad.f.typ.pozemek">Pozemek</option>
+                            <option value="komercni" data-i18n="odhad.f.typ.komerce">Komerční prostor</option>
+                            <option value="cokoli" data-i18n="pes.f.cokoli">Cokoli zajímavého</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="p-dispozice" data-i18n="odhad.f.dispozice">Dispozice</label>
+                        <select id="p-dispozice" name="dispozice">
+                            <option value="" data-i18n="pes.f.jedno">Je mi to jedno</option>
+                            <option>1+kk</option><option>1+1</option>
+                            <option>2+kk</option><option>2+1</option>
+                            <option>3+kk</option><option>3+1</option>
+                            <option>4+kk</option><option>4+1</option>
+                            <option data-i18n="odhad.f.disp.vic">5+1 a větší</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="p-lokalita" data-i18n="pes.f.lokalita">Kde *</label>
+                        <input id="p-lokalita" type="text" name="lokalita" maxlength="160" required
+                               data-i18n-placeholder="pes.f.lokalita_ph" placeholder="Ostrava, Karviná, Havířov…">
+                    </div>
+                    <div class="form-group">
+                        <label for="p-cena" data-i18n="pes.f.cena">Do kolika (Kč)</label>
+                        <input id="p-cena" type="number" name="cena_do" min="0" max="999999999" step="10000" placeholder="4 000 000">
+                    </div>
+                    <div class="form-group pes-email">
+                        <label for="p-email" data-i18n="form.email">E-mail *</label>
+                        <input id="p-email" type="email" name="email" required autocomplete="email"
+                               data-i18n-placeholder="form.email_ph" placeholder="vase@email.cz">
+                    </div>
+                </div>
+
+                <label class="pes-souhlas">
+                    <input type="checkbox" name="souhlas" value="ano" required>
+                    <span data-i18n-html="pes.souhlas">Souhlasím, že mi Jan Řeháček může na tento e-mail posílat nové nabídky. Odhlásit se můžu kdykoli jedním kliknutím. <a href="/ochrana-osobnich-udaju">Ochrana osobních údajů</a></span>
+                </label>
+
+                <div class="overeni" hidden></div>
+                <noscript>
+                    <p class="form-note">Formulář potřebuje zapnutý JavaScript. Bez něj mi prosím napište na
+                        <a href="mailto:invest@janrehacek.com">invest@janrehacek.com</a>.</p>
+                </noscript>
+                <button type="submit" class="btn-submit" data-i18n="pes.f.odeslat">Hlídej za mě →</button>
+            </form>
+        </div>
+    </div>
+</section>
+
 </main>
 
 <footer>
@@ -145,6 +218,7 @@
 
 <script src="/assets/script.js" defer></script>
 <script src="/assets/listings-i18n.js" defer></script>
+<script src="/assets/poptavka.js" defer></script>
     <script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
