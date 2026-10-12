@@ -5,6 +5,9 @@ status: nova
 price: 2 290 000 Kč
 location_short: Karviná — Třída Osvobození
 location_long: Karviná, Třída Osvobození
+# Souřadnice ULICE, ne konkrétního domu — mapa má ukázat lokalitu,
+# ne přesně který barák to je. Dohledáno přes OpenStreetMap.
+gps: "49.86109, 18.53972"
 disposition: 2+1
 area: 59
 ownership: Osobní

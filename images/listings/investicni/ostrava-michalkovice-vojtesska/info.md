@@ -9,6 +9,9 @@ state: Po rekonstrukci
 occupancy: Dlouhodobě pronajato
 location_short: Ostrava — Michalkovice
 location_long: Ostrava — Michalkovice, Vojtěšská
+# Souřadnice ULICE, ne konkrétního domu — mapa má ukázat lokalitu,
+# ne přesně který barák to je. Dohledáno přes OpenStreetMap.
+gps: "49.84502, 18.34714"
 # Třída z PENB — povinný údaj v inzerci podle § 7a zákona č. 406/2000 Sb.
 # "G" je zákonná náhrada, když vlastník průkaz nepředložil. Až průkaz
 # přijde, přepsat skutečnou třídou.

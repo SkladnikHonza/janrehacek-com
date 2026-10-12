@@ -5,6 +5,9 @@ status: prodano
 price: 3 490 000 Kč
 location_short: Ostrava — Michalkovice
 location_long: Ostrava — Michalkovice, Vojtěšská
+# Souřadnice ULICE, ne konkrétního domu — mapa má ukázat lokalitu,
+# ne přesně který barák to je. Dohledáno přes OpenStreetMap.
+gps: "49.84502, 18.34714"
 disposition: 3+kk
 area: 69
 ownership: Družstevní

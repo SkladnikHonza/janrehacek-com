@@ -6,6 +6,9 @@ price: 2 420 000 Kč
 size_total: 56 m²
 location_short: Karviná – Ráj
 location_long: Karviná – Ráj
+# Souřadnice ULICE, ne konkrétního domu — mapa má ukázat lokalitu,
+# ne přesně který barák to je. Dohledáno přes OpenStreetMap.
+gps: "49.84667, 18.5546"
 # Třída z PENB — povinný údaj v inzerci podle § 7a zákona č. 406/2000 Sb.
 # "G" je zákonná náhrada, když vlastník průkaz nepředložil. Až průkaz
 # přijde, přepsat skutečnou třídou.

@@ -200,6 +200,10 @@ window.translations.cs = {
     "listings.detail.cta_more":     "Mám zájem o tuto nabídku →",
     "listings.detail.form_submit": "Odeslat poptávku →",
     "listings.detail.call":        "Nebo zavolejte: +420 608 177 099",
+    "listing.detail.mapa": "Kde to je",
+    "listing.detail.mapa_zobrazit": "Zobrazit mapu",
+    "listing.detail.mapa_pozn": "Mapu načte OpenStreetMap, až na ni kliknete.",
+    "listing.detail.mapa_mapy": "Otevřít v Mapy.cz →",
     "listings.detail.sticky_call": "Zavolat",
     "listings.detail.sticky_form": "Mám zájem",
     "listings.detail.form_prefill": "Mám zájem o prohlídku: ",
@@ -645,6 +649,10 @@ window.translations.sk = {
     "listings.detail.cta_more":     "Mám záujem o túto ponuku →",
     "listings.detail.form_submit": "Odoslať dopyt →",
     "listings.detail.call":        "Alebo zavolajte: +420 608 177 099",
+    "listing.detail.mapa": "Kde to je",
+    "listing.detail.mapa_zobrazit": "Zobraziť mapu",
+    "listing.detail.mapa_pozn": "Mapu načíta OpenStreetMap, až na ňu kliknete.",
+    "listing.detail.mapa_mapy": "Otvoriť v Mapy.cz →",
     "listings.detail.sticky_call": "Zavolať",
     "listings.detail.sticky_form": "Mám záujem",
     "listings.detail.form_prefill": "Mám záujem o prehliadku: ",
@@ -1151,6 +1159,10 @@ window.translations.en = {
     "listings.detail.cta_more":     "I'm interested in this listing →",
     "listings.detail.form_submit": "Send enquiry →",
     "listings.detail.call":        "Or call: +420 608 177 099",
+    "listing.detail.mapa": "Where it is",
+    "listing.detail.mapa_zobrazit": "Show map",
+    "listing.detail.mapa_pozn": "The map loads from OpenStreetMap only when you click.",
+    "listing.detail.mapa_mapy": "Open in Mapy.cz →",
     "listings.detail.sticky_call": "Call",
     "listings.detail.sticky_form": "I'm interested",
     "listings.detail.form_prefill": "I am interested in a viewing: ",
@@ -1656,6 +1668,10 @@ window.translations.de = {
     "listings.detail.cta_more":     "Ich habe Interesse an diesem Angebot →",
     "listings.detail.form_submit": "Anfrage senden →",
     "listings.detail.call":        "Oder rufen Sie an: +420 608 177 099",
+    "listing.detail.mapa": "Wo es liegt",
+    "listing.detail.mapa_zobrazit": "Karte anzeigen",
+    "listing.detail.mapa_pozn": "Die Karte lädt erst beim Klick von OpenStreetMap.",
+    "listing.detail.mapa_mapy": "In Mapy.cz öffnen →",
     "listings.detail.sticky_call": "Anrufen",
     "listings.detail.sticky_form": "Interesse",
     "listings.detail.form_prefill": "Ich interessiere mich für eine Besichtigung: ",
@@ -2164,6 +2180,10 @@ window.translations.fr = {
     "listings.detail.cta_more":     "Ce bien m'intéresse →",
     "listings.detail.form_submit": "Envoyer la demande →",
     "listings.detail.call":        "Ou appelez : +420 608 177 099",
+    "listing.detail.mapa": "Où cela se trouve",
+    "listing.detail.mapa_zobrazit": "Afficher la carte",
+    "listing.detail.mapa_pozn": "La carte ne se charge depuis OpenStreetMap qu’au clic.",
+    "listing.detail.mapa_mapy": "Ouvrir dans Mapy.cz →",
     "listings.detail.sticky_call": "Appeler",
     "listings.detail.sticky_form": "Je suis intéressé",
     "listings.detail.form_prefill": "Je souhaite une visite : ",
@@ -2669,6 +2689,10 @@ window.translations.it = {
     "listings.detail.cta_more":     "Sono interessato a questo annuncio →",
     "listings.detail.form_submit": "Invia richiesta →",
     "listings.detail.call":        "Oppure chiama: +420 608 177 099",
+    "listing.detail.mapa": "Dove si trova",
+    "listing.detail.mapa_zobrazit": "Mostra la mappa",
+    "listing.detail.mapa_pozn": "La mappa si carica da OpenStreetMap solo al clic.",
+    "listing.detail.mapa_mapy": "Apri in Mapy.cz →",
     "listings.detail.sticky_call": "Chiama",
     "listings.detail.sticky_form": "Mi interessa",
     "listings.detail.form_prefill": "Sono interessato a una visita: ",
@@ -3174,6 +3198,10 @@ window.translations.es = {
     "listings.detail.cta_more":     "Me interesa este inmueble →",
     "listings.detail.form_submit": "Enviar solicitud →",
     "listings.detail.call":        "O llame: +420 608 177 099",
+    "listing.detail.mapa": "Dónde está",
+    "listing.detail.mapa_zobrazit": "Ver el mapa",
+    "listing.detail.mapa_pozn": "El mapa se carga desde OpenStreetMap solo al hacer clic.",
+    "listing.detail.mapa_mapy": "Abrir en Mapy.cz →",
     "listings.detail.sticky_call": "Llamar",
     "listings.detail.sticky_form": "Me interesa",
     "listings.detail.form_prefill": "Me interesa una visita: ",
@@ -3685,6 +3713,10 @@ window.translations.pl = {
     "listings.detail.cta_more":     "Interesuje mnie ta oferta →",
     "listings.detail.form_submit": "Wyślij zapytanie →",
     "listings.detail.call":        "Lub zadzwoń: +420 608 177 099",
+    "listing.detail.mapa": "Gdzie to jest",
+    "listing.detail.mapa_zobrazit": "Pokaż mapę",
+    "listing.detail.mapa_pozn": "Mapa ładuje się z OpenStreetMap dopiero po kliknięciu.",
+    "listing.detail.mapa_mapy": "Otwórz w Mapy.cz →",
     "listings.detail.sticky_call": "Zadzwoń",
     "listings.detail.sticky_form": "Jestem zainteresowany",
     "listings.detail.form_prefill": "Chcę umówić oglądanie: ",
@@ -4201,6 +4233,10 @@ window.translations.ru = {
     "listings.detail.cta_more":     "Мне интересно это предложение →",
     "listings.detail.form_submit": "Отправить запрос →",
     "listings.detail.call":        "Или позвоните: +420 608 177 099",
+    "listing.detail.mapa": "Где это",
+    "listing.detail.mapa_zobrazit": "Показать карту",
+    "listing.detail.mapa_pozn": "Карта загрузится из OpenStreetMap только по клику.",
+    "listing.detail.mapa_mapy": "Открыть в Mapy.cz →",
     "listings.detail.sticky_call": "Позвонить",
     "listings.detail.sticky_form": "Интересует",
     "listings.detail.form_prefill": "Хочу записаться на просмотр: ",
@@ -4705,6 +4741,10 @@ window.translations.ja = {
     "listings.detail.cta_more":     "この物件に興味があります →",
     "listings.detail.form_submit": "問い合わせを送る →",
     "listings.detail.call":        "お電話: +420 608 177 099",
+    "listing.detail.mapa": "所在地",
+    "listing.detail.mapa_zobrazit": "地図を表示",
+    "listing.detail.mapa_pozn": "クリックすると OpenStreetMap から地図を読み込みます。",
+    "listing.detail.mapa_mapy": "Mapy.cz で開く →",
     "listings.detail.sticky_call": "電話する",
     "listings.detail.sticky_form": "興味あり",
     "listings.detail.form_prefill": "内見を希望します: ",
@@ -5206,6 +5246,10 @@ window.translations.zh = {
     "listings.detail.cta_more":     "我对此房源感兴趣 →",
     "listings.detail.form_submit": "发送咨询 →",
     "listings.detail.call":        "或致电：+420 608 177 099",
+    "listing.detail.mapa": "位置",
+    "listing.detail.mapa_zobrazit": "显示地图",
+    "listing.detail.mapa_pozn": "点击后才会从 OpenStreetMap 加载地图。",
+    "listing.detail.mapa_mapy": "在 Mapy.cz 中打开 →",
     "listings.detail.sticky_call": "致电",
     "listings.detail.sticky_form": "我有兴趣",
     "listings.detail.form_prefill": "我想预约看房：",
@@ -5729,6 +5773,36 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
                 target.scrollIntoView({ behavior: REDUCED_MOTION ? 'auto' : 'smooth', block: 'start' });
             }
         }
+    });
+});
+
+// Mapa u nabídky se načte až na kliknutí. Dokud na ni nikdo neklikne,
+// neodejde na OpenStreetMap jediný požadavek — stránka tak nestahuje cizí
+// obsah a návštěvníkova IP adresa nikam necestuje.
+// Vložená mapa z OpenStreetMap se dnes kreslí přes WebGL. Kdo ho nemá
+// (starší zařízení, vypnutá hardwarová akcelerace), uviděl by místo mapy
+// modrou cedulku s chybou — což je horší než mapu vůbec nenabídnout.
+// Takovému návštěvníkovi proto tlačítko schováme a necháme mu odkaz na Mapy.cz.
+function umiWebGL() {
+    try {
+        const c = document.createElement('canvas');
+        return !!(window.WebGLRenderingContext && (c.getContext('webgl') || c.getContext('experimental-webgl')));
+    } catch (e) { return false; }
+}
+
+document.querySelectorAll('.listing-mapa').forEach((box) => {
+    const tlacitko = box.querySelector('.listing-mapa-tlacitko');
+    if (!tlacitko) return;
+    if (!umiWebGL()) { box.hidden = true; return; }
+    tlacitko.addEventListener('click', () => {
+        const ramec = document.createElement('iframe');
+        ramec.src = box.getAttribute('data-mapa');
+        ramec.loading = 'lazy';
+        ramec.referrerPolicy = 'no-referrer';
+        ramec.title = document.querySelector('h1') ? document.querySelector('h1').textContent : 'Mapa';
+        box.textContent = '';
+        box.appendChild(ramec);
+        box.classList.add('je-nactena');
     });
 });
 

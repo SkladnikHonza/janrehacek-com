@@ -6,6 +6,9 @@ price: 2 290 000 Kč
 size_total: 59 m² (vč. sklepa)
 location_short: Karviná — Třída Osvobození
 location_long: Karviná, Třída Osvobození
+# Souřadnice ULICE, ne konkrétního domu — mapa má ukázat lokalitu,
+# ne přesně který barák to je. Dohledáno přes OpenStreetMap.
+gps: "49.86109, 18.53972"
 # Třída z PENB — povinný údaj v inzerci podle § 7a zákona č. 406/2000 Sb.
 # "G" je zákonná náhrada, když vlastník průkaz nepředložil. Až průkaz
 # přijde, přepsat skutečnou třídou.

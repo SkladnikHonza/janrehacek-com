@@ -799,6 +799,33 @@ function renderCoverStamp(l) {
     return `                    <span class="listing-stamp" data-i18n="${key}">${escapeHtml(lbl)}</span>`;
 }
 
+/** Mapa lokality. Načítá se až na kliknutí — ze dvou důvodů: ať stránka
+ *  nestahuje cizí skript, dokud o něj nikdo nestojí, a ať se k OpenStreetMap
+ *  nedostane IP adresa každého návštěvníka, který mapu ani nechtěl. */
+function renderMapa(l) {
+    const shoda = /^\s*(-?\d+(?:\.\d+)?)\s*,\s*(-?\d+(?:\.\d+)?)\s*$/.exec(l.gps || '');
+    if (!shoda) return '';
+    const lat = Number(shoda[1]);
+    const lon = Number(shoda[2]);
+    if (!Number.isFinite(lat) || !Number.isFinite(lon)) return '';
+    const o = 0.0055;   // výřez kolem bodu, zhruba čtvrt kilometru na každou stranu
+    const ramec = [lon - o, lat - o / 2, lon + o, lat + o / 2].map((x) => x.toFixed(5)).join(',');
+    const osm = `https://www.openstreetmap.org/export/embed.html?bbox=${ramec}&layer=mapnik&marker=${lat},${lon}`;
+    const mapy = `https://mapy.cz/zakladni?x=${lon}&y=${lat}&z=16&source=coor&id=${lon},${lat}`;
+    const kde = escapeHtml(l.location_long || l.location_short);
+    return `        <section class="listing-mapa-sekce">
+            <div class="container">
+                <h2 class="section-title" data-i18n="listing.detail.mapa">Kde to je</h2>
+                <p class="listing-mapa-adresa"${ti(l.location_long || l.location_short)}>${kde}</p>
+                <div class="listing-mapa" data-mapa="${escapeHtml(osm)}">
+                    <button type="button" class="listing-mapa-tlacitko" data-i18n="listing.detail.mapa_zobrazit">Zobrazit mapu</button>
+                    <p class="listing-mapa-pozn" data-i18n="listing.detail.mapa_pozn">Mapu načte OpenStreetMap, až na ni kliknete.</p>
+                </div>
+                <a class="listing-mapa-odkaz" href="${escapeHtml(mapy)}" target="_blank" rel="noopener noreferrer" data-i18n="listing.detail.mapa_mapy">Otevřít v Mapy.cz →</a>
+            </div>
+        </section>`;
+}
+
 function renderCard(l, cardTpl) {
     const img = cardImage(l);
     return renderTemplate(cardTpl, {
@@ -1202,6 +1229,7 @@ function readListing(type, slug, errors) {
         // uvadi se nejhorsi trida G. Proto se tu nic nedomysli — kdyz pole chybi,
         // build na to nahlas upozorni a dosadi G.
         energy_class: energyClass,
+        gps: str(data.gps),
         short_description: str(data.short_description),
         info_extra: data.info_extra || null,
         // Investicni-specific frontmatter fields
@@ -1745,6 +1773,7 @@ function build() {
             form_interest: escapeHtml({ investicni: 'Realitní investice', prodej: 'Prodej nemovitosti', pronajem: 'Pronájem' }[l.type] || 'Nemovitost'),
             form_title: escapeHtml(l.title),
             form_message: escapeHtml('Mám zájem o prohlídku: ' + l.title),
+            mapa: renderMapa(l),
             status_ribbon: isInvest ? '' : statusRibbon,
             cover_watermark_class: l.cover_is_visualization ? ' has-watermark' : '',
             cover_watermark_overlay: l.cover_is_visualization

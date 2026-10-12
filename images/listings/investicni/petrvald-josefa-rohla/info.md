@@ -9,6 +9,9 @@ short_description: Bytový dům se 4 bytovými jednotkami, vlastní zahradou a p
 status: aktivni
 location_short: Petřvald — Josefa Rohla
 location_long: Petřvald, Josefa Rohla 549
+# Souřadnice ULICE, ne konkrétního domu — mapa má ukázat lokalitu,
+# ne přesně který barák to je. Dohledáno přes OpenStreetMap.
+gps: "49.81701, 18.37244"
 price: 15 900 000 Kč
 price_per_sqm: 39 750 Kč/m²
 size_total: 400+ m²

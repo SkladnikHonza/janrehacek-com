@@ -8,6 +8,9 @@ commission: "0 Kč"
 available_from: "Ihned"
 location_short: "Havířov — Šumbark"
 location_long: "Havířov, Šumbark, ul. Jarošova 751"
+# Souřadnice ULICE, ne konkrétního domu — mapa má ukázat lokalitu,
+# ne přesně který barák to je. Dohledáno přes OpenStreetMap.
+gps: "49.79503, 18.40267"
 disposition: "2+1"
 area: "55"
 floor: ""

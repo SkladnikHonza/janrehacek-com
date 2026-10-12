@@ -8,6 +8,9 @@ state: Po rekonstrukci
 occupancy: Dlouhodobě pronajato
 location_short: Karviná — ČSL. armády
 location_long: Karviná, ČSL. armády
+# Souřadnice ULICE, ne konkrétního domu — mapa má ukázat lokalitu,
+# ne přesně který barák to je. Dohledáno přes OpenStreetMap.
+gps: "49.86994, 18.55012"
 # Třída z PENB — povinný údaj v inzerci podle § 7a zákona č. 406/2000 Sb.
 # "G" je zákonná náhrada, když vlastník průkaz nepředložil. Až průkaz
 # přijde, přepsat skutečnou třídou.

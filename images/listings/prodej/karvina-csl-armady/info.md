@@ -5,6 +5,9 @@ status: prodano
 price: 2 390 000 Kč
 location_short: Karviná — ČSL. armády
 location_long: Karviná, ČSL. armády
+# Souřadnice ULICE, ne konkrétního domu — mapa má ukázat lokalitu,
+# ne přesně který barák to je. Dohledáno přes OpenStreetMap.
+gps: "49.86994, 18.55012"
 disposition: 2+1
 area: 56
 ownership: Osobní

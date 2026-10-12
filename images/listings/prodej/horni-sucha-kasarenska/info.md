@@ -5,6 +5,9 @@ status: nova
 price: 11 990 000 Kč
 location_short: Horní Suchá — Kasárenská
 location_long: Horní Suchá, ul. Kasárenská
+# Souřadnice ULICE, ne konkrétního domu — mapa má ukázat lokalitu,
+# ne přesně který barák to je. Dohledáno přes OpenStreetMap.
+gps: "49.80206, 18.48074"
 area: 368
 condition: K rekonstrukci
 # Třída z PENB — povinný údaj v inzerci podle § 7a zákona č. 406/2000 Sb.

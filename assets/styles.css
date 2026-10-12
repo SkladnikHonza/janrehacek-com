@@ -3475,3 +3475,79 @@ nav.breadcrumbs span { color: var(--text-light); }
     .pes-grid { grid-template-columns: 1fr; }
     .pes-form .btn-submit { width: 100%; }
 }
+
+/* ===== MAPA U NABÍDKY ===== */
+
+/* Lokalita je u nemovitosti to první, co si člověk ověřuje. Do teď tu bylo
+   jen jméno ulice jako text. */
+.listing-mapa-sekce { padding: 8px 0 64px; }
+.listing-mapa-adresa {
+    margin: -6px 0 18px;
+    color: var(--text-muted);
+    font-size: 16px;
+}
+.listing-mapa {
+    position: relative;
+    /* Ne aspect-ratio + max-height: ty dvě se perou a výška pak omezí i šířku,
+       takže mapa byla užší než zbytek stránky. Výška se řídí sama. */
+    width: 100%;
+    height: clamp(260px, 34vw, 440px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: #eceae4;
+    overflow: hidden;
+    /* Jemná mřížka, ať je na první pohled poznat, že tu bude mapa. */
+    background-image:
+        linear-gradient(rgba(15,17,21,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(15,17,21,0.05) 1px, transparent 1px);
+    background-size: 28px 28px;
+}
+/* display:flex výše přebíjí atribut hidden z prohlížeče — bez tohohle řádku
+   by se mapa skryla jen zdánlivě. Stejná past už jednou byla u .radek. */
+.listing-mapa[hidden] { display: none; }
+.listing-mapa.je-nactena {
+    background: none;
+    display: block;
+    padding: 0;
+}
+.listing-mapa iframe {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+.listing-mapa-tlacitko {
+    padding: 12px 26px;
+    border: 0;
+    border-radius: 100px;
+    background: var(--text);
+    color: var(--bg);
+    font-family: 'Manrope', sans-serif;
+    font-size: 14.5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s;
+}
+.listing-mapa-tlacitko:hover { background: var(--accent-dark); }
+.listing-mapa-pozn {
+    margin: 0;
+    padding: 0 16px;
+    text-align: center;
+    font-size: 12.5px;
+    color: var(--text-muted);
+}
+.listing-mapa-odkaz {
+    display: inline-block;
+    margin-top: 14px;
+    font-family: 'Manrope', sans-serif;
+    font-size: 14.5px;
+    font-weight: 600;
+    color: var(--accent-text);
+    text-decoration: none;
+}
+.listing-mapa-odkaz:hover { text-decoration: underline; }

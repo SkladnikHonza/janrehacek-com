@@ -5,6 +5,9 @@ status: prodano
 price: 7 490 000 Kč
 location_short: Ostrava-Poruba — Oty Synka
 location_long: Ostrava-Poruba, Oty Synka
+# Souřadnice ULICE, ne konkrétního domu — mapa má ukázat lokalitu,
+# ne přesně který barák to je. Dohledáno přes OpenStreetMap.
+gps: "49.84512, 18.16023"
 disposition: 4+1
 area: 80
 floor: Přízemí

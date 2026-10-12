@@ -5,6 +5,9 @@ status: prodano
 price: 2 420 000 Kč
 location_short: Karviná – Ráj
 location_long: Karviná – Ráj
+# Souřadnice ULICE, ne konkrétního domu — mapa má ukázat lokalitu,
+# ne přesně který barák to je. Dohledáno přes OpenStreetMap.
+gps: "49.84667, 18.5546"
 disposition: 3+1
 area: 56
 floor: 5. NP
