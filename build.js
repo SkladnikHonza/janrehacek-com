@@ -49,6 +49,9 @@ const SITE_URL = 'https://www.janrehacek.com';
 const TYPES = ['pronajem', 'prodej', 'investicni'];   // recognized listing categories
 const IMG_EXT = /\.(jpe?g|png|webp)$/i;
 const COVER_NAME = /^01-uvodni\.(jpe?g|png|webp)$/i;
+// Půdorys nepatří mezi fotky — vypadal by jako špatně vyfocený pokoj.
+// Stačí ho pojmenovat pudorys.jpg (nebo pudorys-2.jpg, když je pater víc).
+const PUDORYS_NAME = /^pudorys(-\d+)?\.(jpe?g|png|webp)$/i;
 
 // Smaller copies of every listing photo: width → JPEG quality.
 const VARIANT_DIR = '_nahled';
@@ -627,7 +630,7 @@ function generateVariants(listings) {
         const outDir = path.join(dir, VARIANT_DIR);
         const wanted = new Set();
         const byBase = new Map();
-        for (const file of l.gallery) {
+        for (const file of [...l.gallery, ...l.pudorysy]) {
             const base = file.replace(IMG_EXT, '');
             if (byBase.has(base)) {
                 console.warn(`  ⚠ ${l.type}/${l.slug}: "${byBase.get(base)}" a "${file}" mají stejné jméno — náhled bude jen pro jednu z nich`);
@@ -692,11 +695,13 @@ function renderGallery(l, heroRibbon) {
     const remaining = Math.max(0, images.length - visible.length);
 
     // Lightbox payload — every image with a readable alt and a watermark flag.
-    const galleryData = images.map((file, i) => {
+    // Půdorysy jdou do stejného seznamu jako fotky — lightbox je pak umí
+    // otevřít tímtéž ovládáním, jen na ně v mřížce fotek neodkazuje nic.
+    const galleryData = [...images, ...l.pudorysy].map((file, i) => {
         const item = { src: imgUrl(l, file) };
         const thumb = variant(l, file, 320);
         if (thumb) item.thumb = thumb.url;
-        item.alt = i === 0 ? title : `${title} — foto ${i + 1}`;
+        item.alt = i >= images.length ? `${title} — půdorys` : (i === 0 ? title : `${title} — foto ${i + 1}`);
         item.watermark = i === 0 && l.cover_is_visualization;
         return item;
     });
@@ -826,6 +831,30 @@ function renderMapa(l) {
         </section>`;
 }
 
+/** Půdorys. Kupující si podle něj srovná, jestli se mu tam vejde život —
+ *  a podle průzkumů to hlavně zvedá kvalitu dotazů, protože na prohlídku
+ *  pak chodí lidé, kterým dispozice sedí. Otevírá se ve stejném lightboxu
+ *  jako fotky, jen v mřížce fotek mezi nimi není. */
+function renderPudorysy(l) {
+    if (!l.pudorysy.length) return '';
+    const dlazdice = l.pudorysy.map((file, i) => {
+        const nahled = variant(l, file, 800) || {};
+        const poradi = l.gallery.length + i;   // index v seznamu lightboxu
+        const popis = l.pudorysy.length > 1 ? `Půdorys ${i + 1}` : 'Půdorys';
+        return `                    <button type="button" class="listing-pudorys" data-gallery-open data-index="${poradi}" aria-label="${escapeHtml(popis)} — otevřít">
+                        <img src="${nahled.url || imgUrl(l, file)}" alt="${escapeHtml(`${l.title} — ${popis.toLowerCase()}`)}" loading="lazy" decoding="async"${dimsAttr(nahled)}>
+                    </button>`;
+    }).join('\n');
+    return `        <section class="listing-pudorys-sekce">
+            <div class="container">
+                <h2 class="section-title" data-i18n="listing.detail.pudorys">Půdorys</h2>
+                <div class="listing-pudorysy">
+${dlazdice}
+                </div>
+            </div>
+        </section>`;
+}
+
 function renderCard(l, cardTpl) {
     const img = cardImage(l);
     return renderTemplate(cardTpl, {
@@ -841,6 +870,15 @@ function renderCard(l, cardTpl) {
         cover_dims: img.dims,
         cover_alt: escapeHtml(l.title),
         card_class: CLOSED.has(l.status) ? ' is-closed' : '',
+        prodano_za: (() => {
+            // Jen u uzavřených nabídek a jen když jsou data vyplněná.
+            // Vymýšlet si, jak dlouho se co prodávalo, nepřipadá v úvahu.
+            if (!CLOSED.has(l.status)) return '';
+            const doba = dobaProdeje(dnuNaTrhu(l));
+            if (!doba) return '';
+            const slovo = l.status === 'pronajato' ? 'Pronajato' : 'Prodáno';
+            return `                    <div class="listing-card-doba">${escapeHtml(`${slovo} ${doba}`)}</div>`;
+        })(),
         cover_stamp: renderCoverStamp(l),
         cover_watermark: l.cover_is_visualization
             ? '                    <span class="listing-watermark listing-watermark-card" aria-hidden="true" data-i18n="listing.detail.visualization_badge">Vizualizace po rekonstrukci</span>'
@@ -1008,6 +1046,28 @@ function pluralCz(n, one, few, many) {
     if (n === 1) return one;
     if (n >= 2 && n <= 4) return few;
     return many;
+}
+
+/** Kolik dní nabídka ležela, než se prodala. null, když data chybí nebo nedávají smysl. */
+function dnuNaTrhu(l) {
+    if (!l.nabidnuto || !l.prodano_kdy) return null;
+    const od = new Date(l.nabidnuto);
+    const do_ = new Date(l.prodano_kdy);
+    if (Number.isNaN(+od) || Number.isNaN(+do_)) return null;
+    const dnu = Math.round((do_ - od) / 86400000);
+    return dnu >= 0 ? dnu : null;
+}
+
+/** „za 9 dní“ · „za 3 týdny“ · „za 4 měsíce“ — podle toho, co se líp čte. */
+function dobaProdeje(dnu) {
+    if (dnu === null) return '';
+    if (dnu <= 13) return `za ${dnu} ${pluralCz(dnu, 'den', 'dny', 'dní')}`;
+    if (dnu <= 70) {
+        const t = Math.round(dnu / 7);
+        return `za ${t} ${pluralCz(t, 'týden', 'týdny', 'týdnů')}`;
+    }
+    const m = Math.round(dnu / 30);
+    return `za ${m} ${pluralCz(m, 'měsíc', 'měsíce', 'měsíců')}`;
 }
 
 /** "2 290 000" → "2,29 mil. Kč";  13900 → "13 900 Kč" */
@@ -1184,7 +1244,9 @@ function readListing(type, slug, errors) {
         }
     }
 
-    const images = listImages(slug, type);
+    const vsechny = listImages(slug, type);
+    const pudorysy = vsechny.filter((f) => PUDORYS_NAME.test(f));
+    const images = vsechny.filter((f) => !PUDORYS_NAME.test(f));
     const cover = findCover(images);
 
     if (data.type && data.type !== type) {
@@ -1230,6 +1292,10 @@ function readListing(type, slug, errors) {
         // build na to nahlas upozorni a dosadi G.
         energy_class: energyClass,
         gps: str(data.gps),
+        // Kdy šla nabídka ven a kdy se prodala. Z toho se počítá „prodáno za…“,
+        // což je u makléře ten nejlepší důkaz — ne přídavné jméno, ale číslo.
+        nabidnuto: str(data.nabidnuto),
+        prodano_kdy: str(data.prodano),
         short_description: str(data.short_description),
         info_extra: data.info_extra || null,
         // Investicni-specific frontmatter fields
@@ -1249,6 +1315,7 @@ function readListing(type, slug, errors) {
         specs: parseSpecs(sections.specs || ''),
         cover,
         gallery: images,
+        pudorysy,
     };
 }
 
@@ -1773,6 +1840,7 @@ function build() {
             form_interest: escapeHtml({ investicni: 'Realitní investice', prodej: 'Prodej nemovitosti', pronajem: 'Pronájem' }[l.type] || 'Nemovitost'),
             form_title: escapeHtml(l.title),
             form_message: escapeHtml('Mám zájem o prohlídku: ' + l.title),
+            pudorysy: renderPudorysy(l),
             mapa: renderMapa(l),
             status_ribbon: isInvest ? '' : statusRibbon,
             cover_watermark_class: l.cover_is_visualization ? ' has-watermark' : '',
@@ -1836,8 +1904,26 @@ function build() {
         let caraVlozena = false;
         for (const l of filtered) {
             if (!caraVlozena && CLOSED.has(l.status) && kusy.length) {
+                // Z archivu se dá udělat důkaz: kolik se prodalo a jak rychle.
+                // Průměr se počítá jen z nabídek, kde jsou data vyplněná —
+                // jinak by se tvářil přesněji, než jaký doopravdy je.
+                const uzavrene = filtered.filter((x) => CLOSED.has(x.status));
+                const sDaty = uzavrene.map(dnuNaTrhu).filter((d) => d !== null);
+                let souhrn = '';
+                if (uzavrene.length) {
+                    const kolik = `${uzavrene.length} ${pluralCz(uzavrene.length, 'nemovitost', 'nemovitosti', 'nemovitostí')}`;
+                    // Průměr jen tehdy, když mají data VŠECHNY. Spočítat ho ze dvou
+                    // a napsat ho vedle čtyř by znamenalo tvrdit něco, co neplatí.
+                    let doba = '';
+                    if (sDaty.length === uzavrene.length) {
+                        const prumer = Math.round(sDaty.reduce((a, b) => a + b, 0) / sDaty.length);
+                        doba = `, průměrně ${dobaProdeje(prumer)}`;
+                    }
+                    souhrn = `<span class="listing-divider-souhrn">${escapeHtml(kolik + doba)}</span>`;
+                }
                 kusy.push('            <div class="listing-divider" role="separator">'
-                    + '<span data-i18n="listings.divider.closed">Již není v nabídce</span></div>');
+                    + '<span data-i18n="listings.divider.closed">Již není v nabídce</span>'
+                    + souhrn + '</div>');
                 caraVlozena = true;
             }
             kusy.push(renderCard(l, cardTpl));

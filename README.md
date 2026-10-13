@@ -56,6 +56,22 @@ nadpis sekce — radši neprojde, než aby na webu zmizela cena nebo popis.
 4. Když nabídka zmizí nebo se přejmenuje, přidej do `vercel.json` → `redirects`
    přesměrování ze staré adresy (jinak lidé z Googlu skončí na 404).
 
+5. **Půdorys:** soubor pojmenuj `pudorys.jpg` (u víc pater `pudorys-2.jpg` …).
+   Do galerie fotek nespadne — dostane vlastní sekci na detailu a otevírá se
+   stejným prohlížečem obrázků. Nic dalšího nastavovat netřeba.
+6. **Mapa:** `gps: "49.80206, 18.48074"` v `info.md`. Souřadnice mají mířit na
+   ULICI, ne na konkrétní dům. Dohledáš je na openstreetmap.org — pravým
+   tlačítkem na místo → „Zobrazit adresu“, nebo z adresního řádku mapy.cz.
+7. **Jak rychle se prodalo:** `nabidnuto: "2026-06-01"` a `prodano: "2026-09-14"`.
+   Z toho se na kartě ukáže „Prodáno za 3 týdny“ a nad archivem souhrn.
+   Průměr se zobrazí, až budou data u VŠECH uzavřených nabídek — spočítat ho
+   z poloviny a napsat vedle všech by znamenalo tvrdit něco, co neplatí.
+8. **Energetická třída:** `energy_class: "C"`. Když průkaz není, nech `"G"` —
+   to je zákonná náhrada podle § 7a zákona č. 406/2000 Sb. Build vypíše, které
+   nabídky na té náhradě jedou.
+
+   Pozor: parser hlavičky neumí komentář za hodnotou na stejném řádku.
+   Musí stát na samostatném řádku nad ní.
 ## Doména a DNS
 
 DNS je u Webglobe. Hodnoty záznamů ber vždy z Vercel → projekt → Settings →
