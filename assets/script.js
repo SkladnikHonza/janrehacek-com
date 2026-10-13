@@ -5787,6 +5787,38 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
     });
 });
 
+// Částky se při psaní dělí po tisících: 4000000 → 4 000 000. Bez toho
+// člověk nevidí, jestli napsal čtyři miliony nebo čtyřicet.
+//
+// Pole musí být type="text" — do type="number" prohlížeč mezeru nepustí.
+// Dělí se pevnou mezerou (U+00A0), jak je v češtině zvykem; API si ji před
+// převodem na číslo odstraňuje, takže na server jde pořád jen číslo.
+const DELICI_MEZERA = '\u00a0';
+
+function poTisicich(cislice) {
+    return cislice.replace(/\B(?=(\d{3})+(?!\d))/g, DELICI_MEZERA);
+}
+
+document.querySelectorAll('input[data-tisice]').forEach((pole) => {
+    const prepis = () => {
+        // Kolik číslic je před kurzorem — podle toho se kurzor vrátí na místo.
+        // Bez toho by při psaní doprostřed částky odskakoval na konec.
+        const pred = pole.value.slice(0, pole.selectionStart ?? pole.value.length);
+        const cislicPred = (pred.match(/\d/g) || []).length;
+        const cislice = (pole.value.match(/\d/g) || []).join('').slice(0, 9);
+        pole.value = poTisicich(cislice);
+        let i = 0;
+        let videno = 0;
+        while (i < pole.value.length && videno < cislicPred) {
+            if (/\d/.test(pole.value[i])) videno++;
+            i++;
+        }
+        try { pole.setSelectionRange(i, i); } catch (e) { /* některé prohlížeče u text pole neumí */ }
+    };
+    pole.addEventListener('input', prepis);
+    if (pole.value) prepis();
+});
+
 // Mapa u nabídky se načte až na kliknutí. Dokud na ni nikdo neklikne,
 // neodejde na OpenStreetMap jediný požadavek — stránka tak nestahuje cizí
 // obsah a návštěvníkova IP adresa nikam necestuje.
