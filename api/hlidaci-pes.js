@@ -95,7 +95,7 @@ module.exports = async (req, res) => {
     });
     if (!sito.prosel) return res.status(sito.stav).json(sito.telo);
 
-    const ulozeno = await uloz({
+    const zaznam = {
         email: pole.email,
         typ: pole.typ,
         lokalita: pole.lokalita,
@@ -107,13 +107,8 @@ module.exports = async (req, res) => {
         souhlas_kdy: new Date().toISOString(),
         souhlas_ip: sito.ip,
         zdroj: String(data.odkud || '').slice(0, 300) || null,
-    });
-    if (!ulozeno.ok) {
-        return res.status(503).json({
-            kod: ulozeno.kod,
-            chyba: 'Přihlášení se teď nepodařilo uložit. Zkuste to prosím za chvíli nebo mi napište na invest@janrehacek.com.',
-        });
-    }
+    };
+    const ulozeno = await uloz(zaznam);
 
     const popis = [
         NAZEV_TYPU[pole.typ] || pole.typ,
@@ -123,6 +118,33 @@ module.exports = async (req, res) => {
     ].filter(Boolean).join(' · ');
 
     const odhlasit = odhlasovaciOdkaz(pole.email, 'pes');
+
+    // ZÁCHRANA, KDYŽ DATABÁZE SELŽE. Zájemce, který si dal práci vyplnit
+    // formulář, je to poslední, co se smí ztratit kvůli chybějícímu nastavení
+    // na serveru. Pošle se tedy aspoň e-mailem s poznámkou, že ho je potřeba
+    // zapsat ručně. Potvrzení zájemci se v tom případě neposílá: slibovalo by
+    // odhlášení jedním kliknutím, které bez databáze nefunguje.
+    if (!ulozeno.ok) {
+        const doslo = await posli({
+            to: PRIJEMCI,
+            subject: `⚠ Hlídací pes NEULOŽEN: ${popis}`,
+            text: `Databáze přihlášku nepřijala (${ulozeno.kod}), takže ji zapiš ručně.\n\n`
+                + `${pole.email}\n${popis}\n\n${pole.poznamka || ''}`,
+            html: `<div style="font:15px/1.7 -apple-system,Segoe UI,sans-serif">
+<p style="padding:10px 14px;background:#fdeaea;border-left:3px solid #c62016"><strong>Databáze přihlášku nepřijala (${escapeHtml(ulozeno.kod)}).</strong> Zapiš ji prosím ručně.</p>
+<p><strong>${escapeHtml(pole.email)}</strong></p>
+<p>${escapeHtml(popis)}</p>
+${pole.poznamka ? `<p style="white-space:pre-wrap">${escapeHtml(pole.poznamka)}</p>` : ''}
+</div>`,
+        });
+        if (!doslo) {
+            return res.status(503).json({
+                kod: ulozeno.kod,
+                chyba: 'Přihlášení se teď nepodařilo uložit. Zkuste to prosím za chvíli nebo mi napište na invest@janrehacek.com.',
+            });
+        }
+        return res.status(200).json({ ok: true });
+    }
 
     // Potvrzení zájemci — ať ví, co si zapsal, a má po ruce odhlášení.
     await posli({
