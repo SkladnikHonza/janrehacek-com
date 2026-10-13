@@ -1,4 +1,10 @@
 :root {
+    /* Web je navržený jako světlý. Bez tohohle řádku ho Chrome se zapnutým
+       automatickým ztmavováním stránek přebarví po svém — a nejvíc to odnesou
+       formulářová pole: bílé pozadí ztmavne, ale text zůstane tmavý, takže
+       člověk nevidí, co píše. Tím se Chromu říká, že si barvy řešíme sami. */
+    color-scheme: light;
+
     --bg: #fafaf7;
     --bg-card: #ffffff;
     --bg-dark: #0f1115;
@@ -3170,8 +3176,14 @@ nav.breadcrumbs span { color: var(--text-light); }
     transition: border-color 0.15s;
 }
 .listing-form textarea { min-height: 110px; resize: vertical; }
+/* Pozadí se tu musí zopakovat i pro :focus. Nové formuláře používají obaly
+   .form-group z kontaktní stránky, a ta má pole na tmavém podkladu —
+   `.form-group input:focus { background: rgba(255,255,255,0.06) }`. Protože má
+   stejnou váhu jako pravidlo níž, při zaostření přebilo bílou a člověk psal
+   tmavým písmem do tmavého pole. */
 .listing-form input:focus,
 .listing-form textarea:focus {
+    background: var(--bg-card);
     outline: none;
     border-color: var(--accent-dark);
 }
@@ -3330,9 +3342,14 @@ nav.breadcrumbs span { color: var(--text-light); }
     transition: border-color 0.15s;
 }
 .odhad-form textarea { min-height: 96px; resize: vertical; }
+/* Pozadí se tu musí zopakovat i pro :focus. Nové formuláře používají obaly
+   .form-group z kontaktní stránky, a ta má pole na tmavém podkladu —
+   `.form-group input:focus { background: rgba(255,255,255,0.06) }`. Protože má
+   stejnou váhu jako pravidlo níž, při zaostření přebilo bílou a člověk psal
+   tmavým písmem do tmavého pole. */
 .odhad-form input:focus,
 .odhad-form select:focus,
-.odhad-form textarea:focus { outline: none; border-color: var(--accent-dark); }
+.odhad-form textarea:focus { background: var(--bg-card); outline: none; border-color: var(--accent-dark); }
 .odhad-form .btn-submit { width: auto; padding: 14px 30px; }
 .odhad-form .listing-form-actions { margin-top: 22px; }
 
@@ -3430,8 +3447,13 @@ nav.breadcrumbs span { color: var(--text-light); }
     border-radius: 12px;
     transition: border-color 0.15s;
 }
+/* Pozadí se tu musí zopakovat i pro :focus. Nové formuláře používají obaly
+   .form-group z kontaktní stránky, a ta má pole na tmavém podkladu —
+   `.form-group input:focus { background: rgba(255,255,255,0.06) }`. Protože má
+   stejnou váhu jako pravidlo níž, při zaostření přebilo bílou a člověk psal
+   tmavým písmem do tmavého pole. */
 .pes-form input:focus,
-.pes-form select:focus { outline: none; border-color: var(--accent-dark); }
+.pes-form select:focus { background: var(--bg); outline: none; border-color: var(--accent-dark); }
 
 /* Souhlas musí být vidět a musí se zaškrtávat vědomě — předzaškrtnuté
    políčko by nebyl souhlas. */
@@ -3609,4 +3631,22 @@ nav.breadcrumbs span { color: var(--text-light); }
     content: '·';
     margin: 0 8px;
     opacity: 0.6;
+}
+
+/* ===== DOPLNĚNÍ ÚDAJŮ PROHLÍŽEČEM ===== */
+
+/* Když Chrome vyplní pole uloženými údaji, přebarví si ho po svém a běžným
+   `background` to přepsat nejde. Jediné, co na to platí, je vnitřní stín
+   přes celé pole a -webkit-text-fill-color na písmo. Jinak se stane totéž
+   co u automatického ztmavování: tmavý text na tmavém pozadí. */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+select:-webkit-autofill {
+    -webkit-text-fill-color: var(--text);
+    -webkit-box-shadow: 0 0 0 1000px var(--bg-card) inset;
+    box-shadow: 0 0 0 1000px var(--bg-card) inset;
+    caret-color: var(--text);
+    transition: background-color 9999s ease-in-out 0s;
 }
