@@ -3581,8 +3581,9 @@ nav.breadcrumbs span { color: var(--text-light); }
     width: 100%;
     height: auto;
     /* object-fit: contain, aby se plán neořízl — u fotky vadí prázdno,
-       u výkresu vadí useknutá místnost. */
-    max-height: 520px;
+       u výkresu vadí useknutá místnost. Výška radši větší: plány bývají
+       na výšku a při nízkém stropu se ve široké sekci ztratí. */
+    max-height: 720px;
     object-fit: contain;
 }
 

@@ -24,8 +24,6 @@ info_extra:
   Zahrada: 312 m²
   Parkování: Vlastní stání
   Koupelny: Dvě
-  Záchod: Samostatný
-  Šatna: 4,71 m²
   Kuchyně: Moderní linka s vestavěnými spotřebiči
   Dostupnost centra: Cca 8 minut autem
 ---
@@ -48,8 +46,6 @@ Nemovitost se nachází v klidné lokalitě ostravských Michálkovic, odkud se 
 - Zahrada: 312 m²
 - Parkování: Vlastní stání
 - Koupelny: Dvě
-- Záchod: Samostatný
-- Šatna: 4,71 m²
 - Kuchyně: Moderní linka s vestavěnými spotřebiči
 - Lokalita: Ostrava-Michálkovice, ul. U Kříže
 - Dostupnost centra Ostravy: Cca 8 minut autem
