@@ -53,7 +53,17 @@ const soubor = (rel) => {
 };
 
 function posli(res, kod, cesta) {
-    const telo = fs.readFileSync(cesta);
+    let telo = fs.readFileSync(cesta);
+    // Klíč Turnstile doplňuje do assets/poptavka.js až build při kopírování
+    // do dist/. Náhled servíruje soubory z kořene, takže tu dřív zůstával
+    // zástupný text a ověření se v náhledu NIKDY nenačetlo — což dělá
+    // z náhledu past: zkoušíš něco, co se chová jinak než ostrý web.
+    if (path.basename(cesta) === 'poptavka.js') {
+        telo = Buffer.from(
+            telo.toString('utf8').replaceAll('__TURNSTILE_SITEKEY__', process.env.TURNSTILE_SITEKEY || ''),
+            'utf8',
+        );
+    }
     res.writeHead(kod, {
         'Content-Type': TYPY[path.extname(cesta).toLowerCase()] || 'application/octet-stream',
         'Content-Length': telo.length,

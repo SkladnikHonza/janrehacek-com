@@ -22,10 +22,15 @@
   // Turnstile se nacita jednou za stranku, i kdyby formularu bylo vic.
   var turnstileZazadan = false;
   function zapniTurnstile(misto) {
-    // Klíč Turnstile smí obsahovat i podtržítko a pomlčku — ten ostrý je
-    // „0x4AAAAAAFWP5y_xmjwAxhgV“. Puvodni vzor je nepoustel, takze se
-    // overeni tise nenacitalo, i kdyz klic nastaveny byl.
-    if (!misto || !/^0x[0-9A-Za-z_-]+$/.test(TURNSTILE_KLIC)) return;
+    // Jediné, co je tu potřeba zjistit, je jestli je klíč vůbec nastavený —
+    // když build nemá TURNSTILE_SITEKEY, zůstane tu prázdno nebo zástupný text
+    // a widget se nemá o co pokoušet.
+    //
+    // Dřív se tu klíč ověřoval vzorem a ten ho dvakrát vyhodil omylem: ostrý
+    // klíč má podtržítko, zkušební klíče od Cloudflare začínají 1x/2x/3x.
+    // Hádat tvar cizího klíče je zbytečné riziko: když se splete, Turnstile
+    // se tiše nenačte, ale server lístek dál vyžaduje — a neprojde nic.
+    if (!misto || !TURNSTILE_KLIC || TURNSTILE_KLIC.indexOf('__') === 0) return;
     misto.hidden = false;
     misto.className = 'overeni cf-turnstile';
     misto.setAttribute('data-sitekey', TURNSTILE_KLIC);
