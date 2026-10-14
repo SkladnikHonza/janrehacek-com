@@ -3650,3 +3650,38 @@ select:-webkit-autofill {
     caret-color: var(--text);
     transition: background-color 9999s ease-in-out 0s;
 }
+
+/* ===== CO MAKLÉŘ ODPRACUJE (reference) ===== */
+
+/* Na stránce s referencemi chybělo cokoli o prodeji cizí nemovitosti
+   a o financování. Tohle je psané vlastním hlasem — ne jako cizí citace. */
+.makler-sluzby {
+    padding: 72px 0;
+    background: var(--bg-card);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+.makler-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 26px;
+    margin-top: 10px;
+}
+.makler-karta {
+    padding: 28px 26px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--bg);
+}
+.makler-karta h3 {
+    font-family: 'Geist', sans-serif;
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: -0.4px;
+    margin-bottom: 10px;
+}
+.makler-karta p { color: var(--text-muted); line-height: 1.7; font-size: 15px; }
+
+@media (max-width: 900px) {
+    .makler-grid { grid-template-columns: 1fr; gap: 18px; }
+}

@@ -1700,7 +1700,9 @@ function buildDist() {
     const TURNSTILE = process.env.TURNSTILE_SITEKEY || '';
 
     const SKIP_ROOT = new Set(['README.md', 'AGENTS.md', 'build.js', 'nahled.js', 'vercel.json',
-        'package.json', 'package-lock.json', 'Spustit-nahled.command']);
+        'package.json', 'package-lock.json', 'Spustit-nahled.command',
+        // Návrhy referencí nesmí na web, dokud je klient neodsouhlasí.
+        'NAVRHY-REFERENCI.md']);
     const PUBLIC_IMG = /\.(jpe?g|png|webp|gif|svg|ico)$/i;
     const ASSET_URL = /(?<=["'\s,(;=]|janrehacek\.com)\/(?:assets\/[^"'\s?#&<>()]+?\.(?:css|js)|images\/[^"'\s?#&<>()]+?\.(?:jpe?g|png|webp))(?![\w.?%\/-])/gi;
     const stats = { files: 0, bytes: 0, versioned: 0 };
