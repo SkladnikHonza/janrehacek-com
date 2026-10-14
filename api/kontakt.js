@@ -29,10 +29,38 @@ const PRIJEMCI = (process.env.KONTAKT_PRIJEMCE || 'invest@janrehacek.com')
 const ODESILATEL = process.env.KONTAKT_ODESILATEL || 'Formulář janrehacek.com <formular@housio.app>';
 
 const {
-    escapeHtml, nactiTelo, prosejPozadavek,
+    escapeHtml, nactiTelo, prosejPozadavek, jeNavigace,
 } = require('../lib/ochrana');
 
 const DELKY = { name: 120, email: 160, phone: 60, interest: 80, message: 5000, nabidka: 300, odkud: 300, subject: 200 };
+
+const STRANKA_BEZ_JS = `<!DOCTYPE html>
+<html lang="cs"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Zprávu se nepodařilo odeslat | Jan Řeháček</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600&family=Manrope:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fafaf7;--text:#0f1115;--muted:#6b6b6b;--accent:#d4a574}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:Manrope,-apple-system,sans-serif;
+     min-height:100vh;display:flex;align-items:center;justify-content:center;padding:24px;line-height:1.6}
+.karta{max-width:540px;text-align:center}
+h1{font-family:Geist,sans-serif;font-size:clamp(26px,4vw,34px);font-weight:600;letter-spacing:-1px;margin-bottom:14px}
+p{color:var(--muted);font-size:16px;margin-bottom:26px}
+a.tel{display:inline-block;padding:11px 22px;border-radius:100px;background:var(--text);color:var(--bg);
+  text-decoration:none;font-size:15px;font-weight:600;margin:0 6px 10px}
+a.tel.vedlejsi{background:transparent;color:var(--text);border:1px solid rgba(15,17,21,.2)}
+</style></head>
+<body><div class="karta">
+<h1>Zprávu se nepodařilo odeslat</h1>
+<p>Formulář potřebuje zapnutý JavaScript a u Vás se nespustil, takže zpráva nedorazila.
+Ozvěte se mi prosím napřímo — rád Vám odpovím.</p>
+<a class="tel" href="tel:+420608177099">Zavolat +420 608 177 099</a>
+<a class="tel vedlejsi" href="mailto:invest@janrehacek.com">invest@janrehacek.com</a>
+</div></body></html>`;
 
 module.exports = async (req, res) => {
     // `verze` slouží ke kontrole, že je nasazená očekávaná podoba funkce.
@@ -51,7 +79,18 @@ module.exports = async (req, res) => {
         (!pole.name || !pole.message || !/^[^@\s]+@[^@\s.]+\.[^@\s]+$/.test(pole.email))
             ? 'Vyplňte prosím jméno, platný e-mail a zprávu.'
             : null);
-    if (!sito.prosel) return res.status(sito.stav).json(sito.telo);
+    if (!sito.prosel) {
+        // Past na roboty odpovídá 200 {ok:true}, aby automatu neprozradila, že
+        // neprošel. Jenže když formulář odešle ČLOVĚK, kterému se nespustil
+        // JavaScript, prohlížeč na tu adresu přejde a člověk kouká na holý JSON
+        // — a poptávka je přitom zahozená. Takovému návštěvníkovi proto radši
+        // řekneme, co se stalo a kam zavolat.
+        if (sito.tiche && jeNavigace(req)) {
+            res.setHeader('Content-Type', 'text/html; charset=utf-8');
+            return res.status(200).end(STRANKA_BEZ_JS);
+        }
+        return res.status(sito.stav).json(sito.telo);
+    }
 
     const klic = process.env.RESEND_API_KEY;
     if (!klic) return res.status(503).json({ kod: 'bez-klice', chyba: 'Odesílání zatím není nastavené.' });
