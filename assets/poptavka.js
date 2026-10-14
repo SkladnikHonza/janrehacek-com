@@ -22,7 +22,10 @@
   // Turnstile se nacita jednou za stranku, i kdyby formularu bylo vic.
   var turnstileZazadan = false;
   function zapniTurnstile(misto) {
-    if (!misto || !/^0x[0-9A-Za-z]+$/.test(TURNSTILE_KLIC)) return;
+    // Klíč Turnstile smí obsahovat i podtržítko a pomlčku — ten ostrý je
+    // „0x4AAAAAAFWP5y_xmjwAxhgV“. Puvodni vzor je nepoustel, takze se
+    // overeni tise nenacitalo, i kdyz klic nastaveny byl.
+    if (!misto || !/^0x[0-9A-Za-z_-]+$/.test(TURNSTILE_KLIC)) return;
     misto.hidden = false;
     misto.className = 'overeni cf-turnstile';
     misto.setAttribute('data-sitekey', TURNSTILE_KLIC);
