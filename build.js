@@ -1345,8 +1345,17 @@ function loadListings() {
         process.exit(1);
     }
 
-    // Sort by status group, then by explicit `order` (lower = earlier; default 100).
-    // Stable sort keeps the alphabetical order for listings without `order`.
+    // Poradi na vypisech: 1) skupina podle stavu, 2) rucni `order`, 3) datum
+    // `nabidnuto` od nejnovejsiho, 4) abecedne (stabilni razeni zdedene z readdiru).
+    //
+    // Bod 3 pribyl proto, aby nove nabidky slo videt nahore bez rucniho
+    // cislovani. Nabidka bez data se radi az za ty s datem — nova dostane
+    // `nabidnuto:` v info.md a tim predbehne starsi, u kterych datum nezname.
+    const kdyNabidnuto = (l) => {
+        if (!l.nabidnuto) return null;
+        const d = new Date(l.nabidnuto);
+        return Number.isNaN(+d) ? null : +d;
+    };
     listings.sort((a, b) => {
         const ai = STATUS_ORDER.indexOf(a.status);
         const bi = STATUS_ORDER.indexOf(b.status);
@@ -1355,7 +1364,15 @@ function loadListings() {
         if (sa !== sb) return sa - sb;
         const oa = (a.order != null && !Number.isNaN(a.order)) ? a.order : 100;
         const ob = (b.order != null && !Number.isNaN(b.order)) ? b.order : 100;
-        return oa - ob;
+        if (oa !== ob) return oa - ob;
+        const na = kdyNabidnuto(a);
+        const nb = kdyNabidnuto(b);
+        if (na !== nb) {
+            if (na === null) return 1;      // bez data az za ty s datem
+            if (nb === null) return -1;
+            return nb - na;                 // novejsi driv
+        }
+        return 0;
     });
     return listings;
 }

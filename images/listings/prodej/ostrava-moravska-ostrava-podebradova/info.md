@@ -2,6 +2,9 @@
 type: prodej
 title: Byt 2+kk, 38 m² — Ostrava, ul. Poděbradova
 status: nova
+# Den, kdy nabidka vysla na web. Radi vypisy (novejsi driv) a az se
+# nemovitost proda, spocita se z nej doba prodeje.
+nabidnuto: 2026-10-18
 price: 2 690 000 Kč
 location_short: Ostrava — Moravská Ostrava
 location_long: Ostrava, Moravská Ostrava, ul. Poděbradova
