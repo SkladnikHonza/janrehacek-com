@@ -62,6 +62,10 @@ const MAP_FIELDS = new Set(['info_extra', 'investment_case']);
 
 const AVAILABLE = new Set(['nova', 'aktivni']);      // counted as "aktivní / aktuální"
 const CLOSED = new Set(['prodano', 'pronajato']);    // noindex + left out of sitemap
+// Co patri POD delici caru na vypisech. Je to sirsi nez CLOSED: rezervovana
+// nemovitost se uz koupit neda, ale porad je vlastni nabidka — zustava proto
+// v sitemape a v indexu, jen se nemota mezi dostupnymi.
+const ZA_CAROU = new Set(['rezervovano', 'prodano', 'pronajato']);
 
 // Languages that should translate every L.* / T.* key (Czech is the HTML default).
 const I18N_LANGS = ['sk', 'en', 'de', 'fr', 'it', 'es', 'pl', 'ru', 'ja', 'zh'];
@@ -1922,7 +1926,7 @@ function build() {
         const kusy = [];
         let caraVlozena = false;
         for (const l of filtered) {
-            if (!caraVlozena && CLOSED.has(l.status) && kusy.length) {
+            if (!caraVlozena && ZA_CAROU.has(l.status) && kusy.length) {
                 // Z archivu se dá udělat důkaz: kolik se prodalo a jak rychle.
                 // Průměr se počítá jen z nabídek, kde jsou data vyplněná —
                 // jinak by se tvářil přesněji, než jaký doopravdy je.
@@ -1940,8 +1944,14 @@ function build() {
                     }
                     souhrn = `<span class="listing-divider-souhrn">${escapeHtml(kolik + doba)}</span>`;
                 }
+                // „Již není v nabídce" by u rezervované nemovitosti nebyla pravda —
+                // porad je nabizena, jen je zadana. Popisek se proto lisi podle
+                // toho, co pod carou stoji.
+                const jeRezervovana = filtered.some((x) => x.status === 'rezervovano');
+                const klic = jeRezervovana ? 'listings.divider.unavailable' : 'listings.divider.closed';
+                const popis = jeRezervovana ? 'Rezervované a prodané' : 'Již není v nabídce';
                 kusy.push('            <div class="listing-divider" role="separator">'
-                    + '<span data-i18n="listings.divider.closed">Již není v nabídce</span>'
+                    + `<span data-i18n="${klic}">${popis}</span>`
                     + souhrn + '</div>');
                 caraVlozena = true;
             }

@@ -1,7 +1,7 @@
 ---
 type: prodej
 title: Byt 4+kk se zahradou, 94 m² — polovina domu, Ostrava-Michálkovice
-status: nova
+status: rezervovano
 price: 4 490 000 Kč
 location_short: Ostrava — Michálkovice
 location_long: Ostrava-Michálkovice, ul. U Kříže
