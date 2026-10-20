@@ -753,11 +753,11 @@ function renderCardBadge(l) {
         if (l.type === 'pronajem' && l.available_from) {
             extraSpan = `<span>${escapeHtml(String(l.available_from).toUpperCase())}</span>`;
         }
-    } else if (status === 'pronajato' || status === 'prodano') {
-        // Closed states: the word is carried by the stamp across the cover
-        // (renderCoverStamp), so the corner badge would only repeat it.
+    } else if (status === 'pronajato' || status === 'prodano' || status === 'rezervovano') {
+        // Slovo uz nese cervena paska pres fotku (renderCoverStamp),
+        // rohovy odznak by ho jen zopakoval podruhe vedle sebe.
         return '';
-    } else if (status === 'rezervovano' || status === 'nova') {
+    } else if (status === 'nova') {
         const statusLbl = STATUS_CARD_LABEL[status];
         const statusKey = STATUS_I18N[status];
         extraSpan = `<span data-i18n="${statusKey}">${escapeHtml(statusLbl)}</span>`;
@@ -797,12 +797,16 @@ function listingUrl(l) {
     return `/${DETAIL_OUTPUT[l.type].outputBase}/${l.slug}`;
 }
 
-/** Red "PRODÁNO" / "PRONAJATO" stamp across the cover of a closed listing.
- *  Spolu s nim jde na kartu trida is-closed, ktera fotku odbarvi do seda —
- *  prodana nemovitost se pak v mrizce pozna jeste driv, nez si clovek
- *  precte jediné slovo. */
+/** Cervena paska pres fotku: "PRODÁNO", "PRONAJATO", "REZERVOVÁNO".
+ *  U prodanych a pronajatych jde s paskou i trida is-closed, ktera fotku
+ *  odbarvi do seda — prodana nemovitost se pak v mrizce pozna jeste driv,
+ *  nez si clovek precte jedine slovo.
+ *
+ *  Rezervovana paska ma, ale seda NENI: porad je to ziva nabidka, jen je
+ *  zadana. Kdyby vypadala stejne jako prodana, zajemce by ji preskocil —
+ *  a pritom rezervace casto padne. */
 function renderCoverStamp(l) {
-    if (!CLOSED.has(l.status)) return '';
+    if (!ZA_CAROU.has(l.status)) return '';
     const lbl = STATUS_CARD_LABEL[l.status];
     const key = STATUS_I18N[l.status];
     return `                    <span class="listing-stamp" data-i18n="${key}">${escapeHtml(lbl)}</span>`;
