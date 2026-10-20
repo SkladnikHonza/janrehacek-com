@@ -2,6 +2,9 @@
 type: prodej
 title: Polovina domu 70 m² se zahradou, před dokončením — Ostrava-Michálkovice
 status: nova
+# Stazeno z webu. Nabidka vcetne fotek zustava tady; smazanim tohoto
+# radku (nebo zmenou na false) se vrati zpatky na puvodni adresu.
+skryto: true
 # Den, kdy nabidka vysla na web. Radi vypisy (novejsi driv) a az se
 # nemovitost proda, spocita se z nej doba prodeje.
 nabidnuto: 2026-10-20

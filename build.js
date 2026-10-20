@@ -1315,6 +1315,9 @@ function readListing(type, slug, errors) {
         declaration_of_owner: str(data.declaration_of_owner),
         cta: str(data.cta),
         cover_is_visualization: String(data.cover_is_visualization).toLowerCase() === 'true',
+        // Stazeni nabidky z webu bez mazani. Cte se stejne jako
+        // cover_is_visualization — z info.md chodi retezec, ne boolean.
+        skryto: String(data.skryto).toLowerCase() === 'true',
         investment_case: data.investment_case || null,
         description:        sections.description || '',
         highlights:         sections.highlights || '',
@@ -1335,6 +1338,7 @@ function loadListings() {
     }
     const errors = [];
     const listings = [];
+    const skryte = [];
     for (const type of TYPES) {
         const typeDir = path.join(LISTINGS_DIR, type);
         if (!fs.existsSync(typeDir)) continue;
@@ -1344,6 +1348,12 @@ function loadListings() {
             .sort();   // same order on every machine (Linux readdir order is not alphabetical)
         for (const slug of slugs) {
             const l = readListing(type, slug, errors);
+            // `skryto: true` v info.md nabidku stahne z webu, ale nechá ji ležet
+            // ve složce i s fotkami. Slozky nabidka/ a investors/ se pred kazdym
+            // buildem mazou a generuji znovu, takze stranka zmizi sama — ze
+            // seznamu, ze sitemapy i z llms.txt. Vraceni je prepsani jednoho
+            // radku, nic se nemusi delat znovu.
+            if (l && l.skryto) { skryte.push(`${type}/${slug}`); continue; }
             if (l) listings.push(l);
         }
     }
@@ -1351,6 +1361,10 @@ function loadListings() {
         console.error(`✗ Build zastaven — ${errors.length} ${pluralCz(errors.length, 'chyba', 'chyby', 'chyb')} v info.md:`);
         for (const e of errors) console.error(`  • ${e}`);
         process.exit(1);
+    }
+
+    if (skryte.length) {
+        console.log(`  · skryto (skryto: true v info.md): ${skryte.join(', ')}`);
     }
 
     // Poradi na vypisech: 1) skupina podle stavu, 2) rucni `order`, 3) datum
