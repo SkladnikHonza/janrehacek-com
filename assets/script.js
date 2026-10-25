@@ -758,6 +758,8 @@ window.translations.sk = {
     "housio.pricing.eyebrow": "Cenník",
     "housio.pricing.title": "Začnite zadarmo. Plaťte, až keď portfólio porastie.",
     "housio.pricing.per": "mesačne",
+    "housio.pricing.cta.free": "Založiť zadarmo",
+    "housio.pricing.cta.plan": "Vybrať tarif",
     "housio.pricing.free": "Natrvalo zadarmo, nie skúšobná verzia. Pre 1 nehnuteľnosť a 1 nájomníka.",
     "housio.pricing.basic": "Až 15 nehnuteľností.",
     "housio.pricing.pro": "16 až 25 nehnuteľností.",
@@ -1280,6 +1282,8 @@ window.translations.en = {
     "housio.pricing.eyebrow": "Pricing",
     "housio.pricing.title": "Start for free. Pay as your portfolio grows.",
     "housio.pricing.per": "per month",
+    "housio.pricing.cta.free": "Start free",
+    "housio.pricing.cta.plan": "Choose plan",
     "housio.pricing.free": "Free forever, not a trial. For 1 property and 1 tenant.",
     "housio.pricing.basic": "Up to 15 properties.",
     "housio.pricing.pro": "16 to 25 properties.",
@@ -1802,6 +1806,8 @@ window.translations.de = {
     "housio.pricing.eyebrow": "Preise",
     "housio.pricing.title": "Starten Sie kostenlos. Zahlen Sie erst, wenn Ihr Portfolio wächst.",
     "housio.pricing.per": "pro Monat",
+    "housio.pricing.cta.free": "Kostenlos starten",
+    "housio.pricing.cta.plan": "Tarif wählen",
     "housio.pricing.free": "Dauerhaft kostenlos, keine Testversion. Für 1 Immobilie und 1 Mieter.",
     "housio.pricing.basic": "Bis zu 15 Immobilien.",
     "housio.pricing.pro": "16 bis 25 Immobilien.",
@@ -2327,6 +2333,8 @@ window.translations.fr = {
     "housio.pricing.eyebrow": "Tarifs",
     "housio.pricing.title": "Commencez gratuitement. Payez quand votre portefeuille grandit.",
     "housio.pricing.per": "par mois",
+    "housio.pricing.cta.free": "Commencer gratuitement",
+    "housio.pricing.cta.plan": "Choisir la formule",
     "housio.pricing.free": "Gratuit pour toujours, pas une version d'essai. Pour 1 bien et 1 locataire.",
     "housio.pricing.basic": "Jusqu'à 15 biens.",
     "housio.pricing.pro": "De 16 à 25 biens.",
@@ -2849,6 +2857,8 @@ window.translations.it = {
     "housio.pricing.eyebrow": "Prezzi",
     "housio.pricing.title": "Inizi gratis. Paghi quando il portafoglio cresce.",
     "housio.pricing.per": "al mese",
+    "housio.pricing.cta.free": "Inizia gratis",
+    "housio.pricing.cta.plan": "Scegli il piano",
     "housio.pricing.free": "Gratis per sempre, non una prova. Per 1 immobile e 1 inquilino.",
     "housio.pricing.basic": "Fino a 15 immobili.",
     "housio.pricing.pro": "Da 16 a 25 immobili.",
@@ -3371,6 +3381,8 @@ window.translations.es = {
     "housio.pricing.eyebrow": "Precios",
     "housio.pricing.title": "Empiece gratis. Pague cuando su cartera crezca.",
     "housio.pricing.per": "al mes",
+    "housio.pricing.cta.free": "Empezar gratis",
+    "housio.pricing.cta.plan": "Elegir plan",
     "housio.pricing.free": "Gratis para siempre, no es una prueba. Para 1 inmueble y 1 inquilino.",
     "housio.pricing.basic": "Hasta 15 inmuebles.",
     "housio.pricing.pro": "De 16 a 25 inmuebles.",
@@ -3901,6 +3913,8 @@ window.translations.pl = {
     "housio.pricing.eyebrow": "Cennik",
     "housio.pricing.title": "Start za darmo. Płatność dopiero, gdy portfel urośnie.",
     "housio.pricing.per": "miesięcznie",
+    "housio.pricing.cta.free": "Załóż za darmo",
+    "housio.pricing.cta.plan": "Wybierz plan",
     "housio.pricing.free": "Bezpłatnie na stałe, nie wersja próbna. Dla 1 nieruchomości i 1 najemcy.",
     "housio.pricing.basic": "Do 15 nieruchomości.",
     "housio.pricing.pro": "Od 16 do 25 nieruchomości.",
@@ -4434,6 +4448,8 @@ window.translations.ru = {
     "housio.pricing.eyebrow": "Цены",
     "housio.pricing.title": "Начните бесплатно. Платите, когда портфель вырастет.",
     "housio.pricing.per": "в месяц",
+    "housio.pricing.cta.free": "Начать бесплатно",
+    "housio.pricing.cta.plan": "Выбрать тариф",
     "housio.pricing.free": "Бесплатно навсегда, а не пробная версия. Для 1 объекта и 1 арендатора.",
     "housio.pricing.basic": "До 15 объектов.",
     "housio.pricing.pro": "От 16 до 25 объектов.",
@@ -4952,6 +4968,8 @@ window.translations.ja = {
     "housio.pricing.eyebrow": "料金プラン",
     "housio.pricing.title": "無料で始められます。ポートフォリオの成長に合わせてお支払いください。",
     "housio.pricing.per": "/月",
+    "housio.pricing.cta.free": "無料で始める",
+    "housio.pricing.cta.plan": "プランを選ぶ",
     "housio.pricing.free": "お試し版ではなく、ずっと無料。物件1件・入居者1名まで。",
     "housio.pricing.basic": "物件15件まで。",
     "housio.pricing.pro": "物件16〜25件。",
@@ -5470,6 +5488,8 @@ window.translations.zh = {
     "housio.pricing.eyebrow": "价格方案",
     "housio.pricing.title": "免费开始，资产组合扩大后再付费。",
     "housio.pricing.per": "/月",
+    "housio.pricing.cta.free": "免费开始",
+    "housio.pricing.cta.plan": "选择方案",
     "housio.pricing.free": "永久免费，而非试用版。适用于 1 套房产和 1 位租户。",
     "housio.pricing.basic": "最多 15 套房产。",
     "housio.pricing.pro": "16 至 25 套房产。",
@@ -5765,6 +5785,19 @@ function setLanguage(lang) {
         if (el._cs === undefined) el._cs = el.innerHTML;
         el.innerHTML = t[key] || el._cs;
     });
+
+    // Měna v odkazu na registraci musí sedět s cenou, kterou má člověk před očima:
+    // v češtině Kč, v ostatních jazycích €. Jinak by mu Stripe po registraci
+    // strhl jinou částku, než jakou viděl v ceníku. Stejná logika je v ceníku
+    // na housio.app (src/components/Pricing.jsx), proto se tu čte přímo
+    // zobrazená cena, ne seznam jazyků — ten by se mohl rozejít.
+    const cenaBasic = document.querySelector('[data-i18n="housio.pricing.price.basic"]');
+    if (cenaBasic) {
+        const mena = cenaBasic.textContent.includes('Kč') ? 'CZK' : 'EUR';
+        document.querySelectorAll('a.housio-plan[href*="mena="]').forEach(a => {
+            a.href = a.href.replace(/mena=[A-Z]+/, 'mena=' + mena);
+        });
+    }
 
     // Popisky obrázků (alt) — kvůli čtečkám a vyhledávačům v cizích jazycích.
     document.querySelectorAll('[data-i18n-alt]').forEach(el => {

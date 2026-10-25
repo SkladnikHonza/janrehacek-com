@@ -2809,6 +2809,24 @@ nav.breadcrumbs span { color: var(--text-light); }
     padding: 28px 24px; display: flex; flex-direction: column;
 }
 .housio-plan.is-featured { border-color: var(--accent); background: var(--bg-card); box-shadow: 0 20px 50px rgba(0,0,0,0.06); }
+/* Karty tarifu jsou odkazy do registrace s predvybranym tarifem. Barva textu
+   se dedi, aby cela karta nezmodrala jako odkaz — klikatelnost nese vyzva dole
+   a chovani pri najeti. */
+.housio-plan { text-decoration: none; color: inherit; transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease; }
+.housio-plan:hover { transform: translateY(-3px); border-color: var(--accent); box-shadow: 0 20px 50px rgba(0,0,0,0.08); opacity: 1; }
+.housio-plan:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+/* Vyzva k akci. margin-top:auto ji drzi u spodni hrany, aby byly u vsech ctyr
+   karet ve stejne vysce i kdyz maji ruzne dlouhy popis. */
+.housio-plan-cta {
+    margin-top: auto; padding-top: 16px; font-size: 14px; font-weight: 600;
+    color: var(--accent-dark); display: inline-flex; align-items: center; gap: 6px;
+}
+.housio-plan-cta::after { content: '\2192'; transition: transform .18s ease; }
+.housio-plan:hover .housio-plan-cta::after { transform: translateX(3px); }
+@media (prefers-reduced-motion: reduce) {
+    .housio-plan, .housio-plan-cta::after { transition: none; }
+    .housio-plan:hover { transform: none; }
+}
 .housio-plan h3 { font-family: 'Geist', sans-serif; font-size: 20px; font-weight: 600; letter-spacing: -0.5px; margin-bottom: 10px; }
 .housio-plan-price { font-family: 'Geist', sans-serif; font-size: 30px; font-weight: 600; letter-spacing: -1px; line-height: 1.1; }
 .housio-plan-per { font-size: 13px; color: var(--text-muted); margin: 4px 0 14px; }
