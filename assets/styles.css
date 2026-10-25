@@ -1083,6 +1083,13 @@ footer {
     transition: gap 0.2s;
 }
 .teaser-link:hover { gap: 14px; }
+
+/* Rada tlacitek ve vyzve k akci. align-items:center srovna odkaz s tlacitkem
+   na stejnou osu — bez toho sedel odkaz niz, protoze .teaser-link ma
+   margin-top:28px pro pripad, kdy stoji sam pod odstavcem. Tady je vedle
+   tlacitka, takze se ten odstup rusi. */
+.housio-cta-row { display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; align-items: center; }
+.housio-cta-row .teaser-link { margin-top: 0; }
 .teaser-link::after {
     content: '→';
     transition: transform 0.2s;
