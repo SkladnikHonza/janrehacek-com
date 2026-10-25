@@ -1647,25 +1647,27 @@ function updateJsonLd() {
  * Homepage: replace everything between <!-- NABIDKY:START --> and <!-- NABIDKY:END -->
  * with cards of up to 3 available investment listings. Writes only when something changed.
  */
-function updateHomepage(listings, cardTpl, file = HOMEPAGE_PATH) {
+function updateHomepage(listings, cardTpl, file = HOMEPAGE_PATH,
+                        znacka = 'NABIDKY',
+                        vyber = (l) => l.type === 'investicni' && AVAILABLE.has(l.status)) {
     if (!fs.existsSync(file)) return false;
     const src = fs.readFileSync(file, 'utf8');
-    const re = /(<!-- NABIDKY:START -->)[\s\S]*?\n?([ \t]*)(<!-- NABIDKY:END -->)/;
+    const re = new RegExp(`(<!-- ${znacka}:START -->)[\\s\\S]*?\\n?([ \\t]*)(<!-- ${znacka}:END -->)`);
     if (!re.test(src)) {
-        console.log(`  · ${path.basename(file)}: značky <!-- NABIDKY:START --> / <!-- NABIDKY:END --> nenalezeny — doporučené nabídky přeskočeny`);
+        console.log(`  · ${path.basename(file)}: značky <!-- ${znacka}:START --> / <!-- ${znacka}:END --> nenalezeny — doporučené nabídky přeskočeny`);
         return false;
     }
     const featured = listings
-        .filter(l => l.type === 'investicni' && AVAILABLE.has(l.status))
+        .filter(vyber)
         .slice(0, HOMEPAGE_FEATURED_MAX);
     const cards = featured.map(l => renderCard(l, cardTpl)).join('\n');
     const out = src.replace(re, (m, start, indent, end) => `${start}\n${cards ? cards + '\n' : ''}${indent}${end}`);
     if (out === src) {
-        console.log(`  · ${path.basename(file)}: doporučené nabídky beze změny (${featured.length})`);
+        console.log(`  · ${path.basename(file)}: ${znacka} beze změny (${featured.length})`);
         return true;
     }
     fs.writeFileSync(file, out);
-    console.log(`  → ${path.basename(file)}: doporučené nabídky aktualizovány (${featured.length} ${pluralCz(featured.length, 'karta', 'karty', 'karet')})`);
+    console.log(`  → ${path.basename(file)}: ${znacka} aktualizovány (${featured.length} ${pluralCz(featured.length, 'karta', 'karty', 'karet')})`);
     return true;
 }
 
@@ -2027,6 +2029,11 @@ function build() {
 
     // Homepage featured investment cards
     if (updateHomepage(listings, cardTpl)) written.push(HOMEPAGE_PATH);
+    // Druha mrizka na homepage: nejnovejsi nabidky k prodeji a pronajmu.
+    // Investicni sekce je zamerne jen investicni — ma jiny nadpis i jine
+    // publikum — takze prodeje by se do ni nevesly, aniz by nadpis zacal lhat.
+    updateHomepage(listings, cardTpl, HOMEPAGE_PATH, 'NABIDKY-PRODEJ',
+        (l) => (l.type === 'prodej' || l.type === 'pronajem') && AVAILABLE.has(l.status));
 
     // Strukturovaná data ručně psaných stránek
     updateJsonLd();
