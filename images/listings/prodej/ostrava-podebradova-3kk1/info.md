@@ -13,6 +13,10 @@ location_long: Ostrava, Moravská Ostrava, ul. Poděbradova
 gps: "49.83631, 18.28356"
 disposition: 3+1
 area: 127
+# Vykres uvadi 124,46 m2 — je prekresleny z podkladu a sam o sobe rika, ze
+# neni urcen k mereni. Zavazna je plocha z prohlaseni vlastnika, tedy 127 m2.
+# Bez teto poznamky ctenar vidi dve cisla vedle sebe a nevi, kteremu verit.
+pudorys_note: Půdorys je překreslený z dodaného podkladu a slouží k orientaci v rozvržení. Závazná je užitná plocha 127 m² podle prohlášení vlastníka.
 building_type: Cihla
 ownership: Osobní
 condition: Původní, udržovaný

@@ -3716,3 +3716,11 @@ select:-webkit-autofill {
 @media (max-width: 900px) {
     .makler-grid { grid-template-columns: 1fr; gap: 18px; }
 }
+
+/* Poznamka pod pudorysem. Objevi se jen tam, kde je v info.md vyplnena —
+   typicky kdyz se plocha na vykresu lisi od smluvni a ctenar by jinak
+   videl dve cisla vedle sebe a nevedel, kteremu verit. */
+.listing-pudorys-pozn {
+    margin-top: 14px; font-size: 13px; line-height: 1.6;
+    color: var(--text-muted); max-width: 70ch;
+}

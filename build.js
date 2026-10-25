@@ -858,7 +858,8 @@ function renderPudorysy(l) {
                 <h2 class="section-title" data-i18n="listing.detail.pudorys">Půdorys</h2>
                 <div class="listing-pudorysy">
 ${dlazdice}
-                </div>
+                </div>${l.pudorys_note ? `
+                <p class="listing-pudorys-pozn"${ti(l.pudorys_note)}>${escapeHtml(l.pudorys_note)}</p>` : ''}
             </div>
         </section>`;
 }
@@ -1318,6 +1319,9 @@ function readListing(type, slug, errors) {
         // Stazeni nabidky z webu bez mazani. Cte se stejne jako
         // cover_is_visualization — z info.md chodi retezec, ne boolean.
         skryto: String(data.skryto).toLowerCase() === 'true',
+        // Poznamka pod pudorysem. Pouziva se, kdyz se plocha na vykresu lisi
+        // od smluvni — vykres byva prekresleny a neni meritkem.
+        pudorys_note: str(data.pudorys_note),
         investment_case: data.investment_case || null,
         description:        sections.description || '',
         highlights:         sections.highlights || '',
