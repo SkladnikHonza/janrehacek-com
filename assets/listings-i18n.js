@@ -3,6 +3,13 @@
 (function () {
   var data = {
   "sk": {
+    "L.prodej.ostrava-michalkovice-u-krize-144b.title": "Byt 4+1 so záhradou, 95 m² — polovica domu, Ostrava-Michálkovice",
+    "L.prodej.ostrava-michalkovice-u-krize-144b.short": "Polovica rodinného domu v Michálkoviciach — byt 4+1 s plochou 95 m², záhrada 386 m² a parkovanie na pozemku. Rekonštrukcia z marca 2026, dve kúpeľne. Do centra Ostravy osem minút autom.",
+    "L.prodej.ostrava-michalkovice-u-krize-144b.desc": "<p>Ponúkame na predaj polovicu rodinného domu s bytom <strong>4+1 s plochou 95 m²</strong> v ulici U Kříže v Ostrave-Michálkoviciach. K nehnuteľnosti patrí <strong>záhrada s výmerou 386 m²</strong> a je tu možnosť parkovania priamo na pozemku.</p> <p>Štyri izby a samostatná kuchyňa poskytujú dostatok miesta pre rodinné bývanie, domácu pracovňu aj izbu pre hostí. Interiér dopĺňa moderná kuchynská linka so vstavanými spotrebičmi a <strong>dve kúpeľne</strong>, ktoré ocení najmä početnejšia domácnosť. Súčasťou bytu je aj samostatné WC a šatník.</p> <p><strong>Rekonštrukcia prebehla v marci 2026</strong>, takže sa byt preberá v hotovom stave a bez nutnosti ďalších investícií.</p> <p>Záhrada ponúka priestor na oddych, letné posedenie, grilovanie, detské hry alebo pestovanie vlastnej zeleniny. Vonkajšie zázemie tak prirodzene rozširuje obytný priestor.</p> <p>Nehnuteľnosť sa nachádza v pokojnej časti Michálkovíc, pritom do centra Ostravy prídete približne za 8 minút autom.</p>",
+    "T.Březen 2026": "Marec 2026",
+    "T.Na pozemku": "Na pozemku",
+    "T.Půdorys je překreslený z dodaného podkladu a slouží k orientaci v rozvržení. Závazná je užitná plocha podle prohlášení vlastníka.": "Pôdorys je prekreslený z dodaného podkladu a slúži na orientáciu v rozvrhnutí. Záväzná je úžitková plocha podľa vyhlásenia vlastníka.",
+    "T.Rekonstrukce": "Rekonštrukcia",
     "T.Půdorys je překreslený z dodaného podkladu a slouží k orientaci v rozvržení. Závazná je užitná plocha 127 m² podle prohlášení vlastníka.": "Pôdorys je prekreslený z dodaného podkladu a slúži na orientáciu v rozvrhnutí. Záväzná je úžitková plocha 127 m² podľa vyhlásenia vlastníka.",
     "L.prodej.ostrava-podebradova-3kk1.title": "Priestranný byt 3+1, 127 m² — Ostrava, ul. Poděbradova",
     "L.prodej.ostrava-podebradova-3kk1.short": "Byt 3+1 s plochou 127 m² v tehlovom dome v centre Moravskej Ostravy. Ku kúpe patrí pivnica 30 m² a dve parkovacie státia. Vysoké stropy, parkety, priestor, aký sa v novej výstavbe nestavia.",
@@ -200,6 +207,13 @@
     "T.Petřvald, Josefa Rohla 549": "Petřvald, Josefa Rohla 549"
   },
   "en": {
+    "L.prodej.ostrava-michalkovice-u-krize-144b.title": "Four-room flat with garden, 95 m² — half a house, Ostrava-Michálkovice",
+    "L.prodej.ostrava-michalkovice-u-krize-144b.short": "Half a family house in Michálkovice — a 95 m² four-room flat with a 386 m² garden and parking on the plot. Renovated in March 2026, two bathrooms. Eight minutes by car from the centre of Ostrava.",
+    "L.prodej.ostrava-michalkovice-u-krize-144b.desc": "<p>We are offering for sale half a family house with a <strong>four-room flat of 95 m²</strong> on U Kříže Street in Ostrava-Michálkovice. The property includes a <strong>garden of 386 m²</strong> and parking directly on the plot.</p> <p>Four rooms and a separate kitchen give plenty of space for family living, a home office and a guest room. The interior is complemented by a modern fitted kitchen with built-in appliances and <strong>two bathrooms</strong>, which larger households will appreciate. There is also a separate WC and a walk-in wardrobe.</p> <p><strong>The renovation was completed in March 2026</strong>, so the flat is taken over finished, with no further investment needed.</p> <p>The garden offers space to relax, for summer seating, barbecues, children's play or growing your own vegetables. The outdoor space naturally extends the living area.</p> <p>The property is in a quiet part of Michálkovice, yet the centre of Ostrava is about 8 minutes away by car.</p>",
+    "T.Březen 2026": "March 2026",
+    "T.Na pozemku": "On the plot",
+    "T.Půdorys je překreslený z dodaného podkladu a slouží k orientaci v rozvržení. Závazná je užitná plocha podle prohlášení vlastníka.": "The floor plan has been redrawn from the supplied documentation and is intended as a guide to the layout. The binding floor area is that stated in the declaration of owner.",
+    "T.Rekonstrukce": "Renovation",
     "T.Půdorys je překreslený z dodaného podkladu a slouží k orientaci v rozvržení. Závazná je užitná plocha 127 m² podle prohlášení vlastníka.": "The floor plan has been redrawn from the supplied documentation and is intended as a guide to the layout. The binding floor area is 127 m² according to the declaration of owner.",
     "L.prodej.ostrava-podebradova-3kk1.title": "Spacious three-bedroom flat, 127 m² — Ostrava, Poděbradova St.",
     "L.prodej.ostrava-podebradova-3kk1.short": "A 127 m² three-bedroom flat in a brick building in central Moravská Ostrava. A 30 m² cellar and two parking spaces are included. High ceilings, parquet, and more space than new builds offer.",
@@ -397,6 +411,13 @@
     "T.Petřvald, Josefa Rohla 549": "Petřvald, Josefa Rohla 549"
   },
   "de": {
+    "L.prodej.ostrava-michalkovice-u-krize-144b.title": "4-Zimmer-Wohnung mit Garten, 95 m² — Haushälfte, Ostrava-Michálkovice",
+    "L.prodej.ostrava-michalkovice-u-krize-144b.short": "Hälfte eines Einfamilienhauses in Michálkovice — 4-Zimmer-Wohnung mit 95 m², Garten 386 m² und Parken auf dem Grundstück. Sanierung März 2026, zwei Bäder. Acht Autominuten vom Zentrum Ostravas.",
+    "L.prodej.ostrava-michalkovice-u-krize-144b.desc": "<p>Wir bieten die Hälfte eines Einfamilienhauses mit einer <strong>4-Zimmer-Wohnung von 95 m²</strong> in der Straße U Kříže in Ostrava-Michálkovice zum Verkauf an. Zur Immobilie gehören ein <strong>Garten mit 386 m²</strong> und Parkmöglichkeit direkt auf dem Grundstück.</p> <p>Vier Zimmer und eine separate Küche bieten genug Platz für Familienleben, Homeoffice und ein Gästezimmer. Dazu kommen eine moderne Einbauküche mit Elektrogeräten und <strong>zwei Bäder</strong>, die größere Haushalte zu schätzen wissen. Ebenfalls vorhanden: separates WC und Ankleide.</p> <p><strong>Die Sanierung wurde im März 2026 abgeschlossen</strong>, die Wohnung wird also fertig übernommen, ohne weitere Investitionen.</p> <p>Der Garten bietet Raum zum Entspannen, für Sommerabende, Grillen, Kinderspiel oder eigenen Gemüseanbau und erweitert den Wohnraum nach außen.</p> <p>Die Immobilie liegt in einem ruhigen Teil von Michálkovice, das Zentrum Ostravas erreichen Sie in etwa 8 Autominuten.</p>",
+    "T.Březen 2026": "März 2026",
+    "T.Na pozemku": "Auf dem Grundstück",
+    "T.Půdorys je překreslený z dodaného podkladu a slouží k orientaci v rozvržení. Závazná je užitná plocha podle prohlášení vlastníka.": "Der Grundriss wurde aus der gelieferten Unterlage neu gezeichnet und dient der Orientierung über die Aufteilung. Verbindlich ist die Nutzfläche laut Teilungserklärung.",
+    "T.Rekonstrukce": "Sanierung",
     "T.Půdorys je překreslený z dodaného podkladu a slouží k orientaci v rozvržení. Závazná je užitná plocha 127 m² podle prohlášení vlastníka.": "Der Grundriss wurde aus der gelieferten Unterlage neu gezeichnet und dient der Orientierung über die Aufteilung. Verbindlich ist die Nutzfläche von 127 m² laut Teilungserklärung.",
     "L.prodej.ostrava-podebradova-3kk1.title": "Geräumige 4-Zimmer-Wohnung, 127 m² — Ostrava, Poděbradova-Straße",
     "L.prodej.ostrava-podebradova-3kk1.short": "4-Zimmer-Wohnung mit 127 m² in einem Ziegelhaus im Zentrum von Moravská Ostrava. Dazu ein Keller mit 30 m² und zwei Stellplätze. Hohe Decken, Parkett und mehr Raum, als Neubauten bieten.",
@@ -594,6 +615,13 @@
     "T.Petřvald, Josefa Rohla 549": "Petřvald, Josefa Rohla 549"
   },
   "fr": {
+    "L.prodej.ostrava-michalkovice-u-krize-144b.title": "Appartement 5 pièces avec jardin, 95 m² — moitié de maison, Ostrava-Michálkovice",
+    "L.prodej.ostrava-michalkovice-u-krize-144b.short": "Moitié d'une maison familiale à Michálkovice — appartement de 95 m², jardin de 386 m² et stationnement sur le terrain. Rénovation de mars 2026, deux salles de bains. Huit minutes en voiture du centre d'Ostrava.",
+    "L.prodej.ostrava-michalkovice-u-krize-144b.desc": "<p>Nous proposons à la vente la moitié d'une maison familiale avec un <strong>appartement de 95 m²</strong> rue U Kříže, à Ostrava-Michálkovice. Le bien comprend un <strong>jardin de 386 m²</strong> et la possibilité de se garer directement sur le terrain.</p> <p>Quatre pièces et une cuisine séparée offrent de la place pour la vie de famille, un bureau et une chambre d'amis. S'y ajoutent une cuisine équipée moderne et <strong>deux salles de bains</strong>, appréciables pour une famille nombreuse, ainsi qu'un WC séparé et un dressing.</p> <p><strong>La rénovation a été réalisée en mars 2026</strong> : le logement se reprend fini, sans travaux à prévoir.</p> <p>Le jardin offre un espace de détente, pour les repas d'été, les barbecues, les jeux d'enfants ou un potager, et prolonge naturellement l'espace de vie.</p> <p>Le bien se situe dans une partie calme de Michálkovice, à environ 8 minutes en voiture du centre d'Ostrava.</p>",
+    "T.Březen 2026": "Mars 2026",
+    "T.Na pozemku": "Sur le terrain",
+    "T.Půdorys je překreslený z dodaného podkladu a slouží k orientaci v rozvržení. Závazná je užitná plocha podle prohlášení vlastníka.": "Le plan a été redessiné à partir du document fourni et sert à visualiser la distribution. La surface contractuelle est celle indiquée dans la déclaration de propriété.",
+    "T.Rekonstrukce": "Rénovation",
     "T.Půdorys je překreslený z dodaného podkladu a slouží k orientaci v rozvržení. Závazná je užitná plocha 127 m² podle prohlášení vlastníka.": "Le plan a été redessiné à partir du document fourni et sert à visualiser la distribution. La surface contractuelle est de 127 m² selon la déclaration de propriété.",
     "L.prodej.ostrava-podebradova-3kk1.title": "Grand appartement 4 pièces, 127 m² — Ostrava, rue Poděbradova",
     "L.prodej.ostrava-podebradova-3kk1.short": "Appartement de 4 pièces de 127 m² dans un immeuble en brique au centre de Moravská Ostrava. Cave de 30 m² et deux places de stationnement comprises. Hauts plafonds, parquet, des volumes que le neuf n'offre plus.",
@@ -791,6 +819,13 @@
     "T.Petřvald, Josefa Rohla 549": "Petřvald, Josefa Rohla 549"
   },
   "it": {
+    "L.prodej.ostrava-michalkovice-u-krize-144b.title": "Appartamento di cinque locali con giardino, 95 m² — metà casa, Ostrava-Michálkovice",
+    "L.prodej.ostrava-michalkovice-u-krize-144b.short": "Metà di una casa familiare a Michálkovice — appartamento di 95 m², giardino di 386 m² e parcheggio sul lotto. Ristrutturazione del marzo 2026, due bagni. Otto minuti in auto dal centro di Ostrava.",
+    "L.prodej.ostrava-michalkovice-u-krize-144b.desc": "<p>Proponiamo in vendita metà di una casa familiare con un <strong>appartamento di 95 m²</strong> in via U Kříže, a Ostrava-Michálkovice. All'immobile appartengono un <strong>giardino di 386 m²</strong> e la possibilità di parcheggiare direttamente sul lotto.</p> <p>Quattro stanze e una cucina separata offrono spazio per la vita familiare, uno studio e una camera per gli ospiti. Completano gli interni una cucina moderna con elettrodomestici da incasso e <strong>due bagni</strong>, apprezzabili per una famiglia numerosa, oltre a un WC separato e una cabina armadio.</p> <p><strong>La ristrutturazione è stata eseguita nel marzo 2026</strong>, quindi l'immobile si rileva finito, senza ulteriori investimenti.</p> <p>Il giardino offre spazio per il relax, le cene estive, il barbecue, i giochi dei bambini o un orto, ampliando naturalmente la zona giorno.</p> <p>L'immobile si trova in una zona tranquilla di Michálkovice, a circa 8 minuti in auto dal centro di Ostrava.</p>",
+    "T.Březen 2026": "Marzo 2026",
+    "T.Na pozemku": "Sul lotto",
+    "T.Půdorys je překreslený z dodaného podkladu a slouží k orientaci v rozvržení. Závazná je užitná plocha podle prohlášení vlastníka.": "La pianta è ridisegnata dalla documentazione fornita e serve a orientarsi nella distribuzione. Fa fede la superficie utile indicata nella dichiarazione di proprietà.",
+    "T.Rekonstrukce": "Ristrutturazione",
     "T.Půdorys je překreslený z dodaného podkladu a slouží k orientaci v rozvržení. Závazná je užitná plocha 127 m² podle prohlášení vlastníka.": "La pianta è ridisegnata dalla documentazione fornita e serve a orientarsi nella distribuzione. Fa fede la superficie utile di 127 m² secondo la dichiarazione di proprietà.",
     "L.prodej.ostrava-podebradova-3kk1.title": "Ampio appartamento di quattro locali, 127 m² — Ostrava, via Poděbradova",
     "L.prodej.ostrava-podebradova-3kk1.short": "Appartamento di quattro locali di 127 m² in un edificio in mattoni nel centro di Moravská Ostrava. Inclusi cantina di 30 m² e due posti auto. Soffitti alti, parquet e spazi che il nuovo non offre più.",
@@ -988,6 +1023,13 @@
     "T.Petřvald, Josefa Rohla 549": "Petřvald, Josefa Rohla 549"
   },
   "es": {
+    "L.prodej.ostrava-michalkovice-u-krize-144b.title": "Piso de cinco ambientes con jardín, 95 m² — media casa, Ostrava-Michálkovice",
+    "L.prodej.ostrava-michalkovice-u-krize-144b.short": "Media casa familiar en Michálkovice — piso de 95 m², jardín de 386 m² y aparcamiento en la parcela. Reforma de marzo de 2026, dos baños. Ocho minutos en coche del centro de Ostrava.",
+    "L.prodej.ostrava-michalkovice-u-krize-144b.desc": "<p>Ofrecemos en venta media casa familiar con un <strong>piso de 95 m²</strong> en la calle U Kříže, en Ostrava-Michálkovice. Al inmueble pertenece un <strong>jardín de 386 m²</strong> y existe la posibilidad de aparcar directamente en la parcela.</p> <p>Cuatro habitaciones y una cocina independiente dan espacio para la vida familiar, un despacho en casa y un cuarto de invitados. Lo completan una cocina moderna con electrodomésticos integrados y <strong>dos baños</strong>, que agradecerán las familias numerosas, además de un aseo independiente y un vestidor.</p> <p><strong>La reforma se realizó en marzo de 2026</strong>, de modo que el piso se recibe terminado y sin necesidad de más inversiones.</p> <p>El jardín ofrece espacio para descansar, cenas de verano, barbacoas, juegos infantiles o un pequeño huerto, y amplía de forma natural la zona de estar.</p> <p>El inmueble está en una zona tranquila de Michálkovice, a unos 8 minutos en coche del centro de Ostrava.</p>",
+    "T.Březen 2026": "Marzo de 2026",
+    "T.Na pozemku": "En la parcela",
+    "T.Půdorys je překreslený z dodaného podkladu a slouží k orientaci v rozvržení. Závazná je užitná plocha podle prohlášení vlastníka.": "El plano está redibujado a partir de la documentación facilitada y sirve de orientación sobre la distribución. La superficie vinculante es la indicada en la declaración de propiedad.",
+    "T.Rekonstrukce": "Reforma",
     "T.Půdorys je překreslený z dodaného podkladu a slouží k orientaci v rozvržení. Závazná je užitná plocha 127 m² podle prohlášení vlastníka.": "El plano está redibujado a partir de la documentación facilitada y sirve de orientación sobre la distribución. La superficie vinculante es de 127 m² según la declaración de propiedad.",
     "L.prodej.ostrava-podebradova-3kk1.title": "Amplio piso de cuatro ambientes, 127 m² — Ostrava, calle Poděbradova",
     "L.prodej.ostrava-podebradova-3kk1.short": "Piso de cuatro ambientes de 127 m² en un edificio de ladrillo en el centro de Moravská Ostrava. Incluye trastero de 30 m² y dos plazas de aparcamiento. Techos altos, parqué y espacios que la obra nueva ya no ofrece.",
@@ -1185,6 +1227,13 @@
     "T.Petřvald, Josefa Rohla 549": "Petřvald, Josefa Rohla 549"
   },
   "pl": {
+    "L.prodej.ostrava-michalkovice-u-krize-144b.title": "Mieszkanie 4-pokojowe z ogrodem, 95 m² — połowa domu, Ostrawa-Michálkovice",
+    "L.prodej.ostrava-michalkovice-u-krize-144b.short": "Połowa domu jednorodzinnego w Michálkovicach — mieszkanie 95 m², ogród 386 m² i parkowanie na działce. Remont z marca 2026, dwie łazienki. Osiem minut samochodem do centrum Ostrawy.",
+    "L.prodej.ostrava-michalkovice-u-krize-144b.desc": "<p>Oferujemy na sprzedaż połowę domu jednorodzinnego z <strong>mieszkaniem o powierzchni 95 m²</strong> przy ulicy U Kříže w Ostrawie-Michálkovicach. Do nieruchomości należy <strong>ogród o powierzchni 386 m²</strong> oraz możliwość parkowania bezpośrednio na działce.</p> <p>Cztery pokoje i osobna kuchnia dają dość miejsca na życie rodzinne, domowe biuro i pokój gościnny. Wnętrze uzupełnia nowoczesna zabudowa kuchenna ze sprzętem AGD i <strong>dwie łazienki</strong>, które docenią liczniejsze rodziny. Jest też osobne WC i garderoba.</p> <p><strong>Remont przeprowadzono w marcu 2026</strong>, mieszkanie przejmuje się więc w stanie gotowym, bez dalszych inwestycji.</p> <p>Ogród daje przestrzeń na odpoczynek, letnie posiadówki, grillowanie, zabawy dzieci czy własne warzywa i naturalnie powiększa przestrzeń mieszkalną.</p> <p>Nieruchomość leży w spokojnej części Michálkovic, a do centrum Ostrawy dojedziesz w około 8 minut samochodem.</p>",
+    "T.Březen 2026": "Marzec 2026",
+    "T.Na pozemku": "Na działce",
+    "T.Půdorys je překreslený z dodaného podkladu a slouží k orientaci v rozvržení. Závazná je užitná plocha podle prohlášení vlastníka.": "Rzut został przerysowany z dostarczonej dokumentacji i służy do orientacji w układzie. Wiążąca jest powierzchnia użytkowa według oświadczenia właściciela.",
+    "T.Rekonstrukce": "Remont",
     "T.Půdorys je překreslený z dodaného podkladu a slouží k orientaci v rozvržení. Závazná je užitná plocha 127 m² podle prohlášení vlastníka.": "Rzut został przerysowany z dostarczonej dokumentacji i służy do orientacji w układzie. Wiążąca jest powierzchnia użytkowa 127 m² według oświadczenia właściciela.",
     "L.prodej.ostrava-podebradova-3kk1.title": "Przestronne mieszkanie 4-pokojowe, 127 m² — Ostrawa, ul. Poděbradova",
     "L.prodej.ostrava-podebradova-3kk1.short": "Mieszkanie 4-pokojowe o powierzchni 127 m² w ceglanym budynku w centrum Moravskiej Ostrawy. W cenie piwnica 30 m² i dwa miejsca postojowe. Wysokie sufity, parkiet i metraż, jakiego nowe budownictwo nie oferuje.",
@@ -1382,6 +1431,13 @@
     "T.Petřvald, Josefa Rohla 549": "Petřvald, Josefa Rohla 549"
   },
   "ru": {
+    "L.prodej.ostrava-michalkovice-u-krize-144b.title": "Квартира 4+1 с садом, 95 м² — половина дома, Острава-Михалковице",
+    "L.prodej.ostrava-michalkovice-u-krize-144b.short": "Половина семейного дома в Михалковице — квартира 95 м², сад 386 м² и парковка на участке. Ремонт марта 2026, две ванные. Восемь минут на машине до центра Остравы.",
+    "L.prodej.ostrava-michalkovice-u-krize-144b.desc": "<p>Предлагаем к продаже половину семейного дома с <strong>квартирой площадью 95 м²</strong> на улице U Kříže в Остраве-Михалковице. К недвижимости относится <strong>сад площадью 386 м²</strong> и есть возможность парковки прямо на участке.</p> <p>Четыре комнаты и отдельная кухня дают достаточно места для семейной жизни, домашнего кабинета и комнаты для гостей. Интерьер дополняют современная кухня со встроенной техникой и <strong>две ванные комнаты</strong>, что оценит большая семья. Есть также отдельный туалет и гардеробная.</p> <p><strong>Ремонт выполнен в марте 2026 года</strong>, поэтому квартира принимается в готовом виде, без дальнейших вложений.</p> <p>Сад предлагает место для отдыха, летних посиделок, барбекю, детских игр или собственных овощей и естественно расширяет жилое пространство.</p> <p>Недвижимость находится в спокойной части Михалковице, при этом до центра Остравы примерно 8 минут на машине.</p>",
+    "T.Březen 2026": "Март 2026",
+    "T.Na pozemku": "На участке",
+    "T.Půdorys je překreslený z dodaného podkladu a slouží k orientaci v rozvržení. Závazná je užitná plocha podle prohlášení vlastníka.": "План перечерчен с предоставленной документации и служит для ориентации в планировке. Обязательной является полезная площадь согласно декларации собственника.",
+    "T.Rekonstrukce": "Ремонт",
     "T.Půdorys je překreslený z dodaného podkladu a slouží k orientaci v rozvržení. Závazná je užitná plocha 127 m² podle prohlášení vlastníka.": "План перечерчен с предоставленной документации и служит для ориентации в планировке. Обязательной является полезная площадь 127 м² согласно декларации собственника.",
     "L.prodej.ostrava-podebradova-3kk1.title": "Просторная квартира 3+1, 127 м² — Острава, ул. Podebradova",
     "L.prodej.ostrava-podebradova-3kk1.short": "Квартира 3+1 площадью 127 м² в кирпичном доме в центре Моравской Остравы. В покупку входят погреб 30 м² и два парковочных места. Высокие потолки, паркет и метраж, какого в новостройках не бывает.",
@@ -1579,6 +1635,13 @@
     "T.Petřvald, Josefa Rohla 549": "Petřvald, Josefa Rohla 549"
   },
   "ja": {
+    "L.prodej.ostrava-michalkovice-u-krize-144b.title": "庭付き 4+1、95 m² — 二戸一住宅の半分、オストラヴァ・ミハールコヴィツェ",
+    "L.prodej.ostrava-michalkovice-u-krize-144b.short": "ミハールコヴィツェの戸建て半分——95 m² の住戸、386 m² の庭、敷地内駐車。2026 年 3 月改装、浴室 2 室。オストラヴァ中心部まで車で 8 分。",
+    "L.prodej.ostrava-michalkovice-u-krize-144b.desc": "<p>オストラヴァ・ミハールコヴィツェの U Kříže 通りで、<strong>95 m² の住戸</strong>を備えた戸建て住宅の半分を販売します。<strong>386 m² の庭</strong>が付き、敷地内に駐車できます。</p> <p>4 室と独立キッチンがあり、家族の生活に加えて在宅ワーク用の部屋や客間にも余裕があります。内装にはビルトイン機器付きのモダンなキッチンと<strong>浴室 2 室</strong>があり、人数の多い世帯に向いています。独立トイレとウォークインクローゼットも備えています。</p> <p><strong>改装は 2026 年 3 月に完了</strong>しており、追加の工事なしでそのまま引き継げます。</p> <p>庭はくつろぎ、夏の食事、バーベキュー、子どもの遊び、家庭菜園の場となり、居住空間を自然に広げます。</p> <p>物件はミハールコヴィツェの静かな一角にあり、オストラヴァ中心部までは車で約 8 分です。</p>",
+    "T.Březen 2026": "2026 年 3 月",
+    "T.Na pozemku": "敷地内",
+    "T.Půdorys je překreslený z dodaného podkladu a slouží k orientaci v rozvržení. Závazná je užitná plocha podle prohlášení vlastníka.": "平面図は提供資料をもとに描き直したもので、間取りの把握を目的としています。契約上の専有面積は所有者宣言に基づきます。",
+    "T.Rekonstrukce": "改装",
     "T.Půdorys je překreslený z dodaného podkladu a slouží k orientaci v rozvržení. Závazná je užitná plocha 127 m² podle prohlášení vlastníka.": "平面図は提供資料をもとに描き直したもので、間取りの把握を目的としています。契約上の専有面積は所有者宣言に基づく 127 m² です。",
     "L.prodej.ostrava-podebradova-3kk1.title": "ゆとりある 3+1、127 m² — オストラヴァ、Poděbradova 通り",
     "L.prodej.ostrava-podebradova-3kk1.short": "モラフスカー・オストラヴァ中心部のレンガ造建物にある 127 m² の 3+1。30 m² の地下倉庫と駐車スペース 2 台分付き。高い天井、パーケット、新築にはない広さ。",
@@ -1776,6 +1839,13 @@
     "T.Petřvald, Josefa Rohla 549": "Petřvald, Josefa Rohla 549"
   },
   "zh": {
+    "L.prodej.ostrava-michalkovice-u-krize-144b.title": "带花园四室一厅，95 m² — 半栋住宅，俄斯特拉发-米哈尔科维采",
+    "L.prodej.ostrava-michalkovice-u-krize-144b.short": "米哈尔科维采独栋住宅的一半——95 m² 住宅，386 m² 花园，可在地块内停车。2026 年 3 月翻新，两间浴室。开车到俄斯特拉发市中心八分钟。",
+    "L.prodej.ostrava-michalkovice-u-krize-144b.desc": "<p>我们在俄斯特拉发-米哈尔科维采的 U Kříže 街出售半栋独立住宅，<strong>住宅面积 95 m²</strong>。房产含<strong>386 m² 花园</strong>，并可直接在地块内停车。</p> <p>四个房间加独立厨房，足以安排家庭起居、居家办公与客房。室内配有带嵌入式电器的现代整体厨房和<strong>两间浴室</strong>，人口较多的家庭尤其受用。另设独立卫生间与衣帽间。</p> <p><strong>翻新于 2026 年 3 月完成</strong>，可直接接手入住，无需再投入。</p> <p>花园可供休憩、夏日用餐、烧烤、孩子玩耍或种植蔬菜，自然延伸了居住空间。</p> <p>房产位于米哈尔科维采安静的一隅，开车到俄斯特拉发市中心约 8 分钟。</p>",
+    "T.Březen 2026": "2026 年 3 月",
+    "T.Na pozemku": "位于地块内",
+    "T.Půdorys je překreslený z dodaného podkladu a slouží k orientaci v rozvržení. Závazná je užitná plocha podle prohlášení vlastníka.": "平面图依据所提供资料重绘，仅供了解格局之用。以所有权声明中的使用面积为准。",
+    "T.Rekonstrukce": "翻新",
     "T.Půdorys je překreslený z dodaného podkladu a slouží k orientaci v rozvržení. Závazná je užitná plocha 127 m² podle prohlášení vlastníka.": "平面图依据所提供资料重绘，仅供了解格局之用。以所有权声明中的使用面积 127 m² 为准。",
     "L.prodej.ostrava-podebradova-3kk1.title": "宽敞三室一厅，127 m² — 俄斯特拉发，Poděbradova 街",
     "L.prodej.ostrava-podebradova-3kk1.short": "位于摩拉维亚俄斯特拉发市中心砖砌楼房内的 127 m² 三室一厅。含 30 m² 地下储藏室与两个停车位。挑高、拼花地板，面积为新建住宅所不及。",
